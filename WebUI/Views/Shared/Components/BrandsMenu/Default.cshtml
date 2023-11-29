@@ -1,8 +1,17 @@
-﻿<ul style="list-style:none">
+﻿<style>
+    a:hover {
+        color: #4CAF50;
+    }
+
+    ul li a {
+        color: gray;
+    }
+</style>
+<ul style="list-style:none">
     @foreach (var item in Model)
     {
         <li>
-            <a style="font-weight:600;color:gray;font-size:14px;text-decoration:none;margin-left:-20%"
+            <a style="font-weight:500;font-size:14px;margin-left:-20%"
                asp-controller="Products" asp-action="Index" asp-route-brand="@item.Brand">
                 @item.Brand (@item.Count)
             </a>

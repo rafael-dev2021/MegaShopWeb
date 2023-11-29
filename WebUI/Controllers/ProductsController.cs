@@ -31,6 +31,7 @@ namespace WebUI.Controllers
         public IEnumerable<ProductDto> _productsDto = new List<ProductDto>();
         private string _currentCategory = string.Empty;
 
+        //In construction, nothing is finished yet
         public async Task<IActionResult> Index(string categoryStr, string brand, int page = 1, int pageSize = 9, string keyword = "", string minPrice = null, string maxPrice = null, bool? isDailyOffer = null, bool? isBestSeller = null, bool? isPriceHigh = null, bool? isPriceLow = null, bool? showAvailableOnly = null, bool? hasReviews = null)
         {
             var products = await _productDtoService.GetProductsDtoAsync();
@@ -51,14 +52,11 @@ namespace WebUI.Controllers
                 products = productsForCategory;
             }
 
-            // Filtro por marca
             if (!string.IsNullOrEmpty(brand))
             {
                 products = products.Where(p => p.ProductSpecificationsObjectValue.ProductBrand.Contains(brand));
             }
 
-
-            // Filtro por palavra-chave
             if (!string.IsNullOrEmpty(keyword))
             {
                 var filteredProductsByKeyword = await _productDtoService.GetSearchProductDtoAsync(keyword);
@@ -72,7 +70,6 @@ namespace WebUI.Controllers
             }
 
 
-            // Filtro por preço mínimo e máximo
             if (!string.IsNullOrEmpty(minPrice))
             {
                 decimal parsedMinPrice;
@@ -91,39 +88,34 @@ namespace WebUI.Controllers
                 }
             }
 
-            // Filtro por oferta diária
+            
             if (isDailyOffer.HasValue)
             {
                 products = products.Where(p => p.ProductFlagsObjectValue.IsDailyOffer == isDailyOffer);
             }
 
-            // Filtro por best seller
+           
             if (isBestSeller.HasValue)
             {
                 products = products.Where(p => p.ProductFlagsObjectValue.IsBestSeller == isBestSeller);
             }
 
-            // Filtro por preço alto
+           
             if (isPriceHigh.HasValue && isPriceHigh == true)
             {
-                // Ordena os produtos por preço de forma descendente
                 products = products.OrderByDescending(p => p.ProductPriceObjectValue.Price);
             }
 
-            // Filtro por preço baixo
             if (isPriceLow.HasValue && isPriceLow == true)
             {
-                // Ordena os produtos por preço de forma ascendente
                 products = products.OrderBy(p => p.ProductPriceObjectValue.Price);
             }
 
-            // Filtro por mostrar apenas produtos disponíveis (com estoque maior que 0)
             if (showAvailableOnly.HasValue && showAvailableOnly == true)
             {
                 products = products.Where(p => p.Stock > 0);
             }
 
-            // Filtro por mostrar apenas produtos com avaliações (reviews)
             if (hasReviews.HasValue && hasReviews == true)
             {
                 products = products.Where(p => p.Reviews.Any());
@@ -149,6 +141,7 @@ namespace WebUI.Controllers
         {
             return RedirectToAction("Index");
         }
+
         //In construction, nothing is finished yet
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)

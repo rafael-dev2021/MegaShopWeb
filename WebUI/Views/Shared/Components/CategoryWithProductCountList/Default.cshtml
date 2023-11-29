@@ -1,11 +1,19 @@
 ﻿@model List<Domain.Entities.CategoryWithProductCount>
+<style>
+    a:hover {
+        color: #4CAF50;
+    }
 
+    ul li a {
+        color: gray;
+    }
+</style>
 <div>
     <ul style="list-style:none">
         @foreach (var category in Model)
         {
             <li>
-                <a style="font-weight:600;color:gray;font-size:14px;text-decoration:none;margin-left:-20%" asp-controller="Products" asp-action="Index" asp-route-categoryStr="@category.CategoryName">
+                <a style="font-weight:500;font-size:14px;margin-left:-20%" asp-controller="Products" asp-action="Index" asp-route-categoryStr="@category.CategoryName">
                     @category.CategoryName
                     (@category.ProductCount)
                 </a>

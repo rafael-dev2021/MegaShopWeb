@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "pq+mE68OXblMARcnDfndP02klhMcT1rVorsKai+mq5JHa81sAtxnCCEYFSejDO74txWfbKJlXbys24A63lmzbw==",
+  "success": true,
+  "projectFilePath": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ainbo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\ainbo\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\ainbo\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\ainbo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\ainbo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

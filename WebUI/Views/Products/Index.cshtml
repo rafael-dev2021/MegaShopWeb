@@ -1,5 +1,19 @@
 ﻿@model ProductViewModel
 <style>
+
+    a:hover {
+        color: #4CAF50;
+    }
+
+    ul li a {
+        color: gray;
+    }
+
+    .style_li_button_typesOffers {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
     .pagination {
         text-align: center;
         margin-top: 20px;
@@ -25,22 +39,20 @@
                 cursor: default;
             }
 
-    .botao-cinza {
+    .style_form_button {
         margin-top: 2px;
-        background-color: lightgrey; /* Define a cor de fundo cinza */
-        border: none; /* Remove a borda do botão */
-        border-radius: 50%; /* Torna o botão circular */
-        width: 25px; /* Define a largura do botão */
-        height: 25px; /* Define a altura do botão */
-        display: flex; /* Usa flexbox para centralizar o ícone */
-        justify-content: center; /* Centraliza horizontalmente */
-        align-items: center; /* Centraliza verticalmente */
+        background-color: lightgrey;
+        border: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
-        .botao-cinza i {
-            color: white; /* Define a cor do ícone */
+        .style_form_button i {
+            color: white;
         }
-
 </style>
 
 <nav class="navbar navbar-expand-lg">
@@ -70,13 +82,13 @@
             <h6>Types of offers</h6>
             <ul style="list-style:none; margin-left:-16%">
                 <li>
-                    <a style="font-weight:600;color:gray;font-size:14px;text-decoration:none"
+                    <a class="style_li_button_typesOffers"
                        asp-controller="Products" asp-action="Index" asp-route-isDailyOffer="true">
                         Show Daily Offers
                     </a>
                 </li>
                 <li>
-                    <a style="font-weight:600;color:gray;font-size:14px;text-decoration:none"
+                    <a class="style_li_button_typesOffers"
                        asp-controller="Products" asp-action="Index" asp-route-isBestSeller="true">
                         Show Best Sellers
                     </a>
@@ -93,10 +105,10 @@
             <h6>Categories</h6>
             @await Component.InvokeAsync("CategoryWithProductCountList")
             <h6>Price</h6>
-            <ul style="list-style:none;margin-left:-18%;color:gray;font-weight:600">
-                <li><a asp-controller="Products" asp-action="PriceIsLowerThanOneHundred">$ 100.00</a></li>
-                <li><a asp-controller="Products" asp-action="PriceIsBetweenTwoHundredAndAThousand">$ 200.00 - $ 1000.00</a></li>
-                <li><a asp-controller="Products" asp-action="PriceIsHigherThanTwoThousand">$ 2000.00</a></li>
+            <ul style="list-style:none;margin-left:-18%;font-weight:500">
+                <li><a class="style_li_button_price" asp-controller="Products" asp-action="PriceIsLowerThanOneHundred">$ 100.00</a></li>
+                <li><a class="style_li_button_price" asp-controller="Products" asp-action="PriceIsBetweenTwoHundredAndAThousand">$ 200.00 - $ 1000.00</a></li>
+                <li><a class="style_li_button_price" asp-controller="Products" asp-action="PriceIsHigherThanTwoThousand">$ 2000.00</a></li>
             </ul>
             <form id="searchForm" class="d-flex flex-grow-1" method="get" action="/Products/Index" style="max-width: 250px;height:30px;margin-top:-5px">
                 <input class="form-control me-2 bar" placeholder="min" aria-label="Search" name="minPrice" value="@Context.Request.Query["minPrice"].ToString()" />
@@ -106,12 +118,12 @@
                 <!-- Hidden fields to keep paging filters -->
                 <input type="hidden" name="page" value="@(ViewBag.CurrentPage)" />
                 <input type="hidden" name="pageSize" value="@(ViewBag.PageSize)" />
-                <button type="submit" class="botao-cinza">
+                <button type="submit" class="style_form_button">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </form>
             <div class="mt-1">
-                <a asp-controller="Products" asp-action="ClearFilter" style="color:grey;text-decoration:none">Clear all</a>
+                <a asp-controller="Products" asp-action="ClearFilter" style="color:grey;">Clear all</a>
             </div>
         </div>
         <div class="col-md-10">

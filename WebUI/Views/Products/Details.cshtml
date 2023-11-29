@@ -58,6 +58,9 @@
         z-index: 9999;
         cursor: pointer;
     }
+    .card{
+       border-radius:10px;
+    }
 </style>
 <section class="container">
     <div class="my-5">
@@ -156,17 +159,17 @@
             <div class="col-md-8 mt-4">
                 <h5>People who viewed this product also bought</h5>
             </div>
-            <div class="owl-carousel">
+           @*  <div class="owl-carousel">
                 @foreach (var item in Model.ProductsDto)
                 {
-                    @*  @if (@item.Category.CategoryName == "Offers")
-                { *@
+                     @if (@item.Category.CategoryName == "Offers")
+                {
                     <div class="item">
                         <partial name="~/Views/Shared/ProductsPartial/_OwlCarouselPartial.cshtml" for="@item" />
                     </div>
-                    @* } *@
+                    }
                 }
-            </div>
+            </div> *@
         </div>
     </section>
 </section>
@@ -366,7 +369,7 @@
             mainImage.style.opacity = '1';
         }
     </script>
-    <script>
+   @*  <script>
         //<!-- Owl-Carousel init -->
         $(document).ready(function () {
             $('.owl-carousel').owlCarousel({
@@ -389,5 +392,5 @@
                 }
             });
         });
-    </script>
+    </script> *@
 }
