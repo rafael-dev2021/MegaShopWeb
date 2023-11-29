@@ -1,0 +1,9 @@
+﻿namespace Domain.Entities.Products.Technology.Smartphones.ObjectsValue
+{
+    public  class SmartphoneDimensionsOV
+    {
+        public double HeightInche { get; protected set; }
+        public double WidthInche { get; protected set; }
+        public double ThicknessInche { get; protected set; }
+    }
+}

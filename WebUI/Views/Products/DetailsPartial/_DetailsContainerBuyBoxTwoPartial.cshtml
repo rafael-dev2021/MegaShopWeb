@@ -1,0 +1,27 @@
+﻿@model ProductViewModel
+<style>
+    .specs_PurchaseOptions {
+        color: #3483fa;
+        font-size: 14px;
+        font-weight: 600;
+    }
+</style>
+
+@if (Model.PriceIsHigherThanServiceBooleans.IsPriceHigherThanTwoThousand)
+{
+    <a asp-controller="Products" asp-action="PriceIsHigherThanTwoThousand">
+        <span class="specs_PurchaseOptions">@Model.CountProductByPriceOV.CountPriceIsHigherThanTwoThousand  new products from @Model.ProductDto.ProductPriceObjectValue.Price.ToString("C")</span>
+    </a>
+}
+@if (Model.PriceIsHigherThanServiceBooleans.IsPriceIsBetweenTwoHundredAndAThousand)
+{
+    <a asp-controller="Products" asp-action="PriceIsBetweenTwoHundredAndAThousand">
+        <span class="specs_PurchaseOptions">@Model.CountProductByPriceOV.CountPriceIsBetweenTwoHundredAndAThousand  new products from @Model.ProductDto.ProductPriceObjectValue.Price.ToString("C")</span>
+    </a>
+}
+@if (Model.PriceIsHigherThanServiceBooleans.IsPriceIsLowerThanOneHundred)
+{
+    <a asp-controller="Products" asp-action="PriceIsLowerThanOneHundred">
+        <span class="specs_PurchaseOptions">@Model.CountProductByPriceOV.CountPriceIsLowerThanOneHundred  new products from @Model.ProductDto.ProductPriceObjectValue.Price.ToString("C")</span>
+    </a>
+}

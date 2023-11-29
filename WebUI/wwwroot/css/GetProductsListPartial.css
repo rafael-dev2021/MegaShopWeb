@@ -1,0 +1,160 @@
+﻿
+/*/*beginning GetProductsList.cshtml*/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.style_flags {
+    color: #000;
+    font-size: 12px;
+    border: 1px solid black;
+    padding: 0 3px;
+}
+
+#main_image {
+    margin-top: 10px;
+    object-fit: contain;
+    width: 300px;
+    height: 250px;
+}
+
+.img-container {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.style_name_product {
+    font-family: Bogle,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.style_categoryName {
+    font-family: calibri;
+    color: gray;
+}
+
+.card-product-action:hover {
+    opacity: 1;
+}
+
+.card-product-action {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+    .card-product-action a {
+        display: inline-block;
+        color: black;
+    }
+
+
+
+.product_action {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.btn-action:hover {
+    background-color: #32CD32;
+}
+/*end GetProductsList.cshtml*/
+
+/*beginning GetProductsListImagesPartial.cshtml*/
+.secondary-image {
+    cursor: pointer;
+    height: 120px;
+    width: 100%;
+    background-color: #fff;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    border: solid 1px #DCDCDC;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+    .secondary-image:hover {
+        transform: scale(0.8);
+        border: 1px solid rgba(138, 201, 38, 1);
+        border-color: #8ac926;
+    }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+/*end GetProductsListImagesPartial.cshtml*/
+
+
+/*beginning GetProductsListPricePartial.cshtml*/
+.style_prices {
+    font-weight: bold;
+    color: black;
+}
+
+.style_values_prices_installments {
+    font-family: Calibri;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.style_badge_dailyoffer {
+    background-color: deepskyblue;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+
+.style_badge_bestseller {
+    background-color: red;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+
+.style_badge_categoryname {
+    background-color: dodgerblue;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+
+/*end GetProductsListPricePartial.cshtml*/
+
+/*beginning GetProductsListTablePartial.cshtml*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+/*end GetProductsListTablePartial.cshtml*/

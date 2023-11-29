@@ -1,0 +1,27 @@
+﻿@model Application.Dtos.ProductDto
+
+@{
+    string[] imagePaths = new string[]
+    {
+                                Model.ProductImageObjectValue.MainImage,
+                                Model.ProductImageObjectValue.ImageFirst,
+                                Model.ProductImageObjectValue.ImageSecond,
+                                Model.ProductImageObjectValue.ImageThird
+    };
+}
+
+@if (!imagePaths.All(string.IsNullOrEmpty))
+{
+    @if (!string.IsNullOrEmpty(Model.ProductImageObjectValue.MainImage))
+    {
+        <img src="@Model.ProductImageObjectValue.MainImage" alt="@Model.Name" class="img-fluid zoomable-image" style="display: block;margin-left: auto;margin-right: auto;">
+    }
+    <div class="row">
+        @foreach (var imagePath in imagePaths.Where(path => !string.IsNullOrEmpty(path)))
+        {
+            <div class="col-md-3">
+                <img src="@imagePath" alt="@Model.Name" class="img-fluid secondary-image zoomable-image">
+            </div>
+        }
+    </div>
+}

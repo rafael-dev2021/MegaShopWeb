@@ -1,0 +1,393 @@
+﻿@model ProductViewModel
+
+<style>
+    .owl-carousel .owl-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+    }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute;
+            left: -15px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            right: -10px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            font-size: 30px;
+        }
+
+    .fa-chevron-left, .fa-chevron-right {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        padding: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .fa-chevron-left {
+        left: 5px;
+    }
+
+    .fa-chevron-right {
+        right: 5px;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        cursor: pointer;
+    }
+</style>
+<section class="container">
+    <div class="my-5">
+        <div class="row">
+            <!-- start of first column -->
+            <div class="col-md-9">
+                <div class="row">
+                    <partial name="~/Views/Products/DetailsPartial/_DetailsImagePartial.cshtml" for="@Model.ProductDto" />
+
+                    <!-- start of middle column -->
+                    <div class="col-md-6">
+                        <div class="d-none d-md-block">
+                            <span>New</span>
+                            <h5>@Model.ProductDto.Name</h5>
+                        </div>
+                        <div style="margin-top:-5px">
+                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListReviewsAveragePartial.cshtml" for="@Model.ProductDto" />
+                            <span style="color:grey">reviews</span>
+                        </div>
+                        <div class="mt-2">
+                            <partial name="~/Views/Products/DetailsPartial/_DetailsPricePartial.cshtml" for="@Model" />
+                        </div>
+                        <hr />
+                        <div>
+                            <partial name="~/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphoneSpecificationsPartial.cshtml" for="@Model" />
+                        </div>
+                        <div>
+                            <partial name="~/Views/Products/DetailsPartial/Technology/Games/_DetailsGameSpecificationsPartial.cshtml" for="@Model" />
+                        </div>
+                        <hr />
+                        <div class="mt-2">
+                            <partial name="~/Views/Products/DetailsPartial/_DetailsAboutThisProductPartial.cshtml" for="@Model" />
+                            <h6>Other purchase options</h6>
+                            <partial name="~/Views/Products/DetailsPartial/_DetailsContainerBuyBoxTwoPartial.cshtml" for="@Model" />
+                        </div>
+                    </div> <!-- end of middle column -->
+
+                    <hr class="mt-5" />
+                    <div class="col-md-12 mt-4 m-2">
+                        <div>
+                            <h4 style="font-family:Roboto">Customers who viewed this product also purchased</h4>
+                        </div>
+                        <partial name="~/Views/Products/DetailsPartial/_DetailsProductAlsoPurchasedPartial.cshtml" for="@Model" />
+                    </div>
+                    <hr class="mt-5" />
+                    <span class="mt-3">
+                        <a onclick="toggleDescription()" class="text-secondary" style="font-size:14px;cursor:pointer">
+                            Show more information <i id="icon" class="fas fa-arrow-up"></i>
+                        </a>
+                    </span>
+                    <div id="characteristic" style="display:none" class="mt-3">
+                        <partial name="~/Views/Products/DetailsPartial/_DetailsProductsFeaturesPartial.cshtml" for="@Model" />
+                    </div>
+                    <div>
+                        <h5 class="mt-5">Description</h5>
+                        <p style="color:#666;font-size:20px;font-weight:400;word-break:break-word">@Model.ProductDto.Description</p>
+                    </div>
+                </div>
+            </div> <!-- end of first column -->
+            <!--Start of left column-->
+            <div class="col-md-3 d-none d-md-block">
+                <div class="card container">
+                    <partial name="~/Views/Products/DetailsPartial/_DetailsContainerBuyBoxOnePartial.cshtml" for="@Model" />
+                </div>
+                <div class="card mt-3 container">
+                    <h6 style="margin-top:10px;margin-bottom:-5px;text-align:center">Other purchase options</h6>
+                    <hr />
+                    <div style="text-align:center; margin-bottom:7px; margin-top:-5px">
+                        <partial name="~/Views/Products/DetailsPartial/_DetailsContainerBuyBoxTwoPartial.cshtml" for="@Model" />
+                    </div>
+                </div>
+                <div class="card container mt-2 text-center">
+                    <h6 class=" mt-4" style="text-align:left">Forms of Payment</h6>
+                    <partial name="~/Views/Products/DetailsPartial/_DetailsContainerBuyBoxThreePartial.cshtml" for="@Model" />
+                </div>
+            </div>
+            <!--End of left column-->
+        </div>
+    </div>
+
+    <div class="mt-5 container">
+        <h5>Questions and answers</h5>
+        <h6 class="mt-3 mb-3">What information do you need?</h6>
+        <div>
+            <partial name="~/Views/Products/DetailsPartial/_DetailsButtonInformationsPartial.cshtml" for="@Model" />
+        </div>
+        <hr />
+    </div>
+
+    <section id="reviews">
+        <div class="container">
+            <partial name="~/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsPartial.cshtml" for="@Model" />
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 mt-4">
+                <h5>People who viewed this product also bought</h5>
+            </div>
+            <div class="owl-carousel">
+                @foreach (var item in Model.ProductsDto)
+                {
+                    @*  @if (@item.Category.CategoryName == "Offers")
+                { *@
+                    <div class="item">
+                        <partial name="~/Views/Shared/ProductsPartial/_OwlCarouselPartial.cshtml" for="@item" />
+                    </div>
+                    @* } *@
+                }
+            </div>
+        </div>
+    </section>
+</section>
+
+
+@section Scripts {
+    <script>
+        // Characteristic products
+        function toggleDescription() {
+            const characteristic = document.getElementById("characteristic");
+            const icon = document.getElementById('icon');
+            if (characteristic.style.display === "none") {
+                characteristic.style.display = "block";
+                icon.classList.remove('fa-arrow-up');
+                icon.classList.add('fa-arrow-down');
+
+            } else {
+                characteristic.style.display = "none";
+                icon.classList.remove('fa-arrow-down');
+                icon.classList.add('fa-arrow-up');
+            }
+        }
+    </script>
+    <script>
+        //<!-- See more button in the folder ~/Views/Shared/ProductsPartial/_ProductReviews.cshtml -->
+        document.getElementById("show-more-button").addEventListener("click", function () {
+            var hiddenReviews = document.querySelectorAll(".hidden-review");
+            hiddenReviews.forEach(function (review) {
+                review.style.display = "block";
+            });
+            this.style.display = "none"; // Hide the "See more" button after viewing all comments.
+        });
+    </script>
+    <script>
+        // Carousel productAlsoPurchased  script
+        window.addEventListener('DOMContentLoaded', function () {
+            const carouselContainer = document.querySelector('.carousel-container');
+            const prevButton = document.querySelector('.fa-chevron-left');
+            const nextButton = document.querySelector('.fa-chevron-right');
+            const imageWidth = carouselContainer.offsetWidth;
+            let currentPosition = 0;
+            let clickCount = 0;
+            let nextButtonVisible = true;
+
+            prevButton.style.display = 'none'; // Hide the "Previous" button initially
+
+            prevButton.addEventListener('click', function () {
+                currentPosition += imageWidth;
+                if (currentPosition > 0) {
+                    currentPosition = -imageWidth * (carouselContainer.childElementCount - 1);
+                }
+                carouselContainer.style.transform = `translateX(${currentPosition}px)`;
+
+                if (currentPosition !== 0) {
+                    showPrevButton();
+                } else {
+                    hidePrevButton();
+                }
+
+                if (!nextButtonVisible) {
+                    showNextButton();
+                }
+            });
+
+            nextButton.addEventListener('click', function () {
+                currentPosition -= imageWidth;
+                if (currentPosition <= -imageWidth * (carouselContainer.childElementCount - 1)) {
+                    currentPosition = 0;
+                }
+                carouselContainer.style.transform = `translateX(${currentPosition}px)`;
+
+                if (currentPosition !== 0) {
+                    showPrevButton();
+                } else {
+                    hidePrevButton();
+                }
+
+                clickCount++;
+                if (clickCount >= 1) {
+                    hideNextButton();
+                }
+            });
+
+            function showPrevButton() {
+                prevButton.style.display = 'block';
+            }
+
+            function hidePrevButton() {
+                prevButton.style.display = 'none';
+            }
+
+            function showNextButton() {
+                nextButton.style.display = 'block';
+                nextButtonVisible = true;
+            }
+
+            function hideNextButton() {
+                nextButton.style.display = 'none';
+                nextButtonVisible = false;
+            }
+        });
+    </script>
+    <script>
+        //  Customer image carousel script
+        window.addEventListener('DOMContentLoaded', function () {
+            const carouselContainer = document.querySelector('#product-carousel-container');
+            const prevButton = document.querySelector('#product-carousel-prev-btn');
+            const nextButton = document.querySelector('#product-carousel-next-btn');
+            const imageWidth = carouselContainer.offsetWidth;
+            let currentPosition = 0;
+            let clickCount = 0;
+            let nextButtonVisible = true;
+
+            prevButton.style.display = 'none'; // Hide the "Previous" button initially
+
+            carouselContainer.style.display = 'flex';
+
+            prevButton.addEventListener('click', function () {
+                currentPosition += imageWidth;
+                if (currentPosition > 0) {
+                    currentPosition = -imageWidth * (carouselContainer.childElementCount - 1);
+                }
+                carouselContainer.style.transform = `translateX(${currentPosition}px)`;
+
+                if (currentPosition !== 0) {
+                    showPrevButton();
+                } else {
+                    hidePrevButton();
+                }
+
+                if (!nextButtonVisible) {
+                    showNextButton();
+                }
+            });
+
+            nextButton.addEventListener('click', function () {
+                currentPosition -= imageWidth;
+                if (currentPosition <= -imageWidth * (carouselContainer.childElementCount - 1)) {
+                    currentPosition = 0;
+                }
+                carouselContainer.style.transform = `translateX(${currentPosition}px)`;
+
+                if (currentPosition !== 0) {
+                    showPrevButton();
+                } else {
+                    hidePrevButton();
+                }
+
+                clickCount++;
+                if (clickCount >= 1) {
+                    hideNextButton();
+                }
+            });
+
+            function showPrevButton() {
+                prevButton.style.display = 'block';
+            }
+
+            function hidePrevButton() {
+                prevButton.style.display = 'none';
+            }
+
+            function showNextButton() {
+                nextButton.style.display = 'block';
+                nextButtonVisible = true;
+            }
+
+            function hideNextButton() {
+                nextButton.style.display = 'none';
+                nextButtonVisible = false;
+            }
+        });
+
+    </script>
+
+    <script>
+        function changeMainImage(newImageSrc) {
+            const mainImage = document.getElementById('main-image');
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = newImageSrc;
+                mainImage.style.opacity = '1';
+            }, 500);
+        }
+
+        function previewMainImage(previewImageSrc) {
+            const mainImage = document.getElementById('main-image');
+            mainImage.style.opacity = '0.5';
+            setTimeout(() => {
+                mainImage.src = previewImageSrc;
+                mainImage.style.opacity = '1';
+            }, 100);
+        }
+
+        function resetMainImage() {
+            const mainImage = document.getElementById('main-image');
+            mainImage.style.opacity = '1';
+        }
+    </script>
+    <script>
+        //<!-- Owl-Carousel init -->
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ["<i class='fas fa-chevron-left button_fa_chevron_left_and_right'></i>", "<i class='fas fa-chevron-right button_fa_chevron_left_and_right'></i>"],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+}

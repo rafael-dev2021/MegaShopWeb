@@ -1,0 +1,44 @@
+﻿@model Application.Dtos.ProductDto
+
+<style>
+    .cardsHover:hover {
+        max-width: 100%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        background-color: white;
+    }
+</style>
+
+<div class="mt-2 card-custom mx-auto">
+    <div class="card cardsHover h-100 text-center" style="border-radius:6px">
+        <div class="card-body">
+            <img class="mx-auto" src="@Model.ProductImageObjectValue.MainImage" style="width:100px; height:100px" alt="@Model.Name">
+            <hr />
+            @if (Model.ProductFlagsObjectValue.IsDailyOffer == true)
+            {
+                <div style="text-align:left">
+                    <span style="font-size:16px;font-weight:600">@Model.ProductPriceObjectValue.Price.ToString("C2")</span>
+                    <span style="font-size:16px; color:green; font-weight:400;">
+                        @Model.CalculateDiscountService().DiscountPercentage(Model.ProductPriceObjectValue).ToString("F0"))% OFF <br />
+                        12x @Model.CalculateDiscountService().InTwelveInstallmentWithoutInterest(Model.ProductPriceObjectValue).ToString("C2")) without interest<br>
+                        Shipping <b>Free</b>
+                    </span>
+                    <h6 class="mt-2" style="font-size:14px">@Model.Name</h6>
+                </div>
+            }
+            else if (Model.ProductFlagsObjectValue.IsBestSeller == true)
+            {
+                <div style="text-align:left">
+                    <span style="font-size:16px;font-weight:600">@Model.ProductPriceObjectValue.Price.ToString("C2")</span><br>
+                    <span style="font-size:16px; color:green; font-weight:400;">
+                        6x @Model.CalculateDiscountService().InSixInstallmentWithoutInterest(Model.ProductPriceObjectValue).ToString("C2")) without interest<br>
+                        Shipping <b>Free</b>
+                    </span>
+                    <br>
+                    <h6 class="mt-2" style="font-size:14px">@Model.Name</h6>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+

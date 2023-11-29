@@ -1,0 +1,61 @@
+﻿<div class="dropdown d-none d-sm-block" id="sort-dropdown">
+    <a class="btn dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="tree" aria-expanded="false"
+       style="width:160px;color:gray;font-size:14px;font-weight:600;border: 1px solid #8ac926">
+        <i class="fa-solid fa-arrow-down-wide-short"></i> Sort by
+    </a>
+    <ul class="dropdown-menu">
+        <!-- Outros itens do dropdown -->
+        <li>
+            <a style="font-weight:600;color:gray;font-size:14px" class="dropdown-item"
+               asp-controller="Products" asp-action="Index" asp-route-isDailyOffer="true">
+                Show Daily Offers
+            </a>
+        </li>
+        <li>
+            <a style="font-weight:600;color:gray;font-size:14px" class="dropdown-item"
+               asp-controller="Products" asp-action="Index" asp-route-isBestSeller="true">
+                Show Best Sellers
+            </a>
+        </li>
+        <li>
+            <a style="font-weight:600;color:gray;font-size:14px" class="dropdown-item"
+               asp-controller="Products" asp-action="Index" asp-route-isPriceHigh="true">
+                Show Price High
+            </a>
+        </li>
+        <li>
+            <a style="font-weight:600;color:gray;font-size:14px" class="dropdown-item"
+               asp-controller="Products" asp-action="Index" asp-route-isPriceLow="true">
+                Show Price Low
+            </a>
+        </li>
+        <li>
+            <a style="font-weight:600;color:gray;font-size:14px" class="dropdown-item"
+               asp-controller="Products" asp-action="Index" asp-route-showAvailableOnly="true">
+                Show Available Products
+            </a>
+        </li>
+        <li>
+            <a style="font-weight:600;color:gray;font-size:14px" class="dropdown-item"
+               asp-controller="Products" asp-action="Index" asp-route-hasReviews="true">
+                Show Products with Reviews
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var dropdown = document.getElementById('sort-dropdown');
+    dropdown.addEventListener('mouseenter', function () {
+        var dropdownToggle = this.querySelector('.dropdown');
+        dropdownToggle.classList.add('show');
+        var dropdownMenu = this.querySelector('.dropdown-menu');
+        dropdownMenu.classList.add('show');
+    });
+    dropdown.addEventListener('mouseleave', function () {
+        var dropdownToggle = this.querySelector('.dropdown');
+        dropdownToggle.classList.remove('show');
+        var dropdownMenu = this.querySelector('.dropdown-menu');
+        dropdownMenu.classList.remove('show');
+    });
+</script>

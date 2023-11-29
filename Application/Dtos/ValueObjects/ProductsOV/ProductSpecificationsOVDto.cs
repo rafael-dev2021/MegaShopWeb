@@ -1,0 +1,29 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
+namespace Application.Dtos.ValueObjects.ProductsOV
+{
+    public class ProductSpecificationsOVDto
+    {
+        [Required(ErrorMessage = "Product model is required.")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
+        [DisplayName("Product model")]
+        public string? ProductModel { get; set; }
+
+        [Required(ErrorMessage = "Brand is required.")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
+        [DisplayName("Brand")]
+        public string? ProductBrand { get; set; }
+
+        [Required(ErrorMessage = "Product line is required.")]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
+        [DisplayName("Product line")]
+        public string? ProductLine { get; set; }
+
+        [Required(ErrorMessage = "Product weight is required.")]
+        [StringLength(15, MinimumLength = 2, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
+        [DisplayName("Product weight")]
+        public string? ProductWeight { get; set; }
+
+    }
+}

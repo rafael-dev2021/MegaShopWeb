@@ -1,0 +1,73 @@
+html {
+    font-size: 14px;
+}
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #ffffff;
+}
+
+.bar:focus {
+    border: 1px solid;
+    border-color: #8ac926;
+    box-shadow: 0px 0px 2px 0px rgba(138, 201, 38, 1)
+}
+
+a {
+    text-decoration: none;
+}
+
+#myLinks a {
+    font-size: 16px;
+}
+
+#mainFooter a {
+    text-decoration: none;
+    color: lightslategray;
+    font-family: Roboto;
+}
+
+    #mainFooter a:hover {
+        color: black;
+    }
+
+#mainFooter ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+
+
+@media (min-width: 992px) {
+    .card-custom {
+        height: 300px;
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .card-custom {
+        height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-custom {
+        height: 300px;
+    }
+}

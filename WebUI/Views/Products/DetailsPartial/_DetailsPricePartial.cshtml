@@ -1,0 +1,74 @@
+﻿@model ProductViewModel
+<style>
+    .style_badge {
+        border-radius: 10px 0px 10px 0px;
+        font-size: 14px;
+    }
+
+    .style_Installment {
+        font-family: Calibri;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    h2 {
+        font-family: sans-serif;
+    }
+
+    .discount_color {
+        color: #00a650;
+    }
+</style>
+@if (Model.ProductDto.ProductFlagsObjectValue.IsDailyOffer == true)
+{
+    <span style="color:gray;font-size:15px"><del>@Model.ProductDto.ProductPriceObjectValue.HistoryPrice.ToString("C2")</del></span>
+    <h2>
+        @Model.ProductDto.ProductPriceObjectValue.Price.ToString("C2")
+        <span class="discount_color" style="font-size:18px">@Model.CalculateDiscountOV.DiscountPercentage.ToString("F0")% OFF</span>
+    </h2>
+    <div class="style_Installment">
+        <span style="color:black;">
+            In
+            <span class="discount_color">12x @Model.CalculateDiscountOV.InTwelveInstallmentWithoutInterest.ToString("C2") without interest</span>
+        </span>
+    </div>
+    <div class="mt-2">
+        <a asp-controller="Products" asp-action="Index" asp-route-isDailyOffer="true" class="d-none d-md-block">
+            <span class="badge style_badge" style="background-color:deepskyblue">Daily Offers</span>
+        </a>
+    </div>
+}
+else if (Model.ProductDto.ProductFlagsObjectValue.IsBestSeller == true)
+{
+    <h2>@Model.ProductDto.ProductPriceObjectValue.Price.ToString("C2")</h2>
+    <div class="style_Installment">
+        <span style="color:black;">
+            In
+            <span class="discount_color">6x @Model.CalculateDiscountOV.InSixInstallmentWithoutInterest.ToString("C2") without interest</span>
+        </span>
+    </div>
+    <div class="mt-2">
+        <a asp-controller="Products" asp-action="Index" asp-route-isBestSeller="true" class="d-none d-md-block">
+            <span class="badge style_badge" style="background-color:red">Best Sellers</span>
+        </a>
+    </div>
+}
+else
+{
+    <h2>@Model.ProductDto.ProductPriceObjectValue.Price.ToString("C2")</h2>
+    <div class="style_Installment">
+        <span style="color:black;">
+            In
+            <span style="color:red">
+                3x @Model.CalculateDiscountOV.InThreeInstallmentWithInterest.ToString("C2")
+                <span style="color:black"> with interest </span><span style="color:red">3%</span>
+            </span>
+        </span>
+    </div>
+    <div class="mt-2">
+        <a asp-controller="Products" asp-action="Index" asp-route-categoryStr="@Model.ProductDto.Category.CategoryName" class="d-none d-md-block">
+            <span class="badge style_badge" style="background-color:orange">@Model.ProductDto.Category.CategoryName</span>
+        </a>
+    </div>
+}

@@ -1,0 +1,51 @@
+﻿@model ProductViewModel
+<style>
+    .payment_in_installments_speciication {
+        border-radius: 5px;
+        width: 100%;
+        line-height: 30px;
+        background-color: #00a650;
+        color: white;
+        font-weight: 600;
+    }
+
+        .payment_in_installments_speciication:hover {
+            color: white;
+        }
+</style>
+<a class="mt-1 mb-3 d-flex justify-content-center align-items-center"
+   asp-controller="#" asp-action="#">
+    @if (Model.ProductDto.ProductFlagsObjectValue.IsDailyOffer == true)
+    {
+        <span class="btn btn-sm payment_in_installments_speciication">
+            Pay in up to 12x without interest
+        </span>
+    }
+    else if (Model.ProductDto.ProductFlagsObjectValue.IsBestSeller == true)
+    {
+        <span class="btn btn-sm payment_in_installments_speciication">
+            Pay in up to 6x without interest
+        </span>
+    }
+    else
+    {
+        <span class="btn btn-sm payment_in_installments_speciication">
+            Pay in up to 3x with interest
+        </span>
+    }
+</a>
+<h6 class="mt-2" style="text-align:left">Credit cards</h6>
+<span style="text-align:left">
+    <img src="~/images/cc/visa.png" class="img-fluid" width="40" />
+    &nbsp;
+    <img src="~/images/cc/diner.png" class="img-fluid" width="45" />
+    &nbsp;
+    <img src="~/images/cc/master.png" class="img-fluid" width="60" />
+    &nbsp;
+    <img src="~/images/cc/hipercard.png" class="img-fluid" width="60" />
+</span>
+<div>
+    <a asp-controller="#" asp-action="#">
+        <h6 style="text-align:center; font-size:14px">Other payment methods</h6>
+    </a>
+</div>

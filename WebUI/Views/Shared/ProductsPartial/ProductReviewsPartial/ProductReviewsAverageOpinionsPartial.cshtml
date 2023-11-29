@@ -1,0 +1,107 @@
+﻿@model Application.Dtos.ProductDto
+
+<style>
+    .button_fa_chevron_left_and_right_review {
+        font-size: 25px;
+        color: gray;
+    }
+
+    .hidden-review {
+        display: none;
+    }
+
+    #show-more-button {
+        background-color: #3483fa;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.30s ease, transform 0.20s ease;
+    }
+
+        #show-more-button:hover {
+            background-color: #1f5fd6;
+        }
+
+
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+        width: 20%;
+        height: 20%;
+        margin-left: 35px;
+        object-fit: contain;
+    }
+
+    .zoomed-image {
+        max-width: 90%;
+        max-height: 90%;
+    }
+</style>
+<div class="carousel">
+    <div id="product-carousel-container" style="display: flex; transition: transform 0.5s ease-in-out; transform-origin: left;">
+        @foreach (var item in Model.Reviews)
+        {
+            <img class="zoomable-image" src="@item.Image"/>
+        }
+    </div>
+    <button id="product-carousel-prev-btn" class="fa-solid fa-chevron-left button_fa_chevron_left_and_right_review"></button>
+    <button id="product-carousel-next-btn" class="fa-solid fa-chevron-right button_fa_chevron_left_and_right_review"></button>
+</div>
+
+<div class="mt-4" style="text-align: justify; margin-left:35px">
+    @foreach (var item in Model.Reviews.Take(3))
+    {
+        <span class="star-rating">
+            @for (int i = 0; i < Math.Min(5, item.Rating); i++)
+            {
+                <i class="fas fa-star" style="color:#3483fa; font-size:12px">
+                </i>
+            }
+            @for (int i = Math.Min(5, item.Rating); i < 5; i++)
+            {
+                <i class="fas fa-star" style="color:#ccc; font-size:12px">
+                </i>
+            }
+        </span>
+        <span style="position:relative; left: 50%; text-align:justify; color: #666; font-size:12px">
+            @item.ReviewDate.ToString("dd/MM/yyyy")
+        </span>
+        <p class="mt-2">@item.Comment</p>
+        <hr />
+    }
+
+    <button id="show-more-button">Show more</button>
+    @foreach (var item in Model.Reviews.Skip(3))
+    {
+        <div class="hidden-review">
+            <span class="star-rating">
+                @for (int i = 0; i < Math.Min(5, item.Rating); i++)
+                {
+                    <i class="fas fa-star" style="color:#3483fa; font-size:12px">
+                    </i>
+                }
+                @for (int i = Math.Min(5, item.Rating); i < 5; i++)
+                {
+                    <i class="fas fa-star" style="color:#ccc; font-size:12px">
+                    </i>
+                }
+            </span>
+            <span style="position:relative; left: 50%; text-align:justify; color: #666; font-size:12px">
+                @item.ReviewDate.ToString("dd/MM/yyyy")
+            </span>
+            <p class="mt-2">@item.Comment</p>
+            <hr />
+        </div>
+    }
+</div>

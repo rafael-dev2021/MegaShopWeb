@@ -1,0 +1,107 @@
+﻿@model ProductViewModel
+@{
+    var colorDisplayed = false;
+    var ramDisplayed = false;
+    var storageGbDisplayed = false;
+    int counterRam = 0;
+    int counterColor = 0;
+    int counterInternal = 0;
+    var smartphoneDtos = Model.GetMatchingProductsDto.GetMatchingSmartphones();
+}
+
+<style>
+    .style_spects_span {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .btn_detail_custom {
+        object-fit: cover;
+        border: solid 1px #DCDCDC;
+        border-radius: 5px;
+        padding: 5px;
+        line-height: 20px;
+        font-size: 10px;
+        font-weight: bold;
+        transition: transform 0.5s ease;
+    }
+
+        .btn_detail_custom:hover {
+            transform: scale(0.8);
+            border: 1px solid rgba(138, 201, 38, 1);
+            border-color: #8ac926;
+        }
+</style>
+<div class="row">
+    @foreach (var items in smartphoneDtos)
+    {
+        @if (items.Id == Model.ProductDto.Id && !colorDisplayed)
+        {
+            <span class="style_spects_span">Color: <b id="product-color">@items.SmartphoneFeatureObjectValue.Color</b></span>
+            colorDisplayed = true;
+        }
+    }
+</div>
+
+<div class="row">
+    @foreach (var item in smartphoneDtos)
+    {
+        <div class="col col-sm-2 col-md-4 col-lg-2">
+            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">
+                <img src="@item.ProductImageObjectValue.MainImage" alt="@item.Name" class="img-fluid secondary-image h-100" onclick="document.getElementById('main-image').src = '@item.ProductImageObjectValue.MainImage';" onmouseover="document.getElementById('main-image').src = '@item.ProductImageObjectValue.ImageFirst'; document.getElementById('product-color').textContent = '@item.SmartphoneFeatureObjectValue.Color';" onmouseout="document.getElementById('main-image').src = '@item.ProductImageObjectValue.MainImage'; document.getElementById('product-color').textContent = '@item.SmartphoneFeatureObjectValue.Color';">
+            </a>
+        </div>
+        counterColor++;
+        if (counterColor >= 3) break;
+    }
+</div>
+
+<div class="row">
+    @foreach (var items in smartphoneDtos)
+    {
+        @if (items.Id == Model.ProductDto.Id && !ramDisplayed)
+        {
+            <span class="style_spects_span mt-3">Ram: <b id="product-ram">@items.SmartphoneMemoryObjectValue.RAMGB</b></span>
+            ramDisplayed = true;
+        }
+    }
+</div>
+<div class="row">
+    @foreach (var item in smartphoneDtos)
+    {
+        <div class="col col-sm-2 col-md-4 col-lg-2">
+            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">
+                <span class="btn btn_detail_custom" onmouseover="document.getElementById('product-ram').textContent = '@item.SmartphoneMemoryObjectValue.RAMGB';" onmouseout="document.getElementById('product-ram').textContent = '@item.SmartphoneMemoryObjectValue.RAMGB';">
+                    @item.SmartphoneMemoryObjectValue.RAMGB GB
+                </span>
+            </a>
+        </div>
+        counterRam++;
+        if (counterRam >= 3) break;
+    }
+</div>
+<div class="row">
+    @foreach (var items in smartphoneDtos)
+    {
+        if (items.Id == Model.ProductDto.Id && !storageGbDisplayed)
+        {
+            <span class="style_spects_span mt-2">Internal Memory: <b id="product-intMem">@items.SmartphoneMemoryObjectValue.StorageGB</b></span>
+            storageGbDisplayed = true;
+        }
+    }
+</div>
+<div class="row">
+    @foreach (var item in smartphoneDtos)
+    {
+        <div class="col col-sm-2 col-md-4 col-lg-2">
+            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">
+                <p class="btn btn_detail_custom" onmouseover="document.getElementById('product-intMem').textContent = '@item.SmartphoneMemoryObjectValue.StorageGB';" onmouseout="document.getElementById('product-intMem').textContent = '@item.SmartphoneMemoryObjectValue.StorageGB';">
+                    @item.SmartphoneMemoryObjectValue.StorageGB GB
+                </p>
+
+            </a>
+        </div>
+        counterInternal++;
+        if (counterInternal >= 3) break;
+    }
+</div>

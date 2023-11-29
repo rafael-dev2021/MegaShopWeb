@@ -1,0 +1,29 @@
+﻿@model ProductViewModel
+<style>
+    .button_fa_chevron_left_and_right {
+        font-size: 25px;
+        color: gray;
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        transform-origin: left;
+    }
+</style>
+<div class="carousel mt-4">
+    <div class="carousel-container">
+        @foreach (var item in Model.ProductsDto)
+        {
+            if (Model.ProductDto.Category.CategoryName == item.Category.CategoryName &&
+            (item.ProductFlagsObjectValue.IsBestSeller || item.ProductFlagsObjectValue.IsDailyOffer))
+            {
+                <div class="col-sm-2 col-md-4 col-lg-4" style="padding:5px">
+                    <partial name="~/Views/Shared/ProductsPartial/_ProductAlsoPurchased.cshtml" for="@item" />
+                </div>
+            }
+        }
+    </div>
+    <button class="fa-solid fa-chevron-left button_fa_chevron_left_and_right"></button>
+    <button class="fa-solid fa-chevron-right button_fa_chevron_left_and_right"></button>
+</div> 

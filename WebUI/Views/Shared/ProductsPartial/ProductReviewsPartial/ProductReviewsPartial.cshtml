@@ -1,0 +1,50 @@
+﻿@model ProductViewModel
+
+<div class="row">
+    <div class="col-md-4">
+        <h5>Product reviews</h5>
+        <div>
+            <partial name="~/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsAveragePartial.cshtml" for="@Model.ProductDto" />
+            <span style="font-size:15px;margin:5px;color:#3483fa">Reviews</span>
+        </div>
+        <div style="margin-left:-15px">
+            <img src="~/images/icons/rating.png" />
+        </div>
+        <div class="mt-3">
+            <h6>Resource evaluation</h6>
+            <small style="color:#3483fa">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </small>
+        </div>
+        <div class="mt-3">
+            <h6>Cost benefit</h6>
+            <small style="color:#3483fa">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </small>
+        </div>
+        <div class="mt-3">
+            <h6>Product quality</h6>
+            <small style="color:#3483fa">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h6 style="margin-left:35px">Opinions with photos</h6>
+        <partial name="~/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsAverageOpinionsPartial.cshtml" for="@Model.ProductDto" />
+    </div>
+</div>
+

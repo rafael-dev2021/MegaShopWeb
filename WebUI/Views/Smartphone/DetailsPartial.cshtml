@@ -1,0 +1,22 @@
+﻿@model Application.Dtos.ProductsDto.Technology.Smartphones.SmartphoneDto
+<style>
+    .specs_features_list_item li {
+        line-height: 1.75em;
+        padding-left: 5px;
+        text-indent: -10px;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(0,0,0,.9);
+    }
+</style>
+
+<div>
+    <ul class="specs_features_list_item">
+        <li>Display @Model.SmartphoneDisplayObjectValue.DisplayType.</li>
+        <li>Battery @Model.SmartphoneBatteryObjectValue.BatteryCapacitymAh.</li>
+        <li>Internal Memory @Model.SmartphoneMemoryObjectValue.StorageGB GB.</li>
+        <li>RAM @Model.SmartphoneMemoryObjectValue.RAMGB GB.</li>
+        <li>Network compatible @Model.SmartphoneFeatureObjectValue.CellNetworkTechnology.</li>
+        <li>Front camera @Model.SmartphoneCameraObjectValue.SelfieCameraSpec.</li>
+    </ul>
+</div>

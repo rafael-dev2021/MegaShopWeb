@@ -1,0 +1,23 @@
+﻿@model ProductViewModel
+<style>
+    .information_do_you_need {
+        height: 35px;
+        color: #3483fa;
+        background-color: rgba(65,137,230,.15);
+        border-color: transparent;
+        font-size: 12px;
+        font-weight: 600;
+    }
+</style>
+<a class="btn information_do_you_need" asp-controller="Information" asp-action="CostAndTime">
+    Shipping cost and time
+</a>
+<a class="btn information_do_you_need" asp-controller="Information" asp-action="ShippingReturn">
+    Free Returns
+</a>
+<a class="btn information_do_you_need" asp-controller="Information" asp-action="Payments">
+    Payment options
+</a>
+<a class="btn information_do_you_need" asp-controller="Information" asp-action="Guarantee">
+    Guarantee
+</a>

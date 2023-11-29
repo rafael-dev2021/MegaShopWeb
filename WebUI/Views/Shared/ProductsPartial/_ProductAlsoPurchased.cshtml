@@ -1,0 +1,63 @@
+﻿@model Application.Dtos.ProductDto
+
+<style>
+    .cardsHover:hover {
+        max-width: 100%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        background-color: white;
+    }
+</style>
+@{
+    string productName = Model.Name;
+    if (productName.Length > 40)
+    {
+        productName = productName.Substring(0, 40);
+        productName = productName.Substring(0, productName.LastIndexOf(" ")) + "...";
+    }
+}
+
+<div>
+    <a asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id" style="color:gray">
+        <div class="card cardsHover" style="height:120px">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="mx-auto" src="@Model.ProductImageObjectValue.MainImage" style="width:100px; height:100px; object-fit:contain; padding:2px;margin-top:10px" alt="@Model.Name">
+                </div>
+
+                <div class="col-md-8 mt-2" style="line-height:17px; text-align:start">
+                    <h6 style="font-size:12px;padding-left:5px">@productName</h6>
+                    @if (Model.ProductFlagsObjectValue.IsDailyOffer == true)
+                    {
+                        <div style="margin:5px;">
+                            <span style="font-size:15px; font-weight:600;color:black;">
+                                @Model.ProductPriceObjectValue.Price.ToString("C2")
+                                <span style="color:#00a650; font-size:12px">
+                                    <span class="badge" style="background-color:#00a650">@Model.CalculateDiscountService().DiscountPercentage(Model.ProductPriceObjectValue).ToString("F0")%</span><br />
+                                    <span style="font-size:13px">
+                                        12x @Model.CalculateDiscountService().InTwelveInstallmentWithoutInterest(Model.ProductPriceObjectValue).ToString("C2") without interest<br>
+                                        Shipping <b>Free</b>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                    }
+                    else if (Model.ProductFlagsObjectValue.IsBestSeller == true)
+                    {
+                        <div style="margin:5px">
+                            <span style="font-size:15px; font-weight:600;color:black">
+                                @Model.ProductPriceObjectValue.Price.ToString("C2")
+                                <span style="color:#00a650; font-size:14px">
+                                    <br />
+                                    6x @Model.CalculateDiscountService().InSixInstallmentWithoutInterest(Model.ProductPriceObjectValue).ToString("C2") without interest<br>
+                                    Shipping <b>Free</b>
+                                </span>
+                            </span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+

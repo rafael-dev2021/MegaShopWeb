@@ -1,0 +1,129 @@
+﻿.style_name_product {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: rgba(0,0,0,.9);
+    display: -webkit-box;
+    line-height: 18px;
+    margin-top: 12px;
+    max-height: 50px;
+    overflow: hidden;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.style_categoryName {
+    font-family: calibri;
+    color: gray;
+}
+
+.card_style {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+    .card_style:hover {
+        border: 1px solid;
+        border-color: #8ac926;
+        box-shadow: 0px 0px 2px 0px rgba(138, 201, 38, 1)
+    }
+
+
+        .card_style:hover .card-product-action {
+            opacity: 1;
+        }
+
+.card-product-action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+    .card-product-action a {
+        display: inline-block;
+        color: black;
+    }
+
+
+
+.product_action {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.btn-action:hover {
+    background-color: #32CD32;
+}
+
+.secondary-image {
+    cursor: pointer;
+    height: 120px;
+    width: 100%;
+    background-color: #fff;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    border: solid 1px #DCDCDC;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+    .secondary-image:hover {
+        transform: scale(0.8);
+        border: 1px solid rgba(138, 201, 38, 1);
+        border-color: #8ac926;
+    }
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.style_prices {
+    font-weight: bold;
+    color: black;
+}
+.style_values_prices_installments {
+    font-family: Calibri;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+}
+.style_badge_dailyoffer {
+    background-color: deepskyblue;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+
+.style_badge_bestseller {
+    background-color: red;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+.style_badge_categoryname {
+    background-color: dodgerblue;
+    border-radius: 10px 0px 10px 0px;
+    font-size: 14px;
+}

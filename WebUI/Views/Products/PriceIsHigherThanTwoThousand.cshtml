@@ -1,0 +1,15 @@
+﻿@model ProductViewModel
+
+<h2>@Model.CurrentCategory</h2>
+<br />
+<div class="container">
+    <partial name="~/Views/Shared/TemporaryFolder/_InCronstruction.cshtml" for="@Model" />
+    <div class="row ">
+        @foreach (var items in Model.ProductsDto)
+        {
+            <div class="col-lg-3">
+                <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+            </div>
+        }
+    </div>
+</div>

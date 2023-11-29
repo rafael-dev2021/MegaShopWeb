@@ -1,0 +1,129 @@
+﻿@model ProductViewModel
+
+<style>
+    .btn-outStock {
+        width: 250px;
+        height: 50px;
+        background-color: red;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .btn-otherProducts {
+        width: 250px;
+        height: 50px;
+        background-color: deepskyblue;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    .additional_information_name {
+        font-weight: 600;
+    }
+
+    .additional_information_description {
+        font-size: 14px;
+        color: gray;
+    }
+</style>
+<div class="row">
+    <div class="col-md-10 mt-4">
+        <p style="font-weight:600;font-size:15px">Shipping all over the country</p>
+    </div>
+    <div class="mb-1" style="margin-top:-10px;">
+        @if (Model.ProductDto.ProductFlagsObjectValue.IsDailyOffer || Model.ProductDto.ProductFlagsObjectValue.IsBestSeller == true)
+        {
+            <span style="color:#00a650">Free shipping</span>
+        }
+        else
+        {
+            <span style="color:#FF0000">Paid shipping</span>
+        }
+        <p style="font-weight:600;font-size:13px;color:gray">Delivery times and shipping methods.</p>
+    </div>
+    <div>
+        <a asp-controller="" asp-action="">
+            <span style="font-weight:600;font-size:15px"><i class="fa-solid fa-location-dot"></i> Calculate delivery time</span>
+        </a>
+        <br />
+        <p class="mt-3">
+            Official store
+            <a asp-controller="Home" asp-action="Index">
+                Megashop
+            </a>
+        </p>
+    </div>
+
+    @if (Model.ProductDto.Stock > 0)
+    {
+        <div class="mt-2">
+            <span style="color:black; font-weight:400">Available stock</span>
+            <p>Quantity: <span style="color:gray; font-size:15px">(@Model.ProductDto.Stock available)</span></p>
+        </div>
+        <div class="mt-3">
+            <a class="justify-content-center d-flex" asp-controller="ShoppingCart" asp-action="AddToCartItem" asp-route-id=@Model.ProductDto.Id>
+                <span class="btn btn-primary btn-lg" style="width:250px">Buy now</span>
+            </a>
+            <a class="mt-2 mb-4 justify-content-center d-flex" asp-controller="ShoppingCart" asp-action="AddToCartItem" asp-route-id=@Model.ProductDto.Id>
+                <span class="btn btn-lg" style="width:250px;color:#3483fa;border-color:transparent;background-color:rgba(65,137,230,.15)">Add to cart</span>
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="mt-3">
+            <span style="color:gray">Available stock (@Model.ProductDto.Stock units)</span>
+        </div>
+
+        <div class="justify-content-center d-flex mt-4 mb-2">
+            <span class="btn-outStock">Product out of stock</span>
+        </div>
+
+        <a class="justify-content-center d-flex mb-4" asp-controller="Products" asp-action="Index">
+            <span class="btn-otherProducts">See other products</span>
+        </a>
+    }
+    <hr />
+</div>
+<div class="row">
+    <div class="col-md-1">
+        <i class="fa-solid fa-truck" style="color:gray"></i>
+    </div>
+    <div class="col-md-10">
+        <p style="font-size:14px;">
+            Want it faster? <a asp-controller="" asp-action="">Add an address</a> to see options.
+        </p>
+    </div>
+    <div class="col-md-1">
+        <i class="fa-solid fa-check-double" style="color:gray"></i>
+    </div>
+    <div class="col-md-10 mb-3">
+        <a asp-controller="" asp-action="">
+            <span class="additional_information_name">Guarantee.</span>
+            <span class="additional_information_description">@Model.ProductDto.ProductWarrantyObjectValue.WarrantyLength.</span>
+        </a>
+    </div>
+    <div class="col-md-1">
+        <i class="fa-solid fa-dollar-sign" style="color:gray"></i>
+    </div>
+    <div class="col-md-10 mb-2">
+        <a asp-controller="" asp-action="">
+            <span class="additional_information_name">Guaranteed Purchase.</span>
+            <span class="additional_information_description">Get the product or your money back.</span>
+        </a>
+    </div>
+    <div class="col-md-1">
+        <i class="fa fa-reply" style="color:gray"></i>
+    </div>
+    <div class="col-md-10">
+        <a asp-controller="" asp-action="">
+            <span class="additional_information_name">Devolution.</span>
+            <span class="additional_information_description">@Model.ProductDto.ProductWarrantyObjectValue.WarrantyInformation.</span>
+        </a>
+    </div>
+</div>

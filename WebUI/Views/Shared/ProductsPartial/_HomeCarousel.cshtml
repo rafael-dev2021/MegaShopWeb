@@ -1,0 +1,42 @@
+﻿@model Application.Dtos.ProductDto
+
+<div>
+    <span>New</span>
+    <h4>@Model.Name</h4>
+    @if (Model.ProductFlagsObjectValue.IsDailyOffer == true)
+    {
+        <a asp-controller="Products" asp-action="DailyOffers">
+            <span class="badge" style="background-color:#3483fa; border-radius:10px 0px 10px 0px; font-size:14px">Daily Offers</span>
+        </a>
+    }
+</div>
+<div class="col-md-5 d-md-none">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="@Model.ProductImageObjectValue.MainImage" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+            </div>
+            <div class="carousel-item">
+                <img src="@Model.ProductImageObjectValue.ImageFirst" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+            </div>
+            <div class="carousel-item">
+                <img src="@Model.ProductImageObjectValue.ImageSecond" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+            </div>
+            <div class="carousel-item">
+                <img src="@Model.ProductImageObjectValue.ImageThird" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+            </div>
+          
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-black" style="border-radius:5px" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black" style="border-radius:5px" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+</div>
+
+
+

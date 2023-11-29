@@ -1,0 +1,227 @@
+﻿@model ProductViewModel
+<style>
+    .pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .pagination a, .pagination span {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+
+            .pagination a:hover {
+                background-color: #45a049;
+            }
+
+            .pagination span.current {
+                background-color: #45a049;
+                cursor: default;
+            }
+
+    .botao-cinza {
+        margin-top: 2px;
+        background-color: lightgrey; /* Define a cor de fundo cinza */
+        border: none; /* Remove a borda do botão */
+        border-radius: 50%; /* Torna o botão circular */
+        width: 25px; /* Define a largura do botão */
+        height: 25px; /* Define a altura do botão */
+        display: flex; /* Usa flexbox para centralizar o ícone */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+    }
+
+        .botao-cinza i {
+            color: white; /* Define a cor do ícone */
+        }
+
+</style>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+            <div class="position-absolute top-0 end-0">
+                @await Component.InvokeAsync("SortByMenu")
+            </div>
+        </div>
+    </div>
+</nav>
+<nav>
+    @if (Model.CurrentCategory == null)
+    {
+        <h4 class="mb-3" style="color:gray">Products @Model.CurrentBrand</h4>
+    }
+    else if (Model.CurrentCategory != null)
+    {
+        <h4 class="mb-3" style="color:gray">Products in @Model.CurrentCategory</h4>
+    }
+
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <h6>Types of offers</h6>
+            <ul style="list-style:none; margin-left:-16%">
+                <li>
+                    <a style="font-weight:600;color:gray;font-size:14px;text-decoration:none"
+                       asp-controller="Products" asp-action="Index" asp-route-isDailyOffer="true">
+                        Show Daily Offers
+                    </a>
+                </li>
+                <li>
+                    <a style="font-weight:600;color:gray;font-size:14px;text-decoration:none"
+                       asp-controller="Products" asp-action="Index" asp-route-isBestSeller="true">
+                        Show Best Sellers
+                    </a>
+                </li>
+            </ul>
+            <h6>Search for products</h6>
+            <form class="d-flex flex-grow-1 mb-3" style="width:200px;height:35px;">
+                <input class="form-control me-2 bar" type="search" placeholder="Search in @Model.CurrentCategory" aria-label="Search" name="keyword" value="@Context.Request.Query["keyword"].ToString()" />
+            </form>
+            <h6>Brands</h6>
+            <div>
+                @await Component.InvokeAsync("BrandsMenu")
+            </div>
+            <h6>Categories</h6>
+            @await Component.InvokeAsync("CategoryWithProductCountList")
+            <h6>Price</h6>
+            <ul style="list-style:none;margin-left:-18%;color:gray;font-weight:600">
+                <li><a asp-controller="Products" asp-action="PriceIsLowerThanOneHundred">$ 100.00</a></li>
+                <li><a asp-controller="Products" asp-action="PriceIsBetweenTwoHundredAndAThousand">$ 200.00 - $ 1000.00</a></li>
+                <li><a asp-controller="Products" asp-action="PriceIsHigherThanTwoThousand">$ 2000.00</a></li>
+            </ul>
+            <form id="searchForm" class="d-flex flex-grow-1" method="get" action="/Products/Index" style="max-width: 250px;height:30px;margin-top:-5px">
+                <input class="form-control me-2 bar" placeholder="min" aria-label="Search" name="minPrice" value="@Context.Request.Query["minPrice"].ToString()" />
+                <span>_&nbsp;</span>
+                <input class="form-control me-2 bar" placeholder="max" aria-label="Search" name="maxPrice" value="@Context.Request.Query["maxPrice"].ToString()" />
+                <input type="hidden" name="brand" value="@Context.Request.Query["brand"].ToString()" />
+                <!-- Hidden fields to keep paging filters -->
+                <input type="hidden" name="page" value="@(ViewBag.CurrentPage)" />
+                <input type="hidden" name="pageSize" value="@(ViewBag.PageSize)" />
+                <button type="submit" class="botao-cinza">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </form>
+            <div class="mt-1">
+                <a asp-controller="Products" asp-action="ClearFilter" style="color:grey;text-decoration:none">Clear all</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                @foreach (var items in Model.ProductsDto)
+                {
+                    <div class="col-lg-4">
+                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination" style="justify-content:center">
+    @if (ViewBag.CurrentPage > 1)
+    {
+        <a href="/Products/Index?page=@(ViewBag.CurrentPage - 1)&minPrice=@Context.Request.Query["minPrice"].ToString()&maxPrice=@Context.Request.Query["maxPrice"].ToString()">Back</a>
+    }
+
+    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+    {
+        if (i <= 11 || i == ViewBag.CurrentPage || i == ViewBag.TotalPages)
+        {
+            if (i == ViewBag.CurrentPage)
+            {
+                <span class="current">@i</span>
+            }
+            else
+            {
+                <a href="/Products/Index?page=@i&minPrice=@Context.Request.Query["minPrice"].ToString()&maxPrice=@Context.Request.Query["maxPrice"].ToString()">@i</a>
+            }
+        }
+        else if (i == 12 && ViewBag.TotalPages > 12)
+        {
+            <span>...</span>
+        }
+    }
+
+    @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+    {
+        <a href="/Products/Index?page=@(ViewBag.CurrentPage + 1)&minPrice=@Context.Request.Query["minPrice"].ToString()&maxPrice=@Context.Request.Query["maxPrice"].ToString()">Next</a>
+    }
+</div>
+
+
+@section Scripts {
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            var minPriceInput = document.getElementsByName('minPrice')[0];
+            var maxPriceInput = document.getElementsByName('maxPrice')[0];
+
+            var minPrice = parseFloat(minPriceInput.value);
+            var maxPrice = parseFloat(maxPriceInput.value);
+
+            if (minPrice <= 0) {
+                minPriceInput.classList.add('is-invalid');
+                minPriceInput.nextElementSibling.textContent = 'Por favor, digite um valor mínimo positivo.';
+                event.preventDefault(); // Evita que o formulário seja submetido se os valores forem inválidos
+                return;
+            } else {
+                minPriceInput.classList.remove('is-invalid');
+                minPriceInput.nextElementSibling.textContent = '';
+            }
+
+            if (maxPrice <= 0) {
+                maxPriceInput.classList.add('is-invalid');
+                maxPriceInput.nextElementSibling.textContent = 'Por favor, digite um valor máximo positivo.';
+                event.preventDefault(); // Evita que o formulário seja submetido se os valores forem inválidos
+                return;
+            } else {
+                maxPriceInput.classList.remove('is-invalid');
+                maxPriceInput.nextElementSibling.textContent = '';
+            }
+        });
+
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                var minPriceInput = document.getElementsByName('minPrice')[0];
+                var maxPriceInput = document.getElementsByName('maxPrice')[0];
+
+                var minPrice = parseFloat(minPriceInput.value);
+                var maxPrice = parseFloat(maxPriceInput.value);
+
+                if (minPrice <= 0) {
+                    minPriceInput.classList.add('is-invalid');
+                    minPriceInput.nextElementSibling.textContent = '';
+                    alert('O valor mínimo deve ser maior que 0.');
+                    e.preventDefault();
+                    return;
+                } else {
+                    minPriceInput.classList.remove('is-invalid');
+                    minPriceInput.nextElementSibling.textContent = '';
+                }
+
+                if (maxPrice <= 0) {
+                    maxPriceInput.classList.add('is-invalid');
+                    maxPriceInput.nextElementSibling.textContent = '';
+                    alert('O valor máximo deve ser maior que 0.');
+                    e.preventDefault();
+                    return;
+                } else {
+                    maxPriceInput.classList.remove('is-invalid');
+                    maxPriceInput.nextElementSibling.textContent = '';
+                }
+
+                document.getElementById('searchForm').submit();
+            }
+        });
+
+    </script>
+}

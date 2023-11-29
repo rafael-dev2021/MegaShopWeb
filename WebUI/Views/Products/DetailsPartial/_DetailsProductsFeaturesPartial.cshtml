@@ -1,0 +1,48 @@
+﻿@model ProductViewModel
+@foreach (var items in Model.SmartphonesDto)
+{
+    <div class="container">
+        <div class="row">
+            @if (items.Id == Model.ProductDto.Id)
+            {
+                <partial name="~/Views/Smartphone/FeaturesPartial.cshtml" for="@items" />
+            }
+        </div>
+    </div>
+}
+@foreach (var items in Model.GamesDto)
+{
+    <div class="container">
+        <div class="row">
+            @if (items.Id == Model.ProductDto.Id)
+            {
+                <partial name="~/Views/Game/FeaturesPartial.cshtml" for="@items" />
+            }
+        </div>
+    </div>
+}
+@* @foreach (var items in Model.TshirtsDto)
+{
+    <div class="container">
+        <div class="row">
+            @if (items.Id == Model.ProductDto.Id)
+            {
+                <partial name="~/Views/Tshirt/FeaturesPartial.cshtml" for="@items" />
+            }
+        </div>
+    </div>
+}
+@foreach (var items in Model.ShoesDtos)
+{
+    <div class="container">
+        <div class="row">
+            @if (items.Category.CategoryName == Model.ProductDto.Category.CategoryName)
+            {
+                if (items.Id == Model.ProductDto.Id)
+                {
+                    <partial name="~/Views/Shoes/FeaturesPartial.cshtml" for="@items" />
+                }
+            }
+        </div>
+    </div>
+} *@
