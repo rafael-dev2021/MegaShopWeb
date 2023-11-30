@@ -15,7 +15,7 @@ namespace Infra_Data.Configuration.Products.Technology
                    "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                    "2 days",
                    10,
-                   4
+                   3
                    ));
 
             ConfigureImageVO(builder);

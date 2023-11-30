@@ -114,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/IndexCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXhDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#/MegaShopWeb/WebUI/Views/Products/PriceIsBetweenTwoHundredAndAThousand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJpY2VJc0JldHdlZW5Ud29IdW5kcmVkQW5kQVRob3VzYW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -144,6 +148,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/CategoryWithProductCountList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlXaXRoUHJvZHVjdENvdW50TGlzdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/FashionMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmFzaGlvbk1lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/SortByMenu/Default.cshtml]

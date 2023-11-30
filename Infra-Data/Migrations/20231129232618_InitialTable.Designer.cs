@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231128213356_Initial")]
-    partial class Initial
+    [Migration("20231129232618_InitialTable")]
+    partial class InitialTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,18 +57,12 @@ namespace Infra_Data.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryImage = "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8fDA%3D",
-                            CategoryName = "Shoes"
+                            CategoryImage = "https://images.unsplash.com/photo-1537832816519-689ad163238b?q=80&w=1718&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            CategoryName = "Fashion"
                         },
                         new
                         {
                             Id = 3,
-                            CategoryImage = "https://plus.unsplash.com/premium_photo-1673125287084-e90996bad505?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            CategoryName = "T-Shirts"
-                        },
-                        new
-                        {
-                            Id = 4,
                             CategoryImage = "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1547&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                             CategoryName = "Games"
                         });
@@ -160,7 +154,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 11, 28, 18, 33, 54, 33, DateTimeKind.Local).AddTicks(9346)
+                            ReviewDate = new DateTime(2023, 11, 29, 20, 26, 16, 819, DateTimeKind.Local).AddTicks(6115)
                         },
                         new
                         {
@@ -169,7 +163,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 11, 28, 18, 33, 54, 33, DateTimeKind.Local).AddTicks(9362)
+                            ReviewDate = new DateTime(2023, 11, 29, 20, 26, 16, 819, DateTimeKind.Local).AddTicks(6136)
                         },
                         new
                         {
@@ -178,7 +172,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductReviewId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 11, 28, 18, 33, 54, 33, DateTimeKind.Local).AddTicks(9363)
+                            ReviewDate = new DateTime(2023, 11, 29, 20, 26, 16, 819, DateTimeKind.Local).AddTicks(6137)
                         });
                 });
 
@@ -210,7 +204,7 @@ namespace Infra_Data.Migrations
                         new
                         {
                             Id = 3,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             DeliveryDays = "3 days",
                             Description = "Size and weekends Avoid returns, compare the measurements provided with similar products of yours, even if you have any doubts, call us directly or ask questions.",
                             Name = "Nike Dry Fabric T-Shirt",
@@ -228,7 +222,7 @@ namespace Infra_Data.Migrations
                         new
                         {
                             Id = 4,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             DeliveryDays = "2 days",
                             Description = "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                             Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
@@ -723,7 +717,7 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<bool?>("ItsSporty")
+                            b1.Property<bool>("ItsSporty")
                                 .HasColumnType("bit");
 
                             b1.Property<string>("KindOfFabric")
@@ -746,10 +740,10 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<int?>("UnitsPerKit")
+                            b1.Property<int>("UnitsPerKit")
                                 .HasColumnType("int");
 
-                            b1.Property<bool?>("WithRecycledMaterials")
+                            b1.Property<bool>("WithRecycledMaterials")
                                 .HasColumnType("bit");
 
                             b1.HasKey("Id");
@@ -1266,6 +1260,7 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("nvarchar(max)");
 
                             b1.Property<string>("GameRating")
+                                .IsRequired()
                                 .HasColumnType("nvarchar(1)");
 
                             b1.Property<string>("GameTitle")
@@ -1328,7 +1323,7 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<int?>("MinimumRAMRequirement")
+                            b1.Property<int>("MinimumRAMRequirement")
                                 .HasColumnType("int");
 
                             b1.HasKey("Id");
@@ -1358,29 +1353,29 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<int?>("FileSize")
+                            b1.Property<int>("FileSize")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Format")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<bool?>("ItsMultiplayer")
+                            b1.Property<bool>("ItsMultiplayer")
                                 .HasColumnType("bit");
 
-                            b1.Property<bool?>("ItsOffline")
+                            b1.Property<bool>("ItsOffline")
                                 .HasColumnType("bit");
 
-                            b1.Property<bool?>("ItsOnline")
+                            b1.Property<bool>("ItsOnline")
                                 .HasColumnType("bit");
 
-                            b1.Property<int?>("MaximumNumberOfOfflinePlayers")
+                            b1.Property<int>("MaximumNumberOfOfflinePlayers")
                                 .HasColumnType("int");
 
-                            b1.Property<int?>("MaximumNumberOfOnlinePlayers")
+                            b1.Property<int>("MaximumNumberOfOnlinePlayers")
                                 .HasColumnType("int");
 
-                            b1.Property<bool?>("RequiresPeripheral")
+                            b1.Property<bool>("RequiresPeripheral")
                                 .HasColumnType("bit");
 
                             b1.Property<string>("ScreenLanguages")
@@ -1404,7 +1399,7 @@ namespace Infra_Data.Migrations
                                     Id = 4,
                                     AudioLanguages = "English",
                                     FileSize = 60,
-                                    Format = "Physicist",
+                                    Format = "Physical",
                                     ItsMultiplayer = false,
                                     ItsOffline = true,
                                     ItsOnline = false,

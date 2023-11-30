@@ -12,6 +12,7 @@ using Application.Services.PriceIsHigherThan;
 using Application.Services.PriceIsHigherThan.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing.Drawing2D;
 using WebUI.ViewModels;
 
 namespace WebUI.Controllers
@@ -31,6 +32,35 @@ namespace WebUI.Controllers
         public IEnumerable<ProductDto> _productsDto = new List<ProductDto>();
         private string _currentCategory = string.Empty;
 
+        public async Task<IActionResult> IndexCategory(string categoryStr)
+        {
+            var products = await _productDtoService.GetProductsDtoAsync();
+
+            if (string.IsNullOrEmpty(categoryStr))
+            {
+                products = await _productDtoService.GetProductsDtoAsync();
+            }
+            else
+            {
+                var productsForCategory = await _productDtoService.GetProductsDtoByCategoriesAsync(categoryStr);
+
+                if (!productsForCategory.Any())
+                {
+                    return RedirectToAction("IndexCategory");
+                }
+
+                products = productsForCategory;
+            }
+
+            var productVw = new ProductViewModel()
+            {
+                ProductsDto = products,
+                CurrentCategory = categoryStr
+            };
+
+            return View(productVw);
+
+        }
         //In construction, nothing is finished yet
         public async Task<IActionResult> Index(string categoryStr, string brand, int page = 1, int pageSize = 9, string keyword = "", string minPrice = null, string maxPrice = null, bool? isDailyOffer = null, bool? isBestSeller = null, bool? isPriceHigh = null, bool? isPriceLow = null, bool? showAvailableOnly = null, bool? hasReviews = null)
         {
@@ -88,19 +118,19 @@ namespace WebUI.Controllers
                 }
             }
 
-            
+
             if (isDailyOffer.HasValue)
             {
                 products = products.Where(p => p.ProductFlagsObjectValue.IsDailyOffer == isDailyOffer);
             }
 
-           
+
             if (isBestSeller.HasValue)
             {
                 products = products.Where(p => p.ProductFlagsObjectValue.IsBestSeller == isBestSeller);
             }
 
-           
+
             if (isPriceHigh.HasValue && isPriceHigh == true)
             {
                 products = products.OrderByDescending(p => p.ProductPriceObjectValue.Price);

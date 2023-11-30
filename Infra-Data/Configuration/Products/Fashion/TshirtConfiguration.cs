@@ -15,7 +15,7 @@ namespace Infra_Data.Configuration.Products.Fashion
                    "Size and weekends Avoid returns, compare the measurements provided with similar products of yours, even if you have any doubts, call us directly or ask questions.",
                    "3 days",
                    5,
-                   3
+                   2
                    ));
             ConfigureSpecificationsVO(builder);
             ConfigureImageVO(builder);

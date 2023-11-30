@@ -1,0 +1,10 @@
+﻿@model ProductViewModel
+
+@foreach (var item in Model.ProductsDto)
+{
+    if (item.Category.CategoryName == "Fashion")
+    {
+        @await Component.InvokeAsync("FashionMenu")
+    }
+    break;
+}

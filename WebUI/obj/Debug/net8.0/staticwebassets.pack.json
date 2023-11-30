@@ -301,6 +301,14 @@
       "PackagePath": "staticwebassets\\images\\maintenance.jpg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\patterns\\pattern-1.svg",
+      "PackagePath": "staticwebassets\\images\\patterns\\pattern-1.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\patterns\\pattern-2.svg",
+      "PackagePath": "staticwebassets\\images\\patterns\\pattern-2.svg"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\amazonpay.svg",
       "PackagePath": "staticwebassets\\images\\payments\\amazonpay.svg"
     },
@@ -309,12 +317,36 @@
       "PackagePath": "staticwebassets\\images\\payments\\american-express.svg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\amex.svg",
+      "PackagePath": "staticwebassets\\images\\payments\\amex.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\klarna.svg",
+      "PackagePath": "staticwebassets\\images\\payments\\klarna.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\maestro.svg",
+      "PackagePath": "staticwebassets\\images\\payments\\maestro.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\mastercard (1).svg",
+      "PackagePath": "staticwebassets\\images\\payments\\mastercard (1).svg"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\mastercard.svg",
       "PackagePath": "staticwebassets\\images\\payments\\mastercard.svg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\paypal (1).svg",
+      "PackagePath": "staticwebassets\\images\\payments\\paypal (1).svg"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\paypal.svg",
       "PackagePath": "staticwebassets\\images\\payments\\paypal.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\visa (1).svg",
+      "PackagePath": "staticwebassets\\images\\payments\\visa (1).svg"
     },
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\visa.svg",

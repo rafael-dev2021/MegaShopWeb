@@ -1,0 +1,248 @@
+﻿<style>
+    .py-3 {
+        padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
+    }
+
+    .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+
+    .figure-img {
+        filter: brightness(88%);
+        transition: filter 0.3s ease;
+    }
+
+        .figure-img:hover {
+            filter: brightness(70%);
+        }
+
+    .col {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+        .col:hover .custom-button {
+            opacity: 1;
+        }
+
+        .col:hover .fa-arrow-right {
+            transform: translateX(5px);
+        }
+
+    .fa-arrow-right {
+        transition: transform 0.3s ease;
+    }
+
+    .figure-caption-first {
+        position: absolute;
+        top: 34%;
+        left: 30%;
+        text-align: center;
+        font-weight: 600;
+        color: white;
+        font-size: 3rem;
+        z-index: 1;
+    }
+
+    .figure-caption {
+        position: absolute;
+        top: 34%;
+        left: 40%;
+        text-align: center;
+        font-weight: 600;
+        color: white;
+        font-size: 3rem;
+        z-index: 1;
+    }
+
+    .custom-button {
+        position: absolute;
+        top: 84%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 14px 20px;
+        width: 36%;
+        font-size: 16px;
+        text-decoration: none;
+        color: #000;
+        background-color: #fff;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    a {
+        color: black;
+    }
+
+        a:hover {
+            color: black;
+        }
+</style>
+
+<div class="py-3 bg-dark mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center text-white">
+                    <span class="heading-xxs letter-spacing-xl">
+                        ⚡️ Happy Holiday Deals on Everything ⚡️
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="#">
+                <figure class="figure">
+                    <img src="~/images/fashion/women.jpg" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption-first">Women</figcaption>
+                </figure>
+            </a>
+            <div class="custom-button">
+                <a href="#">Shop Women &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <a href="#">
+                <figure class="figure">
+                    <img src="~/images/fashion/Men.jpg" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption">Men</figcaption>
+                </figure>
+            </a>
+            <div class="custom-button">
+                <a href="#">Shop Men &nbsp;&nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <a href="#">
+                <figure class="figure">
+                    <img src="~/images/fashion/Kids.jpg" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption">kids</figcaption>
+                </figure>
+            </a>
+            <div class="custom-button">
+                <a href="#">Shop kids &nbsp;&nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- FEATURES -->
+<section class="pt-7 mb-3 mt-3" style="padding-left:5%">
+    <div class="container">
+        <div class="row pb-7 ">
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <!-- Item -->
+                <div class="d-flex mb-6 mb-lg-0">
+
+                    <!-- Icon -->
+                    <i class="bi bi-truck fs-lg text-success" style="padding-right:10px"></i>
+
+                    <!-- Body -->
+                    <div class="ms-6">
+
+                        <!-- Heading -->
+                        <h6 class="heading-xxs mb-1">
+                            Free shipping
+                        </h6>
+
+                        <!-- Text -->
+                        <p class="mb-0 fs-sm text-muted">
+                            From all orders over $100
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <!-- Item -->
+                <div class="d-flex mb-6 mb-lg-0">
+
+                    <!-- Icon -->
+                    <i class="bi bi-repeat fs-lg text-success" style="padding-right:10px"></i>
+
+                    <!-- Body -->
+                    <div class="ms-6">
+
+                        <!-- Heading -->
+                        <h6 class="mb-1 heading-xxs">
+                            Free returns
+                        </h6>
+
+                        <!-- Text -->
+                        <p class="mb-0 fs-sm text-muted">
+                            Return money within 30 days
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <!-- Item -->
+                <div class="d-flex mb-6 mb-md-0">
+
+                    <!-- Icon -->
+                    <i class="bi bi-lock fs-lg text-success" style="padding-right:10px"></i>
+
+                    <!-- Body -->
+                    <div class="ms-6">
+
+                        <!-- Heading -->
+                        <h6 class="mb-1 heading-xxs">
+                            Secure shopping
+                        </h6>
+
+                        <!-- Text -->
+                        <p class="mb-0 fs-sm text-muted">
+                            You're in safe hands
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <!-- Item -->
+                <div class="d-flex">
+
+                    <!-- Icon -->
+                    <i class="bi bi-tag fs-lg text-success" style="padding-right:10px"></i>
+
+                    <!-- Body -->
+                    <div class="ms-6">
+
+                        <!-- Heading -->
+                        <h6 class="mb-1 heading-xxs">
+                            Over 10,000 Styles
+                        </h6>
+
+                        <!-- Text -->
+                        <p class="mb-0 fs-sm text-muted">
+                            We have everything you need
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<hr style="width:75%; position:absolute;left:13%;color:gray;"/>
+
