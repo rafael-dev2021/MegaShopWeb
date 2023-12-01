@@ -57,6 +57,30 @@
       "PackagePath": "staticwebassets\\images\\ana.jpg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\banner.png",
+      "PackagePath": "staticwebassets\\images\\assets\\banner.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\fashionWoman.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\fashionWoman.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\manShirts.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\manShirts.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\nike.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\nike.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\nikeMen.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\nikeMen.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\womanShoes.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\womanShoes.jpg"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\RefreshForLess.webp",
       "PackagePath": "staticwebassets\\images\\banner\\RefreshForLess.webp"
     },

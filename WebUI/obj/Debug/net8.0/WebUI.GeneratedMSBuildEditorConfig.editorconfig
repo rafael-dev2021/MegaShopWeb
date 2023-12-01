@@ -198,6 +198,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxQcm9kdWN0UmV2aWV3c1BhcnRpYWxcUHJvZHVjdFJldmlld3NQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/ProductsFashionPartial/_ProductsFashionPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxQcm9kdWN0c0Zhc2hpb25QYXJ0aWFsXF9Qcm9kdWN0c0Zhc2hpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/_HomeCarousel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxfSG9tZUNhcm91c2VsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
