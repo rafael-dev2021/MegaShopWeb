@@ -299,20 +299,21 @@
     </div>
 </div>
 
-<section class="py-12 mt-5">
-    <div class="container">
-        <div class="col-md-12">
-            <div class="row">
-                @foreach (var items in Model)
+<section class="container py-12 mt-5">
+    <div class="col-md-12">
+        <div class="row">
+            @foreach (var items in Model)
+            {
+                <div class="col-md-3">
+                    <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                </div>
+           @*      @if (items.Category.CategoryName == "Fashion")
                 {
-                    @*  @if (items.Category.CategoryName == "Fashion")
-                { *@
-                    <div class="col-lg-3">
-                        <partial name="~/Views/Shared/ProductsPartial/ProductsFashionPartial/_ProductsFashionPartial.cshtml" for="@items" />
+                    <div class="col-md-3">
+                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
                     </div>
-                    @* } *@
-                }
-            </div>
+                } *@
+            }
         </div>
     </div>
 </section>

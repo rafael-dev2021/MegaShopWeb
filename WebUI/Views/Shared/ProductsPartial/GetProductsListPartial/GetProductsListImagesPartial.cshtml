@@ -14,7 +14,7 @@
 {
     @if (!string.IsNullOrEmpty(Model.ProductImageObjectValue.MainImage))
     {
-        <img src="@Model.ProductImageObjectValue.MainImage" alt="@Model.Name" class="img-fluid zoomable-image" style="display: block;margin-left: auto;margin-right: auto;">
+        <img src="@Model.ProductImageObjectValue.MainImage" alt="@Model.Name" class="img-fluid zoomable-image" style=" max-width: 100%;max-height: 90vh;display: block;margin-left: auto;margin-right: auto;">
     }
     <div class="row">
         @foreach (var imagePath in imagePaths.Where(path => !string.IsNullOrEmpty(path)))
