@@ -8,14 +8,20 @@
         margin-bottom: 1rem !important;
     }
 
-    .figure-img {
-        filter: brightness(88%);
-        transition: filter 0.3s ease;
+    .card {
+        border: none;
+        border-radius: 0px;
     }
 
-        .figure-img:hover {
-            filter: brightness(70%);
-        }
+    .remove-gutters > [class*='col-'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .remove-gutters .row > [class*='col-'] {
+        margin-right: 0;
+        margin-left: 0;
+    }
 
     .col {
         position: relative;
@@ -35,50 +41,28 @@
         transition: transform 0.3s ease;
     }
 
-    .figure-caption-first {
-        position: absolute;
-        top: 34%;
-        left: 30%;
-        text-align: center;
-        font-weight: 600;
-        color: white;
-        font-size: 3rem;
-        z-index: 1;
+
+    .card {
+        overflow: hidden;
     }
 
-    .figure-caption {
-        position: absolute;
-        top: 34%;
-        left: 40%;
-        text-align: center;
-        font-weight: 600;
-        color: white;
-        font-size: 3rem;
-        z-index: 1;
-    }
-
-    .custom-button {
-        position: absolute;
-        top: 84%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 14px 20px;
-        width: 36%;
-        font-size: 16px;
-        text-decoration: none;
-        color: #000;
-        background-color: #fff;
-        cursor: pointer;
-        z-index: 1;
-    }
-
-    a {
-        color: black;
-    }
-
-        a:hover {
-            color: black;
+        .card img {
+            filter: brightness(85%);
+            transition: filter 0.3s ease;
         }
+
+        .card:hover img {
+            filter: brightness(70%);
+        }
+
+    .card-img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
 </style>
 
 <div class="py-3 bg-dark mb-4">
@@ -96,153 +80,241 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
+    <div class="row remove-gutters">
+        <div class="col col-md-4">
             <a href="#">
-                <figure class="figure">
-                    <img src="~/images/fashion/women.jpg" class="figure-img img-fluid" alt="">
-                    <figcaption class="figure-caption-first">Women</figcaption>
-                </figure>
+                <div class="card text-white position-relative">
+                    <figure class="figure m-0">
+                        <img src="~/images/fashion/women.jpg" class="figure-img img-fluid" alt="">
+                    </figure>
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                        <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Woman</h5>
+                        <span class="btn btn-dark btn-lg" style="font-size:1rem">Shop woman <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                    </div>
+                </div>
             </a>
-            <div class="custom-button">
-                <a href="#">Shop Women &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
-            </div>
         </div>
-        <div class="col">
+        <div class="col col-md-4">
             <a href="#">
-                <figure class="figure">
-                    <img src="~/images/fashion/Men.jpg" class="figure-img img-fluid" alt="">
-                    <figcaption class="figure-caption">Men</figcaption>
-                </figure>
+                <div class="card text-white position-relative">
+                    <figure class="figure m-0">
+                        <img src="~/images/fashion/Kids.jpg" class="figure-img img-fluid" alt="">
+                    </figure>
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                        <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Kids</h5>
+                        <span class="btn btn-dark btn-lg" style="font-size:1rem">Shop Kids <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                    </div>
+                </div>
             </a>
-            <div class="custom-button">
-                <a href="#">Shop Men &nbsp;&nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
-            </div>
         </div>
-        <div class="col">
+        <div class="col col-md-4">
             <a href="#">
-                <figure class="figure">
-                    <img src="~/images/fashion/Kids.jpg" class="figure-img img-fluid" alt="">
-                    <figcaption class="figure-caption">kids</figcaption>
-                </figure>
+                <div class="card text-white position-relative">
+                    <figure class="figure m-0">
+                        <img src="~/images/fashion/Men.jpg" class="figure-img img-fluid" alt="">
+                    </figure>
+                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                        <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Men</h5>
+                        <span class="btn btn-dark btn-lg" style="font-size:1rem">Shop Men <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                    </div>
+                </div>
             </a>
-            <div class="custom-button">
-                <a href="#">Shop kids &nbsp;&nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
-            </div>
         </div>
     </div>
-
 </div>
 <!-- FEATURES -->
 <section class="pt-7 mb-3 mt-3" style="padding-left:5%">
     <div class="container">
         <div class="row pb-7 ">
             <div class="col-12 col-md-6 col-lg-3">
-
-                <!-- Item -->
                 <div class="d-flex mb-6 mb-lg-0">
-
-                    <!-- Icon -->
                     <i class="bi bi-truck fs-lg text-success" style="padding-right:10px"></i>
-
-                    <!-- Body -->
                     <div class="ms-6">
-
-                        <!-- Heading -->
                         <h6 class="heading-xxs mb-1">
                             Free shipping
                         </h6>
-
-                        <!-- Text -->
                         <p class="mb-0 fs-sm text-muted">
                             From all orders over $100
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-
-                <!-- Item -->
                 <div class="d-flex mb-6 mb-lg-0">
-
-                    <!-- Icon -->
                     <i class="bi bi-repeat fs-lg text-success" style="padding-right:10px"></i>
-
-                    <!-- Body -->
                     <div class="ms-6">
-
-                        <!-- Heading -->
                         <h6 class="mb-1 heading-xxs">
                             Free returns
                         </h6>
-
-                        <!-- Text -->
                         <p class="mb-0 fs-sm text-muted">
                             Return money within 30 days
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-
-                <!-- Item -->
                 <div class="d-flex mb-6 mb-md-0">
-
-                    <!-- Icon -->
                     <i class="bi bi-lock fs-lg text-success" style="padding-right:10px"></i>
-
-                    <!-- Body -->
                     <div class="ms-6">
-
-                        <!-- Heading -->
                         <h6 class="mb-1 heading-xxs">
                             Secure shopping
                         </h6>
-
-                        <!-- Text -->
                         <p class="mb-0 fs-sm text-muted">
                             You're in safe hands
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-
-                <!-- Item -->
                 <div class="d-flex">
-
-                    <!-- Icon -->
                     <i class="bi bi-tag fs-lg text-success" style="padding-right:10px"></i>
-
-                    <!-- Body -->
                     <div class="ms-6">
-
-                        <!-- Heading -->
                         <h6 class="mb-1 heading-xxs">
                             Over 10,000 Styles
                         </h6>
-
-                        <!-- Text -->
                         <p class="mb-0 fs-sm text-muted">
                             We have everything you need
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
 </section>
-<hr style="width:75%; position:absolute;left:13%;color:gray;"/>
+<hr style="width:75%; position:absolute;left:13%;color:gray;" />
+
+<section style="margin-top:8%;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+
+                <!-- Preheading -->
+                <h6 class="heading-xxs mb-3 text-gray-400">
+                    New Collection
+                </h6>
+
+                <!-- Heading -->
+                <h2 class="mb-4">Runway Fusion: A Palette of Styles and Vibrant Trends</h2>
+
+                <!-- Subheading -->
+                <p class="mb-10 text-gray-500">
+                    "Within the fashion realm, where styles merge and trends soar, dry couture meets vibrant essence. Models infuse the runway with vivid palettes, breathing life into fashion's sky."
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col col-md-4">
+                <a href="#">
+                    <div class="card text-white position-relative">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/womanShoes.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Woman Collection</h5>
+                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col col-md-6">
+                <a href="#">
+                    <div class="card text-white position-relative">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/manShirts.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Men's Clothing</h5>
+                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col col-md-6">
+                <a href="#">
+                    <div class="card text-white position-relative">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/fashionWoman.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Women Clothing</h5>
+                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col col-md-4">
+                <a href="#">
+                    <div class="card text-white position-relative">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/nike.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Shoes Collection</h5>
+                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</section>
+
+<div class="py-3 bg-dark" style="margin-top:7%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/mango.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/adidas.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/reebok.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/zara.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/bershka.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/asos.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md text-center">
+                        <img src="/images/Brands/stradivarius.svg" alt="..." class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="container py-12 mt-5">
+    <div class="col-md-12">
+        <div class="row">
+            @foreach (var items in Model)
+            {
+                <div class="col-md-3">
+                    <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                </div>
+           @*      @if (items.Category.CategoryName == "Fashion")
+                {
+                    <div class="col-md-3">
+                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                    </div>
+                } *@
+            }
+        </div>
+    </div>
+</section>
 
