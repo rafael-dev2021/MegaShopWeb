@@ -13,7 +13,7 @@ namespace Application.CQRS.Handlers.Products.Technology.Games
 
         public async Task<Game> Handle(CreateGameCommand request, CancellationToken cancellationToken)
         {
-            var product = new Game(request.Name, request.Description, request.Stock, request.DeliveryDays, request.ProductDataObjectValue,
+            var product = new Game(request.Name, request.Description, request.Stock, request.ProductDataObjectValue,
                 request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
                 request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.GameGeneralFeaturesObjectsValue,
                 request.GameSpecificationsObjectsValue, request.GameRequirementsObjectsValue, request.CategoryId)

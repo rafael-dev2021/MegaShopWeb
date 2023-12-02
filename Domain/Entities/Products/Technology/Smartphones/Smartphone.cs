@@ -6,11 +6,11 @@ namespace Domain.Entities.Products.Technology.Smartphones
     public sealed class Smartphone : Product
     {
         public Smartphone() { }
-        public Smartphone(int id, string? name, string? description, string? deliveryDays, int stock, int categoryId) : base(id, name, description, deliveryDays, stock, categoryId)
+        public Smartphone(int id, string name, string description, int stock, int categoryId) : base(id, name, description, stock, categoryId)
         {
         }
-        public Smartphone(int id, string? name, string? description, int stock, string? deliveryDays, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, SmartphoneFeatureOV smartphoneFeatureObjectValue, SmartphoneDisplayOV smartphoneDisplayObjectValue, SmartphoneMemoryOV smartphoneMemoryObjectValue, SmartphoneCameraOV smartphoneCameraObjectValue, SmartphonePlatformOV smartphonePlatformObjectValue, SmartphoneBatteryOV smartphoneBatteryObjectValue, SmartphoneDimensionsOV smartphoneDimensionsObjectValue, int categoryId)
-            : base(id, name, description, stock, deliveryDays, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
+        public Smartphone(int id, string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, SmartphoneFeatureOV smartphoneFeatureObjectValue, SmartphoneDisplayOV smartphoneDisplayObjectValue, SmartphoneMemoryOV smartphoneMemoryObjectValue, SmartphoneCameraOV smartphoneCameraObjectValue, SmartphonePlatformOV smartphonePlatformObjectValue, SmartphoneBatteryOV smartphoneBatteryObjectValue, SmartphoneDimensionsOV smartphoneDimensionsObjectValue, int categoryId)
+            : base(id, name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
         {
             SmartphoneFeatureObjectValue = smartphoneFeatureObjectValue;
             SmartphoneDisplayObjectValue = smartphoneDisplayObjectValue;
@@ -20,8 +20,8 @@ namespace Domain.Entities.Products.Technology.Smartphones
             SmartphoneBatteryObjectValue = smartphoneBatteryObjectValue;
             SmartphoneDimensionsObjectValue = smartphoneDimensionsObjectValue;
         }
-        public Smartphone(string? name, string? description, int stock, string? deliveryDays, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, SmartphoneFeatureOV smartphoneFeatureObjectValue, SmartphoneDisplayOV smartphoneDisplayObjectValue, SmartphoneMemoryOV smartphoneMemoryObjectValue, SmartphoneCameraOV smartphoneCameraObjectValue, SmartphonePlatformOV smartphonePlatformObjectValue, SmartphoneBatteryOV smartphoneBatteryObjectValue, SmartphoneDimensionsOV smartphoneDimensionsObjectValue, int categoryId)
-           : base(name, description, stock, deliveryDays, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
+        public Smartphone(string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, SmartphoneFeatureOV smartphoneFeatureObjectValue, SmartphoneDisplayOV smartphoneDisplayObjectValue, SmartphoneMemoryOV smartphoneMemoryObjectValue, SmartphoneCameraOV smartphoneCameraObjectValue, SmartphonePlatformOV smartphonePlatformObjectValue, SmartphoneBatteryOV smartphoneBatteryObjectValue, SmartphoneDimensionsOV smartphoneDimensionsObjectValue, int categoryId)
+           : base(name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
         {
             SmartphoneFeatureObjectValue = smartphoneFeatureObjectValue;
             SmartphoneDisplayObjectValue = smartphoneDisplayObjectValue;
@@ -32,9 +32,9 @@ namespace Domain.Entities.Products.Technology.Smartphones
             SmartphoneDimensionsObjectValue = smartphoneDimensionsObjectValue;
         }
 
-        public void SmartphoneUpdate(string name, string description, int stock, string deliveryDays, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, SmartphoneFeatureOV smartphoneFeatureObjectValue, SmartphoneDisplayOV smartphoneDisplayObjectValue, SmartphoneMemoryOV smartphoneMemoryObjectValue, SmartphoneCameraOV smartphoneCameraObjectValue, SmartphonePlatformOV smartphonePlatformObjectValue, SmartphoneBatteryOV smartphoneBatteryObjectValue, SmartphoneDimensionsOV smartphoneDimensionsObjectValue, int categoryId)
+        public void SmartphoneUpdate(string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, SmartphoneFeatureOV smartphoneFeatureObjectValue, SmartphoneDisplayOV smartphoneDisplayObjectValue, SmartphoneMemoryOV smartphoneMemoryObjectValue, SmartphoneCameraOV smartphoneCameraObjectValue, SmartphonePlatformOV smartphonePlatformObjectValue, SmartphoneBatteryOV smartphoneBatteryObjectValue, SmartphoneDimensionsOV smartphoneDimensionsObjectValue, int categoryId)
         {
-            ProductUpdate(name, description, stock, deliveryDays, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId);
+            ProductUpdate(name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId);
             SmartphoneFeatureObjectValue = smartphoneFeatureObjectValue;
             SmartphoneDisplayObjectValue = smartphoneDisplayObjectValue;
             SmartphoneMemoryObjectValue = smartphoneMemoryObjectValue;

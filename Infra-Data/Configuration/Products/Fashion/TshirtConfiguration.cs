@@ -11,9 +11,8 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.HasData(
                new Tshirt(
                    3,
-                   "Nike Dry Fabric T-Shirt",
-                   "Size and weekends Avoid returns, compare the measurements provided with similar products of yours, even if you have any doubts, call us directly or ask questions.",
-                   "3 days",
+                   "Top Nike Swoosh Woman",
+                   "The Nike Classic Swoosh Futura medium support women\'s workout top offers long-lasting comfort during training with sweat-wicking fabric and a compression fit.",
                    5,
                    2
                    ));
@@ -39,7 +38,8 @@ namespace Infra_Data.Configuration.Products.Fashion
                         ProductModel = "T-Shirt",
                         ProductBrand = "Nike",
                         ProductLine = "",
-                        ProductWeight = "200 g"
+                        ProductWeight = "200 g",
+                        ProductType = "T-Shirt"
                     });
                 });
         }
@@ -53,10 +53,10 @@ namespace Infra_Data.Configuration.Products.Fashion
                 sa.HasData(new
                 {
                     Id = 3,
-                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_643982-MLB71224535087_082023-O.webp",
-                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_788840-MLB71224485901_082023-O.webp",
-                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_623224-MLB71224535095_082023-O.webp",
-                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_706933-MLB71224545183_082023-O.webp"
+                    MainImage = "https://imgnike-a.akamaihd.net/768x768/002897ID.jpg",
+                    ImageFirst = "https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg",
+                    ImageSecond = "https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg",
+                    ImageThird = "https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg"
                 });
             });
         }
@@ -131,8 +131,8 @@ namespace Infra_Data.Configuration.Products.Fashion
                    sa.HasData(new
                    {
                        Id = 3,
-                       Gender = "Masculine",
-                       Age = "Adults",
+                       Gender = "Woman",
+                       Age = "Adult",
                        TypeOfClothing = "T-shirt",
                        FabricDesign = "Straight",
                        Size = "S"

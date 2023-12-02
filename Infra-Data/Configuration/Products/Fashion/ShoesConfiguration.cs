@@ -11,9 +11,8 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.HasData(
                 new Shoes(
                     2,
-                    "Nike Sb Chron 2 Men\'s Shoes",
-                    "Flexible and ventilated, the Nike SB Chron 2 is a worthy follow-up to its predecessor. The refreshed design includes updates to the collar and heel for an improved fit while maintaining the comfort and performance you expect from Nike SB.",
-                    "5 days",
+                    "Nike Air Max Excee",
+                    "Buoyed to the comfort you\'ve come to trust, the Air Max Excee meets the needs of your 9 to 5 while keeping your outfit on-point with rich textures. These sneakers deliver just what you\'re looking for—soft cushioning that\'s easy to style.\r\n\r\n",
                     15,
                     2
                     ));
@@ -41,7 +40,8 @@ namespace Infra_Data.Configuration.Products.Fashion
                         ProductModel = "DM3493",
                         ProductBrand = "Nike",
                         ProductLine = "SB",
-                        ProductWeight = "368,5 g"
+                        ProductWeight = "368,5 g",
+                        ProductType = "Shoes"
                     });
                 });
         }
@@ -55,10 +55,10 @@ namespace Infra_Data.Configuration.Products.Fashion
                 sa.HasData(new
                 {
                     Id = 2,
-                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_808923-MLB68964867575_042023-O.webp",
-                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_701088-MLB68964867585_042023-O.webp",
-                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_917859-MLB68964867581_042023-O.webp",
-                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_696501-MLB68964867579_042023-O.webp"
+                    MainImage = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/349d779a-6d86-4982-9c0f-93f979038cc4/court-vision-low-next-nature-womens-shoes-ZkMMBG.png",
+                    ImageFirst = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f7c941ab-7e44-4819-9483-adb9cd082787/court-vision-low-next-nature-womens-shoes-ZkMMBG.png",
+                    ImageSecond = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a682c7f1-a6e3-4387-b408-ebee5aae8afc/court-vision-low-next-nature-womens-shoes-ZkMMBG.png",
+                    ImageThird = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f22e12cb-a84f-40af-a864-3c20fa958899/court-vision-low-next-nature-womens-shoes-ZkMMBG.png"
                 });
             });
         }
@@ -72,8 +72,8 @@ namespace Infra_Data.Configuration.Products.Fashion
                  sa.HasData(new
                  {
                      Id = 2,
-                     Price = 52.99M,
-                     HistoryPrice = 94.99M
+                     Price = 95.99M,
+                     HistoryPrice = 0.0M
                  });
              });
         }
@@ -102,7 +102,7 @@ namespace Infra_Data.Configuration.Products.Fashion
                   sa.HasData(new
                   {
                       Id = 2,
-                      IsDailyOffer = true,
+                      IsDailyOffer = false,
                       IsBestSeller = false,
                       IsFavorite = true
                   });
@@ -148,9 +148,9 @@ namespace Infra_Data.Configuration.Products.Fashion
                    sa.HasData(new
                    {
                        Id = 2,
-                       Gender = "No gender",
+                       Gender = "Woman",
                        Version = "two",
-                       Age = "Adults",
+                       Age = "Adult",
                        Color = "Black"
                    });
                });

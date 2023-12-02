@@ -7,28 +7,28 @@ namespace Domain.Entities.Products.Fashion.Shoes
     {
 
         public Shoes() { }
-        public Shoes(int id, string? name, string? description, string? deliveryDays, int stock, int categoryId) : base(id, name, description, deliveryDays, stock, categoryId)
+        public Shoes(int id, string name, string description, int stock, int categoryId) : base(id, name, description, stock, categoryId)
         {
         }
-        public Shoes(int id, string? name, string? description, int stock, string? deliveryDays, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, ShoesDesignOV shoesDesignObjectValue, ShoesGeneralFeaturesOV shoesGeneralFeaturesObjectValue, ShoesMaterialsOV shoesMaterialsObjectValue, ShoesSpecificationsOV shoesSpecificationsObjectValue, int categoryId)
-            : base(id, name, description, stock, deliveryDays, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
+        public Shoes(int id, string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, ShoesDesignOV shoesDesignObjectValue, ShoesGeneralFeaturesOV shoesGeneralFeaturesObjectValue, ShoesMaterialsOV shoesMaterialsObjectValue, ShoesSpecificationsOV shoesSpecificationsObjectValue, int categoryId)
+            : base(id, name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
         {
             ShoesDesignObjectValue = shoesDesignObjectValue;
             ShoesGeneralFeaturesObjectValue = shoesGeneralFeaturesObjectValue;
             ShoesMaterialsObjectValue = shoesMaterialsObjectValue;
             ShoesSpecificationsObjectValue = shoesSpecificationsObjectValue;
         }
-        public Shoes(string? name, string? description, int stock, string? deliveryDays, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, ShoesDesignOV shoesDesignObjectValue, ShoesGeneralFeaturesOV shoesGeneralFeaturesObjectValue, ShoesMaterialsOV shoesMaterialsObjectValue, ShoesSpecificationsOV shoesSpecificationsObjectValue, int categoryId)
-          : base(name, description, stock, deliveryDays, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
+        public Shoes(string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, ShoesDesignOV shoesDesignObjectValue, ShoesGeneralFeaturesOV shoesGeneralFeaturesObjectValue, ShoesMaterialsOV shoesMaterialsObjectValue, ShoesSpecificationsOV shoesSpecificationsObjectValue, int categoryId)
+          : base(name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
         {
             ShoesDesignObjectValue = shoesDesignObjectValue;
             ShoesGeneralFeaturesObjectValue = shoesGeneralFeaturesObjectValue;
             ShoesMaterialsObjectValue = shoesMaterialsObjectValue;
             ShoesSpecificationsObjectValue = shoesSpecificationsObjectValue;
         }
-        public void ShoesUpdate(string? name, string? description, int stock, string? deliveryDays, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV? productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, ShoesDesignOV shoesDesignObjectValue, ShoesGeneralFeaturesOV shoesGeneralFeaturesObjectValue, ShoesMaterialsOV shoesMaterialsObjectValue, ShoesSpecificationsOV shoesSpecificationsObjectValue, int categoryId)
+        public void ShoesUpdate(string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, ShoesDesignOV shoesDesignObjectValue, ShoesGeneralFeaturesOV shoesGeneralFeaturesObjectValue, ShoesMaterialsOV shoesMaterialsObjectValue, ShoesSpecificationsOV shoesSpecificationsObjectValue, int categoryId)
         {
-            ProductUpdate(name, description, stock, deliveryDays, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId);
+            ProductUpdate(name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId);
             ShoesDesignObjectValue = shoesDesignObjectValue;
             ShoesGeneralFeaturesObjectValue = shoesGeneralFeaturesObjectValue;
             ShoesMaterialsObjectValue = shoesMaterialsObjectValue;

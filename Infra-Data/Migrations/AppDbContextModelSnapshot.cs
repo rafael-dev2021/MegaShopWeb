@@ -76,11 +76,6 @@ namespace Infra_Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("DeliveryDays")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(2000)
@@ -151,7 +146,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 11, 29, 20, 26, 16, 819, DateTimeKind.Local).AddTicks(6115)
+                            ReviewDate = new DateTime(2023, 12, 1, 22, 14, 17, 141, DateTimeKind.Local).AddTicks(2222)
                         },
                         new
                         {
@@ -160,7 +155,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 11, 29, 20, 26, 16, 819, DateTimeKind.Local).AddTicks(6136)
+                            ReviewDate = new DateTime(2023, 12, 1, 22, 14, 17, 141, DateTimeKind.Local).AddTicks(2236)
                         },
                         new
                         {
@@ -169,7 +164,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductReviewId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 11, 29, 20, 26, 16, 819, DateTimeKind.Local).AddTicks(6137)
+                            ReviewDate = new DateTime(2023, 12, 1, 22, 14, 17, 141, DateTimeKind.Local).AddTicks(2237)
                         });
                 });
 
@@ -184,9 +179,8 @@ namespace Infra_Data.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            DeliveryDays = "5 days",
-                            Description = "Flexible and ventilated, the Nike SB Chron 2 is a worthy follow-up to its predecessor. The refreshed design includes updates to the collar and heel for an improved fit while maintaining the comfort and performance you expect from Nike SB.",
-                            Name = "Nike Sb Chron 2 Men's Shoes",
+                            Description = "Buoyed to the comfort you've come to trust, the Air Max Excee meets the needs of your 9 to 5 while keeping your outfit on-point with rich textures. These sneakers deliver just what you're looking for—soft cushioning that's easy to style.\r\n\r\n",
+                            Name = "Nike Air Max Excee",
                             Stock = 15
                         });
                 });
@@ -202,9 +196,8 @@ namespace Infra_Data.Migrations
                         {
                             Id = 3,
                             CategoryId = 2,
-                            DeliveryDays = "3 days",
-                            Description = "Size and weekends Avoid returns, compare the measurements provided with similar products of yours, even if you have any doubts, call us directly or ask questions.",
-                            Name = "Nike Dry Fabric T-Shirt",
+                            Description = "The Nike Classic Swoosh Futura medium support women's workout top offers long-lasting comfort during training with sweat-wicking fabric and a compression fit.",
+                            Name = "Top Nike Swoosh Woman",
                             Stock = 5
                         });
                 });
@@ -220,7 +213,6 @@ namespace Infra_Data.Migrations
                         {
                             Id = 4,
                             CategoryId = 3,
-                            DeliveryDays = "2 days",
                             Description = "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                             Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
                             Stock = 10
@@ -238,7 +230,6 @@ namespace Infra_Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            DeliveryDays = "2 days",
                             Description = "Introducing Galaxy S23 Ultra - a smartphone that takes innovation to new heights. With its crystal-clear camera resolution and stunning Night Mode powered by Nightography, you can capture and share unforgettable moments, regardless of lighting conditions. Powered by the fastest Snapdragon processor, multitasking and intense gaming become seamless. Enjoy the convenience of a built-in S Pen, allowing you to write, sketch, edit, and share from anywhere. All of this on a large display designed for gaming, streaming, creating, and more. Elevate your everyday experience with a device that's truly extraordinary and share the epic with Galaxy S23 Ultra.",
                             Name = "Galaxy S23 Ultra 512GB Unlocked - Black",
                             Stock = 20
@@ -330,9 +321,9 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 2,
-                                    Age = "Adults",
+                                    Age = "Adult",
                                     Color = "Black",
-                                    Gender = "No gender",
+                                    Gender = "Woman",
                                     Version = "two"
                                 });
                         });
@@ -467,7 +458,7 @@ namespace Infra_Data.Migrations
                                 {
                                     Id = 2,
                                     IsBestSeller = false,
-                                    IsDailyOffer = true,
+                                    IsDailyOffer = false,
                                     IsFavorite = true
                                 });
                         });
@@ -512,10 +503,10 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 2,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_701088-MLB68964867585_042023-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_917859-MLB68964867581_042023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_696501-MLB68964867579_042023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_808923-MLB68964867575_042023-O.webp"
+                                    ImageFirst = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f0f9838c-a13f-4a16-9d6a-045b8bcd4663/air-max-excee-womens-shoes-jKsgMj.png",
+                                    ImageSecond = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33f14890-9ba3-4ca0-90b6-f3a099620840/air-max-excee-womens-shoes-jKsgMj.png",
+                                    ImageThird = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/14b801db-a5c6-417b-8fd3-2a630291e3d9/air-max-excee-womens-shoes-jKsgMj.png",
+                                    MainImage = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4ff2fe4a-4f74-4189-82f0-3ea780f9389d/air-max-excee-womens-shoes-jKsgMj.png"
                                 });
                         });
 
@@ -543,8 +534,8 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 2,
-                                    HistoryPrice = 94.99m,
-                                    Price = 52.99m
+                                    HistoryPrice = 0.0m,
+                                    Price = 95.99m
                                 });
                         });
 
@@ -571,6 +562,11 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(20)
                                 .HasColumnType("nvarchar(20)");
 
+                            b1.Property<string>("ProductType")
+                                .IsRequired()
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("nvarchar(max)");
+
                             b1.Property<string>("ProductWeight")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
@@ -591,6 +587,7 @@ namespace Infra_Data.Migrations
                                     ProductBrand = "Nike",
                                     ProductLine = "SB",
                                     ProductModel = "DM3493",
+                                    ProductType = "Shoes",
                                     ProductWeight = "368,5 g"
                                 });
                         });
@@ -697,9 +694,9 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 3,
-                                    Age = "Adults",
+                                    Age = "Adult",
                                     FabricDesign = "Straight",
-                                    Gender = "Masculine",
+                                    Gender = "Woman",
                                     Size = "S",
                                     TypeOfClothing = "T-shirt"
                                 });
@@ -873,10 +870,10 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 3,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_788840-MLB71224485901_082023-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_623224-MLB71224535095_082023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_706933-MLB71224545183_082023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_643982-MLB71224535087_082023-O.webp"
+                                    ImageFirst = "https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg",
+                                    ImageSecond = "https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg",
+                                    ImageThird = "https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg",
+                                    MainImage = "https://imgnike-a.akamaihd.net/768x768/002897ID.jpg"
                                 });
                         });
 
@@ -932,6 +929,11 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(20)
                                 .HasColumnType("nvarchar(20)");
 
+                            b1.Property<string>("ProductType")
+                                .IsRequired()
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("nvarchar(max)");
+
                             b1.Property<string>("ProductWeight")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
@@ -952,6 +954,7 @@ namespace Infra_Data.Migrations
                                     ProductBrand = "Nike",
                                     ProductLine = "",
                                     ProductModel = "T-Shirt",
+                                    ProductType = "T-Shirt",
                                     ProductWeight = "200 g"
                                 });
                         });
@@ -1182,6 +1185,11 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(20)
                                 .HasColumnType("nvarchar(20)");
 
+                            b1.Property<string>("ProductType")
+                                .IsRequired()
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("nvarchar(max)");
+
                             b1.Property<string>("ProductWeight")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
@@ -1202,6 +1210,7 @@ namespace Infra_Data.Migrations
                                     ProductBrand = "Sony",
                                     ProductLine = "PS5",
                                     ProductModel = "Sony",
+                                    ProductType = "Video game",
                                     ProductWeight = "100 g"
                                 });
                         });
@@ -1865,6 +1874,11 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(20)
                                 .HasColumnType("nvarchar(20)");
 
+                            b1.Property<string>("ProductType")
+                                .IsRequired()
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("nvarchar(max)");
+
                             b1.Property<string>("ProductWeight")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
@@ -1885,6 +1899,7 @@ namespace Infra_Data.Migrations
                                     ProductBrand = "Samsung",
                                     ProductLine = "Galaxy S",
                                     ProductModel = "S23 Ultra",
+                                    ProductType = "Smartphone",
                                     ProductWeight = "233 g"
                                 });
                         });

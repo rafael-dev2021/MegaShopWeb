@@ -12,7 +12,7 @@ namespace Application.CQRS.Handlers.Products.Fashion.Shoe
         private readonly IShoesRepository _shoesRepository = shoesRepository;
         public async Task<Shoes> Handle(CreateShoesCommand request, CancellationToken cancellationToken)
         {
-            var product = new Shoes(request.Name, request.Description, request.Stock, request.DeliveryDays, request.ProductDataObjectValue,
+            var product = new Shoes(request.Name, request.Description, request.Stock,  request.ProductDataObjectValue,
                request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
                request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.ShoesDesignObjectValue,
                request.ShoesGeneralFeaturesObjectValue, request.ShoesMaterialsObjectValue, request.ShoesSpecificationsObjectValue, request.CategoryId)

@@ -9,7 +9,6 @@ namespace Application.CQRS.Command.Products.Fashion.Tshirts
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string DeliveryDays { get; set; }
         public int Stock { get; set; }
         public ProductDataOV ProductDataObjectValue { get; set; }
         public ProductFlagsOV ProductFlagsObjectValue { get; set; }

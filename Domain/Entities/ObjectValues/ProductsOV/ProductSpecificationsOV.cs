@@ -24,6 +24,7 @@ namespace Domain.Entities.ObjectValues.ProductsOV
         [StringLength(15, MinimumLength = 2, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
         [DisplayName("Product weight")]
         public string ProductWeight { get; protected set; } = string.Empty;
+        public string ProductType { get; protected set; } = string.Empty;
 
     }
 }

@@ -13,7 +13,6 @@ namespace Application.Dtos
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string DeliveryDays { get; set; }
         public int Stock { get; set; }
 
         public ProductDataOVDto ProductDataObjectValue { get; set; }

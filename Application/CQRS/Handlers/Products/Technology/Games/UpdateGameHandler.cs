@@ -25,7 +25,7 @@ namespace Application.CQRS.Handlers.Products.Technology.Games
             }
             else
             {
-                product.GameUpdate(request.Name, request.Description, request.Stock, request.DeliveryDays, request.ProductDataObjectValue,
+                product.GameUpdate(request.Name, request.Description, request.Stock, request.ProductDataObjectValue,
                 request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
                 request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.GameGeneralFeaturesObjectsValue,
                 request.GameSpecificationsObjectsValue, request.GameRequirementsObjectsValue, request.CategoryId);

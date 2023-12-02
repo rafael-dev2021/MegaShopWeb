@@ -13,7 +13,6 @@ namespace Infra_Data.Configuration.Products.Technology
                    4,
                    "Marvel\'s Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
                    "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
-                   "2 days",
                    10,
                    3
                    ));
@@ -42,7 +41,8 @@ namespace Infra_Data.Configuration.Products.Technology
                         ProductModel = "Sony",
                         ProductBrand = "Sony",
                         ProductLine = "PS5",
-                        ProductWeight = "100 g"
+                        ProductWeight = "100 g",
+                        ProductType = "Video game"
                     });
                 });
         }

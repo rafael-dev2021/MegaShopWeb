@@ -13,7 +13,6 @@ namespace Infra_Data.Configuration.Products.Technology
                     1,
                     "Galaxy S23 Ultra 512GB Unlocked - Black",
                     "Introducing Galaxy S23 Ultra - a smartphone that takes innovation to new heights. With its crystal-clear camera resolution and stunning Night Mode powered by Nightography, you can capture and share unforgettable moments, regardless of lighting conditions. Powered by the fastest Snapdragon processor, multitasking and intense gaming become seamless. Enjoy the convenience of a built-in S Pen, allowing you to write, sketch, edit, and share from anywhere. All of this on a large display designed for gaming, streaming, creating, and more. Elevate your everyday experience with a device that's truly extraordinary and share the epic with Galaxy S23 Ultra.",
-                    "2 days",
                     20,
                     1
                     ));
@@ -45,7 +44,8 @@ namespace Infra_Data.Configuration.Products.Technology
                         ProductModel = "S23 Ultra",
                         ProductBrand = "Samsung",
                         ProductLine = "Galaxy S",
-                        ProductWeight = "233 g"
+                        ProductWeight = "233 g",
+                        ProductType = "Smartphone"
                     });
                 });
         }
