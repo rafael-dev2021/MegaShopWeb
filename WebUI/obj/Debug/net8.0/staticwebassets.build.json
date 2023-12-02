@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yiNbbSkMxJyvwxCf5RmvOaE0GLsonqHIhb/xSNSmdpQ=",
+  "Hash": "g5YcUWIpaGK+IhUR1WD2Lv2WBBwJZcF+f101aRkEMv8=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -205,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\assets\\fashionWoman.jpg"
+    },
+    {
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\fashionWoman2.jpg",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "images/assets/fashionWoman2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\assets\\fashionWoman2.jpg"
     },
     {
       "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\manShirts.jpg",

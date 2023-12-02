@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Application.Dtos.CategoryDto>
+<style>
+    .card:hover {
+        border: 1px solid;
+        border-color: #8ac926;
+        box-shadow: 0px 0px 2px 0px rgba(138, 201, 38, 1)
+    }
+
+    #remove {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
+<div class="container">
+    <div class="mb-5">
+        <h2>Categories</h2>
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col mt-2">
+                <a asp-controller="Product" asp-action="Index" asp-route-categoryStr="@item.CategoryName" id="remove">
+                    <div class="card h-100 text-center" style="border-radius:10px">
+                        <div class="card-body">
+                            <img src="@item.CategoryImage" style="height:100px; object-fit:contain">
+                            <p>@item.CategoryName</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

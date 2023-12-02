@@ -210,7 +210,7 @@
                 <a href="#">
                     <div class="card text-white position-relative">
                         <figure class="figure m-0">
-                            <img src="~/images/assets/womanShoes.jpg" class="figure-img img-fluid" alt="">
+                            <img src="~/images/assets/fashionWoman2.jpg" class="figure-img img-fluid" alt="">
                         </figure>
                         <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Woman Collection</h5>
@@ -304,15 +304,15 @@
         <div class="row">
             @foreach (var items in Model)
             {
-                <div class="col-md-3">
+               @*  <div class="col-md-3">
                     <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                </div>
-           @*      @if (items.Category.CategoryName == "Fashion")
+                </div> *@
+                @if (items.Category.CategoryName == "Fashion")
                 {
                     <div class="col-md-3">
                         <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
                     </div>
-                } *@
+                }
             }
         </div>
     </div>

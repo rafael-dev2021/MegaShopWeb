@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\images\\assets\\fashionWoman.jpg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\fashionWoman2.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\fashionWoman2.jpg"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\manShirts.jpg",
       "PackagePath": "staticwebassets\\images\\assets\\manShirts.jpg"
     },

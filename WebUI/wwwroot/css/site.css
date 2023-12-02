@@ -4,7 +4,7 @@ html, body {
 
 .container_layout {
     min-height: 100%;
-    margin-bottom: -50px;
+    margin-bottom: 1%;
     padding-bottom: 25px;
 }
 
