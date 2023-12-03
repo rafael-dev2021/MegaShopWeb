@@ -244,7 +244,6 @@ namespace WebUI.Controllers
             if (string.IsNullOrEmpty(search))
             {
                 _productsDto = await _productDtoService.GetProductsDtoAsync();
-                _currentCategory = "All Products";
             }
             else
             {
@@ -253,13 +252,11 @@ namespace WebUI.Controllers
                 {
                     return RedirectToAction("ProductNotFound");
                 }
-                _currentCategory = "Products";
             }
 
             var productVw = new ProductViewModel()
             {
-                ProductsDto = _productsDto,
-                CurrentCategory = _currentCategory
+                ProductsDto = _productsDto
             };
             return View("Index", productVw);
         }

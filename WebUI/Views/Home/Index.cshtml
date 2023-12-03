@@ -1,32 +1,5 @@
-﻿<section>
-    <div class="container">
-        <div id="myCarousel" class="carousel slide d-none d-md-block" data-ride="carousel">
-            <div class="carousel-inner" style="border-radius:5px">
-                <div class="carousel-item active">
-                    <img src="~/images/slides/slide-1.jpg" alt="Imagem 1" class="d-block w-100" />
-                    <div class="carousel-caption d-none d-md-block" style="text-align:left">
-                        <label style="background-color:orange; border-radius:4px"> &nbsp; Free shipping - orders over $100 &nbsp;</label>
-                        <h1 style="color:black">SuperMarket For<br /> Fresh Grocery</h1>
-                        <p style="color:gray">Lorem ipsum dolor sit amet. Nam debitis atque<br /> in ullam omnis ut quam quam ea illum illum. </p>
-                        <a class="btn btn-dark">
-                            Shop now
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="~/images/slides/slider-2.jpg" alt="Imagem 1" class="d-block w-100" />
-                    <div class="carousel-caption d-none d-md-block" style="text-align:left">
-                        <label style="background-color:orange; border-radius:4px"> &nbsp; Free shipping - orders over $100 &nbsp;</label>
-                        <h1 style="color:black">Free shipping on<br /> orders over <span style="color:green">$100</span></h1>
-                        <p style="color:gray">Lorem ipsum dolor sit amet. Nam debitis atque<br /> in ullam omnis ut quam quam ea illum illum. </p>
-                        <a class="btn btn-dark">
-                            Shop now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+﻿﻿<section>
+    <partial name="~/Views/Shared/TemporaryFolder/_InCronstruction.cshtml" for="@Model" />
 </section>
 @model HomeViewModel
 
@@ -45,19 +18,18 @@
 
 <section>
     <div class="container mt-4" style="color:gray">
-        <partial name="~/Views/Shared/TemporaryFolder/_InCronstruction.cshtml" for="@Model" />
         <span style="font-family:Calibri; font-size:1.5rem">
             DAILY OFFERS
             <i class="fa-sharp fa-regular fa-clock"></i>
         </span>
         <div class="row">
-                @foreach (var items in Model.GetProductsDailyOffersDto)
-                {
-                    <div class="col-lg-4">
-                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                    </div>
-                }
-            </div>
+            @foreach (var items in Model.GetProductsDailyOffersDto)
+            {
+                <div class="col-lg-4">
+                    <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                </div>
+            }
+        </div>
     </div>
 </section>
 

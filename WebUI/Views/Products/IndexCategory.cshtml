@@ -8,3 +8,12 @@
     }
     break;
 }
+
+@foreach (var item in Model.ProductsDto)
+{
+    if (item.Category.CategoryName == "Smartphones")
+    {
+        @await Component.InvokeAsync("SmartphonesMenu")
+    }
+    break;
+}

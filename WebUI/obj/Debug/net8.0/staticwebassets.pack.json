@@ -29,20 +29,48 @@
       "PackagePath": "staticwebassets\\images\\Brands\\asos.svg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\asus.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\asus.png"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\bershka.svg",
       "PackagePath": "staticwebassets\\images\\Brands\\bershka.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\infinix.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\infinix.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\iphone.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\iphone.png"
     },
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\mango.svg",
       "PackagePath": "staticwebassets\\images\\Brands\\mango.svg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\motorola.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\motorola.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\multilaser.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\multilaser.png"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\reebok.svg",
       "PackagePath": "staticwebassets\\images\\Brands\\reebok.svg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\samsung.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\samsung.png"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\stradivarius.svg",
       "PackagePath": "staticwebassets\\images\\Brands\\stradivarius.svg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\xiaomi.png",
+      "PackagePath": "staticwebassets\\images\\Brands\\xiaomi.png"
     },
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\zara.svg",
@@ -81,6 +109,26 @@
       "PackagePath": "staticwebassets\\images\\assets\\nikeMen.jpg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\iphone.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\smarphones\\iphone.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\iphonephone.png",
+      "PackagePath": "staticwebassets\\images\\assets\\smarphones\\iphonephone.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\motorola.png",
+      "PackagePath": "staticwebassets\\images\\assets\\smarphones\\motorola.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\samsung.jpg",
+      "PackagePath": "staticwebassets\\images\\assets\\smarphones\\samsung.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\samsungphone.png",
+      "PackagePath": "staticwebassets\\images\\assets\\smarphones\\samsungphone.png"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\womanShoes.jpg",
       "PackagePath": "staticwebassets\\images\\assets\\womanShoes.jpg"
     },
@@ -103,6 +151,18 @@
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\menu-banner.jpg",
       "PackagePath": "staticwebassets\\images\\banner\\menu-banner.jpg"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\smartphones.png",
+      "PackagePath": "staticwebassets\\images\\banner\\smartphones.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\smartphones2.png",
+      "PackagePath": "staticwebassets\\images\\banner\\smartphones2.png"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\smartphones3.png",
+      "PackagePath": "staticwebassets\\images\\banner\\smartphones3.png"
     },
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\button\\appstore-btn.svg",
