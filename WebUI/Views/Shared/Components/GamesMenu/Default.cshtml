@@ -1,0 +1,292 @@
+﻿
+<style>
+    .img-fluid {
+        border-radius: 10px;
+    }
+
+    .col {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+        .col:hover .custom-button {
+            opacity: 1;
+        }
+
+        .col:hover .fa-arrow-right {
+            transform: translateX(5px);
+        }
+
+    .fa-arrow-right {
+        transition: transform 0.3s ease;
+    }
+
+    .card-img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .custom-buttom {
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-top: 25%;
+        font-weight: 600;
+    }
+
+    .custom-buttom_banner_console_and_game {
+        font-size: 1rem;
+        padding: 20px 49px;
+        background-color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
+    }
+</style>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner d-sm-block" style="height:350px">
+        <div class="carousel-item active">
+            <img src="~/images/banner/gamesSpider.png" class="d-block img-fluid w-100 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/banner/gamesFifa.png" class="d-block img-fluid w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/banner/gamesMario.png" class="d-block img-fluid w-100" alt="...">
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12 col-md-6 mb-3 mb-lg-0">
+                <img src="~/images/banner/pcGamer.png" class="img-fluid w-100" />
+            </div>
+            <div class="col-12 col-md-6 mb-3 mb-lg-0">
+                <img src="~/images/banner/consoles.png" class="img-fluid w-100" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-12 mt-5">
+    <div class="col-md-12">
+        <p style="font-weight:600;font-size:18px;color:gray">CONSOLES</p>
+        <div class="row">
+            <div class="owl-carousel">
+                @foreach (var items in Model)
+                {
+                    @if (items.ProductSpecificationsObjectValue.ProductType == "Console")
+                    {
+                        <div class="item">
+                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <hr class="bg-secondary" />
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="text-center" style="margin-bottom:4%;margin-top:3%">
+            <h5>GAMES AND CONSOLES BY PLATFORM</h5>
+        </div>
+        <div class="row">
+            <div class="col-4 col-md-4 mb-3 mb-lg-0">
+                <img src="~/images/banner/ps.webp" class="img-fluid w-100" />
+            </div>
+            <div class="col-4 col-md-4 mb-3 mb-lg-0">
+                <img src="~/images/banner/xbox.webp" class="img-fluid w-100" />
+            </div>
+            <div class="col-4 col-md-4 mb-3 mb-lg-0">
+                <img src="~/images/banner/swtch.webp" class="img-fluid w-100" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-12 mt-5">
+    <div class="col-md-12">
+        <p style="font-weight:600;font-size:18px;color:gray">THE BEST DEALS</p>
+        <div class="row">
+            <div class="owl-carousel">
+                @foreach (var items in Model)
+                {
+                    @if (items.ProductSpecificationsObjectValue.ProductType == "Video game")
+                    {
+                        <div class="item">
+                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <hr class="bg-secondary" />
+</section>
+
+<section>
+    <div class="container" style="margin-top:5%;">
+        <div class="row">
+            <div class="col col-sm-3 col-md">
+                <a href="#">
+                    <div class="text-white">
+                        <figure class="figure m-0">
+                            <img src="~/images/Brands/peripheral.webp" class="img-fluid w-100" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <span class="btn btn-lg custom-buttom">Peripheral &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col col-sm-3 col-md">
+                <a href="#">
+                    <div class="text-white">
+                        <figure class="figure m-0">
+                            <img src="~/images/Brands/monitor.webp" class="img-fluid w-100" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <span class="btn btn-lg custom-buttom">Monitors &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col col-sm-3 col-md">
+                <a href="#">
+                    <div class="text-white">
+                        <figure class="figure m-0">
+                            <img src="~/images/Brands/gamingseat.webp" class="img-fluid w-100" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <span class="btn btn-lg custom-buttom">Gaming seat &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="py-3" style="margin-top:4%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col col-sm-3 col-md">
+                            <a href="#">
+                                <img src="/images/Brands/consoles.webp" alt="..." class="img-fluid w-100">
+                                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <span class="btn btn-lg custom-buttom_banner_console_and_game">Consoles &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col col-sm-3 col-md">
+                            <a href="#">
+                                <img src="/images/Brands/games.webp" alt="..." class="img-fluid w-100">
+                                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <span class="btn btn-lg custom-buttom_banner_console_and_game">Games &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-12 mt-5">
+    <div class="col-md-12">
+        <p style="font-weight:600;font-size:18px;color:gray">ALL PRODUCTS</p>
+        <div class="row">
+            <div class="owl-carousel">
+                @foreach (var items in Model)
+                {
+                    @if (items.Category.CategoryName == "Games")
+                    {
+                        <div class="item">
+                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <hr class="bg-secondary" />
+</section>
+
+<section>
+    <div class="py-3">
+        <div class="container">
+            <div class="text-center" style="margin-bottom:4%;margin-top:2%">
+                <h5>BROWSE YOUR FAVORITE UNIVERSE</h5>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col col-sm-3 col-md">
+                            <img src="/images/Brands/marvel.webp" alt="..." class="img-fluid w-100">
+                        </div>
+                        <div class="col col-sm-3 col-md">
+                            <img src="/images/Brands/dc.webp" alt="..." class="img-fluid w-100">
+                        </div>
+                        <div class="col col-sm-3 col-md">
+                            <img src="/images/Brands/harrypotter.webp" alt="..." class="img-fluid w-100">
+                        </div>
+                        <div class="col col-sm-3 col-md">
+                            <img src="/images/Brands/starwars.webp" alt="..." class="img-fluid w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="py-3">
+        <div class="container">
+            <div class="text-center" style="margin-bottom:3%;margin-top:2%">
+                <h5>THE BEST BRANDS</h5>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/razer.webp" alt="..." class="img-fluid w-75">
+                        </div>
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/hyperx.webp" alt="..." class="img-fluid w-75">
+                        </div>
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/redragon.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                        </div>
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/corsair.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                        </div>
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/multilaser.webp" alt="..." class="img-fluid w-75">
+                        </div>
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/c3tech.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                        </div>
+                        <div class="col-4 col-sm-3 col-md">
+                            <img src="/images/Brands/blackarrow.webp" alt="..." class="img-fluid w-75" style="margin-top:-10px">
+                        </div>
+                    </div>
+                </div>
+                <hr class="bg-secondary" />
+            </div>
+        </div>
+    </div>
+</section>
+
