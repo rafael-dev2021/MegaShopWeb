@@ -273,25 +273,39 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/mango.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        <a href="#">
+                            <img src="/images/Brands/mango.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        </a>
                     </div>
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/adidas.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        <a href="#">
+                            <img src="/images/Brands/adidas.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        </a>
                     </div>
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/reebok.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        <a href="#">
+                            <img src="/images/Brands/reebok.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        </a>
                     </div>
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/zara.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        <a href="#">
+                            <img src="/images/Brands/zara.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                        </a>
                     </div>
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/bershka.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                        <a href="#">
+                            <img src="/images/Brands/bershka.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                        </a>
                     </div>
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/asos.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                        <a href="#">
+                            <img src="/images/Brands/asos.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                        </a>
                     </div>
                     <div class="col-4 col-sm-3 col-md text-center">
-                        <img src="/images/Brands/stradivarius.svg" alt="..." class="img-fluid">
+                        <a href="#">
+                            <img src="/images/Brands/stradivarius.svg" alt="..." class="img-fluid">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -304,15 +318,9 @@
         <div class="row">
             @foreach (var items in Model)
             {
-               @*  <div class="col-md-3">
+                <div class="col-md-3">
                     <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                </div> *@
-                @if (items.Category.CategoryName == "Fashion")
-                {
-                    <div class="col-md-3">
-                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                    </div>
-                }
+                </div>
             }
         </div>
     </div>

@@ -1,0 +1,13 @@
+﻿<div class="col-md-12">
+    <p style="font-weight:600;font-size:18px;color:gray">ALL PRODUCTS</p>
+</div>
+<div class="carousel-container">
+    @foreach (var items in Model)
+    {
+        <div class="col-sm-2 col-md-3 col-lg-3" style="padding:5px">
+            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml" for="@items" />
+        </div>
+    }
+</div>
+<button class="fa-solid fa-chevron-left button_fa_chevron_left_and_right"></button>
+<button class="fa-solid fa-chevron-right button_fa_chevron_left_and_right"></button>

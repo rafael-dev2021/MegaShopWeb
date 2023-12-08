@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.Entities;
+﻿using Application.Dtos;
+using Application.Interfaces.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Components
@@ -11,16 +12,18 @@ namespace WebUI.Components
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var categories = await _categoryDtoService.GetCategoriesDtoAsync();
-            var products = await _productDtoService.GetProductsDtoAsync();
+            var fashionCategory = categories.FirstOrDefault(x => x.CategoryName == "Fashion");
 
-            foreach (var item in categories)
+            if (fashionCategory != null)
             {
-                if (item.CategoryName == "Fashion")
-                {
-                    return View(products);
-                }
+                var fashionProducts = (await _productDtoService.GetProductsDtoAsync())
+                    .Where(x => x.CategoryId == fashionCategory.Id)
+                    .ToList();
+
+                return View(fashionProducts);
             }
-            return View(products);
+
+            return View(Enumerable.Empty<ProductDto>());
         }
     }
 }

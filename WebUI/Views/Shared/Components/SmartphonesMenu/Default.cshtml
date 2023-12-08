@@ -32,7 +32,7 @@
             filter: brightness(70%);
         }
 
-    .quadrado {
+    .square {
         width: 250px;
         height: 420px;
         background-color: rgba(211, 211, 211, 0.5);
@@ -42,7 +42,7 @@
         z-index: 1;
     }
 
-    .quadrado2 {
+    .square2 {
         width: 250px;
         height: 420px;
         border: 1px solid lightgray;
@@ -70,6 +70,38 @@
         a:hover {
             color: black;
         }
+
+    .button_fa_chevron_left_and_right {
+        font-size: 25px;
+        color: gray;
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.7s ease-in-out;
+        transform-origin: left;
+    }
+
+    .fa-chevron-left, .fa-chevron-right {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        padding: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .fa-chevron-left {
+        left: 5px;
+    }
+
+    .fa-chevron-right {
+        right: 5px;
+    }
 </style>
 
 <section>
@@ -91,78 +123,6 @@
     </div>
 </section>
 
-<hr class="bg-secondary mt-5" />
-<!-- DISCOVER -->
-<section class="pt-7 pt-md-9" style="margin-top:7%">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <!-- Divider -->
-                <hr class="hr-sm bg-primary w-25" style="height:5px">
-                <p class="fs-lg  text-black mb-5 mb-md-0" style="font-weight:600;font-size:15px">
-                    Power in the palm of your hand.
-                </p>
-            </div>
-            <div class="col-md-3">
-                <div class="media-decoration media-decoration-1 mb-5 mb-md-0 position-relative">
-                    <div class="quadrado"></div>
-                    <img class="media-decoration-img img-fluid" src="~/images/assets/smarphones/iphone.jpg" alt="...">
-                    <div class="quadrado2"></div>
-                </div>
-            </div>
-
-            <div class="col-md-4 align-self-center mx-auto">
-
-                <!-- Heading -->
-                <h2 class="mb-2">
-                    <em>Always</em> amazing experience
-                </h2>
-
-                <!-- Text -->
-                <p class="mb-0 text-secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
-                </p>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-</section>
-<!-- DISCOVER -->
-<section class="py-7 py-md-9" style="margin-top:7%">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-4 align-self-center mx-auto">
-                <!-- Heading -->
-                <h2 class="mb-2">
-                    <em>Next</em> wave devices
-                </h2>
-
-                <!-- Text -->
-                <p class="mb-0 text-secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
-                </p>
-            </div>
-            <div class="col-md-2 align-self-end">
-                <!-- Divider -->
-                <hr class="hr-sm bg-primary w-25" style="height:5px">
-                <p class="fs-lg  text-black mb-5 mb-md-0" style="font-weight:600;font-size:15px">
-                    Embrace the freedom of technology.
-                </p>
-            </div>
-            <div class="col-md-3">
-                <div class="media-decoration media-decoration-1 mb-5 mb-md-0 position-relative">
-                    <div class="quadrado"></div>
-                    <img class="media-decoration-img img-fluid" src="~/images/assets/smarphones/samsung.jpg" alt="...">
-                    <div class="quadrado2"></div>
-                </div>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-</section>
-
 <section>
     <div class="py-3" style="margin-top:5%;">
         <div class="container">
@@ -170,26 +130,39 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/asus.png" alt="..." class="img-fluid">
-                        </div>
-
-                        <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/samsung.png" alt="..." class="img-fluid">
+                            <a href="#">
+                                <img src="/images/Brands/asus.png" alt="..." class="img-fluid">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/multilaser.png" alt="..." class="img-fluid">
+                            <a href="#">
+                                <img src="/images/Brands/samsung.png" alt="..." class="img-fluid">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/iphone.png" alt="..." class="w-50 img-fluid" style="margin-top:8px">
+                            <a href="#">
+                                <img src="/images/Brands/multilaser.png" alt="..." class="img-fluid">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/infinix.png" alt="..." class="img-fluid ">
+                            <a href="#">
+                                <img src="/images/Brands/iphone.png" alt="..." class="w-50 img-fluid" style="margin-top:8px">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/motorola.png" alt="..." class="img-fluid ">
+                            <a href="#">
+                                <img src="/images/Brands/infinix.png" alt="..." class="img-fluid ">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md text-center">
-                            <img src="/images/Brands/xiaomi.png" alt="..." class="img-fluid" style="margin-top:39px">
+                            <a href="#">
+                                <img src="/images/Brands/motorola.png" alt="..." class="img-fluid ">
+                            </a>
+                        </div>
+                        <div class="col-4 col-sm-3 col-md text-center">
+                            <a href="#">
+                                <img src="/images/Brands/xiaomi.png" alt="..." class="img-fluid" style="margin-top:39px">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -197,6 +170,84 @@
             </div>
         </div>
     </div>
+</section>
+<!-- DISCOVER -->
+<section class="pt-7 pt-md-9" style="margin-top:7%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <hr class="hr-sm bg-primary w-25" style="height:5px">
+                <p class="fs-lg  text-black mb-5 mb-md-0" style="font-weight:600;font-size:15px">
+                    Power in the palm of your hand.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="media-decoration media-decoration-1 mb-5 mb-md-0 position-relative">
+                    <div class="square"></div>
+                    <a href="#">
+                        <img class="media-decoration-img img-fluid" src="~/images/assets/smarphones/iphone.jpg" alt="...">
+                    </a>
+                    <div class="square2"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 align-self-center mx-auto">
+                <h2 class="mb-2">
+                    <em>Always</em> amazing experience
+                </h2>
+                <p class="mb-0 text-secondary">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
+                </p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel container py-12 mt-5">
+    <hr class="bg-secondary" />
+    <partial name="~/Views/Shared/Components/SmartphonesMenu/AppleViewPartial.cshtml" for="@Model" />
+    <hr class="bg-secondary" />
+</section>
+
+<!-- DISCOVER -->
+<section class="py-7 py-md-9" style="margin-top:7%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 align-self-center mx-auto">
+                <h2 class="mb-2">
+                    <em>Next</em> wave devices
+                </h2>
+                <p class="mb-0 text-secondary">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
+                </p>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <hr class="hr-sm bg-primary w-25" style="height:5px">
+                <p class="fs-lg  text-black mb-5 mb-md-0" style="font-weight:600;font-size:15px">
+                    Embrace the freedom of technology.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="media-decoration media-decoration-1 mb-5 mb-md-0 position-relative">
+                    <div class="square"></div>
+                    <a href="#">
+                        <img class="media-decoration-img img-fluid" src="~/images/assets/smarphones/samsung.jpg" alt="...">
+                    </a>
+                    <div class="square2"></div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel container py-12 mt-5">
+    <hr class="bg-secondary" />
+    <partial name="~/Views/Shared/Components/SmartphonesMenu/SamsungViewPartial.cshtml" for="@Model" />
+    <hr class="bg-secondary" />
 </section>
 
 <section style="margin-top:5%" class="mb-2">
@@ -294,22 +345,17 @@
         </div>
     </div>
 </section>
-<hr class="bg-secondary" style="margin-top:10%" />
 
 <section class="container py-12 mt-5">
+    <hr class="bg-secondary" />
+    <p style="font-weight:600;font-size:18px;color:gray">All products</p>
     <div class="col-md-12">
         <div class="row">
             @foreach (var items in Model)
             {
-                @*  <div class="col-md-3">
-            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-            </div> *@
-                @if (items.Category.CategoryName == "Smartphones")
-                {
-                    <div class="col-md-3">
-                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                    </div>
-                }
+                <div class="col-md-3">
+                    <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
+                </div>
             }
         </div>
     </div>

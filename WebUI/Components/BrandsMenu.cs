@@ -16,7 +16,6 @@ namespace WebUI.Components
         {
             var productDtos = await _productDtoService.GetProductsDtoAsync();
 
-            // Contagem de produtos por marca
             var countByBrand = productDtos
                 .GroupBy(p => p.ProductSpecificationsObjectValue.ProductBrand)
                 .Select(g => new { Brand = g.Key, Count = g.Count() })

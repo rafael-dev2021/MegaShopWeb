@@ -3,14 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Components
 {
-    public class CategoryMenu : ViewComponent
+    public class CategoryMenu(ICategoryDtoService categoryDtoService) : ViewComponent
     {
-        private readonly ICategoryDtoService _categoryDtoService;
-
-        public CategoryMenu(ICategoryDtoService categoryDtoService)
-        {
-            _categoryDtoService = categoryDtoService;
-        }
+        private readonly ICategoryDtoService _categoryDtoService = categoryDtoService;
 
         public async Task<IViewComponentResult> InvokeAsync()
         {

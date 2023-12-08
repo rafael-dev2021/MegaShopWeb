@@ -389,6 +389,10 @@
       "PackagePath": "staticwebassets\\images\\fashion\\basicWomenDress.jpg"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\puma.jpg",
+      "PackagePath": "staticwebassets\\images\\fashion\\puma.jpg"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\shirtsMen.jpg",
       "PackagePath": "staticwebassets\\images\\fashion\\shirtsMen.jpg"
     },

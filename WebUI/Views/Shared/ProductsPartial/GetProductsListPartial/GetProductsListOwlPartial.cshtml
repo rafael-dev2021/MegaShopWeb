@@ -1,0 +1,63 @@
+﻿@model Application.Dtos.ProductDto
+
+<link rel="stylesheet" href="~/css/GetProductsListPartial.css" asp-append-version="true" />
+
+<br />
+<div class="container" style="line-height:20px">
+    <div class="row">
+        <div class="position-relative">
+            <div class="mt-3">
+                @if (Model.ProductFlagsObjectValue.IsDailyOffer == true)
+                {
+                    <div class="position-absolute">
+                        <span class="style_flags bg-dark">@Model.CalculateDiscountService().DiscountPercentage(Model.ProductPriceObjectValue).ToString("F0")%</span>
+                    </div>
+                    <div class="position-absolute" style="margin-left:70%">
+                        <a asp-controller="Products" asp-action="Index" asp-route-isDailyOffer="true" class="d-none d-md-block">
+                            <span class="style_flags bg-dark">Daily Offers</span>
+                        </a>
+                    </div>
+                }
+                @if (Model.ProductFlagsObjectValue.IsBestSeller == true)
+                {
+                    <div class="position-absolute">
+                        <a asp-controller="Products" asp-action="Index" asp-route-isBestSeller="true" class="d-none d-md-block">
+                            <span class="style_flags bg-dark">Best Sellers</span>
+                        </a>
+                    </div>
+                }
+            </div>
+            <a asp-controller="Products" asp-action="Details" asp-route-Id="@Model.Id">
+                <div class="img-container">
+                    <img class="img-fluid" id="main_image" src="@Model.ProductImageObjectValue.MainImage" />
+                </div>
+            </a>
+        </div>
+        <div class="mt-2">
+            <small class="style_categoryName">
+                @Model.ProductSpecificationsObjectValue.ProductType
+            </small>
+            <h6 class="style_name_product">@Model.Name</h6>
+        </div>
+        <div>
+            <span style="color:gray;font-weight:bold;font-size:14px">Now @Model.ProductPriceObjectValue.Price.ToString("C")</span>
+            @if (Model.ProductFlagsObjectValue.IsDailyOffer == true)
+            {
+                <small>
+                    <span class="text-decoration-line-through text-muted"
+                          style="margin-right:0.5rem;">
+                        @Model.ProductPriceObjectValue.HistoryPrice.ToString("C")
+                    </span>
+                </small>
+            }
+        </div>
+        <div class="mt-1 mb-1">
+            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListReviewsAveragePartial.cshtml" for="@Model" />
+        </div>
+        <div style="font-family: calibri;color: gray;">
+            <small>
+                <span>@Model.ProductWarrantyObjectValue.WarrantyInformation</span>
+            </small>
+        </div>
+    </div>
+</div>

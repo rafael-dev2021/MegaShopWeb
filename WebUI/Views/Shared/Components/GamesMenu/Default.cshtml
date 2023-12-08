@@ -44,6 +44,38 @@
         background-color: rgba(255, 255, 255, 0.9);
         font-weight: 600;
     }
+
+    .button_fa_chevron_left_and_right {
+        font-size: 25px;
+        color: gray;
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.7s ease-in-out;
+        transform-origin: left;
+    }
+
+    .fa-chevron-left, .fa-chevron-right {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        padding: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .fa-chevron-left {
+        left: 5px;
+    }
+
+    .fa-chevron-right {
+        right: 5px;
+    }
 </style>
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -64,33 +96,22 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-12 col-md-6 mb-3 mb-lg-0">
-                <img src="~/images/banner/pcGamer.png" class="img-fluid w-100" />
+                <a href="#">
+                    <img src="~/images/banner/pcGamer.png" class="img-fluid w-100" />
+                </a>
             </div>
             <div class="col-12 col-md-6 mb-3 mb-lg-0">
-                <img src="~/images/banner/consoles.png" class="img-fluid w-100" />
+                <a href="#">
+                    <img src="~/images/banner/consoles.png" class="img-fluid w-100" />
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container py-12 mt-5">
-    <div class="col-md-12">
-        <p style="font-weight:600;font-size:18px;color:gray">CONSOLES</p>
-        <div class="row">
-            <div class="owl-carousel">
-                @foreach (var items in Model)
-                {
-                    @if (items.ProductSpecificationsObjectValue.ProductType == "Console")
-                    {
-                        <div class="item">
-                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-        <hr class="bg-secondary" />
-    </div>
+<section class="carousel container py-12 mt-5">
+    <partial name="~/Views/Shared/Components/GamesMenu/ConsoleViewPartial.cshtml" for="@Model" />
+    <hr class="bg-secondary" />
 </section>
 
 <section>
@@ -100,35 +121,26 @@
         </div>
         <div class="row">
             <div class="col-4 col-md-4 mb-3 mb-lg-0">
-                <img src="~/images/banner/ps.webp" class="img-fluid w-100" />
+                <a href="#">
+                    <img src="~/images/banner/ps.webp" class="img-fluid w-100" />
+                </a>
             </div>
             <div class="col-4 col-md-4 mb-3 mb-lg-0">
-                <img src="~/images/banner/xbox.webp" class="img-fluid w-100" />
+                <a href="#">
+                    <img src="~/images/banner/xbox.webp" class="img-fluid w-100" />
+                </a>
             </div>
             <div class="col-4 col-md-4 mb-3 mb-lg-0">
-                <img src="~/images/banner/swtch.webp" class="img-fluid w-100" />
+                <a href="#">
+                    <img src="~/images/banner/swtch.webp" class="img-fluid w-100" />
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container py-12 mt-5">
-    <div class="col-md-12">
-        <p style="font-weight:600;font-size:18px;color:gray">THE BEST DEALS</p>
-        <div class="row">
-            <div class="owl-carousel">
-                @foreach (var items in Model)
-                {
-                    @if (items.ProductSpecificationsObjectValue.ProductType == "Video game")
-                    {
-                        <div class="item">
-                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-    </div>
+<section class="carousel container py-12 mt-5">
+    <partial name="~/Views/Shared/Components/GamesMenu/VideoGameViewPartial.cshtml" for="@Model" />
     <hr class="bg-secondary" />
 </section>
 
@@ -204,23 +216,8 @@
     </div>
 </section>
 
-<section class="container py-12 mt-5">
-    <div class="col-md-12">
-        <p style="font-weight:600;font-size:18px;color:gray">ALL PRODUCTS</p>
-        <div class="row">
-            <div class="owl-carousel">
-                @foreach (var items in Model)
-                {
-                    @if (items.Category.CategoryName == "Games")
-                    {
-                        <div class="item">
-                            <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-    </div>
+<section class="carousel container py-12 mt-5">
+    <partial name="~/Views/Shared/Components/GamesMenu/AllProductsViewPartial.cshtml" for="@Model" />
     <hr class="bg-secondary" />
 </section>
 
@@ -234,16 +231,24 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col col-sm-3 col-md">
-                            <img src="/images/Brands/marvel.webp" alt="..." class="img-fluid w-100">
+                            <a href="#">
+                                <img src="/images/Brands/marvel.webp" alt="..." class="img-fluid w-100">
+                            </a>
                         </div>
                         <div class="col col-sm-3 col-md">
-                            <img src="/images/Brands/dc.webp" alt="..." class="img-fluid w-100">
+                            <a href="#">
+                                <img src="/images/Brands/dc.webp" alt="..." class="img-fluid w-100">
+                            </a>
                         </div>
                         <div class="col col-sm-3 col-md">
-                            <img src="/images/Brands/harrypotter.webp" alt="..." class="img-fluid w-100">
+                            <a href="#">
+                                <img src="/images/Brands/harrypotter.webp" alt="..." class="img-fluid w-100">
+                            </a>
                         </div>
                         <div class="col col-sm-3 col-md">
-                            <img src="/images/Brands/starwars.webp" alt="..." class="img-fluid w-100">
+                            <a href="#">
+                                <img src="/images/Brands/starwars.webp" alt="..." class="img-fluid w-100">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -262,25 +267,39 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/razer.webp" alt="..." class="img-fluid w-75">
+                            <a href="#">
+                                <img src="/images/Brands/razer.webp" alt="..." class="img-fluid w-75">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/hyperx.webp" alt="..." class="img-fluid w-75">
+                            <a href="#">
+                                <img src="/images/Brands/hyperx.webp" alt="..." class="img-fluid w-75">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/redragon.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                            <a href="#">
+                                <img src="/images/Brands/redragon.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/corsair.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                            <a href="#">
+                                <img src="/images/Brands/corsair.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/multilaser.webp" alt="..." class="img-fluid w-75">
+                            <a href="#">
+                                <img src="/images/Brands/multilaser.webp" alt="..." class="img-fluid w-75">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/c3tech.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                            <a href="#">
+                                <img src="/images/Brands/c3tech.webp" alt="..." class="img-fluid w-50" style="margin-top:10px">
+                            </a>
                         </div>
                         <div class="col-4 col-sm-3 col-md">
-                            <img src="/images/Brands/blackarrow.webp" alt="..." class="img-fluid w-75" style="margin-top:-10px">
+                            <a href="#">
+                                <img src="/images/Brands/blackarrow.webp" alt="..." class="img-fluid w-75" style="margin-top:-10px">
+                            </a>
                         </div>
                     </div>
                 </div>

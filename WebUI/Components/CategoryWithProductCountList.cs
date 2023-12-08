@@ -3,14 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Components
 {
-    public class CategoryWithProductCountList : ViewComponent
+    public class CategoryWithProductCountList(ICategoryDtoService categoryDtoService) : ViewComponent
     {
-        private readonly ICategoryDtoService _categoryDtoService;
-
-        public CategoryWithProductCountList(ICategoryDtoService categoryDtoService)
-        {
-            _categoryDtoService = categoryDtoService;
-        }
+        private readonly ICategoryDtoService _categoryDtoService = categoryDtoService;
 
         public async Task<IViewComponentResult> InvokeAsync()
         {

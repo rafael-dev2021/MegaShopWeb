@@ -3,14 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Components
 {
-    public class SortByMenu : ViewComponent
+    public class SortByMenu(IProductDtoService productDtoService) : ViewComponent
     {
-        private readonly IProductDtoService _productDtoService;
-
-        public SortByMenu(IProductDtoService productDtoService)
-        {
-            _productDtoService = productDtoService;
-        }
+        private readonly IProductDtoService _productDtoService = productDtoService;
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
