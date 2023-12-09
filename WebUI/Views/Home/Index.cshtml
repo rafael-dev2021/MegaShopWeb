@@ -1,33 +1,189 @@
-﻿﻿<section>
-    <partial name="~/Views/Shared/TemporaryFolder/_InCronstruction.cshtml" for="@Model" />
-</section>
-@model HomeViewModel
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner d-sm-block" style="height:350px">
-        <div class="carousel-item active">
-            <img src="https://cdn.sanity.io/images/qa41whrn/staging/7e5fce759829d484213afe9aa02a11a89ebf2895-1440x350.jpg?w=2160&q=80&auto=format" class="d-block img-fluid w-100 " alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_327,c_limit/e35033a3-8e2c-4f03-b07a-409755fbd4a2/nike-just-do-it.jpg" class="d-block img-fluid w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/fw23_q4_wintersale_hp_masthead_large_d_01b69228c3.jpg" class="d-block img-fluid w-100" alt="...">
-        </div>
-    </div>
-</div>
+﻿@model HomeViewModel
 
-<div class="mt-5">
-    <div class="row">
-        <div class="owl-carousel">
-            @foreach (var items in Model.GetCategoriesDto)
-            {
-                <div class="item">
-                    <partial name="~/Views/Shared/CategoriesPartial/_CategoriesPartial.cshtml" for="@items" />
-                </div>
-            }
+<style>
+    .button_fa_chevron_left_and_right {
+        font-size: 25px;
+        color: gray;
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.7s ease-in-out;
+        transform-origin: left;
+    }
+
+    .fa-chevron-left, .fa-chevron-right {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        padding: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .fa-chevron-left {
+        left: 5px;
+    }
+
+    .fa-chevron-right {
+        right: 5px;
+    }
+
+    .btn_home_custom {
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-top: 25%;
+        font-weight: 600;
+        color: black;
+    }
+
+        .btn_home_custom:hover {
+            color: black;
+        }
+</style>
+<section class="">
+    <div class="bg-dark text-white position-relative">
+        <img class="card-img" src="~/images/assets/banner.png" class="img-fluid " alt="Card image">
+
+    </div>
+</section>
+<section>
+    <div class="mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                @foreach (var items in Model.GetCategoriesDto)
+                {
+                    <div class="item">
+                        <partial name="~/Views/Shared/CategoriesPartial/_CategoriesPartial.cshtml" for="@items" />
+                    </div>
+                }
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mb-3 mb-lg-0">
+                <a href="#">
+                    <img src="~/images/banner/BeechsideClothing.png" class="img-fluid w-100" style="border-radius:10px" />
+                </a>
+            </div>
+            <div class="col-12 col-md-6 mb-3 mb-lg-0">
+                <a href="#">
+                    <img src="~/images/banner/newcollection.png" class="img-fluid w-100" style="border-radius:10px" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel container py-12 mt-5">
+    <div class="col-md-12">
+        <p style="font-weight:600;font-size:18px;color:gray">DAILY OFFERS  <i class="fa-sharp fa-regular fa-clock"></i></p>
+    </div>
+    <div class="carousel-container">
+        @foreach (var items in Model.GetProductsDailyOffersDto)
+        {
+            <div class="col-6 col-md-3 col-lg-3">
+                <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml" for="@items" />
+            </div>
+        }
+    </div>
+    <button class="fa-solid fa-chevron-left button_fa_chevron_left_and_right"></button>
+    <button class="fa-solid fa-chevron-right button_fa_chevron_left_and_right"></button>
+    <hr class="bg-secondary" />
+</section>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                <h2 class="heading-xxs">
+                    New Collection Summer
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- DISCOVER -->
+<section class="pt-7 pt-md-9" style="margin-top:4%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto mb-3">
+                <h6 class="text-center">
+                    <img src="~/images/Brands/nike.png" class="figure-img w-25" />
+                </h6>
+                <a href="#">
+                    <img class="media-decoration-img img-fluid" src="~/images/assets/nike.jpg" alt="...">
+                </a>
+            </div>
+            <div class="col-md-4  mx-auto mb-3">
+                <h6 class="text-center">
+                    <img src="~/images/Brands/adidas.png" class="figure-img w-25" />
+                </h6>
+                <a href="#">
+                    <img class="media-decoration-img img-fluid" src="~/images/banner/adidasfashion.jpg" alt="...">
+                </a>
+            </div>
+            <div class="col-md-4  mx-auto mb-3">
+                <h6 class="text-center">
+                    <img src="~/images/Brands/puma.png" class="figure-img w-25" />
+                </h6>
+                <a href="#">
+                    <img class="media-decoration-img img-fluid" src="~/images/banner/pumafashion.jpg" alt="...">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel container py-12 mt-5">
+    <span style="font-family:Calibri; font-size:1.5rem">
+        Inspired by your favorites
+    </span>
+    <partial name="~/Views/Shared/Components/FashionMenu/AllProductsViewPartial.cshtml" for="@Model.GetProductsDto" />
+    <hr class="bg-secondary" />
+</section>
+
+<!-- DISCOVER -->
+<section class="py-7 py-md-9" style="margin-top:7%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 align-self-center mx-auto">
+                <h2 class="mb-2">
+                    <em>Next</em> wave devices
+                </h2>
+                <p class="mb-0 text-secondary">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
+                </p>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <hr class="hr-sm bg-primary w-25" style="height:5px">
+                <p class="fs-lg  text-black mb-5 mb-md-0" style="font-weight:600;font-size:15px">
+                    Embrace the freedom of technology.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="media-decoration media-decoration-1 mb-5 mb-md-0 position-relative">
+                    <div class="square"></div>
+                    <a href="#">
+                        <img class="media-decoration-img img-fluid" src="~/images/assets/smarphones/samsung.jpg" alt="...">
+                    </a>
+                    <div class="square2"></div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
 
 <section>
     <div class="container mt-4" style="color:gray">
@@ -36,15 +192,16 @@
             <i class="fa-sharp fa-regular fa-clock"></i>
         </span>
         <div class="row">
-            @foreach (var items in Model.GetProductsDailyOffersDto)
+            @foreach (var items in Model.GetProductsDto)
             {
-                <div class="col-lg-4">
+                <div class="col-6 col-md-3 col-lg-3">
                     <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
                 </div>
             }
         </div>
     </div>
 </section>
+
 
 @section Scripts {
 

@@ -1,130 +1,73 @@
-﻿<style>
-    .py-3 {
-        padding-bottom: 0.75rem !important;
-        padding-top: 0.75rem !important;
-    }
+﻿<link rel="stylesheet" href="~/css/Fashion.css" asp-append-version="true" />
 
-    .mb-4 {
-        margin-bottom: 1rem !important;
-    }
+<div class="py-3 mb-4">
+    <div class="container" id="ticker">
+        <ul id="ticker-list">
+            <li><img src="/images/Brands/mango.svg" alt="Mango" class="ticker_images"></li>
+            <li><img src="/images/Brands/adidas.svg" alt="Adidas" class="ticker_images"></li>
+            <li><img src="/images/Brands/reebok.svg" alt="Reebok" class="ticker_images"></li>
+            <li><img src="/images/Brands/zara.svg" alt="Zara" class="ticker_images"></li>
+            <li><img src="/images/Brands/bershka.svg" alt="Bershka" class="ticker_images"></li>
+            <li><img src="/images/Brands/asos.svg" alt="Asos" class="ticker_images"></li>
+            <li><img src="/images/Brands/stradivarius.svg" alt="Stradivarius" class="ticker_images"></li>
+        </ul>
+    </div>
+</div>
+<!-- CATEGORIES -->
+<section>
+    <div class="row remove-gutters no-gutters gx-0 d-block d-lg-flex">
 
-    .card {
-        border: none;
-        border-radius: 0px;
-    }
-
-    .remove-gutters > [class*='col-'] {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .remove-gutters .row > [class*='col-'] {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    .col {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-    }
-
-        .col:hover .custom-button {
-            opacity: 1;
-        }
-
-        .col:hover .fa-arrow-right {
-            transform: translateX(5px);
-        }
-
-    .fa-arrow-right {
-        transition: transform 0.3s ease;
-    }
-
-
-    .card {
-        overflow: hidden;
-    }
-
-        .card img {
-            filter: brightness(85%);
-            transition: filter 0.3s ease;
-        }
-
-        .card:hover img {
-            filter: brightness(70%);
-        }
-
-    .card-img-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
-</style>
-
-<div class="py-3 bg-dark mb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center text-white">
-                    <span class="heading-xxs letter-spacing-xl">
-                        ⚡️ Happy Holiday Deals on Everything ⚡️
-                    </span>
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column">
+            <div class="card text-center">
+                <div class="card-body mt-auto">
+                    <a href="#">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/adidas.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title-categories">Puma</h5>
+                            <span class="btn-categories"> <span>Shop now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column">
+            <div class="card text-center">
+                <div class="card-body mt-auto">
+                    <a href="#">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/nike1.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title-categories">Nike</h5>
+                            <span class="btn-categories"><span>Shop now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column">
+            <div class="card text-center">
+                <div class="card-body mt-auto">
+                    <a href="#">
+                        <figure class="figure m-0">
+                            <img src="~/images/assets/puma.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title-categories">Adidas</h5>
+                            <span class="btn-categories"><span>Shop now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span></span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container">
-    <div class="row remove-gutters">
-        <div class="col col-md-4">
-            <a href="#">
-                <div class="card text-white position-relative">
-                    <figure class="figure m-0">
-                        <img src="~/images/fashion/women.jpg" class="figure-img img-fluid" alt="">
-                    </figure>
-                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Woman</h5>
-                        <span class="btn btn-dark btn-lg" style="font-size:1rem">Shop woman <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col col-md-4">
-            <a href="#">
-                <div class="card text-white position-relative">
-                    <figure class="figure m-0">
-                        <img src="~/images/fashion/Kids.jpg" class="figure-img img-fluid" alt="">
-                    </figure>
-                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Kids</h5>
-                        <span class="btn btn-dark btn-lg" style="font-size:1rem">Shop Kids <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col col-md-4">
-            <a href="#">
-                <div class="card text-white position-relative">
-                    <figure class="figure m-0">
-                        <img src="~/images/fashion/Men.jpg" class="figure-img img-fluid" alt="">
-                    </figure>
-                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Men</h5>
-                        <span class="btn btn-dark btn-lg" style="font-size:1rem">Shop Men <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
 <!-- FEATURES -->
-<section class="pt-7 mb-3 mt-3" style="padding-left:5%">
-    <div class="container">
+<section class="pt-7" style="padding-left:5%">
+    <div class="container ">
         <div class="row pb-7 ">
             <div class="col-12 col-md-6 col-lg-3">
                 <div class="d-flex mb-6 mb-lg-0">
@@ -181,86 +124,102 @@
         </div>
     </div>
 </section>
-<hr style="width:75%; position:absolute;left:13%;color:gray;" />
-
-<section style="margin-top:8%;">
+<hr class="bg-secondary" />
+<!--  New Collection -->
+<section class="mt-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
-
-                <!-- Preheading -->
                 <h6 class="heading-xxs mb-3 text-gray-400">
                     New Collection
                 </h6>
-
-                <!-- Heading -->
-                <h2 class="mb-4">Runway Fusion: A Palette of Styles and Vibrant Trends</h2>
-
-                <!-- Subheading -->
+                <h3 class="mb-4">Runway Fusion: A Palette of Styles and Vibrant Trends</h3>
                 <p class="mb-10 text-gray-500">
-                    "Within the fashion realm, where styles merge and trends soar, dry couture meets vibrant essence. Models infuse the runway with vivid palettes, breathing life into fashion's sky."
+                    Within the fashion realm, where styles merge and trends soar, dry couture meets vibrant essence. Models infuse the runway with vivid palettes, breathing life into fashion's sky.
                 </p>
-
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col col-md-4">
-                <a href="#">
-                    <div class="card text-white position-relative">
-                        <figure class="figure m-0">
-                            <img src="~/images/assets/fashionWoman2.jpg" class="figure-img img-fluid" alt="">
-                        </figure>
-                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Woman Collection</h5>
-                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col col-md-6">
-                <a href="#">
-                    <div class="card text-white position-relative">
-                        <figure class="figure m-0">
-                            <img src="~/images/assets/manShirts.jpg" class="figure-img img-fluid" alt="">
-                        </figure>
-                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Men's Clothing</h5>
-                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-1"></div>
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col col-md-6">
-                <a href="#">
-                    <div class="card text-white position-relative">
-                        <figure class="figure m-0">
-                            <img src="~/images/assets/fashionWoman.jpg" class="figure-img img-fluid" alt="">
-                        </figure>
-                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Women Clothing</h5>
-                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                        </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex flex-column">
+                <div class="card text-center">
+                    <div class="card-body mt-auto">
+                        <a href="#">
+                            <div class="card text-white position-relative">
+                                <figure class="figure m-0">
+                                    <img src="~/images/assets/fashionWoman2.jpg" class="figure-img img-fluid" alt="">
+                                </figure>
+                                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Woman Collection</h5>
+                                    <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col col-md-4">
-                <a href="#">
-                    <div class="card text-white position-relative">
-                        <figure class="figure m-0">
-                            <img src="~/images/assets/nike.jpg" class="figure-img img-fluid" alt="">
-                        </figure>
-                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Shoes Collection</h5>
-                            <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
-                        </div>
+            <div class="col-12 col-md-6 col-lg-6 d-flex flex-column">
+                <div class="card text-center">
+                    <div class="card-body mt-auto">
+                        <a href="#">
+                            <div class="card text-white position-relative">
+                                <figure class="figure m-0">
+                                    <img src="~/images/assets/manShirts.jpg" class="figure-img img-fluid" alt="">
+                                </figure>
+                                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Men's Clothing</h5>
+                                    <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                        <hr class="hr-sm bg-primary w-25" style="height:5px">
+                        <p class="mb-0 text-secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
+                        </p>
                     </div>
-                </a>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-12 col-md-6 col-lg-6 d-flex flex-column">
+                <div class="card text-center">
+                    <div class="card-body mt-auto">
+                        <a href="#">
+                            <div class="card text-white position-relative">
+                                <figure class="figure m-0">
+                                    <img src="~/images/assets/fashionWoman.jpg" class="figure-img img-fluid" alt="">
+                                </figure>
+                                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Women Clothing</h5>
+                                    <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                        <hr class="hr-sm bg-primary w-25" style="height:5px">
+                        <p class="mb-0 text-secondary">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex flex-column">
+                <div class="card text-center">
+                    <div class="card-body mt-auto">
+                        <a href="#">
+                            <div class="card text-white position-relative">
+                                <figure class="figure m-0">
+                                    <img src="~/images/assets/nike.jpg" class="figure-img img-fluid" alt="">
+                                </figure>
+                                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <h5 class="card-title" style="font-weight:600; font-size:2.5rem">Shoes Collection</h5>
+                                    <span>Shop Now <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -272,37 +231,37 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
-                            <img src="/images/Brands/mango.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                            <img src="/images/Brands/mango.svg" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
-                            <img src="/images/Brands/adidas.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                            <img src="/images/Brands/adidas.svg" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
-                            <img src="/images/Brands/reebok.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                            <img src="/images/Brands/reebok.svg" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
-                            <img src="/images/Brands/zara.svg" alt="..." class="img-fluid mb-7 mb-md-0">
+                            <img src="/images/Brands/zara.svg" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
-                            <img src="/images/Brands/bershka.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                            <img src="/images/Brands/bershka.svg" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
-                            <img src="/images/Brands/asos.svg" alt="..." class="img-fluid mb-6 mb-sm-0">
+                            <img src="/images/Brands/asos.svg" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 col-sm-3 col-md text-center">
+                    <div class="col-4 col-sm-3 col-md mb-4">
                         <a href="#">
                             <img src="/images/Brands/stradivarius.svg" alt="..." class="img-fluid">
                         </a>
@@ -312,17 +271,9 @@
         </div>
     </div>
 </div>
-
-<section class="container py-12 mt-5">
-    <div class="col-md-12">
-        <div class="row">
-            @foreach (var items in Model)
-            {
-                <div class="col-md-3">
-                    <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
-                </div>
-            }
-        </div>
-    </div>
+<section class="carousel container py-12 mt-5">
+    <partial name="~/Views/Shared/Components/FashionMenu/AllProductsViewPartial.cshtml" for="@Model" />
+    <hr class="bg-secondary" />
 </section>
+
 

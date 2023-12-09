@@ -11,6 +11,7 @@ html, body {
     .container_layout a {
         color: gray;
     }
+
         .container_layout a:hover {
             color: rgba(186, 197, 208, 1);
         }
@@ -35,3 +36,5 @@ html, body {
 a {
     text-decoration: none;
 }
+
+
