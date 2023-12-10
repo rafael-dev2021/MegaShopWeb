@@ -12,11 +12,6 @@
                     <div class="position-absolute">
                         <span class="style_flags bg-dark">@Model.CalculateDiscountService().DiscountPercentage(Model.ProductPriceObjectValue).ToString("F0")%</span>
                     </div>
-                    <div class="position-absolute" style="margin-left:70%">
-                        <a asp-controller="Products" asp-action="Index" asp-route-isDailyOffer="true" class="d-none d-md-block">
-                            <span class="style_flags bg-dark">Daily Offers</span>
-                        </a>
-                    </div>
                 }
                 @if (Model.ProductFlagsObjectValue.IsBestSeller == true)
                 {

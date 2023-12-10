@@ -1,22 +1,11 @@
 ﻿@model HomeViewModel
 
 <style>
-    .button_fa_chevron_left_and_right {
-        font-size: 25px;
-        color: gray;
-    }
-
-    .carousel-container {
-        display: flex;
-        transition: transform 0.7s ease-in-out;
-        transform-origin: left;
-    }
-
     .fa-chevron-left, .fa-chevron-right {
         position: absolute;
         top: 40%;
         transform: translateY(-50%);
-        padding: 8px;
+        padding: 12px;
         background-color: #ffffff;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         border: none;
@@ -26,25 +15,40 @@
     }
 
     .fa-chevron-left {
-        left: 5px;
+        left: -5px;
     }
 
     .fa-chevron-right {
-        right: 5px;
+        right: -5px;
     }
 
-    .btn_home_custom {
-        font-size: 1rem;
-        padding: 10px 20px;
-        background-color: rgba(255, 255, 255, 0.9);
-        margin-top: 25%;
+    .style_card_home {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        background-color: white;
+        border-radius: 10px;
+        height: 12vh;
+    }
+
+    .card-img-overlay {
+        position: absolute;
+        top: -20%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .card-title-categories {
         font-weight: 600;
-        color: black;
+        font-size: 2.5rem;
+        color: #fff;
+        line-height: 18px;
     }
 
-        .btn_home_custom:hover {
-            color: black;
-        }
+    .card-title-text {
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: #fff;
+    }
 </style>
 <section class="">
     <div class="bg-dark text-white position-relative">
@@ -55,7 +59,7 @@
 <section>
     <div class="mt-5">
         <div class="row">
-            <div class="owl-carousel">
+            <div id="owl-carousel-categories" class="owl-carousel">
                 @foreach (var items in Model.GetCategoriesDto)
                 {
                     <div class="item">
@@ -84,22 +88,24 @@
     </div>
 </section>
 
-<section class="carousel container py-12 mt-5">
+<section class="container py-12 mt-5">
     <div class="col-md-12">
         <p style="font-weight:600;font-size:18px;color:gray">DAILY OFFERS  <i class="fa-sharp fa-regular fa-clock"></i></p>
     </div>
-    <div class="carousel-container">
-        @foreach (var items in Model.GetProductsDailyOffersDto)
-        {
-            <div class="col-6 col-md-3 col-lg-3">
-                <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml" for="@items" />
-            </div>
-        }
+    <div class="row">
+        <div class="owl-carousel">
+            @foreach (var items in Model.GetProductsDailyOffersDto)
+            {
+                <div class="item">
+                    <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml" for="@items" />
+                </div>
+            }
+        </div>
     </div>
-    <button class="fa-solid fa-chevron-left button_fa_chevron_left_and_right"></button>
-    <button class="fa-solid fa-chevron-right button_fa_chevron_left_and_right"></button>
     <hr class="bg-secondary" />
 </section>
+
+
 
 <section>
     <div class="container">
@@ -144,77 +150,142 @@
     </div>
 </section>
 
-<section class="carousel container py-12 mt-5">
-    <span style="font-family:Calibri; font-size:1.5rem">
-        Inspired by your favorites
-    </span>
-    <partial name="~/Views/Shared/Components/FashionMenu/AllProductsViewPartial.cshtml" for="@Model.GetProductsDto" />
+<section class="container py-12 mt-5">
+    <div class="col-md-12">
+        <p style="font-weight:600;font-size:18px;color:gray">
+            INSPIRED BY YOUR FAVORITES
+    </div>
+    <div class="row">
+        <div class="owl-carousel">
+            @foreach (var items in Model.GetProductsDto)
+            {
+                @if (items.Category.CategoryName == "Fashion")
+                {
+                    <div class="item">
+                        <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml" for="@items" />
+                    </div>
+                }
+            }
+        </div>
+    </div>
     <hr class="bg-secondary" />
 </section>
 
 <!-- DISCOVER -->
-<section class="py-7 py-md-9" style="margin-top:7%">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-4 align-self-center mx-auto">
-                <h2 class="mb-2">
-                    <em>Next</em> wave devices
-                </h2>
-                <p class="mb-0 text-secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus facilis velit, voluptatibus!
-                </p>
-            </div>
-            <div class="col-md-2 align-self-end">
-                <hr class="hr-sm bg-primary w-25" style="height:5px">
-                <p class="fs-lg  text-black mb-5 mb-md-0" style="font-weight:600;font-size:15px">
-                    Embrace the freedom of technology.
-                </p>
-            </div>
-            <div class="col-md-3">
-                <div class="media-decoration media-decoration-1 mb-5 mb-md-0 position-relative">
-                    <div class="square"></div>
+<section class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 mb-3 mb-lg-0">
+            <div class="card text-center" style="border:none">
+                <div class="card-body mt-auto">
                     <a href="#">
-                        <img class="media-decoration-img img-fluid" src="~/images/assets/smarphones/samsung.jpg" alt="...">
+                        <figure class="figure m-0">
+                            <img src="~/images/banner/appleWatch.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title-categories">Watch</h5>
+                            <span style="color:red">SERIES 9</span>
+                            <h6 class="card-title-text">Smarter.Brighter.Mightier.</h6>
+                            <p class="text-primary">Learn more<i class="bi bi-chevron-right" style="font-size:0.75em"></i></p>
+                        </div>
                     </a>
-                    <div class="square2"></div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
+        </div>
+        <div class="col-12 col-md-6 mb-3 mb-lg-0">
+            <div class="card text-center" style="border:none">
+                <div class="card-body mt-auto">
+                    <a href="#">
+                        <figure class="figure m-0">
+                            <img src="~/images/banner/applePods.jpg" class="figure-img img-fluid" alt="">
+                        </figure>
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title-categories">AirPods Pro</h5>
+                            <h6 class="card-title-text">Adaptive Audio. Now Playing.</h6>
+                            <p class="text-primary">Learn more<i class="bi bi-chevron-right" style="font-size:0.75em"></i></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
+
+@{
+    int countProducts = 0;
+}
 <section>
     <div class="container mt-4" style="color:gray">
-        <span style="font-family:Calibri; font-size:1.5rem">
-            DAILY OFFERS
-            <i class="fa-sharp fa-regular fa-clock"></i>
-        </span>
         <div class="row">
             @foreach (var items in Model.GetProductsDto)
             {
-                <div class="col-6 col-md-3 col-lg-3">
+                <div class="col-6 col-sm-2 col-md-4 col-lg-4">
                     <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
                 </div>
+                countProducts++;
+                if (countProducts >= 8) break;
             }
         </div>
     </div>
 </section>
 
+<section>
+    <div class="container mt-5 d-none  d-lg-block">
+        <div class="col-md-12 style_card_home">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card-body ps-5">
+                        <h6 class="card-title">Fast and secure payment</h6>
+                        <p style="font-weight:500; font-size:14px" class="card-subtitle mb-2 text-muted">All cards</>
+                        <p style="border-right: 1px solid lightgray; height: 12vh; margin-top:-29%"></p>
+                    </div>
+                </div>
+                <div class="col-md-1 pt-2 ps-5">
+                    <i class="bi bi-credit-card-2-back text-black" style="font-size:2.5rem"></i>
+                </div>
+                <div class="col-md-2">
+                    <div class="card-body">
+                        <h6 class="card-title">12x without interest</h6>
+                        <a href="#" style="font-weight:500; font-size:14px; color:blue" class="card-subtitle mb-2">See more</a>
+                        <p style="border-right: 1px solid lightgray; height: 12vh; margin-top:-42%"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-1 pt-2 ps-5">
+                    <i class="bi bi-wallet2 text-black" style="font-size:2.5rem"></i>
+                </div>
+                <div class="col-md-2">
+                    <div class="card-body">
+                        <h6 class="card-title">In the wallet</h6>
+                        <a href="#" style="font-weight:500; font-size:14px; color:blue" class="card-subtitle mb-2">Learn more</a>
+                        <p style="border-right: 1px solid lightgray; height: 12vh; margin-top:-42%"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-1 ps-5 pt-2">
+                    <i class="bi bi-qr-code text-black" style="font-size:2.5rem"></i>
+                </div>
+                <div class="col-md-2">
+                    <div class="card-body">
+                        <h6 class="card-title">By qr code</h6>
+                        <a href="#" style="font-weight:500; font-size:14px; color:blue" class="card-subtitle mb-2">See more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @section Scripts {
-
-    <!-- Owl-Carousel init -->
     <script>
         $(document).ready(function () {
-            $('.owl-carousel').owlCarousel({
+            $('#owl-carousel-categories').owlCarousel({
                 loop: true,
                 nav: true,
                 navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
                 responsive: {
                     0: {
-                        items: 1,
+                        items: 3,
                         nav: false
                     },
                     600: {
@@ -228,4 +299,5 @@
             });
         });
     </script>
+ 
 }

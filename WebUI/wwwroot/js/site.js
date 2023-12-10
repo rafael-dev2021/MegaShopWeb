@@ -24,71 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Carousel  script
-window.addEventListener('DOMContentLoaded', function () {
-    const carouselContainers = document.querySelectorAll('.carousel-container');
-    const prevButtons = document.querySelectorAll('.fa-chevron-left');
-    const nextButtons = document.querySelectorAll('.fa-chevron-right');
-    const imageWidths = Array.from(carouselContainers).map(container => container.offsetWidth);
-    const carouselsData = Array.from(carouselContainers).map((container, index) => ({
-        container,
-        currentPosition: 0,
-        imageWidth: imageWidths[index],
-        nextButton: nextButtons[index],
-        prevButton: prevButtons[index],
-    }));
-
-    carouselsData.forEach(carousel => {
-        const { container, nextButton, prevButton, imageWidth } = carousel;
-
-        prevButton.style.display = 'none'; // Hide the "Previous" button initially
-
-        prevButton.addEventListener('click', function () {
-            if (carousel.currentPosition !== 0) {
-                carousel.currentPosition += imageWidth;
-                if (carousel.currentPosition > 0) {
-                    carousel.currentPosition = 0;
-                }
-                carousel.container.style.transform = `translateX(${carousel.currentPosition}px)`;
-
-                showPrevButton();
-                showNextButton();
+// Espera até que o DOM esteja pronto para manipulação
+document.addEventListener('DOMContentLoaded', function () {
+    // Inicializa o carousel quando o DOM estiver pronto
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+        responsive: {
+            0: {
+                items: 2,
+                nav: false
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 4
             }
-
-            if (carousel.currentPosition === 0) {
-                hidePrevButton();
-            }
-        });
-
-        nextButton.addEventListener('click', function () {
-            const maxPosition = -imageWidth * (carousel.container.childElementCount - 1);
-
-            if (carousel.currentPosition > maxPosition) {
-                carousel.currentPosition -= imageWidth;
-                carousel.container.style.transform = `translateX(${carousel.currentPosition}px)`;
-
-                showPrevButton();
-
-                if (carousel.currentPosition <= maxPosition) {
-                    hideNextButton();
-                }
-            }
-        });
-
-        function showPrevButton() {
-            prevButton.style.display = 'block';
-        }
-
-        function hidePrevButton() {
-            prevButton.style.display = 'none';
-        }
-
-        function showNextButton() {
-            nextButton.style.display = 'block';
-        }
-
-        function hideNextButton() {
-            nextButton.style.display = 'none';
         }
     });
 });
+

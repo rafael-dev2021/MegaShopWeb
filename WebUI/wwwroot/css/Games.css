@@ -1,0 +1,65 @@
+﻿.img-fluid {
+    border-radius: 10px;
+}
+
+.col {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+    .col:hover .custom-button {
+        opacity: 1;
+    }
+
+    .col:hover .fa-arrow-right {
+        transform: translateX(5px);
+    }
+
+.fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.custom-buttom {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 25%;
+    font-weight: 600;
+}
+
+.custom-buttom_banner_console_and_game {
+    font-size: 1rem;
+    padding: 20px 49px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.fa-chevron-left, .fa-chevron-right {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    padding: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.fa-chevron-left {
+    left: -5px;
+}
+
+.fa-chevron-right {
+    right: -5px;
+}

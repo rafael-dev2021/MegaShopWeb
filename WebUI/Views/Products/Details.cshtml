@@ -58,8 +58,9 @@
         z-index: 9999;
         cursor: pointer;
     }
-    .card{
-       border-radius:10px;
+
+    .card {
+        border-radius: 10px;
     }
 </style>
 <section class="container">
@@ -96,16 +97,34 @@
                             <h6>Other purchase options</h6>
                             <partial name="~/Views/Products/DetailsPartial/_DetailsContainerBuyBoxTwoPartial.cshtml" for="@Model" />
                         </div>
+                        <div class="mt-3 d-md-none">
+                            <div class="mt-2" style="padding-left:4%;border:1px solid lightgray;border-color:transparent;background-color:rgba(220,220,220);border-radius:3px">
+                                <span style="color:black; font-weight:400">Stock available:</span>
+                                <span style="color:gray; font-size:15px">(@Model.ProductDto.Stock available)</span>
+                            </div>
+                            @if (Model.ProductDto.Stock > 0)
+                            {
+                                <div class="mt-2">
+                                    <a asp-controller="ShoppingCart" asp-action="AddToCartItem" asp-route-id=@Model.ProductDto.Id>
+                                        <span class="btn btn-primary btn-sm" style="width:100%">Buy now</span>
+                                    </a>
+
+                                    <a class="mt-2 mb-4 d-flex" asp-controller="ShoppingCart" asp-action="AddToCartItem" asp-route-id=@Model.ProductDto.Id>
+                                        <span class="btn btn-sm" style="width:100%;color:#3483fa;border-color:transparent;background-color:rgba(65,137,230,.15)">Add to cart</span>
+                                    </a>
+                                </div>
+                            }
+                        </div>
                     </div> <!-- end of middle column -->
 
-                    <hr class="mt-5" />
-                    <div class="col-md-12 mt-4 m-2">
+                    <div class="col-md-12 mt-4 m-2 d-none d-lg-block">
+                        <hr class="mt-5" />
                         <div>
                             <h4 style="font-family:Roboto">Customers who viewed this product also purchased</h4>
                         </div>
                         <partial name="~/Views/Products/DetailsPartial/_DetailsProductAlsoPurchasedPartial.cshtml" for="@Model" />
+                        <hr class="mt-5" />
                     </div>
-                    <hr class="mt-5" />
                     <span class="mt-3">
                         <a onclick="toggleDescription()" class="text-secondary" style="font-size:14px;cursor:pointer">
                             Show more information <i id="icon" class="fas fa-arrow-up"></i>
@@ -159,16 +178,16 @@
             <div class="col-md-8 mt-4">
                 <h5>People who viewed this product also bought</h5>
             </div>
-           @*  <div class="owl-carousel">
-                @foreach (var item in Model.ProductsDto)
-                {
-                     @if (@item.Category.CategoryName == "Offers")
-                {
-                    <div class="item">
-                        <partial name="~/Views/Shared/ProductsPartial/_OwlCarouselPartial.cshtml" for="@item" />
-                    </div>
-                    }
-                }
+            @*  <div class="owl-carousel">
+            @foreach (var item in Model.ProductsDto)
+            {
+            @if (@item.Category.CategoryName == "Offers")
+            {
+            <div class="item">
+            <partial name="~/Views/Shared/ProductsPartial/_OwlCarouselPartial.cshtml" for="@item" />
+            </div>
+            }
+            }
             </div> *@
         </div>
     </section>
@@ -194,7 +213,7 @@
         }
     </script>
     <script>
-        //<!-- See more button in the folder ~/Views/Shared/ProductsPartial/_ProductReviews.cshtml -->
+        // See more button in the folder ~/Views/Shared/ProductsPartial/_ProductReviews.cshtml
         document.getElementById("show-more-button").addEventListener("click", function () {
             var hiddenReviews = document.querySelectorAll(".hidden-review");
             hiddenReviews.forEach(function (review) {
@@ -273,9 +292,9 @@
         });
     </script>
     <script>
-        //  Customer image carousel script
+        //  See more in the folder ~/Views/Shared/ProductsPartial/_ProductReviewsAverageOpinions.cshtml
         window.addEventListener('DOMContentLoaded', function () {
-            const carouselContainer = document.querySelector('#product-carousel-container');
+            const carouselContainer = document.querySelector('#productReview-carousel-container');
             const prevButton = document.querySelector('#product-carousel-prev-btn');
             const nextButton = document.querySelector('#product-carousel-next-btn');
             const imageWidth = carouselContainer.offsetWidth;
@@ -369,28 +388,4 @@
             mainImage.style.opacity = '1';
         }
     </script>
-   @*  <script>
-        //<!-- Owl-Carousel init -->
-        $(document).ready(function () {
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                navText: ["<i class='fas fa-chevron-left button_fa_chevron_left_and_right'></i>", "<i class='fas fa-chevron-right button_fa_chevron_left_and_right'></i>"],
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: false
-                    },
-                    600: {
-                        items: 3,
-                        nav: false
-                    },
-                    1000: {
-                        items: 5
-                    }
-                }
-            });
-        });
-    </script> *@
 }

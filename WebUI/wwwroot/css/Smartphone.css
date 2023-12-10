@@ -104,22 +104,11 @@ a {
         color: black;
     }
 
-.button_fa_chevron_left_and_right {
-    font-size: 25px;
-    color: gray;
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.7s ease-in-out;
-    transform-origin: left;
-}
-
 .fa-chevron-left, .fa-chevron-right {
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
-    padding: 8px;
+    padding: 12px;
     background-color: #ffffff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border: none;
@@ -129,9 +118,9 @@ a {
 }
 
 .fa-chevron-left {
-    left: 5px;
+    left: -5px;
 }
 
 .fa-chevron-right {
-    right: 5px;
+    right: -5px;
 }
