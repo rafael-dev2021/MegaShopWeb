@@ -1,3 +1,4 @@
+using Domain.Identity.Interfaces;
 using Infra_Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,14 +8,18 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDataBaseDependecyInjection(builder.Configuration);
 //domain
 builder.Services.AddProjectDomainDependecyInjection();
-builder.Services.AddProjectDomainTechnologyDependecyInjection();
-builder.Services.AddProjectDomainFashionDependecyInjection();
+builder.Services.AddProjectDomainTechnologyDI();
+builder.Services.AddProjectDomainFashionDI();
+//Identity
+builder.Services.AddIdentityRulesDependecyInjection();
 //application
-builder.Services.AddProjectApplicationFashionDependecyInjection();
-builder.Services.AddProjectApplicationTechnologyDependecyInjection();
+builder.Services.AddApplicationFashionDI();
+builder.Services.AddApplicationTechnologyDI();
 builder.Services.AddProjectApplicationDependecyInjection();
 //Mappings
-builder.Services.AddApplicationMappingsProfile();
+builder.Services.AddDomainEntitiesToApplicationMappingProfile();
+//CultureInfo
+builder.Services.AddEnUSCultureInfoDI();
 
 builder.Services.AddSession();
 builder.Services.AddMemoryCache();
@@ -31,6 +36,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+await SeedUsersRoles(app);
 
 app.UseRequestLocalization();
 app.UseHttpsRedirection();
@@ -62,3 +68,11 @@ app.MapControllerRoute(
 
 app.Run();
 
+async Task SeedUsersRoles(IApplicationBuilder builder)
+{
+    var scope = builder.ApplicationServices.CreateScope();
+    var result = scope.ServiceProvider.GetService<ISeedUserRoleRepository>();
+
+    await result.SeedRoleAsync();
+    await result.SeedUserAsync();
+}

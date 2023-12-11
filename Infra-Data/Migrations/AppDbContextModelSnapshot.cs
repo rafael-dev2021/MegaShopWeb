@@ -48,21 +48,136 @@ namespace Infra_Data.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryImage = "https://images.unsplash.com/photo-1569040029205-a03a8b455808?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            CategoryImage = "https://i5.walmartimages.com/seo/Straight-Talk-Apple-iPhone-12-64GB-Black-Prepaid-Smartphone-Locked-to-Straight-Talk_66b2853b-6cb5-4f20-b73a-b60b39b6de44.6b3bf83a920058a47342318925f1dc2b.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
                             CategoryName = "Smartphones"
                         },
                         new
                         {
                             Id = 2,
-                            CategoryImage = "https://images.unsplash.com/photo-1537832816519-689ad163238b?q=80&w=1718&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            CategoryImage = "https://i5.walmartimages.com/seo/Reebok-Women-s-Flight-Jogger-with-Cargo-Pockets_eefde8e0-c787-48fc-962e-2d2d406391a1.70bc369116e0b1954b5eee14c1a67ea7.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
                             CategoryName = "Fashion"
                         },
                         new
                         {
                             Id = 3,
-                            CategoryImage = "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1547&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            CategoryImage = "https://i5.walmartimages.com/seo/Xbox-Series-X-Video-Game-Console-Black_9f8c06f5-7953-426d-9b68-ab914839cef4.5f15be430800ce4d7c3bb5694d4ab798.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
                             CategoryName = "Games"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryImage = "https://i5.walmartimages.com/seo/Carote-Nonstick-Pots-and-Pans-Set-10-Pcs-Granite-Stone-Kitchen-Cookware-Sets-White_efe69ee7-6273-4cbe-a436-149b7b1d0d0c.a2320ff6519d540c3df326c48fdef207.png?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+                            CategoryName = "Kitchen"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryImage = "https://i5.walmartimages.com/seo/Friendship-Bracelet-Making-Kit-Girls-DIY-Craft-Kits-Toys-Cool-Arts-Crafts-Teen-Travel-Activity-Set-Gifts-Age-6-7-8-9-10-11-12-Year-Old_1c074238-f765-4bc9-bcd4-6aec3c63e831.61da6ea6dec87564dbe3452ae6d55039.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+                            CategoryName = "Kids"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryImage = "https://i5.walmartimages.com/seo/Acer-Nitro-31-5-1500R-Curved-Full-HD-1920-x-1080-Gaming-Monitor-Black-ED320QR-S3biipx_026e53ed-7591-4f39-afb1-d5575a7fc06a.fae36db73738179d935b7d5e64a5be51.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+                            CategoryName = "Electronic"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryImage = "https://i5.walmartimages.com/seo/Intex-Corner-Sofa_b6271dd9-4704-436a-aa35-36293fa7482c_1.887862bad366185f36f3793d387c450e.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+                            CategoryName = "Furniture"
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.Deliveries.DeliveryAddress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AddressType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complement")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsBillingAddress")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Neighborhood")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserGenericId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserGenericId");
+
+                    b.ToTable("DeliveryAddress");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Payments.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
+
+                    b.Property<int>("EPaymentMethod")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EPaymentStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ProcessingDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Payments");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Payment");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Domain.Entities.Product", b =>
@@ -146,7 +261,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 1, 22, 14, 17, 141, DateTimeKind.Local).AddTicks(2222)
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6382)
                         },
                         new
                         {
@@ -155,7 +270,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 1, 22, 14, 17, 141, DateTimeKind.Local).AddTicks(2236)
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6398)
                         },
                         new
                         {
@@ -164,8 +279,362 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductReviewId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 12, 1, 22, 14, 17, 141, DateTimeKind.Local).AddTicks(2237)
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6399)
+                        },
+                        new
+                        {
+                            ReviewId = 4,
+                            Comment = "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
+                            ProductReviewId = 2,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6400)
+                        },
+                        new
+                        {
+                            ReviewId = 5,
+                            Comment = "Excellent, after all it is an Apple product. Worth every penny given ❤.",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
+                            ProductReviewId = 3,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6401)
+                        },
+                        new
+                        {
+                            ReviewId = 6,
+                            Comment = "The best.",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
+                            ProductReviewId = 4,
+                            Rating = 4,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6401)
+                        },
+                        new
+                        {
+                            ReviewId = 7,
+                            Comment = "New original product you can buy without fear!.",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
+                            ProductReviewId = 5,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6402)
+                        },
+                        new
+                        {
+                            ReviewId = 8,
+                            Comment = "Excellent product, came sealed.",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
+                            ProductReviewId = 5,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6403)
+                        },
+                        new
+                        {
+                            ReviewId = 9,
+                            Comment = "Perfect product.",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
+                            ProductReviewId = 6,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6404)
+                        },
+                        new
+                        {
+                            ReviewId = 10,
+                            Comment = "The best product, very good!",
+                            Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
+                            ProductReviewId = 6,
+                            Rating = 4,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6405)
+                        },
+                        new
+                        {
+                            ReviewId = 11,
+                            Comment = "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.",
+                            Image = "",
+                            ProductReviewId = 7,
+                            Rating = 4,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6405)
+                        },
+                        new
+                        {
+                            ReviewId = 12,
+                            Comment = "It was small on me. I want to return it. To get my refund.",
+                            Image = "",
+                            ProductReviewId = 7,
+                            Rating = 1,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6420)
+                        },
+                        new
+                        {
+                            ReviewId = 14,
+                            Comment = "Excellent product.",
+                            Image = "",
+                            ProductReviewId = 9,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6429)
+                        },
+                        new
+                        {
+                            ReviewId = 15,
+                            Comment = "I liked the original, it has to be laced but it's perfect.",
+                            Image = "",
+                            ProductReviewId = 10,
+                            Rating = 5,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6430)
+                        },
+                        new
+                        {
+                            ReviewId = 16,
+                            Comment = "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.",
+                            Image = "",
+                            ProductReviewId = 10,
+                            Rating = 4,
+                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6431)
                         });
+                });
+
+            modelBuilder.Entity("Infra_Data.Identity.UserGeneric", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DefaultPaymentMethod")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsSubscribedToNewsletter")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SSN")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.Payments.CreditCards.CreditCard", b =>
+                {
+                    b.HasBaseType("Domain.Entities.Payments.Payment");
+
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
+
+                    b.Property<string>("CardHolderName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasMaxLength(19)
+                        .HasColumnType("nvarchar(19)");
+
+                    b.Property<string>("ExpirationDate")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<Guid>("Reference")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasDiscriminator().HasValue("CreditCard");
                 });
 
             modelBuilder.Entity("Domain.Entities.Products.Fashion.Shoes.Shoes", b =>
@@ -177,10 +646,18 @@ namespace Infra_Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 2,
+                            Id = 9,
                             CategoryId = 2,
-                            Description = "Buoyed to the comfort you've come to trust, the Air Max Excee meets the needs of your 9 to 5 while keeping your outfit on-point with rich textures. These sneakers deliver just what you're looking for—soft cushioning that's easy to style.\r\n\r\n",
-                            Name = "Nike Air Max Excee",
+                            Description = "Buoyed to the comfort you've come to trust, the Air Max Excee meets the needs of your 9 to 5 while keeping your outfit on-point with rich textures. These sneakers deliver just what you're looking for—soft cushioning that's easy to style.",
+                            Name = "Nike Streakfly",
+                            Stock = 15
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 2,
+                            Description = "The Suede hit the scene in 1968 and has been changing the game ever since. It’s been worn by icons of every generation, and it’s stayed classic through it all. Instantly recognizable and constantly reinvented, Suede’s legacy continues to grow and be legitimized by the authentic and expressive individuals that embrace the iconic shoe. Be apart of the history of Suede.",
+                            Name = "Suede Classic XXI Sneakers",
                             Stock = 15
                         });
                 });
@@ -194,11 +671,19 @@ namespace Infra_Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 3,
+                            Id = 7,
                             CategoryId = 2,
                             Description = "The Nike Classic Swoosh Futura medium support women's workout top offers long-lasting comfort during training with sweat-wicking fabric and a compression fit.",
                             Name = "Top Nike Swoosh Woman",
                             Stock = 5
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 2,
+                            Description = "Fresh and full of life, this Adicolor Firebird track jacket celebrates the power and authenticity of adidas' legendary DNA.",
+                            Name = "Adicolor classics firebird track jacket",
+                            Stock = 8
                         });
                 });
 
@@ -211,11 +696,19 @@ namespace Infra_Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 4,
+                            Id = 5,
                             CategoryId = 3,
                             Description = "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                             Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
                             Stock = 10
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 3,
+                            Description = "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.",
+                            Name = "God of War Ragnarök Standard Edition Sony PS5 Physical",
+                            Stock = 15
                         });
                 });
 
@@ -230,10 +723,41 @@ namespace Infra_Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Description = "Introducing Galaxy S23 Ultra - a smartphone that takes innovation to new heights. With its crystal-clear camera resolution and stunning Night Mode powered by Nightography, you can capture and share unforgettable moments, regardless of lighting conditions. Powered by the fastest Snapdragon processor, multitasking and intense gaming become seamless. Enjoy the convenience of a built-in S Pen, allowing you to write, sketch, edit, and share from anywhere. All of this on a large display designed for gaming, streaming, creating, and more. Elevate your everyday experience with a device that's truly extraordinary and share the epic with Galaxy S23 Ultra.",
-                            Name = "Galaxy S23 Ultra 512GB Unlocked - Black",
+                            Description = "Maximum security so that only you can access your team. You can choose between the fingerprint sensor to activate your phone with a tap, or facial recognition that allows you to unlock up to 30% faster.",
+                            Name = "Samsung Galaxy S23 Ultra 512GB Unlocked - Black",
                             Stock = 20
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            Description = "Maximum security so that only you can access your team. You can choose between the fingerprint sensor to activate your phone with a tap, or facial recognition that allows you to unlock up to 30% faster.",
+                            Name = "Samsung Galaxy S23 Ultra 256GB - Violet",
+                            Stock = 25
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            Description = "FORGED FROM TITANIUM — iPhone 15 Pro features a rugged, lightweight design made from aerospace-grade titanium. On the back, textured matte glass and, on the front, Ceramic Shield, more resistant than any smartphone glass. It's also tough against splashes, water, and dust.",
+                            Name = "Apple iPhone 15 Pro (512 GB) - Titanium Blue",
+                            Stock = 15
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            Description = "FORGED FROM TITANIUM — iPhone 15 Pro features a rugged, lightweight design made from aerospace-grade titanium. On the back, textured matte glass and, on the front, Ceramic Shield, more resistant than any smartphone glass. It's also tough against splashes, water, and dust.",
+                            Name = "Apple iPhone 15 Pro (128 GB) - Titanium White",
+                            Stock = 10
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.Deliveries.DeliveryAddress", b =>
+                {
+                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                        .WithMany("DeliveryAddress")
+                        .HasForeignKey("UserGenericId");
                 });
 
             modelBuilder.Entity("Domain.Entities.Product", b =>
@@ -256,6 +780,57 @@ namespace Infra_Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Entities.Products.Fashion.Shoes.Shoes", b =>
@@ -283,9 +858,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
                                     AdjustmentTypes = "Shoelaces",
-                                    TypeOfPipe = ""
+                                    TypeOfPipe = "Middle pipe"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    AdjustmentTypes = "Shoelaces",
+                                    TypeOfPipe = "Middle pipe"
                                 });
                         });
 
@@ -320,11 +901,19 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
                                     Age = "Adult",
-                                    Color = "Black",
+                                    Color = "Pink/Gold and Black",
                                     Gender = "Woman",
                                     Version = "two"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    Age = "Adult",
+                                    Color = "Black",
+                                    Gender = "Man",
+                                    Version = "One"
                                 });
                         });
 
@@ -355,10 +944,17 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
-                                    InteriorMaterials = "",
-                                    MaterialsFromAbroad = "",
-                                    SoleMaterials = ""
+                                    Id = 9,
+                                    InteriorMaterials = "Cotton",
+                                    MaterialsFromAbroad = "Leather",
+                                    SoleMaterials = "Rubber"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    InteriorMaterials = "Cotton",
+                                    MaterialsFromAbroad = "Leather",
+                                    SoleMaterials = "Rubber"
                                 });
                         });
 
@@ -389,7 +985,14 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
+                                    RecommendedSports = "skateboarding/casual",
+                                    Size = "7.5",
+                                    Style = "Urban"
+                                },
+                                new
+                                {
+                                    Id = 10,
                                     RecommendedSports = "skateboarding/casual",
                                     Size = "7.5",
                                     Style = "Urban"
@@ -423,9 +1026,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
                                     ReleaseMonth = "June",
                                     ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    ReleaseMonth = "October",
+                                    ReleaseYear = "2022"
                                 });
                         });
 
@@ -456,8 +1065,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
                                     IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    IsBestSeller = true,
                                     IsDailyOffer = false,
                                     IsFavorite = true
                                 });
@@ -502,11 +1118,19 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
-                                    ImageFirst = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f0f9838c-a13f-4a16-9d6a-045b8bcd4663/air-max-excee-womens-shoes-jKsgMj.png",
-                                    ImageSecond = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33f14890-9ba3-4ca0-90b6-f3a099620840/air-max-excee-womens-shoes-jKsgMj.png",
-                                    ImageThird = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/14b801db-a5c6-417b-8fd3-2a630291e3d9/air-max-excee-womens-shoes-jKsgMj.png",
-                                    MainImage = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4ff2fe4a-4f74-4189-82f0-3ea780f9389d/air-max-excee-womens-shoes-jKsgMj.png"
+                                    Id = 9,
+                                    ImageFirst = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97fb810e-5803-43f5-98ac-67c8763deb15/streakfly-road-racing-shoes-8rTxtR.png",
+                                    ImageSecond = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d25c69b-b08b-4cc7-b97d-8384e196951f/streakfly-road-racing-shoes-8rTxtR.png",
+                                    ImageThird = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54e264aa-a85f-4152-b409-ed0372924d81/streakfly-road-racing-shoes-8rTxtR.png",
+                                    MainImage = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/24d5a5ec-db76-4512-99a8-36231b9a9b41/streakfly-road-racing-shoes-8rTxtR.png"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    ImageFirst = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod02/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers",
+                                    ImageSecond = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod03/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers",
+                                    ImageThird = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/bv/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers",
+                                    MainImage = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/sv01/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers"
                                 });
                         });
 
@@ -533,9 +1157,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
+                                    HistoryPrice = 95.0m,
+                                    Price = 71.99m
+                                },
+                                new
+                                {
+                                    Id = 10,
                                     HistoryPrice = 0.0m,
-                                    Price = 95.99m
+                                    Price = 75.99m
                                 });
                         });
 
@@ -559,8 +1189,8 @@ namespace Infra_Data.Migrations
                             b1.Property<string>("ProductModel")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("ProductType")
                                 .IsRequired()
@@ -583,10 +1213,19 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
                                     ProductBrand = "Nike",
                                     ProductLine = "SB",
                                     ProductModel = "DM3493",
+                                    ProductType = "Shoes",
+                                    ProductWeight = "368,5 g"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    ProductBrand = "Puma",
+                                    ProductLine = "SB",
+                                    ProductModel = "Basketball Classic XXI sneakers",
                                     ProductType = "Shoes",
                                     ProductWeight = "368,5 g"
                                 });
@@ -619,7 +1258,13 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 2,
+                                    Id = 9,
+                                    WarrantyInformation = "45-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 10,
                                     WarrantyInformation = "45-Day Limited Warranty",
                                     WarrantyLength = "1-year warranty"
                                 });
@@ -693,11 +1338,20 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     Age = "Adult",
                                     FabricDesign = "Straight",
                                     Gender = "Woman",
                                     Size = "S",
+                                    TypeOfClothing = "T-shirt"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    Age = "Adult",
+                                    FabricDesign = "Straight",
+                                    Gender = "Woman",
+                                    Size = "XS",
                                     TypeOfClothing = "T-shirt"
                                 });
                         });
@@ -750,9 +1404,22 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     Composition = "Polyester",
                                     ItsSporty = false,
+                                    KindOfFabric = "Dry",
+                                    MainMaterial = "Polyester",
+                                    RecommendedUses = "Casual",
+                                    SleeveType = "Like",
+                                    TypeOfCollar = "Round neck",
+                                    UnitsPerKit = 1,
+                                    WithRecycledMaterials = false
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    Composition = "Polyester",
+                                    ItsSporty = true,
                                     KindOfFabric = "Dry",
                                     MainMaterial = "Polyester",
                                     RecommendedUses = "Casual",
@@ -790,8 +1457,14 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     ReleaseMonth = "June",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    ReleaseMonth = "March",
                                     ReleaseYear = "2023"
                                 });
                         });
@@ -823,10 +1496,17 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     IsBestSeller = true,
                                     IsDailyOffer = false,
                                     IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = false
                                 });
                         });
 
@@ -869,11 +1549,19 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     ImageFirst = "https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg",
                                     ImageSecond = "https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg",
                                     ImageThird = "https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg",
                                     MainImage = "https://imgnike-a.akamaihd.net/768x768/002897ID.jpg"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    ImageFirst = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3cae025992434e889496afcd002c97ae_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_42_detail.jpg",
+                                    ImageSecond = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c6f0e6def4bd4eefa0bfafcd002c7094_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_21_model.jpg",
+                                    ImageThird = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a915172e29f24ce4b34bafcd002c78dc_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_23_hover_model.jpg",
+                                    MainImage = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5757a66a549439cbac6afcd002ca57f_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_01_laydown.jpg"
                                 });
                         });
 
@@ -900,9 +1588,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     HistoryPrice = 0.0m,
                                     Price = 16.99m
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    HistoryPrice = 80.0m,
+                                    Price = 64.99m
                                 });
                         });
 
@@ -926,8 +1620,8 @@ namespace Infra_Data.Migrations
                             b1.Property<string>("ProductModel")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("ProductType")
                                 .IsRequired()
@@ -950,12 +1644,21 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
                                     ProductBrand = "Nike",
                                     ProductLine = "",
-                                    ProductModel = "T-Shirt",
+                                    ProductModel = "Nike T-Shirt",
                                     ProductType = "T-Shirt",
                                     ProductWeight = "200 g"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    ProductBrand = "Adidas",
+                                    ProductLine = "",
+                                    ProductModel = "JACKET Adidas",
+                                    ProductType = "T-Shirt",
+                                    ProductWeight = "350 g"
                                 });
                         });
 
@@ -986,7 +1689,13 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 3,
+                                    Id = 7,
+                                    WarrantyInformation = "15-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 8,
                                     WarrantyInformation = "15-Day Limited Warranty",
                                     WarrantyLength = "1-year warranty"
                                 });
@@ -1046,9 +1755,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
                                     ReleaseMonth = "June",
                                     ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    ReleaseMonth = "July",
+                                    ReleaseYear = "2022"
                                 });
                         });
 
@@ -1079,10 +1794,17 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
                                     IsBestSeller = true,
                                     IsDailyOffer = false,
-                                    IsFavorite = false
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    IsBestSeller = true,
+                                    IsDailyOffer = false,
+                                    IsFavorite = true
                                 });
                         });
 
@@ -1125,11 +1847,19 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
                                     ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp",
                                     ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp",
                                     ImageThird = "https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp",
                                     MainImage = "https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp",
+                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp",
+                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp",
+                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp"
                                 });
                         });
 
@@ -1156,9 +1886,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
                                     HistoryPrice = 0.0m,
                                     Price = 30.99m
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    HistoryPrice = 0.0m,
+                                    Price = 38.99m
                                 });
                         });
 
@@ -1182,8 +1918,8 @@ namespace Infra_Data.Migrations
                             b1.Property<string>("ProductModel")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("ProductType")
                                 .IsRequired()
@@ -1206,7 +1942,16 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
+                                    ProductBrand = "Sony",
+                                    ProductLine = "PS5",
+                                    ProductModel = "Sony",
+                                    ProductType = "Video game",
+                                    ProductWeight = "100 g"
+                                },
+                                new
+                                {
+                                    Id = 6,
                                     ProductBrand = "Sony",
                                     ProductLine = "PS5",
                                     ProductModel = "Sony",
@@ -1242,7 +1987,13 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 6,
                                     WarrantyInformation = "30-Day Limited Warranty",
                                     WarrantyLength = "1-year warranty"
                                 });
@@ -1299,12 +2050,25 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
                                     Collection = "Spider man",
                                     Developers = "Insomniac Games",
                                     Edition = "Standard Edition",
                                     GameRating = "T",
                                     GameTitle = "Marvel's Spider-Man: Miles Morales",
+                                    Genres = "Action",
+                                    Platform = "PS5",
+                                    Publishers = "Sony",
+                                    Saga = "30-Day Limited Warranty"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    Collection = "God of War",
+                                    Developers = "SIE Santa Monica Studio",
+                                    Edition = "Standard Edition",
+                                    GameRating = "M",
+                                    GameTitle = "God of War Ragnarök",
                                     Genres = "Action",
                                     Platform = "PS5",
                                     Publishers = "Sony",
@@ -1342,7 +2106,15 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
+                                    MinimumGraphicsProcessorsRequired = "V",
+                                    MinimumOperatingSystemsRequired = "PS5",
+                                    MinimumProcessorsRequired = "Ps5",
+                                    MinimumRAMRequirement = 60
+                                },
+                                new
+                                {
+                                    Id = 6,
                                     MinimumGraphicsProcessorsRequired = "V",
                                     MinimumOperatingSystemsRequired = "PS5",
                                     MinimumProcessorsRequired = "Ps5",
@@ -1402,7 +2174,7 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 4,
+                                    Id = 5,
                                     AudioLanguages = "English",
                                     FileSize = 60,
                                     Format = "Physical",
@@ -1414,6 +2186,21 @@ namespace Infra_Data.Migrations
                                     RequiresPeripheral = false,
                                     ScreenLanguages = "English, Portuguese",
                                     SubtitleLanguages = "English, Portuguese"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    AudioLanguages = "English, Spanish, Portuguese",
+                                    FileSize = 91,
+                                    Format = "Physical",
+                                    ItsMultiplayer = false,
+                                    ItsOffline = true,
+                                    ItsOnline = true,
+                                    MaximumNumberOfOfflinePlayers = 1,
+                                    MaximumNumberOfOnlinePlayers = 1,
+                                    RequiresPeripheral = false,
+                                    ScreenLanguages = "Spanish, English, Portuguese",
+                                    SubtitleLanguages = "Spanish, English, Portuguese"
                                 });
                         });
 
@@ -1477,6 +2264,27 @@ namespace Infra_Data.Migrations
                                     BatteryCapacitymAh = 5000,
                                     BatteryType = "Li-Ion",
                                     IsBatteryRemovable = false
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    BatteryCapacitymAh = 5000,
+                                    BatteryType = "Lithium Ion",
+                                    IsBatteryRemovable = false
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    BatteryCapacitymAh = 5000,
+                                    BatteryType = "Lithium Ion",
+                                    IsBatteryRemovable = false
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    BatteryCapacitymAh = 5000,
+                                    BatteryType = "Lithium Ion",
+                                    IsBatteryRemovable = false
                                 });
                         });
 
@@ -1497,8 +2305,8 @@ namespace Infra_Data.Migrations
 
                             b1.Property<string>("SelfieCameraFeature")
                                 .IsRequired()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)");
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
 
                             b1.Property<string>("SelfieCameraSpec")
                                 .IsRequired()
@@ -1517,9 +2325,33 @@ namespace Infra_Data.Migrations
                                 {
                                     Id = 1,
                                     MainCameraFeature = "(Quad) 200 MP + 10 MP + 10 MP + 12 MP",
-                                    MainCameraSpec = "200 MPx",
+                                    MainCameraSpec = "200 Mpx",
                                     SelfieCameraFeature = "LED flash, auto-HDR, panorama",
-                                    SelfieCameraSpec = "12 MP"
+                                    SelfieCameraSpec = "12 Mpx"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    MainCameraFeature = "200 Mpx/12 Mpx/10 Mpx/10 Mpx",
+                                    MainCameraSpec = "200 Mpx",
+                                    SelfieCameraFeature = "LED flash, auto-HDR, panorama",
+                                    SelfieCameraSpec = "12 Mpx"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    MainCameraFeature = "48 Mpx/12 Mpx/12 Mpx",
+                                    MainCameraSpec = "48 Mpx",
+                                    SelfieCameraFeature = "Photonic engine, Deep fusion, Smart HDR 4, Portrait mode, Portrait lighting with six effects,",
+                                    SelfieCameraSpec = "12 Mpx"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    MainCameraFeature = "48 Mpx/12 Mpx/12 Mpx",
+                                    MainCameraSpec = "48 Mpx",
+                                    SelfieCameraFeature = "Photonic engine, Deep fusion, Smart HDR 4, Portrait mode, Portrait lighting with six effects,",
+                                    SelfieCameraSpec = "12 Mpx"
                                 });
                         });
 
@@ -1548,9 +2380,30 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 1,
-                                    HeightInche = 6.4299999999999997,
-                                    ThicknessInche = 0.34999999999999998,
-                                    WidthInche = 3.0699999999999998
+                                    HeightInche = 163.40000000000001,
+                                    ThicknessInche = 8.9000000000000004,
+                                    WidthInche = 78.099999999999994
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    HeightInche = 163.40000000000001,
+                                    ThicknessInche = 8.9000000000000004,
+                                    WidthInche = 78.099999999999994
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    HeightInche = 160.90000000000001,
+                                    ThicknessInche = 7.7999999999999998,
+                                    WidthInche = 77.799999999999997
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    HeightInche = 160.90000000000001,
+                                    ThicknessInche = 7.7999999999999998,
+                                    WidthInche = 77.799999999999997
                                 });
                         });
 
@@ -1589,9 +2442,33 @@ namespace Infra_Data.Migrations
                                 {
                                     Id = 1,
                                     DisplayProtection = "Corning Gorilla Glass Victus 2",
-                                    DisplayResolution = "1440 x 3088 pixels",
+                                    DisplayResolution = "1440 px x 3088 px",
+                                    DisplaySizeInche = 6.7999999999999998,
+                                    DisplayType = "Dynamic AMOLED 2X 120 Hz"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    DisplayProtection = "Corning Gorilla Glass Victus 2",
+                                    DisplayResolution = "1440 px x 3088 px",
                                     DisplaySizeInche = 6.7999999999999998,
                                     DisplayType = "Dynamic AMOLED 2X"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    DisplayProtection = "Corning Gorilla Glass Victus 2",
+                                    DisplayResolution = "2556 px x 1179 px",
+                                    DisplaySizeInche = 6.0999999999999996,
+                                    DisplayType = "Super Retina XDR"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    DisplayProtection = "Corning Gorilla Glass Victus 2",
+                                    DisplayResolution = "2556 px x 1179 px",
+                                    DisplaySizeInche = 6.0999999999999996,
+                                    DisplayType = "Super Retina XDR"
                                 });
                         });
 
@@ -1635,6 +2512,30 @@ namespace Infra_Data.Migrations
                                     Color = "Phantom Black",
                                     ManufacturerPartNumber = "SM-S918UZKFXAA",
                                     VirtualAssistant = "Samsung Bixby,Alexa,Google Assistant"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    CellNetworkTechnology = "WCDMA (UMTS) / GSM / 5G",
+                                    Color = "Violet",
+                                    ManufacturerPartNumber = "SM-B518UZKFX22",
+                                    VirtualAssistant = "Samsung Bixby,Alexa,Google Assistant"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    CellNetworkTechnology = "WCDMA (UMTS) / GSM / 5G",
+                                    Color = "Titanium Blue",
+                                    ManufacturerPartNumber = "AA-12SF7832SD301EW3",
+                                    VirtualAssistant = "Apple Watch,HomePod,Siri Assistant"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    CellNetworkTechnology = "WCDMA (UMTS) / GSM / 5G",
+                                    Color = "Titanium White",
+                                    ManufacturerPartNumber = "AA-12VD783HR230SW19",
+                                    VirtualAssistant = "Apple Watch,HomePod,Siri Assistant"
                                 });
                         });
 
@@ -1660,8 +2561,26 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 1,
-                                    RAMGB = 16,
+                                    RAMGB = 12,
                                     StorageGB = 512
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    RAMGB = 8,
+                                    StorageGB = 258
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    RAMGB = 8,
+                                    StorageGB = 512
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    RAMGB = 8,
+                                    StorageGB = 128
                                 });
                         });
 
@@ -1672,8 +2591,8 @@ namespace Infra_Data.Migrations
 
                             b1.Property<string>("CPU")
                                 .IsRequired()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("Chipset")
                                 .IsRequired()
@@ -1682,8 +2601,8 @@ namespace Infra_Data.Migrations
 
                             b1.Property<string>("GPU")
                                 .IsRequired()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("OperatingSystem")
                                 .IsRequired()
@@ -1705,6 +2624,30 @@ namespace Infra_Data.Migrations
                                     Chipset = "Qualcomm SM8550-AC Snapdragon 8 Gen 2",
                                     GPU = "Adreno 740",
                                     OperatingSystem = "Android"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    CPU = "Octa-Core of up to 3.36GHz",
+                                    Chipset = "Qualcomm SM8550-AC Snapdragon 8 Gen 2",
+                                    GPU = "Adreno 740",
+                                    OperatingSystem = "Android"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    CPU = "Chip A16 Bionic",
+                                    Chipset = "Apple A17 Pro",
+                                    GPU = "5 cores",
+                                    OperatingSystem = "iOS"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    CPU = "Chip A16 Bionic",
+                                    Chipset = "Apple A17 Pro",
+                                    GPU = "5 cores",
+                                    OperatingSystem = "iOS"
                                 });
                         });
 
@@ -1738,6 +2681,24 @@ namespace Infra_Data.Migrations
                                     Id = 1,
                                     ReleaseMonth = "June",
                                     ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    ReleaseMonth = "August",
+                                    ReleaseYear = "2022"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    ReleaseMonth = "Februery",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    ReleaseMonth = "March",
+                                    ReleaseYear = "2023"
                                 });
                         });
 
@@ -1769,6 +2730,27 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 1,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = false
+                                },
+                                new
+                                {
+                                    Id = 4,
                                     IsBestSeller = false,
                                     IsDailyOffer = true,
                                     IsFavorite = true
@@ -1819,6 +2801,30 @@ namespace Infra_Data.Migrations
                                     ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_808604-MLU70400221716_072023-O.webp",
                                     ImageThird = "https://http2.mlstatic.com/D_NQ_NP_827555-MLU70400783806_072023-O.webp",
                                     MainImage = "https://http2.mlstatic.com/D_NQ_NP_856672-MLU70401529412_072023-O.webp"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_690989-MLU72932986551_112023-O.webp",
+                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_612226-MLU72932986555_112023-O.webp",
+                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_683459-MLU72932986549_112023-O.webp",
+                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_683947-MLU73106437489_112023-O.webp"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp",
+                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_829742-MLA71783365702_092023-O.webp",
+                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_715495-MLA71783365704_092023-O.webps",
+                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp",
+                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_658271-MLA71782871766_092023-O.webp",
+                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_998898-MLA71782901894_092023-O.webp",
+                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp"
                                 });
                         });
 
@@ -1846,8 +2852,26 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 1,
-                                    HistoryPrice = 6199.99m,
-                                    Price = 4479.99m
+                                    HistoryPrice = 2299.99m,
+                                    Price = 2179.99m
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    HistoryPrice = 2199.99m,
+                                    Price = 1624.99m
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    HistoryPrice = 2199.99m,
+                                    Price = 2035.99m
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    HistoryPrice = 1799.99m,
+                                    Price = 1624.99m
                                 });
                         });
 
@@ -1871,8 +2895,8 @@ namespace Infra_Data.Migrations
                             b1.Property<string>("ProductModel")
                                 .IsRequired()
                                 .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("ProductType")
                                 .IsRequired()
@@ -1901,6 +2925,33 @@ namespace Infra_Data.Migrations
                                     ProductModel = "S23 Ultra",
                                     ProductType = "Smartphone",
                                     ProductWeight = "233 g"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    ProductBrand = "Samsung",
+                                    ProductLine = "Galaxy S",
+                                    ProductModel = "S23 Ultra",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "235 g"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    ProductBrand = "Apple",
+                                    ProductLine = "iPhone",
+                                    ProductModel = "iPhone 15 Pro",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "235 g"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    ProductBrand = "Apple",
+                                    ProductLine = "iPhone",
+                                    ProductModel = "iPhone 15 Pro",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "235 g"
                                 });
                         });
 
@@ -1932,6 +2983,24 @@ namespace Infra_Data.Migrations
                                 new
                                 {
                                     Id = 1,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 4,
                                     WarrantyInformation = "30-Day Limited Warranty",
                                     WarrantyLength = "1-year warranty"
                                 });
@@ -1985,6 +3054,11 @@ namespace Infra_Data.Migrations
             modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("Infra_Data.Identity.UserGeneric", b =>
+                {
+                    b.Navigation("DeliveryAddress");
                 });
 #pragma warning restore 612, 618
         }

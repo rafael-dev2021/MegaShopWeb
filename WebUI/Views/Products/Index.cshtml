@@ -183,7 +183,6 @@
 
             if (minPrice <= 0) {
                 minPriceInput.classList.add('is-invalid');
-                minPriceInput.nextElementSibling.textContent = 'Por favor, digite um valor mínimo positivo.';
                 event.preventDefault(); // Evita que o formulário seja submetido se os valores forem inválidos
                 return;
             } else {
@@ -193,7 +192,6 @@
 
             if (maxPrice <= 0) {
                 maxPriceInput.classList.add('is-invalid');
-                maxPriceInput.nextElementSibling.textContent = 'Por favor, digite um valor máximo positivo.';
                 event.preventDefault(); // Evita que o formulário seja submetido se os valores forem inválidos
                 return;
             } else {
@@ -213,7 +211,6 @@
                 if (minPrice <= 0) {
                     minPriceInput.classList.add('is-invalid');
                     minPriceInput.nextElementSibling.textContent = '';
-                    alert('O valor mínimo deve ser maior que 0.');
                     e.preventDefault();
                     return;
                 } else {
@@ -224,7 +221,6 @@
                 if (maxPrice <= 0) {
                     maxPriceInput.classList.add('is-invalid');
                     maxPriceInput.nextElementSibling.textContent = '';
-                    alert('O valor máximo deve ser maior que 0.');
                     e.preventDefault();
                     return;
                 } else {

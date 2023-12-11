@@ -6,7 +6,7 @@ namespace Infra_Ioc
 {
     public static class DomainEntitiesToApplicationMappingProfile
     {
-        public static IServiceCollection AddApplicationMappingsProfile(this IServiceCollection services)
+        public static IServiceCollection AddDomainEntitiesToApplicationMappingProfile(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(DomainToMappingProductProfile));
             services.AddAutoMapper(typeof(DomainToMappingProfile));

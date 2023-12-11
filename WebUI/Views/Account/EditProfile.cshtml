@@ -1,0 +1,67 @@
+﻿@model EditProfileViewModel
+
+<h2>Edit Profile</h2>
+
+<form asp-action="EditProfile" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BirthDate" class="control-label"></label>
+        <input asp-for="BirthDate" placeholder="@Model.BirthDate" class="form-control" />
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SSN" class="control-label"></label>
+        <input asp-for="SSN" placeholder="@Model.SSN" class="form-control"  readonly/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DefaultPaymentMethod" class="control-label"></label>
+        <select asp-for="DefaultPaymentMethod" class="form-control">
+            <option value="@Model.payPal">@Model.payPal</option>
+            <option value="@Model.creditCart">@Model.creditCart</option>
+            <option value="@Model.debitCard">@Model.debitCard</option>
+            <option value="@Model.money">@Model.money</option>
+            <option value="@Model.bankTransfer">@Model.bankTransfer</option>
+        </select>
+        <span asp-validation-for="DefaultPaymentMethod" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>
+            <input asp-for="IsSubscribedToNewsletter" /> Subscribe to Newsletter
+        </label>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

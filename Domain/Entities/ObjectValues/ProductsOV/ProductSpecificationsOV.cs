@@ -6,7 +6,7 @@ namespace Domain.Entities.ObjectValues.ProductsOV
     public class ProductSpecificationsOV
     {
         [Required(ErrorMessage = "Product model is required.")]
-        [StringLength(20, MinimumLength = 4, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
+        [StringLength(50, MinimumLength = 4, ErrorMessage = "Minimum {2} and maximum {1} characters.")]
         [DisplayName("Product model")]
         public string ProductModel { get; protected set; } = string.Empty;
 

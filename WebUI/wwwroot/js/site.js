@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 nav: false
             },
             600: {
-                items: 2,
+                items: 3,
                 nav: false
             },
             1000: {
-                items: 4
+                items: 4.2
             }
         }
     });

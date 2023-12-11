@@ -1,0 +1,70 @@
+﻿@model RegisterViewModel
+
+<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+
+<form asp-controller="Account" asp-action="Register" method="post" class="register-form">
+    @Html.AntiForgeryToken()
+
+    <h4>Create an Account</h4>
+    <div class="mt-3 mb-3 text-center">
+        <span>Okay, fill in the information requested below to create your account</span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="Email" placeholder="Insert your email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="Password" placeholder="Insert your password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="ConfirmPassword" placeholder="Confirm Password" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="FirstName" placeholder="First Name" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="LastName" placeholder="Last Name" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="SSN" placeholder="Social Security Number" class="form-control" />
+        <span asp-validation-for="SSN" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="Phone" placeholder="Phone number" class="form-control">
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="BirthDate">Birth Date</label>
+        <input asp-for="BirthDate" class="form-control" />
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <button type="submit">Sign Up</button>
+
+    <a class="btn btn-outline-secondary" asp-controller="Account" asp-action="Login"
+       style="height:35px;width:100%;border-radius:5px">
+        Back
+    </a>
+    <div>
+        <p>
+            By signing up, you agree to our
+            <a asp-controller="" asp-action="Privacy">Privacy Policy</a>
+            and
+            <a asp-controller="" asp-action="Term">Terms of Service</a>.
+        </p>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

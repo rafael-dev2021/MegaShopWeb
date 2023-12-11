@@ -219,7 +219,7 @@
         <div class="row">
             @foreach (var items in Model.GetProductsDto)
             {
-                <div class="col-6 col-sm-2 col-md-4 col-lg-4">
+                <div class="col-6 col-sm-2 col-md-4 col-lg-3">
                     <partial name="~/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml" for="@items" />
                 </div>
                 countProducts++;
@@ -278,26 +278,23 @@
 
 @section Scripts {
     <script>
-        $(document).ready(function () {
-            $('#owl-carousel-categories').owlCarousel({
-                loop: true,
-                nav: true,
-                navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
-                responsive: {
-                    0: {
-                        items: 3,
-                        nav: false
-                    },
-                    600: {
-                        items: 3,
-                        nav: false
-                    },
-                    1000: {
-                        items: 6
-                    }
+        $('#owl-carousel-categories').owlCarousel({
+            loop: true,
+            nav: true,
+            navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+            responsive: {
+                0: {
+                    items: 3,
+                    nav: false
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 6
                 }
-            });
+            }
         });
     </script>
- 
-}
+}             

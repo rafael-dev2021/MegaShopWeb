@@ -39,7 +39,7 @@
                             &nbsp;
                             @* @await Component.InvokeAsync("ShoppingCartMenu") *@
                             &nbsp;
-                            @* @await Html.PartialAsync("_LoginPartial") *@
+                            @await Html.PartialAsync("_LoginPartial")
                         </div>
                     </div>
                 </div>
@@ -48,8 +48,8 @@
                 <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
                     @await Component.InvokeAsync("CategoryMenu")
                     @* <a class="btn btn-outline-secondary" asp-area="Admin" asp-controller="Admin" asp-action="Index">
-                    Admin
-                    </a>*@
+                        Admin
+                    </a> *@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -69,6 +69,7 @@
                         {
                             <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin</a>
                         }
+
                         @if (Context.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -92,7 +93,7 @@
             </nav>
         </div>
         <div class="border-bottom mt-2 mb-2"></div>
-       
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">

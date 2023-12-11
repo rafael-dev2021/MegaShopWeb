@@ -22,6 +22,15 @@
     <None Include="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
     <None Include="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
     <None Include="Areas\Admin\Views\SmartphoneAdmin\Index.cshtml" />
+    <None Include="Views\Account\AccessDenied.cshtml" />
+    <None Include="Views\Account\ChangePassword.cshtml" />
+    <None Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <None Include="Views\Account\EditProfile.cshtml" />
+    <None Include="Views\Account\EditProfileSuccess.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\PasswordResetSuccess.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Account\ResetPassword.cshtml" />
     <None Include="Views\Shared\CategoriesPartial\_CategoriesPartial.cshtml" />
     <None Include="Views\Smartphone\DetailsPartial.cshtml" />
     <None Include="Views\Smartphone\FeaturesPartial.cshtml" />
@@ -45,6 +54,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="wwwroot\images\img_games\" />
   </ItemGroup>
 

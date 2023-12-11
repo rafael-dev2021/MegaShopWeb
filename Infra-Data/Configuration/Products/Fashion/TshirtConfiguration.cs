@@ -10,10 +10,17 @@ namespace Infra_Data.Configuration.Products.Fashion
         {
             builder.HasData(
                new Tshirt(
-                   3,
+                   7,
                    "Top Nike Swoosh Woman",
                    "The Nike Classic Swoosh Futura medium support women\'s workout top offers long-lasting comfort during training with sweat-wicking fabric and a compression fit.",
                    5,
+                   2
+                   ),
+                new Tshirt(
+                   8,
+                   "Adicolor classics firebird track jacket",
+                   "Fresh and full of life, this Adicolor Firebird track jacket celebrates the power and authenticity of adidas\' legendary DNA.",
+                   8,
                    2
                    ));
             ConfigureSpecificationsVO(builder);
@@ -34,11 +41,20 @@ namespace Infra_Data.Configuration.Products.Fashion
                     sa.HasKey("Id");
                     sa.HasData(new
                     {
-                        Id = 3,
-                        ProductModel = "T-Shirt",
+                        Id = 7,
+                        ProductModel = "Nike T-Shirt",
                         ProductBrand = "Nike",
                         ProductLine = "",
                         ProductWeight = "200 g",
+                        ProductType = "T-Shirt"
+                    });
+                    sa.HasData(new
+                    {
+                        Id = 8,
+                        ProductModel = "JACKET Adidas",
+                        ProductBrand = "Adidas",
+                        ProductLine = "",
+                        ProductWeight = "350 g",
                         ProductType = "T-Shirt"
                     });
                 });
@@ -52,11 +68,19 @@ namespace Infra_Data.Configuration.Products.Fashion
                 sa.HasKey("Id");
                 sa.HasData(new
                 {
-                    Id = 3,
+                    Id = 7,
                     MainImage = "https://imgnike-a.akamaihd.net/768x768/002897ID.jpg",
                     ImageFirst = "https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg",
                     ImageSecond = "https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg",
                     ImageThird = "https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg"
+                });
+                sa.HasData(new
+                {
+                    Id = 8,
+                    MainImage = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5757a66a549439cbac6afcd002ca57f_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_01_laydown.jpg",
+                    ImageFirst = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3cae025992434e889496afcd002c97ae_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_42_detail.jpg",
+                    ImageSecond = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c6f0e6def4bd4eefa0bfafcd002c7094_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_21_model.jpg",
+                    ImageThird = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a915172e29f24ce4b34bafcd002c78dc_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_23_hover_model.jpg"
                 });
             });
         }
@@ -69,9 +93,15 @@ namespace Infra_Data.Configuration.Products.Fashion
                  sa.HasKey("Id");
                  sa.HasData(new
                  {
-                     Id = 3,
+                     Id = 7,
                      Price = 16.99M,
                      HistoryPrice = 0.0M
+                 });
+                 sa.HasData(new
+                 {
+                     Id = 8,
+                     Price = 64.99M,
+                     HistoryPrice = 80.0M
                  });
              });
         }
@@ -84,7 +114,13 @@ namespace Infra_Data.Configuration.Products.Fashion
                   sa.HasKey("Id");
                   sa.HasData(new
                   {
-                      Id = 3,
+                      Id = 7,
+                      WarrantyLength = "1-year warranty",
+                      WarrantyInformation = "15-Day Limited Warranty"
+                  });
+                  sa.HasData(new
+                  {
+                      Id = 8,
                       WarrantyLength = "1-year warranty",
                       WarrantyInformation = "15-Day Limited Warranty"
                   });
@@ -99,10 +135,17 @@ namespace Infra_Data.Configuration.Products.Fashion
                   sa.HasKey("Id");
                   sa.HasData(new
                   {
-                      Id = 3,
+                      Id = 7,
                       IsDailyOffer = false,
                       IsFavorite = true,
                       IsBestSeller = true
+                  });
+                  sa.HasData(new
+                  {
+                      Id = 8,
+                      IsDailyOffer = true,
+                      IsFavorite = false,
+                      IsBestSeller = false
                   });
               });
         }
@@ -115,8 +158,14 @@ namespace Infra_Data.Configuration.Products.Fashion
                    sa.HasKey("Id");
                    sa.HasData(new
                    {
-                       Id = 3,
+                       Id = 7,
                        ReleaseMonth = "June",
+                       ReleaseYear = "2023"
+                   });
+                   sa.HasData(new
+                   {
+                       Id = 8,
+                       ReleaseMonth = "March",
                        ReleaseYear = "2023"
                    });
                });
@@ -130,12 +179,21 @@ namespace Infra_Data.Configuration.Products.Fashion
                    sa.HasKey("Id");
                    sa.HasData(new
                    {
-                       Id = 3,
+                       Id = 7,
                        Gender = "Woman",
                        Age = "Adult",
                        TypeOfClothing = "T-shirt",
                        FabricDesign = "Straight",
                        Size = "S"
+                   });
+                   sa.HasData(new
+                   {
+                       Id = 8,
+                       Gender = "Woman",
+                       Age = "Adult",
+                       TypeOfClothing = "T-shirt",
+                       FabricDesign = "Straight",
+                       Size = "XS"
                    });
                });
         }
@@ -148,7 +206,7 @@ namespace Infra_Data.Configuration.Products.Fashion
                    sa.HasKey("Id");
                    sa.HasData(new
                    {
-                       Id = 3,
+                       Id = 7,
                        RecommendedUses = "Casual",
                        KindOfFabric = "Dry",
                        Composition = "Polyester",
@@ -158,6 +216,19 @@ namespace Infra_Data.Configuration.Products.Fashion
                        UnitsPerKit = 1,
                        WithRecycledMaterials = false,
                        ItsSporty = false
+                   });
+                   sa.HasData(new
+                   {
+                       Id = 8,
+                       RecommendedUses = "Casual",
+                       KindOfFabric = "Dry",
+                       Composition = "Polyester",
+                       MainMaterial = "Polyester",
+                       SleeveType = "Like",
+                       TypeOfCollar = "Round neck",
+                       UnitsPerKit = 1,
+                       WithRecycledMaterials = false,
+                       ItsSporty = true
                    });
                });
         }
