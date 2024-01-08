@@ -3,13 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Enums\" />
-    <Folder Include="Entities\ShoppingCarts\" />
-    <Folder Include="Entities\Orders\" />
+    <Compile Remove="Entities\Enums\**" />
+    <Compile Remove="Entities\ShoppingCarts\**" />
+    <EmbeddedResource Remove="Entities\Enums\**" />
+    <EmbeddedResource Remove="Entities\ShoppingCarts\**" />
+    <None Remove="Entities\Enums\**" />
+    <None Remove="Entities\ShoppingCarts\**" />
   </ItemGroup>
 
 </Project>

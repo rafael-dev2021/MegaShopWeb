@@ -31,7 +31,12 @@
     <None Include="Views\Account\PasswordResetSuccess.cshtml" />
     <None Include="Views\Account\Register.cshtml" />
     <None Include="Views\Account\ResetPassword.cshtml" />
+    <None Include="Views\Order\Checkout.cshtml" />
+    <None Include="Views\Order\CheckoutDetail.cshtml" />
     <None Include="Views\Shared\CategoriesPartial\_CategoriesPartial.cshtml" />
+    <None Include="Views\Shared\Components\ShoppingCartMenu\Default.cshtml" />
+    <None Include="Views\ShoppingCart\Index.cshtml" />
+    <None Include="Views\ShoppingCart\ItemReview.cshtml" />
     <None Include="Views\Smartphone\DetailsPartial.cshtml" />
     <None Include="Views\Smartphone\FeaturesPartial.cshtml" />
     <None Include="Views\Smartphone\Index.cshtml" />
@@ -48,14 +53,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infra-Ioc\Infra-Ioc.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="wwwroot\images\img_games\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infra-Ioc\Infra-Ioc.csproj" />
   </ItemGroup>
 
 </Project>

@@ -20,7 +20,7 @@ namespace Domain.Entities.Payments.Enums
         CashOnDelivery = 5
     }
 
-    public static class EPaymentMethodExtensions
+    public static class EPaymentMethodHelper
     {
         public static string GetDescription(this EPaymentMethod value)
         {

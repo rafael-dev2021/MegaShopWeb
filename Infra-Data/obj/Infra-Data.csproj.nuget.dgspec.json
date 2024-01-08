@@ -111,6 +111,10 @@
               "target": "Package",
               "version": "[1.10.4, )"
             },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"

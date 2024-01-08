@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "s0i4gj1GEQdhXyJQLVuKazKyHA/shVxqotT9McNo/b++LYUDrt0ahDN14QJFCXTOEKYKOvLKmBrUbZ5uqifIZA==",
+  "dgSpecHash": "BNt+hVdlIXT6zq2M2T54suynXxDZaeFomUCJGCJvUXXnhRGcO6Ssv5uifYLy16IJsMvh4L26Dtp+ACUy4S0ptA==",
   "success": true,
   "projectFilePath": "C:\\C#\\MegaShopWeb\\WebUI\\WebUI.csproj",
   "expectedPackageFiles": [
@@ -58,6 +58,7 @@
     "C:\\Users\\ainbo\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\ainbo\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",

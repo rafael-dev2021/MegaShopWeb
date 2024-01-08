@@ -1,5 +1,6 @@
 ﻿using Domain.Entities.ObjectValues.ProductsOV;
 using Domain.Entities.Products.Technology.Smartphones.ObjectsValue;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Products.Technology.Smartphones
 {
@@ -43,12 +44,19 @@ namespace Domain.Entities.Products.Technology.Smartphones
             SmartphoneBatteryObjectValue = smartphoneBatteryObjectValue;
             SmartphoneDimensionsObjectValue = smartphoneDimensionsObjectValue;
         }
+        [Required]
         public SmartphoneFeatureOV SmartphoneFeatureObjectValue { get; set; }
+        [Required]
         public SmartphoneDisplayOV SmartphoneDisplayObjectValue { get; set; }
+        [Required]
         public SmartphoneMemoryOV SmartphoneMemoryObjectValue { get; set; }
+        [Required]
         public SmartphoneCameraOV SmartphoneCameraObjectValue { get; set; }
+        [Required]
         public SmartphonePlatformOV SmartphonePlatformObjectValue { get; set; }
+        [Required]
         public SmartphoneBatteryOV SmartphoneBatteryObjectValue { get; set; }
+        [Required]
         public SmartphoneDimensionsOV SmartphoneDimensionsObjectValue { get; set; }
 
     }

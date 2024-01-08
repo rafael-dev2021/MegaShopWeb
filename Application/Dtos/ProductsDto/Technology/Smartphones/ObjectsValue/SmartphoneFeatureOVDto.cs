@@ -2,9 +2,9 @@
 {
     public class SmartphoneFeatureOVDto
     {
-        public string? CellNetworkTechnology { get; set; }
-        public string? VirtualAssistant { get; set; }
-        public string? ManufacturerPartNumber { get; set; }
-        public string? Color { get; set; }
+        public string CellNetworkTechnology { get; set; }
+        public string VirtualAssistant { get; set; }
+        public string ManufacturerPartNumber { get; set; }
+        public string Color { get; set; }
     }
 }

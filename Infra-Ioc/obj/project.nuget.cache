@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MI2gAFze+suOsij2b7cnAbVqoUxHddFdiHCw0LULuymT9PcASiHxDzS6PJ71eU30DVbvp1RtQQJW2iSXgLPdaw==",
+  "dgSpecHash": "gebacuCB/+ely4bb1d4jr9QDoQZ/R0I+mwQzNXkBEQiGsfEumvEpXLv2pJPgrYfCf1T5xGH0tjHNOIB0SineMQ==",
   "success": true,
   "projectFilePath": "C:\\C#\\MegaShopWeb\\Infra-Ioc\\Infra-Ioc.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\ainbo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\azure.core\\1.36.0\\azure.core.1.36.0.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\azure.identity\\1.10.4\\azure.identity.1.10.4.nupkg.sha512",
+    "C:\\Users\\ainbo\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0\\microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",

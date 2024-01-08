@@ -1,5 +1,6 @@
 ﻿using Domain.Entities.ObjectValues.ProductsOV;
 using Domain.Entities.Products.Fashion.Shoes.ObjectsValue;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Products.Fashion.Shoes
 {
@@ -36,9 +37,13 @@ namespace Domain.Entities.Products.Fashion.Shoes
         }
 
 
+        [Required]
         public ShoesDesignOV ShoesDesignObjectValue { get; set; }
+        [Required]
         public ShoesGeneralFeaturesOV ShoesGeneralFeaturesObjectValue { get; set; }
+        [Required]
         public ShoesMaterialsOV ShoesMaterialsObjectValue { get; set; }
+        [Required]
         public ShoesSpecificationsOV ShoesSpecificationsObjectValue { get; set; }
     }
 }

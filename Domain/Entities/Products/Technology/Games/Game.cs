@@ -1,5 +1,6 @@
 ﻿using Domain.Entities.ObjectValues.ProductsOV;
 using Domain.Entities.Products.Technology.Games.ObjectsValue;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Products.Technology.Games
 {
@@ -34,9 +35,11 @@ namespace Domain.Entities.Products.Technology.Games
             GameSpecificationsObjectsValue = gameSpecificationsObjectsValue;
             GameRequirementsObjectsValue = gameRequirementsObjectsValue;
         }
-
+        [Required]
         public GameGeneralFeaturesOV GameGeneralFeaturesObjectsValue { get; set; }
+        [Required]
         public GameSpecificationsOV GameSpecificationsObjectsValue { get; set; }
+        [Required]
         public GameRequirementsOV GameRequirementsObjectsValue { get; set; }
     }
 }

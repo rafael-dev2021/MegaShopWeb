@@ -1,5 +1,6 @@
 ﻿using Domain.Entities.ObjectValues.ProductsOV;
 using Domain.Entities.Products.Fashion.Tshirts.ObjectsValue;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Products.Fashion.Tshirts
 {
@@ -28,8 +29,9 @@ namespace Domain.Entities.Products.Fashion.Tshirts
             TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
             TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
         }
-
+        [Required]
         public TshirtOtherFeaturesOV TshirtOtherFeaturesObectsValue { get; set; }
+        [Required]
         public TshirtMainFeaturesOV TshirtMainFeaturesObectsValue { get; set; }
     }
 }

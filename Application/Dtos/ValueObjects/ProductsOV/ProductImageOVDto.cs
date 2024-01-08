@@ -8,16 +8,16 @@ namespace Application.Dtos.ValueObjects.ProductsOV
         [Required(ErrorMessage = "Image is required.")]
         [StringLength(500, ErrorMessage = "Maximum {1} characters.")]
         [DisplayName("Main image")]
-        public string? MainImage { get; set; }
+        public string MainImage { get; set; }
 
         [StringLength(500, ErrorMessage = "Maximum {1} characters.")]
-        public string? ImageFirst { get; set; }
+        public string ImageFirst { get; set; }
 
         [StringLength(500, ErrorMessage = "Maximum {1} characters.")]
-        public string? ImageSecond { get; set; }
+        public string ImageSecond { get; set; }
 
         [StringLength(500, ErrorMessage = "Maximum {1} characters.")]
-        public string? ImageThird { get; set; }
+        public string ImageThird { get; set; }
 
 
         //public static implicit operator ProductImageVO(string v)
