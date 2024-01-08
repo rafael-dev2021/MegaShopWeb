@@ -1,0 +1,268 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+<style>
+    a {
+        text-decoration: none;
+    }
+
+</style>
+@{
+    var totalX = ((decimal)ViewBag.TotalPedido / 12).ToString("C");
+    var lastFourNumbers = Model.Payment.CardNumber.Substring(Model.Payment.CardNumber.Length - 4);
+
+    var cardVisaNumer = "4024 0071 7015 5856";
+    var firstVisaNumber = cardVisaNumer.Substring(0);
+    var lastFourNumber = cardVisaNumer.Substring(cardVisaNumer.Length - 4);
+}
+<div class="container">
+    <h6>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</h6>
+    @* <p>User: <strong>@Model.Name</strong></p> *@
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            @if (ViewBag.TotalQuantity == 1)
+            {
+                <span style="font-size:14px;font-weight:600">Product</span>
+            }
+            else
+            {
+                <span style="font-size:14px;font-weight:600">Products (@ViewBag.TotalQuantity)</span>
+            }
+        </div>
+        <div class="col-md-6">
+            <span style="font-size:14px;font-weight:600">@(((decimal)ViewBag.TotalPedido).ToString("C"))</span>
+        </div>
+        <div class="col-md-6 mt-2 mb-2">
+            <span style="font-size:14px;font-weight:600">Cash discount</span>
+        </div>
+        <div class="col-md-6 mt-2 mb-2">
+            <span style="color:green;font-size:14px;font-weight:600">#Lorem ipsum#</span>
+        </div>
+        <div class="col-md-6 mt-2 mb-2">
+            <span style="font-size:14px;font-weight:600">Shipping</span>
+        </div>
+        <div class="col-md-6 mt-2 mb-2">
+            <span style="color:green;font-size:14px;font-weight:600">#Lorem ipsum#</span>
+        </div>
+        <hr />
+        <div class="col-md-6">
+            <span style="font-size:14px;font-weight:600">Payment</span>
+        </div>
+        <div class="col-md-6 mb-2">
+            @if (Model.Payment.CardNumber == firstVisaNumber)
+            {
+                <div class="col-md-6">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span> <br>
+                    <span style="color:green;font-size:14px;font-weight:600">interest-free</span><br>
+                    <span>Visa **** @lastFourNumber</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 2) == "51" || Model.Payment.CardNumber.Substring(0, 2) == "52" || Model.Payment.CardNumber.Substring(0, 2) == "53" || Model.Payment.CardNumber.Substring(0, 2) == "54" || Model.Payment.CardNumber.Substring(0, 2) == "55")
+            {
+                <div class="col-md-6">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span> <br>
+                    <span style="color:green;font-size:14px;font-weight:600">interest-free</span><br>
+                    <span>MasterCard **** @lastFourNumber</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 2) == "30" || Model.Payment.CardNumber.Substring(0, 2) == "36" || Model.Payment.CardNumber.Substring(0, 2) == "38")
+            {
+                <div class="col-md-6">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span> <br>
+                    <span style="color:green;font-size:14px;font-weight:600">interest-free</span><br>
+                    <span>Dinners **** @lastFourNumber</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 2) == "34" || Model.Payment.CardNumber.Substring(0, 2) == "37")
+            {
+                <div class="col-md-6">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span> <br>
+                    <span style="color:green;font-size:14px;font-weight:600">interest-free</span><br>
+                    <span>Amex **** @lastFourNumber</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 4) == "6011")
+            {
+                <div class="col-md-6">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span> <br>
+                    <span style="color:green;font-size:14px;font-weight:600">interest-free</span><br>
+                    <span>Discover **** @lastFourNumber</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 4) == "6062")
+            {
+                <div class="col-md-6">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span> <br>
+                    <span style="color:green;font-size:14px;font-weight:600">interest-free</span><br>
+                    <span>HiperCard **** @lastFourNumber</span>
+                </div>
+            }
+        </div>
+        <hr />
+        <div class="col-md-6 mb-5">
+            <span style="font-size:14px;font-weight:600">Total</span>
+        </div>
+        <div class="col-md-6 mb-5">
+            <span style="font-size:14px;font-weight:600">@(((decimal)ViewBag.TotalPedido).ToString("C"))</span>
+        </div>
+    </div>
+    @{
+
+    }
+    <h6>Payment details</h6>
+    <div class="card col-md-6" style="background-color:white;box-shadow:0px 0px 3px 0px rgba(0,0,0,0.2) ">
+        <div class="row">
+            @if (Model.Payment.CardNumber == firstVisaNumber)
+            {
+                <div class="col-md-2">
+                    <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                        <img src="~/images/cc/visa.png" class="img-fluid w-50 mx-auto" />
+                    </span>
+                </div>
+                <div class="col-md-8 mt-3 mb-3">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span>
+                    <span>Visa **** @lastFourNumber</span>
+                    <br />
+                    <span>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</span>
+                    <span style="color:green">Payment accepted</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 2) == "51" || Model.Payment.CardNumber.Substring(0, 2) == "52" || Model.Payment.CardNumber.Substring(0, 2) == "53" || Model.Payment.CardNumber.Substring(0, 2) == "54" || Model.Payment.CardNumber.Substring(0, 2) == "55")
+            {
+                <div class="col-md-2">
+                    <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                        <img src="~/images/cc/master.png" class="img-fluid w-50 mx-auto" />
+                    </span>
+                </div>
+                <div class="col-md-8 mt-3 mb-3">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span>
+                    <span>MasterCard **** @lastFourNumber</span>
+                    <br />
+                    <span>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</span>
+                    <span style="color:green">Payment accepted</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 2) == "30" || Model.Payment.CardNumber.Substring(0, 2) == "36" || Model.Payment.CardNumber.Substring(0, 2) == "38")
+            {
+                <div class="col-md-2">
+                    <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                        <img src="~/images/cc/diner.png" class="img-fluid w-50 mx-auto" />
+                    </span>
+                </div>
+                <div class="col-md-8 mt-3 mb-3">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span>
+                    <span>Dinners **** @lastFourNumber</span>
+                    <br />
+                    <span>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</span>
+                    <span style="color:green">Payment accepted</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 2) == "34" || Model.Payment.CardNumber.Substring(0, 2) == "37")
+            {
+                <div class="col-md-2">
+                    <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                        <img src="~/images/cc/amex.png" class="img-fluid w-50 mx-auto" />
+                    </span>
+                </div>
+                <div class="col-md-8 mt-3 mb-3">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span>
+                    <span>Amex **** @lastFourNumber</span>
+                    <br />
+                    <span>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</span>
+                    <span style="color:green">Payment accepted</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 4) == "6011")
+            {
+                <div class="col-md-2">
+                    <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                        <img src="~/images/cc/discover.png" class="img-fluid w-50 mx-auto" />
+                    </span>
+                </div>
+                <div class="col-md-8 mt-3 mb-3">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span>
+                    <span>Discover **** @lastFourNumber</span>
+                    <br />
+                    <span>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</span>
+                    <span style="color:green">Payment accepted</span>
+                </div>
+            }
+            else if (Model.Payment.CardNumber.Substring(0, 4) == "6062")
+            {
+                <div class="col-md-2">
+                    <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                        <img src="~/images/cc/hipercard.png" class="img-fluid w-50 mx-auto" />
+                    </span>
+                </div>
+                <div class="col-md-8 mt-3 mb-3">
+                    <span style="font-size:14px;font-weight:600">12x @totalX</span>
+                    <span>HiperCard **** @lastFourNumber</span>
+                    <br />
+                    <span>@Model.ConfirmedOrder.ToString("MMMM/dd/yyyy") | # @Model.Id</span>
+                    <span style="color:green">Payment accepted</span>
+                </div>
+            }
+
+        </div>
+    </div>
+    <h6 class="mt-4">Shipping details</h6>
+    <div class="card col-md-6" style="background-color:white;box-shadow:0px 0px 3px 0px rgba(0,0,0,0.2) ">
+        <div class="row">
+            <div class="col-md-2">
+                <span style="justify-content:center;display:flex;margin-top:20px;border-radius:50px;">
+                    <img src="~/images/icons/cart.png" class="img-fluid w-50 mx-auto" />
+                </span>
+            </div>
+            <div class="col-md-4 mt-3 mb-3">
+                <span>@Model.Complement</span><br />
+                <span>@Model.City, @Model.State.</span><br />
+            </div>
+        </div>
+    </div>
+    <div class="card col-md-6 mt-4" style="background-color:white;box-shadow:0px 0px 3px 0px rgba(0,0,0,0.2) ">
+        <div class="row">
+            @if (Model.OrderDetails != null)
+            {
+                <div class="card col-md-6 mt-4" style="background-color:white;box-shadow:0px 0px 3px 0px rgba(0,0,0,0.2) ">
+                    <div class="row">
+                        @foreach (var item in Model.OrderDetails)
+                        {
+                            <div class="col-md-2">
+                                @if (item.Product != null)
+                                {
+                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@item.Product.Id">
+                                        <div class="mx-auto justify-content-center d-flex" style="margin-top:15px;margin-bottom:5px">
+                                            <span><img src="@item.Product.ProductImageObjectValue.MainImage" style="object-fit:contain;width:80px;height:80px;margin-left:5px" /></span>
+                                        </div>
+                                    </a>
+                                    <hr style="color:blue;justify-content:center;display:flex;margin-left:7px" />
+                                }
+                            </div>
+                            <div class="col-md-10 mt-3 mb-3">
+                                @if (item.Product != null)
+                                {
+                                    <h6>@item.Product.Name</h6>
+
+                                    <br />
+                                    <span>@item.Product.ProductPriceObjectValue.Price.ToString("C") | @item.Quantity unit</span>
+
+                                    <br />
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        <hr />
+        <div class="mb-2">
+            <a asp-controller="Order" asp-action="Details" asp-route-id="@Model.Id">
+                <span style="margin:10px">Shipping detail</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="form-group" style="text-align :center">
+    <h3>
+        <a class="nav-link text-info" asp-controller="Home" asp-action="Index">Return</a>
+    </h3>
+</div>
