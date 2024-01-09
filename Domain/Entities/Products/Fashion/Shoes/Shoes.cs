@@ -36,14 +36,9 @@ namespace Domain.Entities.Products.Fashion.Shoes
             ShoesSpecificationsObjectValue = shoesSpecificationsObjectValue;
         }
 
-
-        [Required]
         public ShoesDesignOV ShoesDesignObjectValue { get; set; }
-        [Required]
         public ShoesGeneralFeaturesOV ShoesGeneralFeaturesObjectValue { get; set; }
-        [Required]
         public ShoesMaterialsOV ShoesMaterialsObjectValue { get; set; }
-        [Required]
         public ShoesSpecificationsOV ShoesSpecificationsObjectValue { get; set; }
     }
 }

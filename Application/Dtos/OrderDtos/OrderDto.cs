@@ -1,6 +1,4 @@
 ﻿using Application.Dtos.PaymentsDto;
-using Domain.Entities.Orders;
-using Domain.Entities.Payments;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

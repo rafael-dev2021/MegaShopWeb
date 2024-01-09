@@ -29,9 +29,7 @@ namespace Domain.Entities.Products.Fashion.Tshirts
             TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
             TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
         }
-        [Required]
         public TshirtOtherFeaturesOV TshirtOtherFeaturesObectsValue { get; set; }
-        [Required]
         public TshirtMainFeaturesOV TshirtMainFeaturesObectsValue { get; set; }
     }
 }

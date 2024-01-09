@@ -12,6 +12,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
         builder.Property(x => x.Description).HasMaxLength(10000).IsRequired();
         builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId);
+        builder.Property(x => x.RowVersion).IsRowVersion();
 
         builder
              .OwnsOne(x => x.ProductImageObjectValue, img =>

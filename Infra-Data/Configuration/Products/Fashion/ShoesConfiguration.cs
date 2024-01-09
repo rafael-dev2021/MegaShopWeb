@@ -177,6 +177,11 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.OwnsOne(x => x.ShoesDesignObjectValue,
                sa =>
                {
+                   sa.Property(x => x.AdjustmentTypes)
+                   .HasMaxLength(20);
+                   sa.Property(x => x.TypeOfPipe)
+                   .HasMaxLength(20)
+                   .IsRequired();
                    sa.Property<int>("Id");
                    sa.HasKey("Id");
                    sa.HasData(new
@@ -198,6 +203,17 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.OwnsOne(x => x.ShoesGeneralFeaturesObjectValue,
                sa =>
                {
+                   sa.Property(x => x.Gender)
+                   .HasMaxLength(10)
+                   .IsRequired();
+                   sa.Property(x => x.Version)
+                   .HasMaxLength(10);
+                   sa.Property(x => x.Age)
+                   .HasMaxLength(10)
+                   .IsRequired();
+                   sa.Property(x => x.Color)
+                   .HasMaxLength(20)
+                   .IsRequired();
                    sa.Property<int>("Id");
                    sa.HasKey("Id");
                    sa.HasData(new
@@ -223,6 +239,13 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.OwnsOne(x => x.ShoesMaterialsObjectValue,
                sa =>
                {
+                   sa.Property(x => x.MaterialsFromAbroad)
+                   .HasMaxLength(10)
+                   .IsRequired();
+                   sa.Property(x => x.InteriorMaterials)
+                   .HasMaxLength(10);
+                   sa.Property(x => x.SoleMaterials)
+                   .HasMaxLength(10);
                    sa.Property<int>("Id");
                    sa.HasKey("Id");
                    sa.HasData(new
@@ -246,6 +269,15 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.OwnsOne(x => x.ShoesSpecificationsObjectValue,
                sa =>
                {
+                   sa.Property(x => x.Style)
+                   .HasMaxLength(15)
+                   .IsRequired();
+                   sa.Property(x => x.RecommendedSports)
+                   .HasMaxLength(30)
+                   .IsRequired();
+                   sa.Property(x => x.Size)
+                   .HasMaxLength(5)
+                   .IsRequired();
                    sa.Property<int>("Id");
                    sa.HasKey("Id");
                    sa.HasData(new

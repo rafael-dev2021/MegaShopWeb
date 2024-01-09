@@ -240,7 +240,6 @@ namespace Infra_Data.Migrations
                         .HasColumnType("nvarchar(5)");
 
                     b.Property<string>("PaymentMethod")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityCode")
@@ -278,6 +277,11 @@ namespace Infra_Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -332,7 +336,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5746)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6006)
                         },
                         new
                         {
@@ -341,7 +345,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductReviewId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5761)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6022)
                         },
                         new
                         {
@@ -350,7 +354,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductReviewId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5762)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6023)
                         },
                         new
                         {
@@ -359,7 +363,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
                             ProductReviewId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5762)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6024)
                         },
                         new
                         {
@@ -368,7 +372,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
                             ProductReviewId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5772)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6024)
                         },
                         new
                         {
@@ -377,7 +381,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
                             ProductReviewId = 4,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5773)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6025)
                         },
                         new
                         {
@@ -386,7 +390,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
                             ProductReviewId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5774)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6026)
                         },
                         new
                         {
@@ -395,7 +399,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
                             ProductReviewId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5775)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6027)
                         },
                         new
                         {
@@ -404,7 +408,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
                             ProductReviewId = 6,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5776)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6027)
                         },
                         new
                         {
@@ -413,7 +417,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
                             ProductReviewId = 6,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5777)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6028)
                         },
                         new
                         {
@@ -422,7 +426,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductReviewId = 7,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5777)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6029)
                         },
                         new
                         {
@@ -431,7 +435,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductReviewId = 7,
                             Rating = 1,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5778)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6030)
                         },
                         new
                         {
@@ -440,7 +444,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductReviewId = 9,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5779)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6030)
                         },
                         new
                         {
@@ -449,7 +453,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductReviewId = 10,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5780)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6031)
                         },
                         new
                         {
@@ -458,7 +462,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductReviewId = 10,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 1, 8, 1, 3, 7, 713, DateTimeKind.Local).AddTicks(5780)
+                            ReviewDate = new DateTime(2024, 1, 8, 22, 42, 32, 113, DateTimeKind.Local).AddTicks(6032)
                         });
                 });
 
@@ -1435,10 +1439,19 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("AdjustmentTypes")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
 
                             b1.Property<string>("TypeOfPipe")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1468,16 +1481,29 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("Age")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Color")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
 
                             b1.Property<string>("Gender")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Version")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1511,13 +1537,23 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("InteriorMaterials")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MaterialsFromAbroad")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("SoleMaterials")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1549,13 +1585,25 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("RecommendedSports")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("Size")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(5)
+                                .HasColumnType("nvarchar(5)");
 
                             b1.Property<string>("Style")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1598,6 +1646,12 @@ namespace Infra_Data.Migrations
                                 .ValueGeneratedOnUpdateSometimes()
                                 .HasColumnType("bit");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -1625,17 +1679,13 @@ namespace Infra_Data.Migrations
                     b.Navigation("ProductFlagsObjectValue")
                         .IsRequired();
 
-                    b.Navigation("ShoesDesignObjectValue")
-                        .IsRequired();
+                    b.Navigation("ShoesDesignObjectValue");
 
-                    b.Navigation("ShoesGeneralFeaturesObjectValue")
-                        .IsRequired();
+                    b.Navigation("ShoesGeneralFeaturesObjectValue");
 
-                    b.Navigation("ShoesMaterialsObjectValue")
-                        .IsRequired();
+                    b.Navigation("ShoesMaterialsObjectValue");
 
-                    b.Navigation("ShoesSpecificationsObjectValue")
-                        .IsRequired();
+                    b.Navigation("ShoesSpecificationsObjectValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Products.Fashion.Tshirts.Tshirt", b =>
@@ -1646,19 +1696,34 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("Age")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("FabricDesign")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("Gender")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Size")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(5)
+                                .HasColumnType("nvarchar(5)");
 
                             b1.Property<string>("TypeOfClothing")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1694,31 +1759,45 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("Composition")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<bool>("ItsSporty")
                                 .HasColumnType("bit");
 
                             b1.Property<string>("KindOfFabric")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MainMaterial")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("RecommendedUses")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("SleeveType")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("TypeOfCollar")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<int>("UnitsPerKit")
                                 .HasColumnType("int");
 
                             b1.Property<bool>("WithRecycledMaterials")
                                 .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1773,6 +1852,12 @@ namespace Infra_Data.Migrations
                                 .ValueGeneratedOnUpdateSometimes()
                                 .HasColumnType("bit");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -1800,11 +1885,9 @@ namespace Infra_Data.Migrations
                     b.Navigation("ProductFlagsObjectValue")
                         .IsRequired();
 
-                    b.Navigation("TshirtMainFeaturesObectsValue")
-                        .IsRequired();
+                    b.Navigation("TshirtMainFeaturesObectsValue");
 
-                    b.Navigation("TshirtOtherFeaturesObectsValue")
-                        .IsRequired();
+                    b.Navigation("TshirtOtherFeaturesObectsValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Products.Technology.Games.Game", b =>
@@ -1825,6 +1908,12 @@ namespace Infra_Data.Migrations
                             b1.Property<bool>("IsFavorite")
                                 .ValueGeneratedOnUpdateSometimes()
                                 .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1856,32 +1945,54 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("Collection")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(25)
+                                .HasColumnType("nvarchar(25)");
 
                             b1.Property<string>("Developers")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(40)
+                                .HasColumnType("nvarchar(40)");
 
                             b1.Property<string>("Edition")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(25)
+                                .HasColumnType("nvarchar(25)");
 
                             b1.Property<string>("GameRating")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(1)");
 
                             b1.Property<string>("GameTitle")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("Genres")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(25)
+                                .HasColumnType("nvarchar(25)");
 
                             b1.Property<string>("Platform")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("Publishers")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("Saga")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(40)
+                                .HasColumnType("nvarchar(40)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1925,16 +2036,26 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("MinimumGraphicsProcessorsRequired")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MinimumOperatingSystemsRequired")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MinimumProcessorsRequired")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<int>("MinimumRAMRequirement")
                                 .HasColumnType("int");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1968,13 +2089,17 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("AudioLanguages")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<int>("FileSize")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Format")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
 
                             b1.Property<bool>("ItsMultiplayer")
                                 .HasColumnType("bit");
@@ -1995,10 +2120,20 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("bit");
 
                             b1.Property<string>("ScreenLanguages")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("SubtitleLanguages")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2040,14 +2175,11 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.Navigation("GameGeneralFeaturesObjectsValue")
-                        .IsRequired();
+                    b.Navigation("GameGeneralFeaturesObjectsValue");
 
-                    b.Navigation("GameRequirementsObjectsValue")
-                        .IsRequired();
+                    b.Navigation("GameRequirementsObjectsValue");
 
-                    b.Navigation("GameSpecificationsObjectsValue")
-                        .IsRequired();
+                    b.Navigation("GameSpecificationsObjectsValue");
 
                     b.Navigation("ProductFlagsObjectValue")
                         .IsRequired();
@@ -2070,6 +2202,12 @@ namespace Infra_Data.Migrations
 
                             b1.Property<bool>("IsBatteryRemovable")
                                 .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2134,6 +2272,12 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(15)
                                 .HasColumnType("nvarchar(15)");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -2190,6 +2334,12 @@ namespace Infra_Data.Migrations
                             b1.Property<double>("WidthInche")
                                 .HasColumnType("float");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -2234,10 +2384,12 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("DisplayProtection")
+                                .IsRequired()
                                 .HasMaxLength(40)
                                 .HasColumnType("nvarchar(40)");
 
                             b1.Property<string>("DisplayResolution")
+                                .IsRequired()
                                 .HasMaxLength(25)
                                 .HasColumnType("nvarchar(25)");
 
@@ -2245,8 +2397,15 @@ namespace Infra_Data.Migrations
                                 .HasColumnType("float");
 
                             b1.Property<string>("DisplayType")
+                                .IsRequired()
                                 .HasMaxLength(30)
                                 .HasColumnType("nvarchar(30)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2315,6 +2474,12 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -2367,6 +2532,12 @@ namespace Infra_Data.Migrations
 
                             b1.Property<int>("StorageGB")
                                 .HasColumnType("int");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2427,6 +2598,12 @@ namespace Infra_Data.Migrations
                                 .HasMaxLength(15)
                                 .HasColumnType("nvarchar(15)");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -2486,6 +2663,12 @@ namespace Infra_Data.Migrations
                                 .ValueGeneratedOnUpdateSometimes()
                                 .HasColumnType("bit");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -2527,26 +2710,19 @@ namespace Infra_Data.Migrations
                     b.Navigation("ProductFlagsObjectValue")
                         .IsRequired();
 
-                    b.Navigation("SmartphoneBatteryObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphoneBatteryObjectValue");
 
-                    b.Navigation("SmartphoneCameraObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphoneCameraObjectValue");
 
-                    b.Navigation("SmartphoneDimensionsObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphoneDimensionsObjectValue");
 
-                    b.Navigation("SmartphoneDisplayObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphoneDisplayObjectValue");
 
-                    b.Navigation("SmartphoneFeatureObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphoneFeatureObjectValue");
 
-                    b.Navigation("SmartphoneMemoryObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphoneMemoryObjectValue");
 
-                    b.Navigation("SmartphonePlatformObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphonePlatformObjectValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Category", b =>

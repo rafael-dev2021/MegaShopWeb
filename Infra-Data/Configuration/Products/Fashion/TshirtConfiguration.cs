@@ -175,6 +175,22 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.OwnsOne(x => x.TshirtMainFeaturesObectsValue,
                sa =>
                {
+                   sa.Property(x => x.Gender)
+                    .HasMaxLength(10)
+                    .IsRequired();
+                   sa.Property(x => x.Age)
+                    .HasMaxLength(10)
+                    .IsRequired();
+                   sa.Property(x => x.TypeOfClothing)
+                    .HasMaxLength(15)
+                    .IsRequired();
+                   sa.Property(x => x.FabricDesign)
+                    .HasMaxLength(15);
+                   sa.Property(x => x.Size)
+                    .HasMaxLength(5)
+                    .IsRequired();
+
+
                    sa.Property<int>("Id");
                    sa.HasKey("Id");
                    sa.HasData(new
@@ -202,6 +218,27 @@ namespace Infra_Data.Configuration.Products.Fashion
             builder.OwnsOne(x => x.TshirtOtherFeaturesObectsValue,
                sa =>
                {
+                   sa.Property(x => x.RecommendedUses)
+                   .HasMaxLength(15)
+                   .IsRequired();
+                   sa.Property(x => x.KindOfFabric)
+                   .HasMaxLength(10);
+                   sa.Property(x => x.Composition)
+                   .HasMaxLength(15);
+                   sa.Property(x => x.MainMaterial)
+                   .HasMaxLength(15)
+                   .IsRequired();
+                   sa.Property(x => x.SleeveType)
+                   .HasMaxLength(15);
+                   sa.Property(x => x.TypeOfCollar)
+                   .HasMaxLength(15);
+                   sa.Property(x => x.UnitsPerKit)
+                   .HasConversion<int>();
+                   sa.Property(x => x.WithRecycledMaterials)
+                   .HasConversion<bool>();
+                   sa.Property(x => x.ItsSporty)
+                 .HasConversion<bool>();
+
                    sa.Property<int>("Id");
                    sa.HasKey("Id");
                    sa.HasData(new

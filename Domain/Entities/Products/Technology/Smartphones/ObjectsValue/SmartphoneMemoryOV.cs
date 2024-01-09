@@ -1,8 +1,7 @@
-﻿namespace Domain.Entities.Products.Technology.Smartphones.ObjectsValue
+﻿namespace Domain.Entities.Products.Technology.Smartphones.ObjectsValue;
+
+public  class SmartphoneMemoryOV
 {
-    public  class SmartphoneMemoryOV
-    {
-        public int StorageGB { get; protected set; }
-        public int RAMGB { get; protected set; }
-    }
+    public int StorageGB { get; protected set; }
+    public int RAMGB { get; protected set; }
 }
