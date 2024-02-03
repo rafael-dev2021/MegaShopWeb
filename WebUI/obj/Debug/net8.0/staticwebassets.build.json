@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fKdVqpriQX+zphYthyvlUhVe0z8HrPRtDduKI9Kzxpg=",
+  "Hash": "VPQrROe/RmQpnF8d7RQseaCaRHJfiIZAg5Oml0b1YE4=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebUI.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\_GetProductList.css",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "css/_GetProductList.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\_GetProductList.css"
     },
     {
       "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\Fashion.css",
@@ -3245,6 +3264,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\slides\\slider-2.jpg"
+    },
+    {
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\_GetProductList.js",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "js/_GetProductList.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\_GetProductList.js"
     },
     {
       "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\GetProductsListPartial.js",

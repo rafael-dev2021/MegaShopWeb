@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240203032405_FirstTable")]
+    [Migration("20240203042643_FirstTable")]
     partial class FirstTable
     {
         /// <inheritdoc />
@@ -376,7 +376,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3938)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2697)
                         },
                         new
                         {
@@ -385,7 +385,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3954)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2711)
                         },
                         new
                         {
@@ -394,7 +394,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3955)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2712)
                         },
                         new
                         {
@@ -403,7 +403,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
                             ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3956)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2722)
                         },
                         new
                         {
@@ -412,7 +412,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
                             ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3957)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2723)
                         },
                         new
                         {
@@ -421,7 +421,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
                             ProductId = 4,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3957)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2724)
                         },
                         new
                         {
@@ -430,7 +430,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3958)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2725)
                         },
                         new
                         {
@@ -439,7 +439,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3959)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2726)
                         },
                         new
                         {
@@ -448,7 +448,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
                             ProductId = 6,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3960)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2726)
                         },
                         new
                         {
@@ -457,7 +457,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
                             ProductId = 6,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3960)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2727)
                         },
                         new
                         {
@@ -466,7 +466,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3961)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2728)
                         },
                         new
                         {
@@ -475,7 +475,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 1,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3962)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2729)
                         },
                         new
                         {
@@ -484,7 +484,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 9,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3963)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2730)
                         },
                         new
                         {
@@ -493,7 +493,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3964)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2730)
                         },
                         new
                         {
@@ -502,7 +502,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3965)
+                            ReviewDate = new DateTime(2024, 2, 3, 1, 26, 40, 779, DateTimeKind.Local).AddTicks(2731)
                         });
                 });
 

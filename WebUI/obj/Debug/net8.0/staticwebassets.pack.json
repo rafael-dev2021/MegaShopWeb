@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\Smartphone.css"
     },
     {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\_GetProductList.css",
+      "PackagePath": "staticwebassets\\css\\_GetProductList.css"
+    },
+    {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -679,6 +683,10 @@
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\GetProductsListPartial.js",
       "PackagePath": "staticwebassets\\js\\GetProductsListPartial.js"
+    },
+    {
+      "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\_GetProductList.js",
+      "PackagePath": "staticwebassets\\js\\_GetProductList.js"
     },
     {
       "Id": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\site.js",

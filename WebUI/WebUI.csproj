@@ -9,53 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\Admin\Data\**" />
-    <Compile Remove="Areas\Admin\Models\**" />
-    <Compile Remove="Areas\Admin\Views\Admin\**" />
-    <Content Remove="Areas\Admin\Data\**" />
-    <Content Remove="Areas\Admin\Models\**" />
-    <Content Remove="Areas\Admin\Views\Admin\**" />
-    <EmbeddedResource Remove="Areas\Admin\Data\**" />
-    <EmbeddedResource Remove="Areas\Admin\Models\**" />
-    <EmbeddedResource Remove="Areas\Admin\Views\Admin\**" />
-    <None Remove="Areas\Admin\Data\**" />
-    <None Remove="Areas\Admin\Models\**" />
-    <None Remove="Areas\Admin\Views\Admin\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Create.cshtml" />
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Index.cshtml" />
-    <Content Remove="wwwroot\css\_GetProductList.css" />
-    <Content Remove="wwwroot\js\_GetProductList.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Create.cshtml" />
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Index.cshtml" />
-    <None Include="Views\Account\AccessDenied.cshtml" />
-    <None Include="Views\Account\ChangePassword.cshtml" />
-    <None Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <None Include="Views\Account\EditProfile.cshtml" />
-    <None Include="Views\Account\EditProfileSuccess.cshtml" />
-    <None Include="Views\Account\Login.cshtml" />
-    <None Include="Views\Account\PasswordResetSuccess.cshtml" />
-    <None Include="Views\Account\Register.cshtml" />
-    <None Include="Views\Account\ResetPassword.cshtml" />
-    <None Include="Views\Shared\CategoriesPartial\_CategoriesPartial.cshtml" />
-    <None Include="Views\Shared\Components\ShoppingCartMenu\Default.cshtml" />
-    <None Include="Views\ShoppingCart\Index.cshtml" />
-    <None Include="Views\ShoppingCart\ItemReview.cshtml" />
-    <None Include="Views\Smartphone\DetailsPartial.cshtml" />
-    <None Include="Views\Smartphone\FeaturesPartial.cshtml" />
-    <None Include="Views\Smartphone\Index.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -66,7 +19,98 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\img_games\" />
+    <None Include="Areas\Admin\Views\GameAdmin\Create.cshtml" />
+    <None Include="Areas\Admin\Views\GameAdmin\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\GameAdmin\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\GameAdmin\Index.cshtml" />
+    <None Include="Areas\Admin\Views\SmartphoneAdmin\Create.cshtml" />
+    <None Include="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\SmartphoneAdmin\Index.cshtml" />
+    <None Include="Areas\Admin\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <None Include="Views\Account\AccessDenied.cshtml" />
+    <None Include="Views\Account\ChangePassword.cshtml" />
+    <None Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <None Include="Views\Account\EditProfile.cshtml" />
+    <None Include="Views\Account\EditProfileSuccess.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\PasswordResetSuccess.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Account\ResetPassword.cshtml" />
+    <None Include="Views\Category\Index.cshtml" />
+    <None Include="Views\Contact\About.cshtml" />
+    <None Include="Views\Contact\Contact.cshtml" />
+    <None Include="Views\Contact\ThankYou.cshtml" />
+    <None Include="Views\Game\DetailsPartial.cshtml" />
+    <None Include="Views\Game\FeaturesPartial.cshtml" />
+    <None Include="Views\Game\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Order\Checkout.cshtml" />
+    <None Include="Views\Order\CheckoutDetail.cshtml" />
+    <None Include="Views\Order\CreditCard.cshtml" />
+    <None Include="Views\Order\DebitCard.cshtml" />
+    <None Include="Views\Products\Details.cshtml" />
+    <None Include="Views\Products\DetailsPartial\Technology\Games\_DetailsGameSpecificationsPartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\Technology\Smartphones\_DetailsSmartphoneSpecificationsPartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsAboutThisProductPartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsButtonInformationsPartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsContainerBuyBoxOnePartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsContainerBuyBoxThreePartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsContainerBuyBoxTwoPartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsImagePartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsPricePartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsProductAlsoPurchasedPartial.cshtml" />
+    <None Include="Views\Products\DetailsPartial\_DetailsProductsFeaturesPartial.cshtml" />
+    <None Include="Views\Products\Index.cshtml" />
+    <None Include="Views\Products\IndexCategory.cshtml" />
+    <None Include="Views\Products\PriceIsBetweenTwoHundredAndAThousand.cshtml" />
+    <None Include="Views\Products\PriceIsHigherThanTwoThousand.cshtml" />
+    <None Include="Views\Products\PriceIsLowerThanOneHundred.cshtml" />
+    <None Include="Views\Products\ProductNotFound.cshtml" />
+    <None Include="Views\Shared\CategoriesPartial\_CategoriesPartial.cshtml" />
+    <None Include="Views\Shared\Components\BrandsMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\CategoryMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\CategoryWithProductCountList\Default.cshtml" />
+    <None Include="Views\Shared\Components\FashionMenu\AllProductsViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\FashionMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\GamesMenu\AllProductsViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\GamesMenu\ConsoleViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\GamesMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\GamesMenu\VideoGameViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\ShoppingCartMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\SmartphonesMenu\AllProductsViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\SmartphonesMenu\AppleViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\SmartphonesMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\SmartphonesMenu\SamsungViewPartial.cshtml" />
+    <None Include="Views\Shared\Components\SortByMenu\Default.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsList.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsListImagesPartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsListModalPartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsListOwlPartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsListPricePartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsListReviewsAveragePartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\GetProductsListPartial\GetProductsListTablePartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\ProductReviewsPartial\ProductReviewsAverageOpinionsPartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\ProductReviewsPartial\ProductReviewsAveragePartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\ProductReviewsPartial\ProductReviewsPartial.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\_HomeCarousel.cshtml" />
+    <None Include="Views\Shared\ProductsPartial\_ProductAlsoPurchased.cshtml" />
+    <None Include="Views\Shared\TemporaryFolder\_InCronstruction.cshtml" />
+    <None Include="Views\Shared\_CartCheckoutPartial.cshtml" />
+    <None Include="Views\Shared\_CartPartial.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\ShoppingCart\Index.cshtml" />
+    <None Include="Views\ShoppingCart\ItemReview.cshtml" />
+    <None Include="Views\Smartphone\DetailsPartial.cshtml" />
+    <None Include="Views\Smartphone\FeaturesPartial.cshtml" />
+    <None Include="Views\Smartphone\Index.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
