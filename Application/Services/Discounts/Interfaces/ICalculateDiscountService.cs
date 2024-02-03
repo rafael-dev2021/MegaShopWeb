@@ -1,4 +1,4 @@
-﻿using Application.Dtos.ValueObjects.ProductsOV;
+﻿using Application.Dtos.Valuables.ProductsOV;
 
 namespace Application.Services.Discounts.Interfaces
 {

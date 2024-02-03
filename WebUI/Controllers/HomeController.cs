@@ -1,4 +1,4 @@
-using Application.Interfaces.Entities;
+using Application.Services.Entities.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebUI.Models;
@@ -6,18 +6,11 @@ using WebUI.ViewModels;
 
 namespace WebUI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(ILogger<HomeController> logger, ICategoryDtoService categoryDtoService, IProductDtoService productDtoService) : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly ICategoryDtoService _categoryDtoService;
-        private readonly IProductDtoService _productDtoService;
-
-        public HomeController(ILogger<HomeController> logger, ICategoryDtoService categoryDtoService, IProductDtoService productDtoService)
-        {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
-            _productDtoService = productDtoService ?? throw new ArgumentNullException(nameof(productDtoService));
-        }
+        private readonly ILogger<HomeController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
+        private readonly IProductDtoService _productDtoService = productDtoService ?? throw new ArgumentNullException(nameof(productDtoService));
 
         [HttpGet]
         public async Task<IActionResult> Index()

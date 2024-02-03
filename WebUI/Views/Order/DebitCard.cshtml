@@ -1,0 +1,28 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+
+<div>
+    <!-- Campos do formulário de cartão de débito -->
+    <div class="mb-3 debit-card">
+        <input asp-for="PaymentMethod.DebitCard.DebitCardNumber" id="DebitCardNumber" placeholder="Debit Card number" class="form-control" />
+        <span id="DebitCardBrand" class="text-muted"></span>
+        <span asp-validation-for="PaymentMethod.DebitCard.DebitCardNumber" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <input asp-for="PaymentMethod.SSN" placeholder="SSN" class="form-control" />
+        <span asp-validation-for="PaymentMethod.SSN" class="text-danger"></span>
+    </div>
+    <div class="mb-3 debit-card">
+        <input asp-for="PaymentMethod.DebitCard.DebitCardHolderName" placeholder="Holder name" class="form-control" />
+        <span asp-validation-for="PaymentMethod.DebitCard.DebitCardHolderName" class="text-danger"></span>
+    </div>
+    <div class="row debit-card">
+        <div class="col-md-6 mb-3">
+            <input asp-for="PaymentMethod.DebitCard.DebitCardExpirationDate" id="DebitExpirationDate" placeholder="Expiration date" class="form-control" />
+            <span asp-validation-for="PaymentMethod.DebitCard.DebitCardExpirationDate" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <input asp-for="PaymentMethod.DebitCard.DebitCardCVV" placeholder="Security code" class="form-control" />
+            <span asp-validation-for="PaymentMethod.DebitCard.DebitCardCVV" class="text-danger"></span>
+        </div>
+    </div>
+</div>

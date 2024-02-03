@@ -1,9 +1,9 @@
 ﻿using Application.Dtos.ProductsDto.Technology.Smartphones;
-using Application.Interfaces.Entities.TechnologyInterfaces;
-using Application.Interfaces.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Application.Services.Entities.Products.Interfaces.TechnologyInterfaces;
+using Application.Services.Entities.Interfaces;
 
 namespace WebUI.Areas.Admin.Controllers
 {

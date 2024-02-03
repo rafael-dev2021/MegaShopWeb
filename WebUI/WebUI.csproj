@@ -9,6 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Data\**" />
+    <Compile Remove="Areas\Admin\Models\**" />
+    <Compile Remove="Areas\Admin\Views\Admin\**" />
+    <Content Remove="Areas\Admin\Data\**" />
+    <Content Remove="Areas\Admin\Models\**" />
+    <Content Remove="Areas\Admin\Views\Admin\**" />
+    <EmbeddedResource Remove="Areas\Admin\Data\**" />
+    <EmbeddedResource Remove="Areas\Admin\Models\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\Admin\**" />
+    <None Remove="Areas\Admin\Data\**" />
+    <None Remove="Areas\Admin\Models\**" />
+    <None Remove="Areas\Admin\Views\Admin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Create.cshtml" />
     <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
     <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
@@ -32,30 +47,30 @@
     <None Include="Views\Account\Register.cshtml" />
     <None Include="Views\Account\ResetPassword.cshtml" />
     <None Include="Views\Shared\CategoriesPartial\_CategoriesPartial.cshtml" />
+    <None Include="Views\Shared\Components\ShoppingCartMenu\Default.cshtml" />
+    <None Include="Views\ShoppingCart\Index.cshtml" />
+    <None Include="Views\ShoppingCart\ItemReview.cshtml" />
     <None Include="Views\Smartphone\DetailsPartial.cshtml" />
     <None Include="Views\Smartphone\FeaturesPartial.cshtml" />
     <None Include="Views\Smartphone\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infra-Ioc\Infra-Ioc.csproj" />
+    <Folder Include="wwwroot\images\img_games\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Admin\" />
-    <Folder Include="wwwroot\images\img_games\" />
+    <ProjectReference Include="..\Infra-Ioc\Infra-Ioc.csproj" />
   </ItemGroup>
 
 </Project>

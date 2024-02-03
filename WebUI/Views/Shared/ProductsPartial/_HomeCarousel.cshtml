@@ -14,16 +14,16 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="@Model.ProductImageObjectValue.MainImage" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+                <img src="@Url.Content(Model.Images[0])" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
             </div>
             <div class="carousel-item">
-                <img src="@Model.ProductImageObjectValue.ImageFirst" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+                <img src="@Url.Content(Model.Images[1])" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
             </div>
             <div class="carousel-item">
-                <img src="@Model.ProductImageObjectValue.ImageSecond" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+                <img src="@Url.Content(Model.Images[2])" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
             </div>
             <div class="carousel-item">
-                <img src="@Model.ProductImageObjectValue.ImageThird" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
+                <img src="@Url.Content(Model.Images[3])" alt="@Model.Name" class="d-block w-50 mx-auto" id="main-image">
             </div>
           
         </div>

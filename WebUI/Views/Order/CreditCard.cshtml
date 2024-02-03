@@ -1,0 +1,27 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+<div>
+    <!-- Campos do formulário de cartão de crédito -->
+    <div class="mb-3 credit-card">
+        <input asp-for="PaymentMethod.CreditCard.CreditCardNumber" id="CreditCardNumber" placeholder="Credit Card number" class="form-control" />
+        <span id="CreditCardBrand" class="text-muted"></span>
+        <span asp-validation-for="PaymentMethod.CreditCard.CreditCardNumber" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <input asp-for="PaymentMethod.SSN" placeholder="SSN" class="form-control" />
+        <span asp-validation-for="PaymentMethod.SSN" class="text-danger"></span>
+    </div>
+    <div class="mb-3 credit-card">
+        <input asp-for="PaymentMethod.CreditCard.CreditCardHolderName" placeholder="Holder name" class="form-control" />
+        <span asp-validation-for="PaymentMethod.CreditCard.CreditCardHolderName" class="text-danger"></span>
+    </div>
+    <div class="row credit-card">
+        <div class="col-md-6 mb-3">
+            <input asp-for="PaymentMethod.CreditCard.CreditCardExpirationDate" id="CreditExpirationDate" placeholder="Expiration date" class="form-control" />
+            <span asp-validation-for="PaymentMethod.CreditCard.CreditCardExpirationDate" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <input asp-for="PaymentMethod.CreditCard.CreditCardCVV" placeholder="Security code" class="form-control" />
+            <span asp-validation-for="PaymentMethod.CreditCard.CreditCardCVV" class="text-danger"></span>
+        </div>
+    </div>
+</div>

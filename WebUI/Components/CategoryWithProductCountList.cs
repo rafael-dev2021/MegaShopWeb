@@ -1,4 +1,4 @@
-﻿using Application.Interfaces.Entities;
+﻿using Application.Services.Entities.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Components

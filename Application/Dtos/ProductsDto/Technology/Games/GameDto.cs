@@ -1,12 +1,10 @@
-﻿
-using Application.Dtos.ProductsDto.Technology.Games.ObjectsValue;
+﻿using Application.Dtos.ProductsDto.Technology.Games.Valuables;
 
-namespace Application.Dtos.ProductsDto.Technology.Games
+namespace Application.Dtos.ProductsDto.Technology.Games;
+
+public class GameDto : ProductDto
 {
-    public sealed class GameDto : ProductDto
-    {
-        public GameGeneralFeaturesOVDto GameGeneralFeaturesObjectsValue { get; set; }
-        public GameSpecificationsOVDto GameSpecificationsObjectsValue { get; set; }
-        public GameRequirementsOVDto GameRequirementsObjectsValue { get; set; }
-    }
+    public GameGeneralFeaturesOVDto GameGeneralFeaturesObjectsValue { get; set; }
+    public GameSpecificationsOVDto GameSpecificationsObjectsValue { get; set; }
+    public GameRequirementsOVDto GameRequirementsObjectsValue { get; set; }
 }

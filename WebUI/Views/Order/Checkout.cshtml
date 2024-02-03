@@ -1,0 +1,330 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+
+<style>
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        height: 50px;
+    }
+
+    .form-group input[type="submit"],
+    .form-group a.btn {
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .row {
+        margin-bottom: 10px;
+    }
+
+    .text-danger {
+        display: block;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .login-form button[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background-color: blue;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .login-form .form-group {
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<form asp-action="Checkout" method="post" role="form">
+    @Html.AntiForgeryToken()
+    <div class="text-center mb-4 container" style="background-color:#B12704 !important;padding:10px">
+        <span style="font-size:18px">
+            <a asp-controller="ShoppingCart" asp-action="Index" style="color:white">
+                Cart
+            </a>
+            <a asp-controller="ShoppingCart" asp-action="ItemReview" style="color:white">
+                > Item Review >
+            </a>
+            <a asp-controller="Order" asp-action="Checkout" style="color:deepskyblue">
+                Checkout
+            </a>
+            <span style="color:white">
+                > Order Detail
+            </span>
+        </span>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card-header" style="border: 1px solid lightgray;border-radius:5px">
+                    <h4 class="card-title">Shipping address</h4>
+                </div>
+                <div class="row">
+                    <div class="form-group mb-3 mt-2">
+                        <input id="pais" asp-for="DeliveryAddress.Country" placeholder="Country" class="form-control" />
+                        <span asp-validation-for="DeliveryAddress.Country" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input asp-for="UserDelivery.FirstName" placeholder="First name" class="form-control" />
+                        <span asp-validation-for="UserDelivery.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input asp-for="UserDelivery.LastName" placeholder="Last name" class="form-control" />
+                        <span asp-validation-for="UserDelivery.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group mb-3 mt-2">
+                        <div class="form-group col-md-6">
+                            <input asp-for="UserDelivery.Email" placeholder="Email" class="form-control" />
+                            <span asp-validation-for="UserDelivery.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <input id="cpf" asp-for="UserDelivery.SSN" placeholder="SSN" class="form-control" />
+                        <span asp-validation-for="UserDelivery.SSN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input asp-for="UserDelivery.Phone" placeholder="Phone" class="form-control" />
+                        <span asp-validation-for="UserDelivery.Phone" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input id="cep" asp-for="DeliveryAddress.ZipCode" placeholder="Cep" class="form-control" />
+                    <span asp-validation-for="DeliveryAddress.ZipCode" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <input id="state" asp-for="DeliveryAddress.State" placeholder="State" class="form-control" />
+                        <span asp-validation-for="DeliveryAddress.State" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input id="city" asp-for="DeliveryAddress.City" placeholder="City" class="form-control" />
+                        <span asp-validation-for="DeliveryAddress.City" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <input id="logradouro" asp-for="DeliveryAddress.Address" placeholder="Address" class="form-control" />
+                        <span asp-validation-for="DeliveryAddress.Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input id="neighborhood" asp-for="DeliveryAddress.Neighborhood" placeholder="Neighborhood" class="form-control" />
+                        <span asp-validation-for="DeliveryAddress.Neighborhood" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="DeliveryAddress.Complement" placeholder="Apartment, Suite, Unit, Building, Floor, etc.(Optional)" class="form-control" />
+                    <span asp-validation-for="DeliveryAddress.Complement" class="text-danger"></span>
+                </div>
+                <div style="justify-content:right; display:flex">
+                    <p>
+                        Upon completion, you agree to
+                        <a asp-controller="" asp-action="Privacy">Privay Policy</a>
+                        and
+                        <a asp-controller="" asp-action="Cookies">Cookies</a>
+                    </p>
+                </div>
+                <div class="row login-form">
+                    <div class="form-group col-md-3">
+                        <button type="submit" value="Finish">Finish order</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-header" style="border:1px solid lightgray;border-radius:5px">
+                    <h4 class="card-title">Payment data</h4>
+                </div>
+                <div class="card mt-2" style="line-height:20px">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="PaymentMethod" class="form-label">Payment method:</label>
+                            <select id="PaymentMethod" name="Payment.PaymentMethod" class="form-control">
+                                <option value="">Select payment method</option>
+                                @foreach (var paymentMethod in Enum.GetValues(typeof(Domain.Entities.Payments.Enums.EPaymentMethod)))
+                                {
+                                    var paymentMethodValue = (Domain.Entities.Payments.Enums.EPaymentMethod)paymentMethod;
+                                    <option value="@paymentMethodValue">@Domain.Entities.Payments.Enums.EPaymentMethodHelper.GetDescription(paymentMethodValue)</option>
+                                }
+                            </select>
+                            <span asp-validation-for="PaymentMethod.EPaymentMethod" class="text-danger"></span>
+                        </div>
+
+                        <div id="creditCardFields" style="display:none;">
+                            <!-- Campos do formulário de cartão de crédito -->
+                            <div class="mb-3">
+                                <input asp-for="PaymentMethod.CreditCard.CreditCardNumber" id="CardNumber" placeholder="Card number" class="form-control" />
+                                <span id="CardBrand" class="text-muted"></span>
+                                <span asp-validation-for="PaymentMethod.CreditCard.CreditCardNumber" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input asp-for="PaymentMethod.SSN" placeholder="SSN" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.SSN" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input asp-for="PaymentMethod.CreditCard.CreditCardHolderName" placeholder="Holder name" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.CreditCard.CreditCardHolderName" class="text-danger"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input asp-for="PaymentMethod.CreditCard.CreditCardExpirationDate" id="ExpirationDate" placeholder="Expiration date" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.CreditCard.CreditCardExpirationDate" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input asp-for="PaymentMethod.CreditCard.CreditCardCVV" placeholder="Security code" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.CreditCard.CreditCardCVV" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Adicione este campo oculto para armazenar o valor do método de pagamento escolhido -->
+                        <input type="hidden" id="SelectedPaymentMethod" name="SelectedPaymentMethod" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Função para ser chamada quando o método de pagamento é alterado
+        function handlePaymentMethodChange() {
+            // Obtenha o elemento do dropdown
+            var paymentMethodDropdown = document.getElementById("PaymentMethod");
+
+            // Obtenha o valor selecionado
+            var selectedPaymentMethod = paymentMethodDropdown.value;
+
+            // Atualize o campo oculto com o valor selecionado
+            document.getElementById("SelectedPaymentMethod").value = selectedPaymentMethod;
+
+            // Exiba ou oculte os campos do cartão de crédito conforme necessário
+            var creditCardFields = document.getElementById("creditCardFields");
+            if (selectedPaymentMethod === "CreditCard" || selectedPaymentMethod === "DebitCard") {
+                creditCardFields.style.display = "block";
+            } else {
+                creditCardFields.style.display = "none";
+            }
+        }
+
+        // Adicione um ouvinte de evento para chamar a função quando o método de pagamento é alterado
+        var paymentMethodDropdown = document.getElementById("PaymentMethod");
+        paymentMethodDropdown.addEventListener("change", handlePaymentMethodChange);
+
+        // Chame a função inicialmente para garantir que os campos estejam corretamente configurados ao carregar a página
+        handlePaymentMethodChange();
+
+        // Adiciona o divisor '/' automaticamente na data de expiração
+        const expirationDateInput = document.getElementById('ExpirationDate');
+        expirationDateInput.addEventListener('input', (event) => {
+            const input = event.target;
+            let value = input.value;
+            value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (value.length > 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2);
+            }
+            input.value = value;
+        });
+
+        // Identifica a bandeira do cartão de acordo com o número digitado
+        const cardNumberInput = document.getElementById('CardNumber');
+        const cardBrandSpan = document.getElementById('CardBrand');
+        cardNumberInput.addEventListener('input', (event) => {
+            const input = event.target;
+            let value = input.value;
+            value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+            // Array com expressões regulares para identificar a bandeira do cartão
+            const cardBrands = [
+                { brand: 'Visa', pattern: /^4/ },
+                { brand: 'Mastercard', pattern: /^5[1-5]/ },
+                { brand: 'Amex', pattern: /^3[47]/ },
+                { brand: 'Dinners', pattern: /^3[068]/ },
+                { brand: 'Discover', pattern: /^6(?:011|5)/ },
+                { brand: 'Hipercard', pattern: /^6(?:062|5)/ },
+            ];
+
+            let cardBrand = '';
+            for (const brand of cardBrands) {
+                if (brand.pattern.test(value)) {
+                    cardBrand = brand.brand;
+                    break;
+                }
+            }
+
+            cardBrandSpan.textContent = cardBrand;
+        });
+
+        // Função para fazer a requisição à API ViaCEP e preencher o endereço
+        function getAddressByCEP(cep) {
+            axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => {
+                    const endereco = response.data;
+                    document.getElementById("pais").value = "Brasil";
+                    document.getElementById("logradouro").value = endereco.logradouro;
+                    document.getElementById("neighborhood").value = endereco.bairro;
+                    document.getElementById("city").value = endereco.localidade;
+                    document.getElementById("state").value = endereco.uf;
+                })
+                .catch(error => {
+                    document.getElementById("cep-error").textContent = "CEP inválido";
+                    console.error(error);
+                });
+        }
+
+        // Função para validar o CEP
+        function validateCEP() {
+            const cep = document.getElementById("cep").value;
+            const cepPattern = /^[0-9]{8}$/;
+
+            if (cepPattern.test(cep)) {
+                getAddressByCEP(cep);
+                document.getElementById("cep-error").textContent = "";
+            } else {
+                document.getElementById("cep-error").textContent = "CEP inválido";
+            }
+        }
+
+        // Adicionar um ouvinte de evento para o campo de CEP
+        document.getElementById("cep").addEventListener("input", validateCEP);
+
+        // Função para formatar o CPF
+        function formatCPF(cpf) {
+            cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+            cpf = cpf.replace(/(\d{3})(\d{2})$/, '$1-$2');
+            return cpf;
+        }
+
+        // Função para lidar com a entrada de CPF
+        function handleCPFInput() {
+            const cpfInput = document.getElementById("cpf");
+            cpfInput.value = formatCPF(cpfInput.value);
+        }
+
+        // Adicionar um ouvinte de evento para o campo de CPF
+        document.getElementById("cpf").addEventListener("input", handleCPFInput);
+    </script>
+}
+

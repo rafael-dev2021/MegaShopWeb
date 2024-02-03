@@ -1,7 +1,22 @@
-﻿@if (Context.User.Identity.IsAuthenticated)
+﻿@using Infra_Data.Identity
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> _userManager
+
+@{
+    ApplicationUser user = await _userManager.GetUserAsync(Context.User);
+
+    string GetFormattedName(ApplicationUser user)
+    {
+        return user?.FirstName != null && user?.LastName != null
+            ? $"Hello, {user.FirstName} {user.LastName}"
+            : "Login";
+    }
+}
+
+@if (Context.User.Identity.IsAuthenticated)
 {
     <a asp-controller="Account" asp-action="Logout" style="text-decoration:none;color:black">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i> @Context.User.Identity.Name
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;@GetFormattedName(user)
     </a>
 }
 else

@@ -17,10 +17,43 @@ namespace Infra_Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Domain.Entities.Cart.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShoppingCartId")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ShoppingCartItems");
+                });
 
             modelBuilder.Entity("Domain.Entities.Category", b =>
                 {
@@ -89,7 +122,7 @@ namespace Infra_Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.Deliveries.DeliveryAddress", b =>
+            modelBuilder.Entity("Domain.Entities.Orders.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,49 +130,127 @@ namespace Infra_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ConfirmedOrder")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("AddressType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DispatchedOrder")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("PaymentMethodId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Complement")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("RequestReceived")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TotalItemsOrder")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("IsBillingAddress")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Neighborhood")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserGenericId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ZipCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("TotalOrder")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserGenericId");
+                    b.HasIndex("PaymentMethodId");
 
-                    b.ToTable("DeliveryAddress");
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Orders.OrderDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentMethodId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("PaymentMethodId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Payments.CreditCard", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreditCardCVV")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
+
+                    b.Property<string>("CreditCardExpirationDate")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<string>("CreditCardHolderName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CreditCardNumber")
+                        .IsRequired()
+                        .HasMaxLength(19)
+                        .HasColumnType("nvarchar(19)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CreditCard");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Payments.DebitCard", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DebitCardCVV")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
+
+                    b.Property<string>("DebitCardExpirationDate")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<string>("DebitCardHolderName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("DebitCardNumber")
+                        .IsRequired()
+                        .HasMaxLength(19)
+                        .HasColumnType("nvarchar(19)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DebitCard");
                 });
 
             modelBuilder.Entity("Domain.Entities.Payments.Payment", b =>
@@ -159,17 +270,10 @@ namespace Infra_Data.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
-                    b.Property<int>("EPaymentMethod")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EPaymentStatus")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ProcessingDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("SSN")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
 
@@ -193,18 +297,28 @@ namespace Infra_Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
+                        .HasMaxLength(10000)
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
+                    b.Property<string>("Images")
+                        .IsRequired()
+                        .HasMaxLength(800)
+                        .HasColumnType("nvarchar(800)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -229,16 +343,14 @@ namespace Infra_Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewId"));
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasMaxLength(2000)
                         .HasColumnType("nvarchar(2000)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("ProductReviewId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Rating")
@@ -249,7 +361,7 @@ namespace Infra_Data.Migrations
 
                     b.HasKey("ReviewId");
 
-                    b.HasIndex("ProductReviewId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Reviews");
 
@@ -259,139 +371,139 @@ namespace Infra_Data.Migrations
                             ReviewId = 1,
                             Comment = "The quality of the photos is incredible.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
-                            ProductReviewId = 1,
+                            ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6382)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3938)
                         },
                         new
                         {
                             ReviewId = 2,
                             Comment = "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.",
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
-                            ProductReviewId = 1,
+                            ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6398)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3954)
                         },
                         new
                         {
                             ReviewId = 3,
                             Comment = "Good!",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
-                            ProductReviewId = 1,
+                            ProductId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6399)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3955)
                         },
                         new
                         {
                             ReviewId = 4,
                             Comment = "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
-                            ProductReviewId = 2,
+                            ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6400)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3956)
                         },
                         new
                         {
                             ReviewId = 5,
                             Comment = "Excellent, after all it is an Apple product. Worth every penny given ❤.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
-                            ProductReviewId = 3,
+                            ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6401)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3957)
                         },
                         new
                         {
                             ReviewId = 6,
                             Comment = "The best.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
-                            ProductReviewId = 4,
+                            ProductId = 4,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6401)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3957)
                         },
                         new
                         {
                             ReviewId = 7,
                             Comment = "New original product you can buy without fear!.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
-                            ProductReviewId = 5,
+                            ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6402)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3958)
                         },
                         new
                         {
                             ReviewId = 8,
                             Comment = "Excellent product, came sealed.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
-                            ProductReviewId = 5,
+                            ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6403)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3959)
                         },
                         new
                         {
                             ReviewId = 9,
                             Comment = "Perfect product.",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
-                            ProductReviewId = 6,
+                            ProductId = 6,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6404)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3960)
                         },
                         new
                         {
                             ReviewId = 10,
                             Comment = "The best product, very good!",
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
-                            ProductReviewId = 6,
+                            ProductId = 6,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6405)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3960)
                         },
                         new
                         {
                             ReviewId = 11,
                             Comment = "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.",
                             Image = "",
-                            ProductReviewId = 7,
+                            ProductId = 7,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6405)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3961)
                         },
                         new
                         {
                             ReviewId = 12,
                             Comment = "It was small on me. I want to return it. To get my refund.",
                             Image = "",
-                            ProductReviewId = 7,
+                            ProductId = 7,
                             Rating = 1,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6420)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3962)
                         },
                         new
                         {
                             ReviewId = 14,
                             Comment = "Excellent product.",
                             Image = "",
-                            ProductReviewId = 9,
+                            ProductId = 9,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6429)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3963)
                         },
                         new
                         {
                             ReviewId = 15,
                             Comment = "I liked the original, it has to be laced but it's perfect.",
                             Image = "",
-                            ProductReviewId = 10,
+                            ProductId = 10,
                             Rating = 5,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6430)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3964)
                         },
                         new
                         {
                             ReviewId = 16,
                             Comment = "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.",
                             Image = "",
-                            ProductReviewId = 10,
+                            ProductId = 10,
                             Rating = 4,
-                            ReviewDate = new DateTime(2023, 12, 11, 0, 5, 44, 103, DateTimeKind.Local).AddTicks(6431)
+                            ReviewDate = new DateTime(2024, 2, 3, 0, 24, 3, 942, DateTimeKind.Local).AddTicks(3965)
                         });
                 });
 
-            modelBuilder.Entity("Infra_Data.Identity.UserGeneric", b =>
+            modelBuilder.Entity("Infra_Data.Identity.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -405,9 +517,6 @@ namespace Infra_Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DefaultPaymentMethod")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -607,37 +716,24 @@ namespace Infra_Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Entities.Payments.CreditCards.CreditCard", b =>
+            modelBuilder.Entity("Domain.Entities.Payments.PaymentMethod", b =>
                 {
                     b.HasBaseType("Domain.Entities.Payments.Payment");
 
-                    b.Property<string>("CVV")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)");
-
-                    b.Property<string>("CardHolderName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CardNumber")
-                        .IsRequired()
-                        .HasMaxLength(19)
-                        .HasColumnType("nvarchar(19)");
-
-                    b.Property<string>("ExpirationDate")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<Guid>("Reference")
+                    b.Property<Guid?>("CreditCardId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasDiscriminator().HasValue("CreditCard");
+                    b.Property<Guid?>("DebitCardId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasIndex("CreditCardId");
+
+                    b.HasIndex("DebitCardId");
+
+                    b.HasDiscriminator().HasValue("PaymentMethod");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Products.Fashion.Shoes.Shoes", b =>
+            modelBuilder.Entity("Domain.Entities.Products.Fashion.ProductShoes.Shoes", b =>
                 {
                     b.HasBaseType("Domain.Entities.Product");
 
@@ -649,6 +745,7 @@ namespace Infra_Data.Migrations
                             Id = 9,
                             CategoryId = 2,
                             Description = "Buoyed to the comfort you've come to trust, the Air Max Excee meets the needs of your 9 to 5 while keeping your outfit on-point with rich textures. These sneakers deliver just what you're looking for—soft cushioning that's easy to style.",
+                            Images = "[\"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/24d5a5ec-db76-4512-99a8-36231b9a9b41/streakfly-road-racing-shoes-8rTxtR.png\",\"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97fb810e-5803-43f5-98ac-67c8763deb15/streakfly-road-racing-shoes-8rTxtR.png\",\"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d25c69b-b08b-4cc7-b97d-8384e196951f/streakfly-road-racing-shoes-8rTxtR.png\",\"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54e264aa-a85f-4152-b409-ed0372924d81/streakfly-road-racing-shoes-8rTxtR.png\"]",
                             Name = "Nike Streakfly",
                             Stock = 15
                         },
@@ -657,6 +754,7 @@ namespace Infra_Data.Migrations
                             Id = 10,
                             CategoryId = 2,
                             Description = "The Suede hit the scene in 1968 and has been changing the game ever since. It’s been worn by icons of every generation, and it’s stayed classic through it all. Instantly recognizable and constantly reinvented, Suede’s legacy continues to grow and be legitimized by the authentic and expressive individuals that embrace the iconic shoe. Be apart of the history of Suede.",
+                            Images = "[\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/sv01/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\",\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod02/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\",\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod03/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\",\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/bv/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\"]",
                             Name = "Suede Classic XXI Sneakers",
                             Stock = 15
                         });
@@ -674,6 +772,7 @@ namespace Infra_Data.Migrations
                             Id = 7,
                             CategoryId = 2,
                             Description = "The Nike Classic Swoosh Futura medium support women's workout top offers long-lasting comfort during training with sweat-wicking fabric and a compression fit.",
+                            Images = "[\"https://imgnike-a.akamaihd.net/768x768/002897ID.jpg\",\"https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg\",\"https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg\",\"https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg\"]",
                             Name = "Top Nike Swoosh Woman",
                             Stock = 5
                         },
@@ -682,6 +781,7 @@ namespace Infra_Data.Migrations
                             Id = 8,
                             CategoryId = 2,
                             Description = "Fresh and full of life, this Adicolor Firebird track jacket celebrates the power and authenticity of adidas' legendary DNA.",
+                            Images = "[\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5757a66a549439cbac6afcd002ca57f_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_01_laydown.jpg\",\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3cae025992434e889496afcd002c97ae_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_42_detail.jpg\",\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c6f0e6def4bd4eefa0bfafcd002c7094_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_21_model.jpg\",\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a915172e29f24ce4b34bafcd002c78dc_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_23_hover_model.jpg\"]",
                             Name = "Adicolor classics firebird track jacket",
                             Stock = 8
                         });
@@ -699,6 +799,7 @@ namespace Infra_Data.Migrations
                             Id = 5,
                             CategoryId = 3,
                             Description = "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
+                            Images = "[\"https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp\"]",
                             Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
                             Stock = 10
                         },
@@ -707,6 +808,7 @@ namespace Infra_Data.Migrations
                             Id = 6,
                             CategoryId = 3,
                             Description = "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.",
+                            Images = "[\"https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp\"]",
                             Name = "God of War Ragnarök Standard Edition Sony PS5 Physical",
                             Stock = 15
                         });
@@ -724,6 +826,7 @@ namespace Infra_Data.Migrations
                             Id = 1,
                             CategoryId = 1,
                             Description = "Maximum security so that only you can access your team. You can choose between the fingerprint sensor to activate your phone with a tap, or facial recognition that allows you to unlock up to 30% faster.",
+                            Images = "[\"https://http2.mlstatic.com/D_NQ_NP_856672-MLU70401529412_072023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_945544-MLU70401529414_072023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_808604-MLU70400221716_072023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_827555-MLU70400783806_072023-O.webp\"]",
                             Name = "Samsung Galaxy S23 Ultra 512GB Unlocked - Black",
                             Stock = 20
                         },
@@ -732,6 +835,7 @@ namespace Infra_Data.Migrations
                             Id = 2,
                             CategoryId = 1,
                             Description = "Maximum security so that only you can access your team. You can choose between the fingerprint sensor to activate your phone with a tap, or facial recognition that allows you to unlock up to 30% faster.",
+                            Images = "[\"https://http2.mlstatic.com/D_NQ_NP_683947-MLU73106437489_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_690989-MLU72932986551_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_612226-MLU72932986555_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_683459-MLU72932986549_112023-O.webp\"]",
                             Name = "Samsung Galaxy S23 Ultra 256GB - Violet",
                             Stock = 25
                         },
@@ -740,6 +844,7 @@ namespace Infra_Data.Migrations
                             Id = 3,
                             CategoryId = 1,
                             Description = "FORGED FROM TITANIUM — iPhone 15 Pro features a rugged, lightweight design made from aerospace-grade titanium. On the back, textured matte glass and, on the front, Ceramic Shield, more resistant than any smartphone glass. It's also tough against splashes, water, and dust.",
+                            Images = "[\"https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_829742-MLA71783365702_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_715495-MLA71783365704_092023-O.webps\"]",
                             Name = "Apple iPhone 15 Pro (512 GB) - Titanium Blue",
                             Stock = 15
                         },
@@ -748,16 +853,202 @@ namespace Infra_Data.Migrations
                             Id = 4,
                             CategoryId = 1,
                             Description = "FORGED FROM TITANIUM — iPhone 15 Pro features a rugged, lightweight design made from aerospace-grade titanium. On the back, textured matte glass and, on the front, Ceramic Shield, more resistant than any smartphone glass. It's also tough against splashes, water, and dust.",
+                            Images = "[\"https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_658271-MLA71782871766_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_998898-MLA71782901894_092023-O.webp\"]",
                             Name = "Apple iPhone 15 Pro (128 GB) - Titanium White",
                             Stock = 10
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.Deliveries.DeliveryAddress", b =>
+            modelBuilder.Entity("Domain.Entities.Cart.ShoppingCartItem", b =>
                 {
-                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
-                        .WithMany("DeliveryAddress")
-                        .HasForeignKey("UserGenericId");
+                    b.HasOne("Domain.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Orders.Order", b =>
+                {
+                    b.HasOne("Domain.Entities.Payments.PaymentMethod", "PaymentMethod")
+                        .WithMany()
+                        .HasForeignKey("PaymentMethodId");
+
+                    b.OwnsOne("Domain.Entities.Delivery.DeliveryAddress", "DeliveryAddress", b1 =>
+                        {
+                            b1.Property<int>("OrderId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Address")
+                                .IsRequired()
+                                .HasMaxLength(60)
+                                .HasColumnType("nvarchar(60)");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("Complement")
+                                .IsRequired()
+                                .HasMaxLength(60)
+                                .HasColumnType("nvarchar(60)");
+
+                            b1.Property<string>("Country")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("Neighborhood")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("State")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("ZipCode")
+                                .IsRequired()
+                                .HasMaxLength(11)
+                                .HasColumnType("nvarchar(11)");
+
+                            b1.HasKey("OrderId");
+
+                            b1.ToTable("Orders");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrderId");
+                        });
+
+                    b.OwnsOne("Domain.Entities.Delivery.UserDelivery", "UserDelivery", b1 =>
+                        {
+                            b1.Property<int>("OrderId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Email")
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
+
+                            b1.Property<string>("FirstName")
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.Property<string>("LastName")
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.Property<string>("Phone")
+                                .IsRequired()
+                                .HasMaxLength(16)
+                                .HasColumnType("nvarchar(16)");
+
+                            b1.Property<string>("SSN")
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.HasKey("OrderId");
+
+                            b1.ToTable("Orders");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrderId");
+                        });
+
+                    b.Navigation("DeliveryAddress");
+
+                    b.Navigation("PaymentMethod");
+
+                    b.Navigation("UserDelivery");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Orders.OrderDetail", b =>
+                {
+                    b.HasOne("Domain.Entities.Orders.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Payments.PaymentMethod", "PaymentMethod")
+                        .WithMany()
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("PaymentMethod");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Payments.Payment", b =>
+                {
+                    b.OwnsOne("Domain.Entities.Payments.Valuables.PaymentMethodObjectValue", "PaymentMethodObjectValue", b1 =>
+                        {
+                            b1.Property<int>("PaymentId")
+                                .HasColumnType("int");
+
+                            b1.Property<DateTime>("PaymentDate")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("PaymentMethod")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<Guid>("Reference")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.HasKey("PaymentId");
+
+                            b1.ToTable("Payments");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PaymentId");
+
+                            b1.OwnsOne("Domain.Entities.Payments.Valuables.PaymentStatusObjectValue", "PaymentStatusObjectValue", b2 =>
+                                {
+                                    b2.Property<int>("PaymentMethodObjectValuePaymentId")
+                                        .HasColumnType("int");
+
+                                    b2.Property<string>("PaymentStatus")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
+
+                                    b2.HasKey("PaymentMethodObjectValuePaymentId");
+
+                                    b2.ToTable("Payments");
+
+                                    b2.WithOwner()
+                                        .HasForeignKey("PaymentMethodObjectValuePaymentId");
+                                });
+
+                            b1.Navigation("PaymentStatusObjectValue");
+                        });
+
+                    b.Navigation("PaymentMethodObjectValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Product", b =>
@@ -768,14 +1059,405 @@ namespace Infra_Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductDataOV", "ProductDataObjectValue", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("ReleaseMonth")
+                                .IsRequired()
+                                .HasMaxLength(12)
+                                .HasColumnType("nvarchar(12)");
+
+                            b1.Property<string>("ReleaseYear")
+                                .IsRequired()
+                                .HasMaxLength(4)
+                                .HasColumnType("nvarchar(4)");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Products");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Id");
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 9,
+                                    ReleaseMonth = "June",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    ReleaseMonth = "October",
+                                    ReleaseYear = "2022"
+                                },
+                                new
+                                {
+                                    Id = 7,
+                                    ReleaseMonth = "June",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    ReleaseMonth = "March",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 5,
+                                    ReleaseMonth = "June",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    ReleaseMonth = "July",
+                                    ReleaseYear = "2022"
+                                },
+                                new
+                                {
+                                    Id = 1,
+                                    ReleaseMonth = "June",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    ReleaseMonth = "August",
+                                    ReleaseYear = "2022"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    ReleaseMonth = "Februery",
+                                    ReleaseYear = "2023"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    ReleaseMonth = "March",
+                                    ReleaseYear = "2023"
+                                });
+                        });
+
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductPriceOV", "ProductPriceObjectValue", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .HasColumnType("int");
+
+                            b1.Property<decimal>("HistoryPrice")
+                                .HasPrecision(18, 2)
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Price")
+                                .HasPrecision(18, 2)
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Products");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Id");
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 9,
+                                    HistoryPrice = 95.0m,
+                                    Price = 71.99m
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    HistoryPrice = 0.0m,
+                                    Price = 75.99m
+                                },
+                                new
+                                {
+                                    Id = 7,
+                                    HistoryPrice = 0.0m,
+                                    Price = 16.99m
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    HistoryPrice = 80.0m,
+                                    Price = 64.99m
+                                },
+                                new
+                                {
+                                    Id = 5,
+                                    HistoryPrice = 0.0m,
+                                    Price = 30.99m
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    HistoryPrice = 0.0m,
+                                    Price = 38.99m
+                                },
+                                new
+                                {
+                                    Id = 1,
+                                    HistoryPrice = 2299.99m,
+                                    Price = 2179.99m
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    HistoryPrice = 2199.99m,
+                                    Price = 1624.99m
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    HistoryPrice = 2199.99m,
+                                    Price = 2035.99m
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    HistoryPrice = 1799.99m,
+                                    Price = 1624.99m
+                                });
+                        });
+
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductSpecificationsOV", "ProductSpecificationsObjectValue", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("ProductBrand")
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
+
+                            b1.Property<string>("ProductLine")
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
+
+                            b1.Property<string>("ProductModel")
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
+
+                            b1.Property<string>("ProductType")
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
+
+                            b1.Property<string>("ProductWeight")
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Products");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Id");
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 9,
+                                    ProductBrand = "Nike",
+                                    ProductLine = "SB",
+                                    ProductModel = "DM3493",
+                                    ProductType = "Shoes",
+                                    ProductWeight = "368,5 g"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    ProductBrand = "Puma",
+                                    ProductLine = "SB",
+                                    ProductModel = "Basketball Classic XXI sneakers",
+                                    ProductType = "Shoes",
+                                    ProductWeight = "368,5 g"
+                                },
+                                new
+                                {
+                                    Id = 7,
+                                    ProductBrand = "Nike",
+                                    ProductLine = "",
+                                    ProductModel = "Nike T-Shirt",
+                                    ProductType = "T-Shirt",
+                                    ProductWeight = "200 g"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    ProductBrand = "Adidas",
+                                    ProductLine = "",
+                                    ProductModel = "JACKET Adidas",
+                                    ProductType = "T-Shirt",
+                                    ProductWeight = "350 g"
+                                },
+                                new
+                                {
+                                    Id = 5,
+                                    ProductBrand = "Sony",
+                                    ProductLine = "PS5",
+                                    ProductModel = "Sony",
+                                    ProductType = "Video game",
+                                    ProductWeight = "100 g"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    ProductBrand = "Sony",
+                                    ProductLine = "PS5",
+                                    ProductModel = "Sony",
+                                    ProductType = "Video game",
+                                    ProductWeight = "100 g"
+                                },
+                                new
+                                {
+                                    Id = 1,
+                                    ProductBrand = "Samsung",
+                                    ProductLine = "Galaxy S",
+                                    ProductModel = "S23 Ultra",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "233 g"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    ProductBrand = "Samsung",
+                                    ProductLine = "Galaxy S",
+                                    ProductModel = "S23 Ultra",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "235 g"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    ProductBrand = "Apple",
+                                    ProductLine = "iPhone",
+                                    ProductModel = "iPhone 15 Pro",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "235 g"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    ProductBrand = "Apple",
+                                    ProductLine = "iPhone",
+                                    ProductModel = "iPhone 15 Pro",
+                                    ProductType = "Smartphone",
+                                    ProductWeight = "235 g"
+                                });
+                        });
+
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductWarrantyOV", "ProductWarrantyObjectValue", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("WarrantyInformation")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<string>("WarrantyLength")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Products");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Id");
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 9,
+                                    WarrantyInformation = "45-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    WarrantyInformation = "45-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 7,
+                                    WarrantyInformation = "15-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 8,
+                                    WarrantyInformation = "15-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 5,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 6,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 1,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    WarrantyInformation = "30-Day Limited Warranty",
+                                    WarrantyLength = "1-year warranty"
+                                });
+                        });
+
                     b.Navigation("Category");
+
+                    b.Navigation("ProductDataObjectValue");
+
+                    b.Navigation("ProductPriceObjectValue");
+
+                    b.Navigation("ProductSpecificationsObjectValue");
+
+                    b.Navigation("ProductWarrantyObjectValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Reviews.Review", b =>
                 {
                     b.HasOne("Domain.Entities.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductReviewId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -793,7 +1475,7 @@ namespace Infra_Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                    b.HasOne("Infra_Data.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -802,7 +1484,7 @@ namespace Infra_Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                    b.HasOne("Infra_Data.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -817,7 +1499,7 @@ namespace Infra_Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                    b.HasOne("Infra_Data.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -826,27 +1508,96 @@ namespace Infra_Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Infra_Data.Identity.UserGeneric", null)
+                    b.HasOne("Infra_Data.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Entities.Products.Fashion.Shoes.Shoes", b =>
+            modelBuilder.Entity("Domain.Entities.Payments.PaymentMethod", b =>
                 {
-                    b.OwnsOne("Domain.Entities.Products.Fashion.Shoes.ObjectsValue.ShoesDesignOV", "ShoesDesignObjectValue", b1 =>
+                    b.HasOne("Domain.Entities.Payments.CreditCard", "CreditCard")
+                        .WithMany()
+                        .HasForeignKey("CreditCardId");
+
+                    b.HasOne("Domain.Entities.Payments.DebitCard", "DebitCard")
+                        .WithMany()
+                        .HasForeignKey("DebitCardId");
+
+                    b.Navigation("CreditCard");
+
+                    b.Navigation("DebitCard");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Products.Fashion.ProductShoes.Shoes", b =>
+                {
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .HasColumnType("int");
+
+                            b1.Property<bool>("IsBestSeller")
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("bit");
+
+                            b1.Property<bool>("IsDailyOffer")
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("bit");
+
+                            b1.Property<bool>("IsFavorite")
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Products");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Id");
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 9,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 10,
+                                    IsBestSeller = true,
+                                    IsDailyOffer = false,
+                                    IsFavorite = true
+                                });
+                        });
+
+                    b.OwnsOne("Domain.Entities.Products.Fashion.ProductShoes.ShoesDesignOV", "ShoesDesignObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("AdjustmentTypes")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
 
                             b1.Property<string>("TypeOfPipe")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -870,26 +1621,35 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Fashion.Shoes.ObjectsValue.ShoesGeneralFeaturesOV", "ShoesGeneralFeaturesObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Fashion.ProductShoes.ShoesGeneralFeaturesOV", "ShoesGeneralFeaturesObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Age")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Color")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
 
                             b1.Property<string>("Gender")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Version")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -917,22 +1677,29 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Fashion.Shoes.ObjectsValue.ShoesMaterialsOV", "ShoesMaterialsObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Fashion.ProductShoes.ShoesMaterialsOV", "ShoesMaterialsObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("InteriorMaterials")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MaterialsFromAbroad")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("SoleMaterials")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -958,22 +1725,31 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Fashion.Shoes.ObjectsValue.ShoesSpecificationsOV", "ShoesSpecificationsObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Fashion.ProductShoes.ShoesSpecificationsOV", "ShoesSpecificationsObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("RecommendedSports")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("Size")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(5)
+                                .HasColumnType("nvarchar(5)");
 
                             b1.Property<string>("Style")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -999,46 +1775,20 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductDataOV", "ProductDataObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
+                    b.Navigation("ProductFlagsObjectValue");
 
-                            b1.Property<string>("ReleaseMonth")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(12)
-                                .HasColumnType("nvarchar(12)");
+                    b.Navigation("ShoesDesignObjectValue");
 
-                            b1.Property<string>("ReleaseYear")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(4)
-                                .HasColumnType("nvarchar(4)");
+                    b.Navigation("ShoesGeneralFeaturesObjectValue");
 
-                            b1.HasKey("Id");
+                    b.Navigation("ShoesMaterialsObjectValue");
 
-                            b1.ToTable("Products");
+                    b.Navigation("ShoesSpecificationsObjectValue");
+                });
 
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 9,
-                                    ReleaseMonth = "June",
-                                    ReleaseYear = "2023"
-                                },
-                                new
-                                {
-                                    Id = 10,
-                                    ReleaseMonth = "October",
-                                    ReleaseYear = "2022"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
+            modelBuilder.Entity("Domain.Entities.Products.Fashion.Tshirts.Tshirt", b =>
+                {
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -1055,6 +1805,12 @@ namespace Infra_Data.Migrations
                                 .ValueGeneratedOnUpdateSometimes()
                                 .HasColumnType("bit");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -1065,268 +1821,54 @@ namespace Infra_Data.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    Id = 9,
-                                    IsBestSeller = false,
-                                    IsDailyOffer = true,
-                                    IsFavorite = true
-                                },
-                                new
-                                {
-                                    Id = 10,
+                                    Id = 7,
                                     IsBestSeller = true,
                                     IsDailyOffer = false,
                                     IsFavorite = true
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductImageOV", "ProductImageObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ImageFirst")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageSecond")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageThird")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("MainImage")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 9,
-                                    ImageFirst = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97fb810e-5803-43f5-98ac-67c8763deb15/streakfly-road-racing-shoes-8rTxtR.png",
-                                    ImageSecond = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d25c69b-b08b-4cc7-b97d-8384e196951f/streakfly-road-racing-shoes-8rTxtR.png",
-                                    ImageThird = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54e264aa-a85f-4152-b409-ed0372924d81/streakfly-road-racing-shoes-8rTxtR.png",
-                                    MainImage = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/24d5a5ec-db76-4512-99a8-36231b9a9b41/streakfly-road-racing-shoes-8rTxtR.png"
                                 },
                                 new
                                 {
-                                    Id = 10,
-                                    ImageFirst = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod02/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers",
-                                    ImageSecond = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod03/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers",
-                                    ImageThird = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/bv/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers",
-                                    MainImage = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/sv01/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers"
+                                    Id = 8,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = false
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductPriceOV", "ProductPriceObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<decimal>("HistoryPrice")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.Property<decimal>("Price")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 9,
-                                    HistoryPrice = 95.0m,
-                                    Price = 71.99m
-                                },
-                                new
-                                {
-                                    Id = 10,
-                                    HistoryPrice = 0.0m,
-                                    Price = 75.99m
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductSpecificationsOV", "ProductSpecificationsObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ProductBrand")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductLine")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductModel")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)");
-
-                            b1.Property<string>("ProductType")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<string>("ProductWeight")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 9,
-                                    ProductBrand = "Nike",
-                                    ProductLine = "SB",
-                                    ProductModel = "DM3493",
-                                    ProductType = "Shoes",
-                                    ProductWeight = "368,5 g"
-                                },
-                                new
-                                {
-                                    Id = 10,
-                                    ProductBrand = "Puma",
-                                    ProductLine = "SB",
-                                    ProductModel = "Basketball Classic XXI sneakers",
-                                    ProductType = "Shoes",
-                                    ProductWeight = "368,5 g"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductWarrantyOV", "ProductWarrantyObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("WarrantyInformation")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.Property<string>("WarrantyLength")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 9,
-                                    WarrantyInformation = "45-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                },
-                                new
-                                {
-                                    Id = 10,
-                                    WarrantyInformation = "45-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                });
-                        });
-
-                    b.Navigation("ProductDataObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductFlagsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductImageObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductPriceObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductSpecificationsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductWarrantyObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ShoesDesignObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ShoesGeneralFeaturesObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ShoesMaterialsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ShoesSpecificationsObjectValue")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Entities.Products.Fashion.Tshirts.Tshirt", b =>
-                {
-                    b.OwnsOne("Domain.Entities.Products.Fashion.Tshirts.ObjectsValue.TshirtMainFeaturesOV", "TshirtMainFeaturesObectsValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Fashion.Tshirts.Valuables.TshirtMainFeaturesOV", "TshirtMainFeaturesObectsValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Age")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("FabricDesign")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("Gender")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Size")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(5)
+                                .HasColumnType("nvarchar(5)");
 
                             b1.Property<string>("TypeOfClothing")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1356,43 +1898,51 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Fashion.Tshirts.ObjectsValue.TshirtOtherFeaturesOV", "TshirtOtherFeaturesObectsValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Fashion.Tshirts.Valuables.TshirtOtherFeaturesOV", "TshirtOtherFeaturesObectsValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Composition")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<bool>("ItsSporty")
                                 .HasColumnType("bit");
 
                             b1.Property<string>("KindOfFabric")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MainMaterial")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("RecommendedUses")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("SleeveType")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("TypeOfCollar")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<int>("UnitsPerKit")
                                 .HasColumnType("int");
 
                             b1.Property<bool>("WithRecycledMaterials")
                                 .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -1430,344 +1980,16 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductDataOV", "ProductDataObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
+                    b.Navigation("ProductFlagsObjectValue");
 
-                            b1.Property<string>("ReleaseMonth")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(12)
-                                .HasColumnType("nvarchar(12)");
+                    b.Navigation("TshirtMainFeaturesObectsValue");
 
-                            b1.Property<string>("ReleaseYear")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(4)
-                                .HasColumnType("nvarchar(4)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 7,
-                                    ReleaseMonth = "June",
-                                    ReleaseYear = "2023"
-                                },
-                                new
-                                {
-                                    Id = 8,
-                                    ReleaseMonth = "March",
-                                    ReleaseYear = "2023"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<bool>("IsBestSeller")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("bit");
-
-                            b1.Property<bool>("IsDailyOffer")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("bit");
-
-                            b1.Property<bool>("IsFavorite")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("bit");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 7,
-                                    IsBestSeller = true,
-                                    IsDailyOffer = false,
-                                    IsFavorite = true
-                                },
-                                new
-                                {
-                                    Id = 8,
-                                    IsBestSeller = false,
-                                    IsDailyOffer = true,
-                                    IsFavorite = false
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductImageOV", "ProductImageObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ImageFirst")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageSecond")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageThird")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("MainImage")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 7,
-                                    ImageFirst = "https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg",
-                                    ImageSecond = "https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg",
-                                    ImageThird = "https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg",
-                                    MainImage = "https://imgnike-a.akamaihd.net/768x768/002897ID.jpg"
-                                },
-                                new
-                                {
-                                    Id = 8,
-                                    ImageFirst = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3cae025992434e889496afcd002c97ae_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_42_detail.jpg",
-                                    ImageSecond = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c6f0e6def4bd4eefa0bfafcd002c7094_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_21_model.jpg",
-                                    ImageThird = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a915172e29f24ce4b34bafcd002c78dc_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_23_hover_model.jpg",
-                                    MainImage = "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5757a66a549439cbac6afcd002ca57f_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_01_laydown.jpg"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductPriceOV", "ProductPriceObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<decimal>("HistoryPrice")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.Property<decimal>("Price")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 7,
-                                    HistoryPrice = 0.0m,
-                                    Price = 16.99m
-                                },
-                                new
-                                {
-                                    Id = 8,
-                                    HistoryPrice = 80.0m,
-                                    Price = 64.99m
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductSpecificationsOV", "ProductSpecificationsObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ProductBrand")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductLine")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductModel")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)");
-
-                            b1.Property<string>("ProductType")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<string>("ProductWeight")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 7,
-                                    ProductBrand = "Nike",
-                                    ProductLine = "",
-                                    ProductModel = "Nike T-Shirt",
-                                    ProductType = "T-Shirt",
-                                    ProductWeight = "200 g"
-                                },
-                                new
-                                {
-                                    Id = 8,
-                                    ProductBrand = "Adidas",
-                                    ProductLine = "",
-                                    ProductModel = "JACKET Adidas",
-                                    ProductType = "T-Shirt",
-                                    ProductWeight = "350 g"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductWarrantyOV", "ProductWarrantyObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("WarrantyInformation")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.Property<string>("WarrantyLength")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 7,
-                                    WarrantyInformation = "15-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                },
-                                new
-                                {
-                                    Id = 8,
-                                    WarrantyInformation = "15-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                });
-                        });
-
-                    b.Navigation("ProductDataObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductFlagsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductImageObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductPriceObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductSpecificationsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductWarrantyObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("TshirtMainFeaturesObectsValue")
-                        .IsRequired();
-
-                    b.Navigation("TshirtOtherFeaturesObectsValue")
-                        .IsRequired();
+                    b.Navigation("TshirtOtherFeaturesObectsValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Products.Technology.Games.Game", b =>
                 {
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductDataOV", "ProductDataObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ReleaseMonth")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(12)
-                                .HasColumnType("nvarchar(12)");
-
-                            b1.Property<string>("ReleaseYear")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(4)
-                                .HasColumnType("nvarchar(4)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 5,
-                                    ReleaseMonth = "June",
-                                    ReleaseYear = "2023"
-                                },
-                                new
-                                {
-                                    Id = 6,
-                                    ReleaseMonth = "July",
-                                    ReleaseYear = "2022"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -1784,6 +2006,12 @@ namespace Infra_Data.Migrations
                                 .ValueGeneratedOnUpdateSometimes()
                                 .HasColumnType("bit");
 
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
                             b1.HasKey("Id");
 
                             b1.ToTable("Products");
@@ -1808,213 +2036,25 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductImageOV", "ProductImageObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ImageFirst")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageSecond")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageThird")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("MainImage")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 5,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp"
-                                },
-                                new
-                                {
-                                    Id = 6,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductPriceOV", "ProductPriceObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<decimal>("HistoryPrice")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.Property<decimal>("Price")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 5,
-                                    HistoryPrice = 0.0m,
-                                    Price = 30.99m
-                                },
-                                new
-                                {
-                                    Id = 6,
-                                    HistoryPrice = 0.0m,
-                                    Price = 38.99m
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductSpecificationsOV", "ProductSpecificationsObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ProductBrand")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductLine")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductModel")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)");
-
-                            b1.Property<string>("ProductType")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<string>("ProductWeight")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 5,
-                                    ProductBrand = "Sony",
-                                    ProductLine = "PS5",
-                                    ProductModel = "Sony",
-                                    ProductType = "Video game",
-                                    ProductWeight = "100 g"
-                                },
-                                new
-                                {
-                                    Id = 6,
-                                    ProductBrand = "Sony",
-                                    ProductLine = "PS5",
-                                    ProductModel = "Sony",
-                                    ProductType = "Video game",
-                                    ProductWeight = "100 g"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductWarrantyOV", "ProductWarrantyObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("WarrantyInformation")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.Property<string>("WarrantyLength")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 5,
-                                    WarrantyInformation = "30-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                },
-                                new
-                                {
-                                    Id = 6,
-                                    WarrantyInformation = "30-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.Products.Technology.Games.ObjectsValue.GameGeneralFeaturesOV", "GameGeneralFeaturesObjectsValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Games.Valuables.GameGeneralFeaturesOV", "GameGeneralFeaturesObjectsValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Collection")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(25)
+                                .HasColumnType("nvarchar(25)");
 
                             b1.Property<string>("Developers")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(40)
+                                .HasColumnType("nvarchar(40)");
 
                             b1.Property<string>("Edition")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(25)
+                                .HasColumnType("nvarchar(25)");
 
                             b1.Property<string>("GameRating")
                                 .IsRequired()
@@ -2022,23 +2062,34 @@ namespace Infra_Data.Migrations
 
                             b1.Property<string>("GameTitle")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("Genres")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(25)
+                                .HasColumnType("nvarchar(25)");
 
                             b1.Property<string>("Platform")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("Publishers")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)");
 
                             b1.Property<string>("Saga")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(40)
+                                .HasColumnType("nvarchar(40)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2076,25 +2127,32 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Games.ObjectsValue.GameRequirementsOV", "GameRequirementsObjectsValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Games.Valuables.GameRequirementsOV", "GameRequirementsObjectsValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("MinimumGraphicsProcessorsRequired")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MinimumOperatingSystemsRequired")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("MinimumProcessorsRequired")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<int>("MinimumRAMRequirement")
                                 .HasColumnType("int");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2122,21 +2180,23 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Games.ObjectsValue.GameSpecificationsOV", "GameSpecificationsObjectsValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Games.Valuables.GameSpecificationsOV", "GameSpecificationsObjectsValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("AudioLanguages")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<int>("FileSize")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Format")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)");
 
                             b1.Property<bool>("ItsMultiplayer")
                                 .HasColumnType("bit");
@@ -2158,11 +2218,19 @@ namespace Infra_Data.Migrations
 
                             b1.Property<string>("ScreenLanguages")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("SubtitleLanguages")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2204,37 +2272,79 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.Navigation("GameGeneralFeaturesObjectsValue")
-                        .IsRequired();
+                    b.Navigation("GameGeneralFeaturesObjectsValue");
 
-                    b.Navigation("GameRequirementsObjectsValue")
-                        .IsRequired();
+                    b.Navigation("GameRequirementsObjectsValue");
 
-                    b.Navigation("GameSpecificationsObjectsValue")
-                        .IsRequired();
+                    b.Navigation("GameSpecificationsObjectsValue");
 
-                    b.Navigation("ProductDataObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductFlagsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductImageObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductPriceObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductSpecificationsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductWarrantyObjectValue")
-                        .IsRequired();
+                    b.Navigation("ProductFlagsObjectValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Products.Technology.Smartphones.Smartphone", b =>
                 {
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphoneBatteryOV", "SmartphoneBatteryObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Valuables.ProductValuables.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .HasColumnType("int");
+
+                            b1.Property<bool>("IsBestSeller")
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("bit");
+
+                            b1.Property<bool>("IsDailyOffer")
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("bit");
+
+                            b1.Property<bool>("IsFavorite")
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Products");
+
+                            b1.WithOwner()
+                                .HasForeignKey("Id");
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 1,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                },
+                                new
+                                {
+                                    Id = 3,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = false
+                                },
+                                new
+                                {
+                                    Id = 4,
+                                    IsBestSeller = false,
+                                    IsDailyOffer = true,
+                                    IsFavorite = true
+                                });
+                        });
+
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphoneBatteryOV", "SmartphoneBatteryObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2249,6 +2359,12 @@ namespace Infra_Data.Migrations
 
                             b1.Property<bool>("IsBatteryRemovable")
                                 .HasColumnType("bit");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2288,7 +2404,7 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphoneCameraOV", "SmartphoneCameraObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphoneCameraOV", "SmartphoneCameraObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2312,6 +2428,12 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasMaxLength(15)
                                 .HasColumnType("nvarchar(15)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2355,7 +2477,7 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphoneDimensionsOV", "SmartphoneDimensionsObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphoneDimensionsOV", "SmartphoneDimensionsObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2368,6 +2490,12 @@ namespace Infra_Data.Migrations
 
                             b1.Property<double>("WidthInche")
                                 .HasColumnType("float");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2407,7 +2535,7 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphoneDisplayOV", "SmartphoneDisplayObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphoneDisplayOV", "SmartphoneDisplayObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2429,6 +2557,12 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasMaxLength(30)
                                 .HasColumnType("nvarchar(30)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2472,7 +2606,7 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphoneFeatureOV", "SmartphoneFeatureObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphoneFeatureOV", "SmartphoneFeatureObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2496,6 +2630,12 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2539,7 +2679,7 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphoneMemoryOV", "SmartphoneMemoryObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphoneMemoryOV", "SmartphoneMemoryObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2549,6 +2689,12 @@ namespace Infra_Data.Migrations
 
                             b1.Property<int>("StorageGB")
                                 .HasColumnType("int");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2584,7 +2730,7 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.ObjectsValue.SmartphonePlatformOV", "SmartphonePlatformObjectValue", b1 =>
+                    b.OwnsOne("Domain.Entities.Products.Technology.Smartphones.Valuables.SmartphonePlatformOV", "SmartphonePlatformObjectValue", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .HasColumnType("int");
@@ -2608,6 +2754,12 @@ namespace Infra_Data.Migrations
                                 .IsRequired()
                                 .HasMaxLength(15)
                                 .HasColumnType("nvarchar(15)");
+
+                            b1.Property<byte[]>("_TableSharingConcurrencyTokenConvention_RowVersion")
+                                .IsConcurrencyToken()
+                                .ValueGeneratedOnAddOrUpdate()
+                                .HasColumnType("rowversion")
+                                .HasColumnName("RowVersion");
 
                             b1.HasKey("Id");
 
@@ -2651,399 +2803,21 @@ namespace Infra_Data.Migrations
                                 });
                         });
 
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductDataOV", "ProductDataObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
+                    b.Navigation("ProductFlagsObjectValue");
 
-                            b1.Property<string>("ReleaseMonth")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(12)
-                                .HasColumnType("nvarchar(12)");
+                    b.Navigation("SmartphoneBatteryObjectValue");
 
-                            b1.Property<string>("ReleaseYear")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(4)
-                                .HasColumnType("nvarchar(4)");
+                    b.Navigation("SmartphoneCameraObjectValue");
 
-                            b1.HasKey("Id");
+                    b.Navigation("SmartphoneDimensionsObjectValue");
 
-                            b1.ToTable("Products");
+                    b.Navigation("SmartphoneDisplayObjectValue");
 
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
+                    b.Navigation("SmartphoneFeatureObjectValue");
 
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    ReleaseMonth = "June",
-                                    ReleaseYear = "2023"
-                                },
-                                new
-                                {
-                                    Id = 2,
-                                    ReleaseMonth = "August",
-                                    ReleaseYear = "2022"
-                                },
-                                new
-                                {
-                                    Id = 3,
-                                    ReleaseMonth = "Februery",
-                                    ReleaseYear = "2023"
-                                },
-                                new
-                                {
-                                    Id = 4,
-                                    ReleaseMonth = "March",
-                                    ReleaseYear = "2023"
-                                });
-                        });
+                    b.Navigation("SmartphoneMemoryObjectValue");
 
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductFlagsOV", "ProductFlagsObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<bool>("IsBestSeller")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("bit");
-
-                            b1.Property<bool>("IsDailyOffer")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("bit");
-
-                            b1.Property<bool>("IsFavorite")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("bit");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    IsBestSeller = false,
-                                    IsDailyOffer = true,
-                                    IsFavorite = true
-                                },
-                                new
-                                {
-                                    Id = 2,
-                                    IsBestSeller = false,
-                                    IsDailyOffer = true,
-                                    IsFavorite = true
-                                },
-                                new
-                                {
-                                    Id = 3,
-                                    IsBestSeller = false,
-                                    IsDailyOffer = true,
-                                    IsFavorite = false
-                                },
-                                new
-                                {
-                                    Id = 4,
-                                    IsBestSeller = false,
-                                    IsDailyOffer = true,
-                                    IsFavorite = true
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductImageOV", "ProductImageObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ImageFirst")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageSecond")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("ImageThird")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.Property<string>("MainImage")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(500)
-                                .HasColumnType("nvarchar(500)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_945544-MLU70401529414_072023-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_808604-MLU70400221716_072023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_827555-MLU70400783806_072023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_856672-MLU70401529412_072023-O.webp"
-                                },
-                                new
-                                {
-                                    Id = 2,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_690989-MLU72932986551_112023-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_612226-MLU72932986555_112023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_683459-MLU72932986549_112023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_683947-MLU73106437489_112023-O.webp"
-                                },
-                                new
-                                {
-                                    Id = 3,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_829742-MLA71783365702_092023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_715495-MLA71783365704_092023-O.webps",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp"
-                                },
-                                new
-                                {
-                                    Id = 4,
-                                    ImageFirst = "https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp",
-                                    ImageSecond = "https://http2.mlstatic.com/D_NQ_NP_658271-MLA71782871766_092023-O.webp",
-                                    ImageThird = "https://http2.mlstatic.com/D_NQ_NP_998898-MLA71782901894_092023-O.webp",
-                                    MainImage = "https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductPriceOV", "ProductPriceObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<decimal>("HistoryPrice")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.Property<decimal>("Price")
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("decimal(18,2)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    HistoryPrice = 2299.99m,
-                                    Price = 2179.99m
-                                },
-                                new
-                                {
-                                    Id = 2,
-                                    HistoryPrice = 2199.99m,
-                                    Price = 1624.99m
-                                },
-                                new
-                                {
-                                    Id = 3,
-                                    HistoryPrice = 2199.99m,
-                                    Price = 2035.99m
-                                },
-                                new
-                                {
-                                    Id = 4,
-                                    HistoryPrice = 1799.99m,
-                                    Price = 1624.99m
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductSpecificationsOV", "ProductSpecificationsObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("ProductBrand")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductLine")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
-
-                            b1.Property<string>("ProductModel")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)");
-
-                            b1.Property<string>("ProductType")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<string>("ProductWeight")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    ProductBrand = "Samsung",
-                                    ProductLine = "Galaxy S",
-                                    ProductModel = "S23 Ultra",
-                                    ProductType = "Smartphone",
-                                    ProductWeight = "233 g"
-                                },
-                                new
-                                {
-                                    Id = 2,
-                                    ProductBrand = "Samsung",
-                                    ProductLine = "Galaxy S",
-                                    ProductModel = "S23 Ultra",
-                                    ProductType = "Smartphone",
-                                    ProductWeight = "235 g"
-                                },
-                                new
-                                {
-                                    Id = 3,
-                                    ProductBrand = "Apple",
-                                    ProductLine = "iPhone",
-                                    ProductModel = "iPhone 15 Pro",
-                                    ProductType = "Smartphone",
-                                    ProductWeight = "235 g"
-                                },
-                                new
-                                {
-                                    Id = 4,
-                                    ProductBrand = "Apple",
-                                    ProductLine = "iPhone",
-                                    ProductModel = "iPhone 15 Pro",
-                                    ProductType = "Smartphone",
-                                    ProductWeight = "235 g"
-                                });
-                        });
-
-                    b.OwnsOne("Domain.Entities.ObjectValues.ProductsOV.ProductWarrantyOV", "ProductWarrantyObjectValue", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("WarrantyInformation")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.Property<string>("WarrantyLength")
-                                .IsRequired()
-                                .ValueGeneratedOnUpdateSometimes()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Products");
-
-                            b1.WithOwner()
-                                .HasForeignKey("Id");
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    WarrantyInformation = "30-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                },
-                                new
-                                {
-                                    Id = 2,
-                                    WarrantyInformation = "30-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                },
-                                new
-                                {
-                                    Id = 3,
-                                    WarrantyInformation = "30-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                },
-                                new
-                                {
-                                    Id = 4,
-                                    WarrantyInformation = "30-Day Limited Warranty",
-                                    WarrantyLength = "1-year warranty"
-                                });
-                        });
-
-                    b.Navigation("ProductDataObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductFlagsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductImageObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductPriceObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductSpecificationsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("ProductWarrantyObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphoneBatteryObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphoneCameraObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphoneDimensionsObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphoneDisplayObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphoneFeatureObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphoneMemoryObjectValue")
-                        .IsRequired();
-
-                    b.Navigation("SmartphonePlatformObjectValue")
-                        .IsRequired();
+                    b.Navigation("SmartphonePlatformObjectValue");
                 });
 
             modelBuilder.Entity("Domain.Entities.Category", b =>
@@ -3051,14 +2825,14 @@ namespace Infra_Data.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Orders.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
+                });
+
             modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Navigation("Reviews");
-                });
-
-            modelBuilder.Entity("Infra_Data.Identity.UserGeneric", b =>
-                {
-                    b.Navigation("DeliveryAddress");
                 });
 #pragma warning restore 612, 618
         }

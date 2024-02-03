@@ -1,22 +1,20 @@
 ﻿using Application.Dtos;
-using Application.Dtos.ValueObjects.ProductsOV;
+using Application.Dtos.Valuables.ProductsOV;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Entities.ObjectValues.ProductsOV;
+using Domain.Entities.Valuables.ProductValuables;
 
-namespace Application.Mappings.Entities.DomainProduct
+namespace Application.Mappings.Entities.DomainProduct;
+
+public class DomainToMappingProductProfile : Profile
 {
-    public class DomainToMappingProductProfile : Profile
+    public DomainToMappingProductProfile()
     {
-        public DomainToMappingProductProfile()
-        {
-            CreateMap<Product, ProductDto>().ReverseMap();
-            CreateMap<ProductDataOV, ProductDataOVDto>().ReverseMap();
-            CreateMap<ProductFlagsOV, ProductFlagsOVDto>().ReverseMap();
-            CreateMap<ProductImageOV, ProductImageOVDto>().ReverseMap();
-            CreateMap<ProductPriceOV, ProductPriceOVDto>().ReverseMap();
-            CreateMap<ProductSpecificationsOV, ProductSpecificationsOVDto>().ReverseMap();
-            CreateMap<ProductWarrantyOV, ProductWarrantyOVDto>().ReverseMap();
-        }
+        CreateMap<Product, ProductDto>().ReverseMap();
+        CreateMap<ProductDataOV, ProductDataOVDto>().ReverseMap();
+        CreateMap<ProductFlagsOV, ProductFlagsOVDto>().ReverseMap();
+        CreateMap<ProductPriceOV, ProductPriceOVDto>().ReverseMap();
+        CreateMap<ProductSpecificationsOV, ProductSpecificationsOVDto>().ReverseMap();
+        CreateMap<ProductWarrantyOV, ProductWarrantyOVDto>().ReverseMap();
     }
 }

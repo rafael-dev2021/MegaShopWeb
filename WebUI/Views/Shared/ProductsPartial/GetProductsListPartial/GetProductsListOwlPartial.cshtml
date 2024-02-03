@@ -24,7 +24,7 @@
             </div>
             <a asp-controller="Products" asp-action="Details" asp-route-Id="@Model.Id">
                 <div class="img-container">
-                    <img class="img-fluid" id="main_image" src="@Model.ProductImageObjectValue.MainImage" />
+                    <img class="img-fluid" id="main_image" src="@Url.Content(Model.Images[0])" />
                 </div>
             </a>
         </div>

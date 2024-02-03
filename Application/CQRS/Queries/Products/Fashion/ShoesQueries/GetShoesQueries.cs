@@ -1,9 +1,7 @@
-﻿using Domain.Entities.Products.Fashion.Shoes;
+﻿using Domain.Entities.Products.Fashion.ProductShoes;
 using MediatR;
 
-namespace Application.CQRS.Queries.Products.Fashion.ShoesQueries
-{
-    public class GetShoesQueries : IRequest<IEnumerable<Shoes>>
-    {
-    }
-}
+namespace Application.CQRS.Queries.Products.Fashion.ShoesQueries;
+
+public class GetShoesQueries : IRequest<IEnumerable<Shoes>>
+{ }

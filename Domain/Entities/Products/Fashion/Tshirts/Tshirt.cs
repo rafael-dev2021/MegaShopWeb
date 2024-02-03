@@ -1,35 +1,71 @@
-﻿using Domain.Entities.ObjectValues.ProductsOV;
-using Domain.Entities.Products.Fashion.Tshirts.ObjectsValue;
+﻿using Domain.Entities.Products.Fashion.Tshirts.Valuables;
+using Domain.Entities.Valuables.ProductValuables;
 
-namespace Domain.Entities.Products.Fashion.Tshirts
+namespace Domain.Entities.Products.Fashion.Tshirts;
+
+public sealed class Tshirt : Product
 {
-    public sealed class Tshirt : Product
+    public Tshirt(int id, string name, string description, List<string> images, int stock, int categoryId) : base(id, name, description, images, stock, categoryId)
+    { }
+
+    public Tshirt(
+        string name,
+        string description,
+        List<string> images,
+        int stock,
+        ProductDataOV productDataObjectValue,
+        ProductFlagsOV productFlagsObjectValue,
+        ProductPriceOV productPriceObjectValue,
+        ProductSpecificationsOV productSpecificationsObjectValue,
+        ProductWarrantyOV productWarrantyObjectValue,
+        TshirtOtherFeaturesOV tshirtOtherFeaturesObectsValue,
+        TshirtMainFeaturesOV tshirtMainFeaturesObectsValue,
+        int categoryId)
+     : base(
+           name,
+           description,
+           images,
+           stock,
+           productDataObjectValue,
+           productFlagsObjectValue,
+           productPriceObjectValue,
+           productSpecificationsObjectValue,
+           productWarrantyObjectValue,
+           categoryId)
     {
-        public Tshirt() { }
-        public Tshirt(int id, string name, string description, int stock, int categoryId) : base(id, name, description, stock, categoryId)
-        {
-        }
-        public Tshirt(int id, string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, TshirtOtherFeaturesOV tshirtOtherFeaturesObectsValue, TshirtMainFeaturesOV tshirtMainFeaturesObectsValue, int categoryId)
-            : base(id, name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
-        {
-            TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
-            TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
-        }
-        public Tshirt(string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, TshirtOtherFeaturesOV tshirtOtherFeaturesObectsValue, TshirtMainFeaturesOV tshirtMainFeaturesObectsValue, int categoryId)
-         : base(name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId)
-        {
-            TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
-            TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
-        }
-
-        public void TshirtUpdate(string name, string description, int stock, ProductDataOV productDataObjectValue, ProductFlagsOV productFlagsObjectValue, ProductImageOV productImageObjectValue, ProductPriceOV productPriceObjectValue, ProductSpecificationsOV productSpecificationsObjectValue, ProductWarrantyOV productWarrantyObjectValue, TshirtOtherFeaturesOV tshirtOtherFeaturesObectsValue, TshirtMainFeaturesOV tshirtMainFeaturesObectsValue, int categoryId)
-        {
-            ProductUpdate(name, description, stock, productDataObjectValue, productFlagsObjectValue, productImageObjectValue, productPriceObjectValue, productSpecificationsObjectValue, productWarrantyObjectValue, categoryId);
-            TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
-            TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
-        }
-
-        public TshirtOtherFeaturesOV TshirtOtherFeaturesObectsValue { get; set; }
-        public TshirtMainFeaturesOV TshirtMainFeaturesObectsValue { get; set; }
+        TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
+        TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
     }
+
+    public void TshirtUpdate(
+        string name,
+        string description,
+        List<string> images,
+        int stock,
+        ProductDataOV productDataObjectValue,
+        ProductFlagsOV productFlagsObjectValue,
+        ProductPriceOV productPriceObjectValue,
+        ProductSpecificationsOV productSpecificationsObjectValue,
+        ProductWarrantyOV productWarrantyObjectValue,
+        TshirtOtherFeaturesOV tshirtOtherFeaturesObectsValue,
+        TshirtMainFeaturesOV tshirtMainFeaturesObectsValue,
+        int categoryId)
+    {
+        ProductUpdate(
+            name,
+            description,
+            images,
+            stock,
+            productDataObjectValue,
+            productFlagsObjectValue,
+            productPriceObjectValue,
+            productSpecificationsObjectValue,
+            productWarrantyObjectValue,
+            categoryId);
+
+        TshirtOtherFeaturesObectsValue = tshirtOtherFeaturesObectsValue;
+        TshirtMainFeaturesObectsValue = tshirtMainFeaturesObectsValue;
+    }
+    public TshirtOtherFeaturesOV TshirtOtherFeaturesObectsValue { get; private set; }
+    public TshirtMainFeaturesOV TshirtMainFeaturesObectsValue { get; private set; }
 }

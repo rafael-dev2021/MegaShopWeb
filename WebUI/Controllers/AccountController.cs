@@ -144,7 +144,7 @@ namespace WebUI.Controllers
 
             var userEmail = User.Identity.Name;
 
-            var updateResult = await _authenticateRepository.UpdateProfileAsync(userEmail, model.FirstName, model.LastName, model.Phone, model.BirthDate, model.DefaultPaymentMethod, model.IsSubscribedToNewsletter);
+            var updateResult = await _authenticateRepository.UpdateProfileAsync(userEmail, model.FirstName, model.LastName, model.Phone, model.BirthDate, model.IsSubscribedToNewsletter);
 
             if (updateResult)
             {

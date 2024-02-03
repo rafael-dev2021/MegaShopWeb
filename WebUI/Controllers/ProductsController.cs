@@ -1,18 +1,17 @@
 ﻿using Application.Dtos;
-using Application.Interfaces.Entities;
-using Application.Interfaces.Entities.Products.FashionInterfaces;
-using Application.Interfaces.Entities.TechnologyInterfaces;
+using Application.Services.CountProductByPrice;
 using Application.Services.CountProductByPrice.Interfaces;
-using Application.Services.CountProductByPrice.ObjectsValue;
+using Application.Services.Discounts;
 using Application.Services.Discounts.Interfaces;
-using Application.Services.Discounts.ValueObjects;
+using Application.Services.Entities.Interfaces;
+using Application.Services.Entities.Products.Interfaces.FashionInterfaces;
+using Application.Services.Entities.Products.Interfaces.TechnologyInterfaces;
 using Application.Services.GetMatchingProducts.Fashion;
 using Application.Services.GetMatchingProducts.Technology;
 using Application.Services.PriceIsHigherThan;
 using Application.Services.PriceIsHigherThan.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Drawing.Drawing2D;
 using WebUI.ViewModels;
 
 namespace WebUI.Controllers
@@ -34,8 +33,8 @@ namespace WebUI.Controllers
 
         public async Task<IActionResult> IndexCategory(string categoryStr)
         {
-            var products = await _productDtoService.GetProductsDtoAsync();
-
+            _ = await _productDtoService.GetProductsDtoAsync();
+            IEnumerable<ProductDto> products;
             if (string.IsNullOrEmpty(categoryStr))
             {
                 products = await _productDtoService.GetProductsDtoAsync();
@@ -102,8 +101,7 @@ namespace WebUI.Controllers
 
             if (!string.IsNullOrEmpty(minPrice))
             {
-                decimal parsedMinPrice;
-                if (decimal.TryParse(minPrice, out parsedMinPrice))
+                if (decimal.TryParse(minPrice, out decimal parsedMinPrice))
                 {
                     products = products.Where(p => p.ProductPriceObjectValue.Price >= parsedMinPrice);
                 }
@@ -111,8 +109,7 @@ namespace WebUI.Controllers
 
             if (!string.IsNullOrEmpty(maxPrice))
             {
-                decimal parsedMaxPrice;
-                if (decimal.TryParse(maxPrice, out parsedMaxPrice))
+                if (decimal.TryParse(maxPrice, out decimal parsedMaxPrice))
                 {
                     products = products.Where(p => p.ProductPriceObjectValue.Price <= parsedMaxPrice);
                 }
@@ -148,7 +145,7 @@ namespace WebUI.Controllers
 
             if (hasReviews.HasValue && hasReviews == true)
             {
-                products = products.Where(p => p.Reviews.Any());
+                products = products.Where(p => p.Reviews.Count != 0);
             }
             int totalProducts = products.Count();
             int totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
@@ -201,17 +198,17 @@ namespace WebUI.Controllers
                 ProductsDto = getProductsDto,
                 SmartphonesDto = getSmartphonesDto,
                 GamesDto = getGamesDto,
-                ShoesDtos = getShoesDto,
+                ShoesDto = getShoesDto,
                 TshirtsDto = getTshirtsDto,
                 ReviewsDto = getReviewsDto,
-                CalculateDiscountOV = new CalculateDiscountOV
+                CalculateDiscountValuable = new CalculateDiscountValuable
                 {
                     DiscountPercentage = discountPercentage,
                     InTwelveInstallmentWithoutInterest = inTwelveInstallmentWithoutInterest,
                     InSixInstallmentWithoutInterest = inSixInstallmentWithoutInterest,
                     InThreeInstallmentWithInterest = inThreeInstallmentWithInterest,
                 },
-                CountProductByPriceOV = new CountProductByPriceOV
+                CountProductByPriceValuable = new CountProductByPriceValuable
                 {
                     CountPriceIsHigherThanTwoThousand = priceIsHigherThanTwoThousand,
                     CountPriceIsBetweenTwoHundredAndAThousand = priceIsBetweenTwoHundredAndAThousand,
@@ -227,7 +224,7 @@ namespace WebUI.Controllers
                 {
                     ProductDto = getIdProductDtoAsync,
                     TshirtsDto = getTshirtsDto,
-                    ShoesDtos = getShoesDto
+                    ShoesDto = getShoesDto
                 },
                 PriceIsHigherThanServiceBooleans = new PriceIsHigherThanServiceBooleans
                 {

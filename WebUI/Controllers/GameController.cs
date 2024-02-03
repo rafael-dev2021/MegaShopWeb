@@ -1,6 +1,6 @@
 ﻿using Application.Dtos.ProductsDto.Technology.Games;
-using Application.Interfaces.Entities;
-using Application.Interfaces.Entities.TechnologyInterfaces;
+using Application.Services.Entities.Interfaces;
+using Application.Services.Entities.Products.Interfaces.TechnologyInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;

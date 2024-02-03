@@ -1,0 +1,101 @@
+﻿@model Application.Dtos.CartDto.ShoppingCartItemDto
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    .a-icon-text-separator, .a-text-separator {
+        display: inline-block;
+        margin: -1px 0.6em 0;
+        width: 1px;
+        background-color: gray;
+        line-height: 0;
+        height: 12px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <a asp-controller="Products" asp-action="Details" asp-route-id="@Model.Product.Id">
+                <div class="mx-auto justify-content-center d-flex">
+                    <span><img src="@Url.Content(Model.Product.Images[0])" style="object-fit:contain;width:80px;height:80px" /></span>
+                </div>
+                <hr />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <span style="font-weight:600;font-size:15px">@Model.Product.Name</span>
+            @if (Model.Product.ProductFlagsObjectValue.IsDailyOffer == true)
+            {
+                <div>
+                    <a asp-controller="Products" asp-action="DailyOffer">
+                        <span class="badge" style="background-color:deepskyblue">Daily Offer</span>
+                    </a>
+                    <a asp-controller="Products" asp-action="Index" asp-route-categoryStr="@Model.Category.CategoryName">
+                        <span style="color:gray">@Model.Category.CategoryName</span>
+                    </a>
+                </div>
+                <div>
+                    <span style="font-weight:600;font-size:18px;color:#B12704!important">@Model.Product.ProductPriceObjectValue.Price.ToString("C")</span><br>
+                </div>
+            }
+            else if (Model.Product.ProductFlagsObjectValue.IsBestSeller == true)
+            {
+                <div>
+                    <a asp-controller="Products" asp-action="DailyOffer">
+                        <span class="badge" style="background-color:red">Best Seller</span>
+                    </a>
+                    <a asp-controller="Products" asp-action="Index" asp-route-categoryStr="@Model.Category.CategoryName">
+                        <span style="color:gray">@Model.Category.CategoryName</span>
+                    </a>
+                </div>
+                <div>
+                    <span style="font-weight:600;font-size:18px;color:#B12704!important">@Model.Product.ProductPriceObjectValue.Price.ToString("C")</span><br>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <a asp-controller="Products" asp-action="Index" asp-route-categoryStr="@Model.Category.CategoryName">
+                        <span style="color:gray">@Model.Category.CategoryName</span>
+                    </a>
+                </div>
+                <div>
+                    <span style="font-weight:600;font-size:18px;color:#B12704!important">@Model.Product.ProductPriceObjectValue.Price.ToString("C")</span><br>
+                </div>
+            }
+            <div>
+                @if (Model.Product.Stock - Model.Quantity <= 0)
+                {
+                    <span style="color:red;font-size:13px">@((Model.Product.Stock - Model.Quantity)) out of stock</span>
+                }
+
+            </div>
+            <div>
+                <a asp-controller="ShoppingCart" asp-action="RemoveToCart" asp-route-id="@Model.Product.Id"
+                   style="text-decoration:none">
+                    <i class="fa-solid fa-minus"></i>
+                </a>
+                &nbsp;
+                <span>@Model.Quantity</span>
+                &nbsp;
+                @*Verifica se a quantidade do item  é diferente do estoque do produto correspondente*@
+                @if (Model.Quantity < Model.Product.Stock)
+                {
+                    <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@Model.Product.Id">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                }
+                <i class="a-icon a-icon-text-separator sc-action-separator" role="img" aria-label="|"></i>
+                <a asp-controller="ShoppingCart" asp-action="RemoveItem" asp-route-id="@Model.Product.Id">
+                    <span style="color:gray">Delete</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

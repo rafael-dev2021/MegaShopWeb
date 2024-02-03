@@ -2,15 +2,24 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infra_Data.Configuration.Payments
+namespace Infra_Data.Configuration.Payments;
+
+public class PaymentConfiguration : IEntityTypeConfiguration<Payment>
 {
-    public class PaymentConsfiguration : IEntityTypeConfiguration<Payment>
+    public void Configure(EntityTypeBuilder<Payment> builder)
     {
-        public void Configure(EntityTypeBuilder<Payment> builder)
+        builder.HasKey(x => x.Id);
+        builder.Property(x => x.Amount).HasPrecision(18, 2);
+        builder.Property(u => u.SSN).HasMaxLength(15).IsRequired();
+
+        builder.OwnsOne(x => x.PaymentMethodObjectValue, paymentMethod =>
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Amount).HasPrecision(18, 2);
-            builder.Property(x => x.EPaymentMethod).IsRequired();
-        }
+            paymentMethod.OwnsOne(pm => pm.PaymentStatusObjectValue, paymentStatus =>
+            {
+                paymentStatus.Property(ps => ps.PaymentStatus).IsRequired();
+            });
+
+            paymentMethod.Property(pm => pm.PaymentMethod).IsRequired();
+        });
     }
 }
