@@ -107,28 +107,3 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
 }
 
 
-//public async Task<IEnumerable<Order>> GetOrdersAsync(string searchKeyword = null, DateTime? startDate = null, DateTime? endDate = null)
-//{
-//    var query = _appDbContext.Orders
-//         .AsNoTracking()
-//         .Include(x => x.Payment)
-//         .Include(x => x.OrderDetails)
-//         .OrderBy(x => x.Id);
-
-//    if (!string.IsNullOrWhiteSpace(searchKeyword))
-//    {
-//        query = query.Where(x => x.CustomerName.Contains(searchKeyword) || x.OrderNumber.Contains(searchKeyword));
-//    }
-
-//    if (startDate.HasValue)
-//    {
-//        query = query.Where(x => x.ConfirmedOrder >= startDate.Value);
-//    }
-
-//    if (endDate.HasValue)
-//    {
-//        query = query.Where(x => x.ConfirmedOrder <= endDate.Value);
-//    }
-
-//    return await query.ToListAsync();
-//}

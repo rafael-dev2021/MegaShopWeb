@@ -14,7 +14,7 @@ public class Order
     public List<OrderDetail> OrderDetails { get; protected set; } = [];
     public DeliveryAddress DeliveryAddress { get; protected set; }
     public UserDelivery UserDelivery { get; protected set; }
-    public PaymentMethod PaymentMethod { get; protected set; }
+    public PaymentMethod PaymentMethod { get; set; }
 
 
     public void WhenConfirmedOrder()
