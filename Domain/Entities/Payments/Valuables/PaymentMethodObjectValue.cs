@@ -64,26 +64,10 @@ public class PaymentMethodObjectValue : IPaymentMethod
         }
     }
 
-    public void PayPalPaymentMethod()
+    public void BankSlipPaymentMethod()
     {
-        EPaymentMethod = EPaymentMethod.PayPal;
-        PaymentMethod = EPaymentMethod.PayPal.ToString();
-        SetReference();
-        PaymentDateConfirm();
-    }
-
-    public void TransferPaymentMethod()
-    {
-        EPaymentMethod = EPaymentMethod.BankTransfer;
-        PaymentMethod = EPaymentMethod.BankTransfer.ToString();
-        SetReference();
-        PaymentDateConfirm();
-    }
-
-    public void MoneyPaymentMethod()
-    {
-        EPaymentMethod = EPaymentMethod.CashOnDelivery;
-        PaymentMethod = EPaymentMethod.CashOnDelivery.ToString();
+        EPaymentMethod = EPaymentMethod.BankSlip;
+        PaymentMethod = EPaymentMethod.BankSlip.ToString();
         SetReference();
         PaymentDateConfirm();
     }

@@ -10,14 +10,8 @@ public enum EPaymentMethod
     [Description("Debit Card")]
     DebitCard = 2,
 
-    [Description("PayPal")]
-    PayPal = 3,
-
-    [Description("Bank Transfer")]
-    BankTransfer = 4,
-
-    [Description("Cash On Delivery")]
-    CashOnDelivery = 5
+    [Description("Bank Slip")]
+    BankSlip = 3
 }
 
 public static class EPaymentMethodHelper

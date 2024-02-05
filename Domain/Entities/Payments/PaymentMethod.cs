@@ -17,14 +17,8 @@ public class PaymentMethod : Payment
             case EPaymentMethod.DebitCard:
                 PaymentMethodObjectValue.DebitCardPaymentMethod(DebitCard.DebitCardNumber);
                 break;
-            case EPaymentMethod.PayPal:
-                PaymentMethodObjectValue.PayPalPaymentMethod();
-                break;
-            case EPaymentMethod.BankTransfer:
-                PaymentMethodObjectValue.TransferPaymentMethod();
-                break;
-            case EPaymentMethod.CashOnDelivery:
-                PaymentMethodObjectValue.MoneyPaymentMethod();
+            case EPaymentMethod.BankSlip:
+                PaymentMethodObjectValue.BankSlipPaymentMethod();
                 break;
         }
     }

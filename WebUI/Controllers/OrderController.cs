@@ -1,6 +1,5 @@
 ﻿using Application.Dtos.CartDto;
 using Application.Dtos.OrderDtos;
-using Application.Dtos.PaymentsDto;
 using Application.Services.Entities.CartDtoServices.Interfaces;
 using Application.Services.Entities.OrderDtoServices.Interfaces;
 using Domain.Entities.Payments.Enums;

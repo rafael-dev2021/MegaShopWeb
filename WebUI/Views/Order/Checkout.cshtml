@@ -147,6 +147,7 @@
                 </div>
             </div>
 
+
             <div class="col-md-4">
                 <div class="card-header" style="border:1px solid lightgray;border-radius:5px">
                     <h4 class="card-title">Payment data</h4>
@@ -163,7 +164,7 @@
                                     <option value="@paymentMethodValue">@Domain.Entities.Payments.Enums.EPaymentMethodHelper.GetDescription(paymentMethodValue)</option>
                                 }
                             </select>
-                            <span asp-validation-for="PaymentMethod.EPaymentMethod" class="text-danger"></span>
+                            <span asp-validation-for="PaymentMethod.PaymentMethodObjectValue.EPaymentMethod" class="text-danger"></span>
                         </div>
 
                         <div id="creditCardFields" style="display:none;">
