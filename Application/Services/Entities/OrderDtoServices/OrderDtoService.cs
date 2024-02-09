@@ -15,12 +15,15 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
     public async Task<IEnumerable<OrderDto>> GetOrdersDtoAsync()
     {
         var ordersDto = await _orderRepository.GetOrdersAsync();
+
         if (ordersDto == null || !ordersDto.Any())
         {
             return new List<OrderDto>();
         }
+
         return _mapper.Map<IEnumerable<OrderDto>>(ordersDto);
     }
+
 
     public async Task<OrderDto> GetByIdAsync(int? id)
     {
@@ -60,5 +63,17 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
 
         var updateOrder = _mapper.Map<Order>(orderDto);
         await _orderRepository.UpdateOrder(updateOrder);
+    }
+
+    public async Task<IEnumerable<OrderDetailDto>> GetOrdersDetailsAsync()
+    {
+        var ordersDto = await _orderRepository.GetOrdersDetailsAsync();
+
+        if (ordersDto == null || !ordersDto.Any())
+        {
+            return new List<OrderDetailDto>();
+        }
+
+        return _mapper.Map<IEnumerable<OrderDetailDto>>(ordersDto);
     }
 }

@@ -13,8 +13,8 @@ public class ProductRepository(AppDbContext appDbContext) : IProductRepository
     {
         return await _appDbContext.Products
             .AsNoTracking()
-            .Include(x => x.Reviews)
-            .Include(x => x.Category)
+            .Include(review => review.Reviews)
+            .Include(category => category.Category)
             .ToListAsync();
     }
     public async Task<Product> GetByIdAsync(int? id)
@@ -42,6 +42,7 @@ public class ProductRepository(AppDbContext appDbContext) : IProductRepository
         return _products
             .Where(item => item.ProductFlagsObjectValue.IsDailyOffer == true)
             .OrderBy(x => x.Id)
+            .ThenBy(x => x.Name)
             .ToList();
     }
     public async Task<IEnumerable<Product>> GetProductsBestSellersAsync()
@@ -51,6 +52,7 @@ public class ProductRepository(AppDbContext appDbContext) : IProductRepository
         return _products
             .Where(item => item.ProductFlagsObjectValue.IsBestSeller == true)
             .OrderBy(x => x.Id)
+            .ThenBy(x => x.Name)
             .ToList();
     }
     public async Task<IEnumerable<Product>> GetProductsByCategoriesAsync(string categoryStr)
@@ -78,6 +80,7 @@ public class ProductRepository(AppDbContext appDbContext) : IProductRepository
                 x.ProductSpecificationsObjectValue.ProductBrand.Contains(keyword, StringComparison.CurrentCultureIgnoreCase) ||
                 x.ProductSpecificationsObjectValue.ProductModel.Contains(keyword, StringComparison.CurrentCultureIgnoreCase)))
             .OrderBy(x => x.Id)
+            .ThenBy(x => x.Name)
             .ToList();
 
         return filteredProducts;

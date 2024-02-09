@@ -83,21 +83,28 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
         }
     }
 
-
     public async Task<Order> GetByIdAsync(int? id)
     {
-        return await _appDbContext.Orders.FindAsync(id);
+        return await _appDbContext.Orders
+            .Include(x => x.OrderDetails)
+            .FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<IEnumerable<Order>> GetOrdersAsync()
     {
         return await _appDbContext.Orders
-             .AsNoTracking()
-             .Include(x => x.OrderDetails)
-             .Include(x => x.PaymentMethod)
-             .OrderBy(x => x.Id)
-             .ToListAsync();
+            .AsNoTracking()
+            .Include(x => x.OrderDetails)
+            .ThenInclude(x => x.Product)
+            .Include(x => x.DeliveryAddress)
+            .Include(x => x.UserDelivery)
+            .Include(x => x.PaymentMethod)
+            .Include(x => x.PaymentMethod.CreditCard)
+            .Include(x => x.PaymentMethod.DebitCard)
+            .OrderBy(x => x.Id)
+            .ToListAsync();
     }
+
 
     public async Task<IEnumerable<OrderDetail>> GetOrdersDetailsAsync()
     {
@@ -105,9 +112,11 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
             .AsNoTracking()
             .Include(x => x.Product)
             .Include(x => x.Order)
+                .ThenInclude(order => order.UserDelivery)  
             .OrderBy(x => x.Id)
             .ToListAsync();
     }
+
 
     public async Task<Order> RemoveOrder(Order order)
     {

@@ -5,6 +5,7 @@ namespace Domain.Entities.Orders.Interfaces;
 public interface IOrderRepository
 {
     Task<IEnumerable<Order>> GetOrdersAsync();
+    Task<IEnumerable<OrderDetail>> GetOrdersDetailsAsync();
     Task<Order> GetByIdAsync(int? id);
     Task CreateOrder(Order order, EPaymentMethod ePaymentMethod);
     Task<Order> UpdateOrder(Order order);

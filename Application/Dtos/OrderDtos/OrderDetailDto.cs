@@ -1,4 +1,5 @@
 ﻿using Application.Dtos.PaymentsDto;
+using Domain.Entities.Orders;
 
 namespace Application.Dtos.OrderDtos;
 
@@ -11,5 +12,6 @@ public class OrderDetailDto
     public ProductDto Product { get; set; }
     public int OrderId { get; set; }
     public OrderDto Order { get; set; }
-    public CreditCardDto CreditCard { get; set; }
+    public int PaymentMethodId { get; set; }
+    public PaymentMethodDto PaymentMethod { get; set; }
 }

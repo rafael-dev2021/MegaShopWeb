@@ -17,7 +17,7 @@ public class DomainEntitiesToMappingProfile : Profile
         CreateMap<Payment, PaymentDto>().ReverseMap();
         CreateMap<CreditCard, CreditCardDto>().ReverseMap();
         CreateMap<DebitCard, DebitCardDto>().ReverseMap();
-        CreateMap< PaymentMethod, PaymentMethodDto> ().ReverseMap();
+        CreateMap<PaymentMethod, PaymentMethodDto> ().ReverseMap();
         CreateMap<CategoryWithProductCount, CategoryWithProductCountDto>().ReverseMap();
     }
 }

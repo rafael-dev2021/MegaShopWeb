@@ -12,8 +12,8 @@ public class Order
     public DateTime DispatchedOrder { get; protected set; }
     public DateTime RequestReceived { get; protected set; }
     public List<OrderDetail> OrderDetails { get; protected set; } = [];
-    public DeliveryAddress DeliveryAddress { get; protected set; }
-    public UserDelivery UserDelivery { get; protected set; }
+    public DeliveryAddress DeliveryAddress { get; protected set; } = new DeliveryAddress();
+    public UserDelivery UserDelivery { get; protected set; } = new UserDelivery();
     public PaymentMethod PaymentMethod { get; set; }
 
 

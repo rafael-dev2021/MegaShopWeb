@@ -5,6 +5,7 @@ using Application.Services.Entities.OrderDtoServices.Interfaces;
 using Domain.Entities.Payments.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebUI.ViewModels.OrderViewModel;
 
 namespace WebUI.Controllers;
 
@@ -13,9 +14,25 @@ public class OrderController(IOrderDtoService orderDtoService, IShoppingCartItem
     private readonly IOrderDtoService _orderDtoService = orderDtoService;
     private readonly IShoppingCartItemDtoService _shoppingCart = shoppingCart;
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var orders = await _orderDtoService.GetOrdersDtoAsync();
+        return View(orders);
+    } 
+
+    public async Task<IActionResult> OrderProducts(int? id)
+    {
+        if (id is null) return NotFound();
+        var orderId = await _orderDtoService.GetByIdAsync(id);
+        var orderDetails = await _orderDtoService.GetOrdersDetailsAsync();
+
+        OrderProductViewModel orderProducts = new()
+        {
+            OrderDto = orderId,
+            OrderDetails = orderDetails,
+            TotalOrder = orderId.TotalOrder
+        };
+        return View(orderProducts);
     }
 
     [Authorize]
