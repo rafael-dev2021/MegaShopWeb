@@ -4,41 +4,40 @@ using System.Diagnostics;
 using WebUI.Models;
 using WebUI.ViewModels;
 
-namespace WebUI.Controllers
+namespace WebUI.Controllers;
+
+public class HomeController(ILogger<HomeController> logger, ICategoryDtoService categoryDtoService, IProductDtoService productDtoService) : Controller
 {
-    public class HomeController(ILogger<HomeController> logger, ICategoryDtoService categoryDtoService, IProductDtoService productDtoService) : Controller
+    private readonly ILogger<HomeController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
+    private readonly IProductDtoService _productDtoService = productDtoService ?? throw new ArgumentNullException(nameof(productDtoService));
+
+    [HttpGet]
+    public async Task<IActionResult> Index()
     {
-        private readonly ILogger<HomeController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
-        private readonly IProductDtoService _productDtoService = productDtoService ?? throw new ArgumentNullException(nameof(productDtoService));
+        var getCategoriesDtoAsync = await _categoryDtoService.GetCategoriesDtoAsync();
+        var getProductsDtoAsync = await _productDtoService.GetProductsDtoAsync();
+        var dailyOfferProducts = await _productDtoService.GetProductsDtoDailyOffersAsync();
 
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        var homeVw = new HomeViewModel()
         {
-            var getCategoriesDtoAsync = await _categoryDtoService.GetCategoriesDtoAsync();
-            var getProductsDtoAsync = await _productDtoService.GetProductsDtoAsync();
-            var dailyOfferProducts = await _productDtoService.GetProductsDtoDailyOffersAsync();
-
-            var homeVw = new HomeViewModel()
-            {
-                GetCategoriesDto = getCategoriesDtoAsync,
-                GetProductsDto = getProductsDtoAsync,
-                GetProductsDailyOffersDto = dailyOfferProducts
-            };
+            GetCategoriesDto = getCategoriesDtoAsync,
+            GetProductsDto = getProductsDtoAsync,
+            GetProductsDailyOffersDto = dailyOfferProducts
+        };
 
 
-            return View(homeVw);
-        }
+        return View(homeVw);
+    }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

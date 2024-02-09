@@ -7,14 +7,14 @@
 {
     if (items.Id == Model.ProductDto.Id)
     {
-        <partial name="~/Views/Smartphone/DetailsPartial.cshtml" for="@items" />
+        <partial name="~/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphonePartial.cshtml" for="@items" />
     }
 }
 @foreach (var items in Model.GamesDto)
 {
     if (items.Id == Model.ProductDto.Id)
     {
-        <partial name="~/Views/Game/DetailsPartial.cshtml" for="@items" />
+        <partial name="~/Views/Products/DetailsPartial/Technology/Games/_DetailsGamePartial.cshtml" for="@items" />
     }
 }
 

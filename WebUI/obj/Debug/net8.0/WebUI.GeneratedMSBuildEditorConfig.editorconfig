@@ -26,36 +26,76 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\C#\MegaShopWeb\WebUI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/GameAdmin/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FtZUFkbWluXENyZWF0ZS5jc2h0bWw=
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/GameAdmin/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FtZUFkbWluXERlbGV0ZS5jc2h0bWw=
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/GameAdmin/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FtZUFkbWluXEVkaXQuY3NodG1s
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/GameAdmin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FtZUFkbWluXEluZGV4LmNzaHRtbA==
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/SmartphoneAdmin/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU21hcnRwaG9uZUFkbWluXENyZWF0ZS5jc2h0bWw=
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/SmartphoneAdmin/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU21hcnRwaG9uZUFkbWluXERlbGV0ZS5jc2h0bWw=
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/SmartphoneAdmin/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU21hcnRwaG9uZUFkbWluXEVkaXQuY3NodG1s
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/SmartphoneAdmin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU21hcnRwaG9uZUFkbWluXEluZGV4LmNzaHRtbA==
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminProduct/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Qcm9kdWN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/_ViewImports.cshtml]
@@ -102,10 +142,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWeb/WebUI/Views/Category/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/C\#/MegaShopWeb/WebUI/Views/Contact/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -116,18 +152,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/C\#/MegaShopWeb/WebUI/Views/Contact/ThankYou.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxUaGFua1lvdS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/C\#/MegaShopWeb/WebUI/Views/Game/DetailsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxEZXRhaWxzUGFydGlhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/C\#/MegaShopWeb/WebUI/Views/Game/FeaturesPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxGZWF0dXJlc1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/C\#/MegaShopWeb/WebUI/Views/Game/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#/MegaShopWeb/WebUI/Views/Home/Index.cshtml]
@@ -158,12 +182,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Games/_DetailsGamePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxHYW1lc1xfRGV0YWlsc0dhbWVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Games/_DetailsGameSpecificationsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxHYW1lc1xfRGV0YWlsc0dhbWVTcGVjaWZpY2F0aW9uc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Games/_FeaturesGamePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxHYW1lc1xfRmVhdHVyZXNHYW1lUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphonePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxTbWFydHBob25lc1xfRGV0YWlsc1NtYXJ0cGhvbmVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphoneSpecificationsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxTbWFydHBob25lc1xfRGV0YWlsc1NtYXJ0cGhvbmVTcGVjaWZpY2F0aW9uc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_FeaturesSmartphonePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxTbWFydHBob25lc1xfRmVhdHVyZXNTbWFydHBob25lUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsAboutThisProductPartial.cshtml]
@@ -368,18 +408,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/C\#/MegaShopWeb/WebUI/Views/ShoppingCart/ItemReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEl0ZW1SZXZpZXcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/C\#/MegaShopWeb/WebUI/Views/Smartphone/DetailsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU21hcnRwaG9uZVxEZXRhaWxzUGFydGlhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/C\#/MegaShopWeb/WebUI/Views/Smartphone/FeaturesPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU21hcnRwaG9uZVxGZWF0dXJlc1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/C\#/MegaShopWeb/WebUI/Views/Smartphone/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU21hcnRwaG9uZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#/MegaShopWeb/WebUI/Views/_ViewImports.cshtml]

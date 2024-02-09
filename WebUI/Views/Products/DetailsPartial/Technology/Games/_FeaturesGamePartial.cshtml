@@ -1,0 +1,157 @@
+﻿@model Application.Dtos.ProductsDto.Technology.Games.GameDto
+
+<style>
+
+    th {
+        word-break: break-word;
+        font-size: 14px;
+        font-weight: 600;
+        border-spacing: 0;
+        color: rgba(0,0,0,.9);
+        text-align: left;
+        height: 50px;
+    }
+
+    td {
+        color: rgba(0,0,0,.9);
+        font-size: 12px;
+        word-break: break-word;
+        font-family: Roboto,Arial,sans-serif;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: right;
+    }
+
+    .syle_text {
+        font-size: 15px;
+        color: black;
+    }
+
+    .style_text_content {
+        font-weight: 600;
+    }
+
+    .style_img_thumbnail {
+        background-color: rgba(211,211,211);
+        border-radius: 50%;
+        z-index: 1;
+    }
+</style>
+
+<h5>Resources for @Model.Name</h5>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-1">
+            <img class="style_img_thumbnail" src="~/images/img_games/default.svg" width="40" />
+            <span> <img class="style_img_thumbnail mt-4" src="~/images/img_games/default.svg" width="40" /></span>
+        </div>
+        <div class="col-md-4">
+            <span class="syle_text">Platform: <span class="style_text_content">@Model.GameGeneralFeaturesObjectsValue.Platform</span></span>
+            <p class="syle_text mt-5">File Size: <span class="style_text_content">@Model.GameSpecificationsObjectsValue.FileSize GB</span></p>
+        </div>
+        <div class="col-md-1">
+            <img class="style_img_thumbnail" src="~/images/img_games/default.svg" width="40" />
+            <span><img class="style_img_thumbnail mt-4" src="~/images/img_games/default.svg" width="40" /></span>
+        </div>
+        <div class="col-md-4">
+            <span class="syle_text">Is it multiplayer: <span class="style_text_content">@(Model.GameSpecificationsObjectsValue.ItsMultiplayer ? "Yes" : "Not")</span></span>
+            <p class="syle_text mt-5">Format: <span class="style_text_content">@Model.GameSpecificationsObjectsValue.Format</span></p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-1">
+            <img class="style_img_thumbnail" src="~/images/img_games/default.svg" width="40" />
+        </div>
+        <div class="col-md-4">
+            <span class="syle_text">Is it online: <span class="style_text_content">@(Model.GameSpecificationsObjectsValue.ItsOnline ? "Yes" : "Not")</span></span>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-lg-6">
+        <h5 class="mb-3">General features</h5>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>Collection</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.Collection</td>
+                </tr>
+                <tr>
+                    <th>Saga</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.Saga</td>
+                </tr>
+                <tr>
+                    <th>Game title</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.GameTitle</td>
+                </tr>
+                <tr>
+                    <th>Edition</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.Edition</td>
+                </tr>
+                <tr>
+                    <th>Platform</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.Platform</td>
+                </tr>
+                <tr>
+                    <th>Developers</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.Developers</td>
+                </tr>
+                <tr>
+                    <th>Release year</th>
+                    <td>@Model.ProductDataObjectValue.ReleaseYear</td>
+                </tr>
+
+                <tr>
+                    <th>Genres</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.Genres</td>
+                </tr>
+                <tr>
+                    <th>Game rating</th>
+                    <td>@Model.GameGeneralFeaturesObjectsValue.GameRating</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <h5 class="mb-3">Specifications</h5>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>Format</th>
+                    <td>@Model.GameSpecificationsObjectsValue.Format</td>
+                </tr>
+                <tr>
+                    <th>It's multiplayer</th>
+                    <td>@(Model.GameSpecificationsObjectsValue.ItsMultiplayer ? "Yes" : "Not")</td>
+                </tr>
+                <tr>
+                    <th>It's online</th>
+                    <td>@(Model.GameSpecificationsObjectsValue.ItsOnline ? "Yes" : "Not")</td>
+                </tr>
+                <tr>
+                    <th>It's offline</th>
+                    <td>@(Model.GameSpecificationsObjectsValue.ItsOffline ? "Yes" : "Not")</td>
+                </tr>
+                <tr>
+                    <th>Need peripherals?</th>
+                    <td>@(Model.GameSpecificationsObjectsValue.RequiresPeripheral ? "Yes" : "Not")</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-6">
+                <h5 class="mb-3 mt-4">File</h5>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>File size</th>
+                            <td>@Model.GameSpecificationsObjectsValue.FileSize GB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
