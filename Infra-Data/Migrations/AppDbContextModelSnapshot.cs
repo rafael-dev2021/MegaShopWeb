@@ -373,7 +373,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4422)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9822)
                         },
                         new
                         {
@@ -382,7 +382,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4437)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9838)
                         },
                         new
                         {
@@ -391,7 +391,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4438)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9839)
                         },
                         new
                         {
@@ -400,7 +400,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
                             ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4439)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9840)
                         },
                         new
                         {
@@ -409,7 +409,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
                             ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4440)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9841)
                         },
                         new
                         {
@@ -418,7 +418,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
                             ProductId = 4,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4442)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9841)
                         },
                         new
                         {
@@ -427,7 +427,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4443)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9842)
                         },
                         new
                         {
@@ -436,7 +436,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4444)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9843)
                         },
                         new
                         {
@@ -445,7 +445,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
                             ProductId = 6,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4445)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9844)
                         },
                         new
                         {
@@ -454,7 +454,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
                             ProductId = 6,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4446)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9845)
                         },
                         new
                         {
@@ -463,7 +463,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4448)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9845)
                         },
                         new
                         {
@@ -472,7 +472,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 1,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4449)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9846)
                         },
                         new
                         {
@@ -481,7 +481,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 9,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4450)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9847)
                         },
                         new
                         {
@@ -490,7 +490,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4451)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9848)
                         },
                         new
                         {
@@ -499,7 +499,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 8, 23, 13, 51, 291, DateTimeKind.Local).AddTicks(4452)
+                            ReviewDate = new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9848)
                         });
                 });
 

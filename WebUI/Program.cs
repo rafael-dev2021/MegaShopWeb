@@ -45,11 +45,6 @@ app.Run();
 
 
 
-
-
-
-
-
 //var csp = "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self';";
 
 //app.Use(async (context, next) =>

@@ -23,6 +23,17 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
 
         return _mapper.Map<IEnumerable<OrderDto>>(ordersDto);
     }
+    public IQueryable<OrderDto> GetPagingListOrdersDto(string filter)
+    {
+        var ordersDto = _orderRepository.GetPagingListOrders(filter);
+
+        if (ordersDto == null || !ordersDto.Any())
+        {
+            return Enumerable.Empty<OrderDto>().AsQueryable();
+        }
+
+        return _mapper.ProjectTo<OrderDto>(ordersDto.AsQueryable());
+    }
 
 
     public async Task<OrderDto> GetByIdAsync(int? id)
@@ -76,4 +87,6 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
 
         return _mapper.Map<IEnumerable<OrderDetailDto>>(ordersDto);
     }
+
+
 }

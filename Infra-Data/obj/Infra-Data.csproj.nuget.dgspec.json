@@ -111,6 +111,10 @@
               "target": "Package",
               "version": "[1.10.4, )"
             },
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.13.12, )"
+            },
             "IdentityModel": {
               "target": "Package",
               "version": "[6.2.0, )"

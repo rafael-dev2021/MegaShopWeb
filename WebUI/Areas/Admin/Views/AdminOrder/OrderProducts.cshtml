@@ -1,0 +1,42 @@
+﻿@model AdminOrderProductViewModel;
+
+@{
+    ViewData["Title"] = "PedidoLanches";
+}
+
+<h1>Produtos do Pedido</h1>
+<hr />
+
+<h3>Pedido :  @Html.DisplayFor(model => Model.OrderDto.Id)</h3>
+<h3>Cliente :  @Html.DisplayFor(model => Model.OrderDto.UserDelivery.FirstName)</h3>
+<h3>Pedido feito em :  @Html.DisplayFor(model => Model.OrderDto.DispatchedOrder)</h3>
+<h3>Pedido saiu para entrega :  @Html.DisplayFor(model => Model.OrderDto.DispatchedOrder)</h3>
+<h3>Entrega :  @Html.DisplayFor(model => Model.OrderDto.RequestReceived)</h3>
+
+<table class="table">
+    @foreach (var item in @Model.OrderDetails)
+    {
+        <tr>
+            <td align="right">
+                <h3>@Html.DisplayFor(modelItem => item.Product.Name)</h3>
+            </td>
+            <td align="right">
+                <img src="@Url.Content(item.Product.Images[0])" class="img-fluid" height="100" width="100">
+            </td>
+            <td align="right">
+                <h3>@string.Format("{0:C2}", item.Product.ProductPriceObjectValue.Price)</h3>
+            </td>
+            <td align="right">
+                <h3>(@Html.DisplayFor(modelItem => item.Quantity))</h3>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="2">&nbsp;</td>
+        <td align="right">
+            <h3>Total do Pedido : @string.Format("{0:C2}", Model.TotalOrder)</h3>
+        </td>
+    </tr>
+</table>
+<a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+

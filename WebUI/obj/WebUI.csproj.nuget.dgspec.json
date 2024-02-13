@@ -184,6 +184,10 @@
               "target": "Package",
               "version": "[1.10.4, )"
             },
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.13.12, )"
+            },
             "IdentityModel": {
               "target": "Package",
               "version": "[6.2.0, )"
@@ -371,6 +375,10 @@
               "version": "[1.19.6, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "ReflectionIT.Mvc.Paging": {
               "target": "Package",
               "version": "[8.0.0, )"
             }

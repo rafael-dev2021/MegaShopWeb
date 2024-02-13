@@ -1,0 +1,122 @@
+﻿@model OrderViewModel
+<style>
+
+    a:hover {
+        color: #4CAF50;
+    }
+
+    ul li a {
+        color: gray;
+    }
+
+    .style_li_button_typesOffers {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .pagination a, .pagination span {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+
+            .pagination a:hover {
+                background-color: #45a049;
+            }
+
+            .pagination span.current {
+                background-color: #45a049;
+                cursor: default;
+            }
+
+    .style_form_button {
+        margin-top: 2px;
+        background-color: lightgrey;
+        border: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .style_form_button i {
+            color: white;
+        }
+</style>
+
+<h2>Total Orders: @Model.TotalOrders</h2>
+
+<h6>Search for orders</h6>
+<form class="d-flex flex-grow-1 mb-3" style="width:200px;height:35px;">
+    <input class="form-control me-2 bar" type="search" placeholder="" aria-label="Search" name="filter" value="@ViewBag.Filter" />
+</form>
+
+<table>
+    <tbody>
+        @foreach (var item in Model.OrdersDto)
+        {
+            <tr>
+                <td>@item.UserDelivery.FirstName</td>
+                <td>@item.UserDelivery.LastName</td>
+                <td>@item.DeliveryAddress.Address</td>
+                <td>@item.DeliveryAddress.Complement</td>
+                <td>@item.DeliveryAddress.ZipCode</td>
+                <td>@item.DeliveryAddress.State</td>
+                <td>@item.DeliveryAddress.City</td>
+                <td>@item.UserDelivery.Phone</td>
+                <td>@item.UserDelivery.Email</td>
+                <td>@item.DispatchedOrder</td>
+                <td>@item.RequestReceived</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                    <a asp-action="OrderProducts" asp-route-id="@item.Id">View Items</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pagination" style="justify-content:center">
+    @if (ViewBag.CurrentPage > 1)
+    {
+        <a href="/Admin/AdminOrder/Index?page=@(ViewBag.CurrentPage - 1)&filter=@(ViewBag.Filter ?? "")">Back</a>
+    }
+
+    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+    {
+        if (i == ViewBag.CurrentPage)
+        {
+            <span class="current">@i</span>
+        }
+        else if (i == 1 || i == ViewBag.TotalPages || (i >= ViewBag.CurrentPage - 5 && i <= ViewBag.CurrentPage + 5))
+        {
+            <a href="/Admin/AdminOrder/Index?page=@i&filter=@(ViewBag.Filter ?? "")">@i</a>
+        }
+        else if (i == ViewBag.CurrentPage - 6 || i == ViewBag.CurrentPage + 6)
+        {
+            <span>...</span>
+        }
+    }
+
+    @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+    {
+        <a href="/Admin/AdminOrder/Index?page=@(ViewBag.CurrentPage + 1)&filter=@(ViewBag.Filter ?? "")">Next</a>
+    }
+</div>
+
+
+

@@ -12,6 +12,58 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
 {
     private readonly AppDbContext _appDbContext = appDbContext;
     private readonly IShoppingCartItemRepository _shoppingCartItemRepository = shoppingCartItemRepository;
+
+    public async Task<IEnumerable<Order>> GetOrdersAsync()
+    {
+        return await _appDbContext.Orders
+            .AsNoTracking()
+            .Include(x => x.OrderDetails)
+            .ThenInclude(x => x.Product)
+            .Include(x => x.DeliveryAddress)
+            .Include(x => x.UserDelivery)
+            .Include(x => x.PaymentMethod)
+            .Include(x => x.PaymentMethod.CreditCard)
+            .Include(x => x.PaymentMethod.DebitCard)
+            .OrderBy(x => x.Id)
+            .ToListAsync();
+    }
+    public IQueryable<Order> GetPagingListOrders(string filter)
+    {
+        var result = _appDbContext.Orders
+            .AsNoTracking()
+            .Include(x => x.DeliveryAddress)
+            .Include(x => x.UserDelivery)
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(filter))
+        {
+            result = result.Where(x =>
+                x.UserDelivery.FirstName.Contains(filter)
+            );
+        }
+
+        return result.OrderBy(x => x.UserDelivery.FirstName);
+    }
+
+
+    public async Task<IEnumerable<OrderDetail>> GetOrdersDetailsAsync()
+    {
+        return await _appDbContext.OrderDetails
+            .AsNoTracking()
+            .Include(x => x.Product)
+            .Include(x => x.Order)
+                .ThenInclude(order => order.UserDelivery)
+            .OrderBy(x => x.Id)
+            .ToListAsync();
+    }
+
+    public async Task<Order> GetByIdAsync(int? id)
+    {
+        return await _appDbContext.Orders
+            .Include(x => x.OrderDetails)
+            .FirstOrDefaultAsync(x => x.Id == id);
+    }
+
     private void ConfirmOrder(Order order, EPaymentMethod ePaymentMethod)
     {
         order.WhenConfirmedOrder();
@@ -82,42 +134,6 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
             throw new Exception("There was an error processing the request.", ex);
         }
     }
-
-    public async Task<Order> GetByIdAsync(int? id)
-    {
-        return await _appDbContext.Orders
-            .Include(x => x.OrderDetails)
-            .FirstOrDefaultAsync(x => x.Id == id);
-    }
-
-    public async Task<IEnumerable<Order>> GetOrdersAsync()
-    {
-        return await _appDbContext.Orders
-            .AsNoTracking()
-            .Include(x => x.OrderDetails)
-            .ThenInclude(x => x.Product)
-            .Include(x => x.DeliveryAddress)
-            .Include(x => x.UserDelivery)
-            .Include(x => x.PaymentMethod)
-            .Include(x => x.PaymentMethod.CreditCard)
-            .Include(x => x.PaymentMethod.DebitCard)
-            .OrderBy(x => x.Id)
-            .ToListAsync();
-    }
-
-
-    public async Task<IEnumerable<OrderDetail>> GetOrdersDetailsAsync()
-    {
-        return await _appDbContext.OrderDetails
-            .AsNoTracking()
-            .Include(x => x.Product)
-            .Include(x => x.Order)
-                .ThenInclude(order => order.UserDelivery)  
-            .OrderBy(x => x.Id)
-            .ToListAsync();
-    }
-
-
     public async Task<Order> RemoveOrder(Order order)
     {
         _appDbContext.Remove(order);
@@ -131,6 +147,8 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
         await _appDbContext.SaveChangesAsync();
         return order;
     }
+
+
 }
 
 
