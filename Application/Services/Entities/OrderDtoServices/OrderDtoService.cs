@@ -67,14 +67,23 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
         await _orderRepository.RemoveOrder(deleteOrder);
     }
 
-    public async Task UpdateOrder(OrderDto orderDto)
+    public async Task<OrderDto> UpdateOrderPropertyAsync(int orderId, Action<OrderDto> updateAction)
     {
-        if (orderDto == null)
-            throw new ArgumentNullException(nameof(orderDto), "OrderDto cannot be null.");
+        if (updateAction == null)
+            throw new ArgumentNullException(nameof(updateAction), "Update action cannot be null.");
 
-        var updateOrder = _mapper.Map<Order>(orderDto);
-        await _orderRepository.UpdateOrder(updateOrder);
+        var existingOrder = await _orderRepository.GetByIdAsync(orderId) ??
+            throw new ArgumentException($"Order with ID {orderId} not found.", nameof(orderId));
+        var orderDto = _mapper.Map<OrderDto>(existingOrder);
+
+        updateAction(orderDto);
+
+        var updatedOrder = _mapper.Map<Order>(orderDto);
+        await _orderRepository.UpdateOrder(updatedOrder);
+
+        return orderDto;
     }
+
 
     public async Task<IEnumerable<OrderDetailDto>> GetOrdersDetailsAsync()
     {
@@ -88,5 +97,38 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
         return _mapper.Map<IEnumerable<OrderDetailDto>>(ordersDto);
     }
 
+    public async Task<IEnumerable<OrderDto>> FindByOrderConfirmDateDtoAsync(DateTime? minDate, DateTime? maxDate)
+    {
+        var orders = await _orderRepository.FindByOrderConfirmDateAsync(minDate, maxDate);
+        if (orders == null || !orders.Any())
+        {
+            return Enumerable.Empty<OrderDto>();
+        }
+        var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
+        return orderDtos;
+    }
 
+    public async Task<IEnumerable<OrderDto>> FindByOrderDispatchedDateDtoAsync(DateTime? minDate, DateTime? maxDate)
+    {
+        var orders = await _orderRepository.FindByOrderDispatchedDateAsync(minDate, maxDate);
+        if (orders == null || !orders.Any())
+        {
+            return Enumerable.Empty<OrderDto>();
+        }
+        var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
+        return orderDtos;
+    }
+
+    public async Task<IEnumerable<OrderDto>> FindByOrderRequestReceivedDateDtoAsync(DateTime? minDate, DateTime? maxDate)
+    {
+        var orders = await _orderRepository.FindByOrderRequestReceivedDateAsync(minDate, maxDate);
+        if (orders == null || !orders.Any())
+        {
+            return Enumerable.Empty<OrderDto>();
+        }
+        var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
+        return orderDtos;
+    }
+
+   
 }

@@ -62,33 +62,43 @@
 <form class="d-flex flex-grow-1 mb-3" style="width:200px;height:35px;">
     <input class="form-control me-2 bar" type="search" placeholder="" aria-label="Search" name="filter" value="@ViewBag.Filter" />
 </form>
-
-<table>
-    <tbody>
-        @foreach (var item in Model.OrdersDto)
-        {
+<div class="panel-body">
+    <table class="table table-striped table-hover">
+        <thead>
             <tr>
-                <td>@item.UserDelivery.FirstName</td>
-                <td>@item.UserDelivery.LastName</td>
-                <td>@item.DeliveryAddress.Address</td>
-                <td>@item.DeliveryAddress.Complement</td>
-                <td>@item.DeliveryAddress.ZipCode</td>
-                <td>@item.DeliveryAddress.State</td>
-                <td>@item.DeliveryAddress.City</td>
-                <td>@item.UserDelivery.Phone</td>
-                <td>@item.UserDelivery.Email</td>
-                <td>@item.DispatchedOrder</td>
-                <td>@item.RequestReceived</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                    <a asp-action="OrderProducts" asp-route-id="@item.Id">View Items</a>
-                </td>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Phone</th>
+                <th>Total Order</th>
+                <th>Total Itens</th>
+                <th>Confirmed order</th>
+                <th>Dispatched order</th>
+                <th>Received</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrdersDto)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.UserDelivery.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UserDelivery.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UserDelivery.Phone)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TotalOrder)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TotalItemsOrder)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ConfirmedOrder)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DispatchedOrder)</td>
+                    <td>@Html.DisplayFor(modelItem => item.RequestReceived)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-info fs-5 mx-1"></i></a>|
+                        <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye text-primary fs-5 mx-1"></i></a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash text-danger fs-5 mx-1"></i></a> |
+                        <a asp-action="OrderProducts" asp-route-id="@item.Id">View Items</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 <div class="pagination" style="justify-content:center">
     @if (ViewBag.CurrentPage > 1)
@@ -119,4 +129,59 @@
 </div>
 
 
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal" asp-action="DispatchedSalesReport">
+            <fieldset>
+                <legend><b>Relatório de pedidos enviados por período</b></legend>
+                <div class="form-group">
+                    <label for="minDate" class="col-lg-6 control-label">Data Inicial</label>
+                    <div class="col-lg-10">
+                        <input type="date" name="minDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maxDate" class="col-lg-6 control-label">Data Final</label>
+                    <div class="col-lg-10">
+                        <input type="date" name="maxDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal" asp-action="RequestReceivedSalesReport">
+            <fieldset>
+                <legend><b>Relatório de pedidos entregues por período</b></legend>
+                <div class="form-group">
+                    <label for="minDate" class="col-lg-6 control-label">Data Inicial</label>
+                    <div class="col-lg-10">
+                        <input type="date" name="minDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maxDate" class="col-lg-6 control-label">Data Final</label>
+                    <div class="col-lg-10">
+                        <input type="date" name="maxDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
 

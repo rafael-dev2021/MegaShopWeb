@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Application.Dtos.OrderDtos.OrderDto>
+
+<div class="container">
+    <h2 class="mt-4">Report of confirmed orders by period</h2>
+
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid d-flex align-items-center">
+            <form class="d-flex gap-3">
+                <div class="form-group">
+                    <label for="minDate" class="me-2">Start date:</label>
+                    <input type="date" class="form-control" name="minDate" value="@ViewData["minDate"]" />
+                </div>
+                <div class="form-group">
+                    <label for="maxDate" class="me-2">End date:</label>
+                    <input type="date" class="form-control" name="maxDate" value="@ViewData["maxDate"]" />
+                </div>
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-success">Filter</button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="panel panel-primary mt-4">
+        <div class="panel-body">
+            <table class="table table-bordered table-hover mt-3">
+                <thead>
+                    <tr class="table-primary">
+                        <th>@Html.DisplayNameFor(model => model.Id)</th>
+                        <th>@Html.DisplayNameFor(model => model.UserDelivery.FirstName)</th>
+                        <th>@Html.DisplayNameFor(model => model.UserDelivery.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.UserDelivery.Phone)</th>
+                        <th>@Html.DisplayNameFor(model => model.TotalOrder)</th>
+                        <th>@Html.DisplayNameFor(model => model.TotalItemsOrder)</th>
+                        <th>@Html.DisplayNameFor(model => model.ConfirmedOrder)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UserDelivery.FirstName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UserDelivery.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UserDelivery.Phone)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalOrder)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalItemsOrder)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ConfirmedOrder)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total orders</h5>
+                        <p class="card-text">@Model.Count()</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total products</h5>
+                        <p class="card-text">@Model.Sum(obj => obj.TotalItemsOrder).ToString()</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total amount</h5>
+                        <p class="card-text">@Model.Sum(obj => obj.TotalOrder).ToString("c")</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Graphics</h5>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('pieChart').getContext('2d');
+
+            // Obtendo os valores dinamicamente da sua coleção
+            var totalOrders = @Html.Raw(Model.Count());
+            var totalProducts = @Html.Raw(Model.Sum(obj => obj.TotalItemsOrder));
+            var totalAmount = @Html.Raw(Model.Sum(obj => obj.TotalOrder));
+
+            var data = {
+                labels: ['Total Orders', 'Total Products', 'Total Amount'],
+                datasets: [{
+                    data: [totalOrders, totalProducts, totalAmount],
+                    backgroundColor: [
+                        'rgb(40, 167, 69)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        // Adicione mais cores conforme necessário
+                    ],
+                }]
+            };
+
+            var options = {
+                responsive: false,
+                maintainAspectRatio: false,
+            };
+
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: options
+            });
+        });
+    </script>
+}
+

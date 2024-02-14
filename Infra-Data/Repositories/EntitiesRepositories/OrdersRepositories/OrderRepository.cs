@@ -1,17 +1,19 @@
-﻿using Domain.Entities.Cart;
-using Domain.Entities.Cart.Interfaces;
+﻿using Domain.Entities.Cart.Interfaces;
 using Domain.Entities.Orders;
 using Domain.Entities.Orders.Interfaces;
 using Domain.Entities.Payments.Enums;
 using Infra_Data.Context;
+using Infra_Data.Repositories.EntitiesRepositories.OrdersRepositories.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra_Data.Repositories.EntitiesRepositories.OrdersRepositories;
 
-public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemRepository shoppingCartItemRepository) : IOrderRepository
+public class OrderRepository(
+    AppDbContext appDbContext, 
+    IShoppingCartItemRepository shoppingCartItemRepository) : IOrderRepository
 {
     private readonly AppDbContext _appDbContext = appDbContext;
-    private readonly IShoppingCartItemRepository _shoppingCartItemRepository = shoppingCartItemRepository;
+    public OrderRepositoryHelper orderRepositoryHelper = new(appDbContext, shoppingCartItemRepository);
 
     public async Task<IEnumerable<Order>> GetOrdersAsync()
     {
@@ -42,7 +44,7 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
             );
         }
 
-        return result.OrderBy(x => x.UserDelivery.FirstName);
+        return result.OrderBy(x => x.Id);
     }
 
 
@@ -57,6 +59,23 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
             .ToListAsync();
     }
 
+
+    public async Task<IEnumerable<Order>> FindByOrderConfirmDateAsync(DateTime? minDate, DateTime? maxDate)
+    {
+        return await orderRepositoryHelper.FindOrdersByDateAsync(minDate, maxDate, x => x.ConfirmedOrder);
+    }
+
+    public async Task<IEnumerable<Order>> FindByOrderDispatchedDateAsync(DateTime? minDate, DateTime? maxDate)
+    {
+        return await orderRepositoryHelper.FindOrdersByDateAsync(minDate, maxDate, x => x.DispatchedOrder);
+    }
+
+    public async Task<IEnumerable<Order>> FindByOrderRequestReceivedDateAsync(DateTime? minDate, DateTime? maxDate)
+    {
+        return await orderRepositoryHelper.FindOrdersByDateAsync(minDate, maxDate, x => x.RequestReceived);
+    }
+
+
     public async Task<Order> GetByIdAsync(int? id)
     {
         return await _appDbContext.Orders
@@ -64,65 +83,17 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
             .FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    private void ConfirmOrder(Order order, EPaymentMethod ePaymentMethod)
-    {
-        order.WhenConfirmedOrder();
-        order.PaymentMethod.DefaultPayment(ePaymentMethod);
-
-        if (order.PaymentMethod.PaymentMethodObjectValue.PaymentStatusObjectValue.EPaymentStatus != EPaymentStatus.Approved)
-        {
-            throw new Exception("Payment was declined.");
-        }
-    }
-    private async Task SaveMainOrder(Order order)
-    {
-        _appDbContext.Add(order);
-        await _appDbContext.SaveChangesAsync();
-    }
-    private async Task ProcessShoppingCartItems(Order order)
-    {
-        var cartItems = await _shoppingCartItemRepository.GetShoppingCartItemsAsync();
-
-        foreach (var cartItem in cartItems)
-        {
-            await ProcessCartItem(order, cartItem);
-        }
-    }
-    private async Task ProcessCartItem(Order order, ShoppingCartItem cartItem)
-    {
-        var product = await _appDbContext.Products.FindAsync(cartItem.Product.Id);
-
-        if (product.Stock >= cartItem.Quantity)
-        {
-            product.Stock -= cartItem.Quantity;
-
-            var orderDetails = new OrderDetail
-            (
-                cartItem.Quantity,
-                cartItem.Product.ProductPriceObjectValue.Price,
-                order.Id,
-                cartItem.Product.Id,
-                order.PaymentMethod.Id
-            );
-
-            _appDbContext.OrderDetails.Add(orderDetails);
-        }
-        else
-        {
-            throw new Exception("Product stock not available.");
-        }
-    }
     public async Task CreateOrder(Order order, EPaymentMethod ePaymentMethod)
     {
         using var transaction = _appDbContext.Database.BeginTransaction();
 
         try
         {
-            ConfirmOrder(order, ePaymentMethod);
+            orderRepositoryHelper.ConfirmOrder(order, ePaymentMethod);
 
-            await SaveMainOrder(order);
+            await orderRepositoryHelper.SaveMainOrder(order);
 
-            await ProcessShoppingCartItems(order);
+            await orderRepositoryHelper.ProcessShoppingCartItems(order);
 
             await _appDbContext.SaveChangesAsync();
 
@@ -134,21 +105,30 @@ public class OrderRepository(AppDbContext appDbContext, IShoppingCartItemReposit
             throw new Exception("There was an error processing the request.", ex);
         }
     }
+  
+    public async Task<Order> UpdateOrder(Order order)
+    {
+        try
+        {
+            var existingOrder = await _appDbContext.Orders.FindAsync(order.Id);
+
+            _appDbContext.Entry(existingOrder).CurrentValues.SetValues(order);
+
+            await _appDbContext.SaveChangesAsync();
+
+            return existingOrder;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Erro ao atualizar o pedido.", ex);
+        }
+    }
     public async Task<Order> RemoveOrder(Order order)
     {
         _appDbContext.Remove(order);
         await _appDbContext.SaveChangesAsync();
         return order;
     }
-
-    public async Task<Order> UpdateOrder(Order order)
-    {
-        _appDbContext.Update(order);
-        await _appDbContext.SaveChangesAsync();
-        return order;
-    }
-
-
 }
 
 

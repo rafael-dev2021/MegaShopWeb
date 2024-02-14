@@ -530,21 +530,21 @@ namespace Infra_Data.Migrations
                 columns: new[] { "ReviewId", "Comment", "Image", "ProductId", "Rating", "ReviewDate" },
                 values: new object[,]
                 {
-                    { 1, "The quality of the photos is incredible.", "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp", 1, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9822) },
-                    { 2, "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.", "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg", 1, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9838) },
-                    { 3, "Good!", "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp", 1, 4, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9839) },
-                    { 4, "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.", "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp", 2, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9840) },
-                    { 5, "Excellent, after all it is an Apple product. Worth every penny given ❤.", "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp", 3, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9841) },
-                    { 6, "The best.", "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp", 4, 4, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9841) },
-                    { 7, "New original product you can buy without fear!.", "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp", 5, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9842) },
-                    { 8, "Excellent product, came sealed.", "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp", 5, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9843) },
-                    { 9, "Perfect product.", "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp", 6, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9844) },
-                    { 10, "The best product, very good!", "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp", 6, 4, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9845) },
-                    { 11, "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.", "", 7, 4, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9845) },
-                    { 12, "It was small on me. I want to return it. To get my refund.", "", 7, 1, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9846) },
-                    { 14, "Excellent product.", "", 9, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9847) },
-                    { 15, "I liked the original, it has to be laced but it's perfect.", "", 10, 5, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9848) },
-                    { 16, "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.", "", 10, 4, new DateTime(2024, 2, 12, 23, 35, 16, 431, DateTimeKind.Local).AddTicks(9848) }
+                    { 1, "The quality of the photos is incredible.", "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp", 1, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2924) },
+                    { 2, "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.", "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg", 1, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2940) },
+                    { 3, "Good!", "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp", 1, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2940) },
+                    { 4, "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.", "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp", 2, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2941) },
+                    { 5, "Excellent, after all it is an Apple product. Worth every penny given ❤.", "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp", 3, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2942) },
+                    { 6, "The best.", "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp", 4, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2943) },
+                    { 7, "New original product you can buy without fear!.", "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp", 5, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2943) },
+                    { 8, "Excellent product, came sealed.", "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp", 5, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2944) },
+                    { 9, "Perfect product.", "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp", 6, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2945) },
+                    { 10, "The best product, very good!", "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp", 6, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2946) },
+                    { 11, "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.", "", 7, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2946) },
+                    { 12, "It was small on me. I want to return it. To get my refund.", "", 7, 1, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2947) },
+                    { 14, "Excellent product.", "", 9, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2948) },
+                    { 15, "I liked the original, it has to be laced but it's perfect.", "", 10, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2949) },
+                    { 16, "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.", "", 10, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2949) }
                 });
 
             migrationBuilder.CreateIndex(

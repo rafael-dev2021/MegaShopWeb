@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Application.Dtos.ProductsDto.Fashion.Shoes.ShoesDto>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <p>@item.Id</p>
+                <p>@item.Category.CategoryName</p>
+                <h2>@item.Name</h2>
+                <img src="@Url.Content(item.Images[0])" width="150" />
+                <h6>@item.Description</h6>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

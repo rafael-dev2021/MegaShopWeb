@@ -1,0 +1,81 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h3>Detalhes do Pedido</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.UserDelivery.FirstName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.UserDelivery.FirstName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.UserDelivery.LastName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.UserDelivery.LastName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DeliveryAddress.Address)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DeliveryAddress.Address)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DeliveryAddress.Complement)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DeliveryAddress.Complement)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DeliveryAddress.ZipCode)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DeliveryAddress.ZipCode)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DeliveryAddress.State)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DeliveryAddress.State)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DeliveryAddress.City)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DeliveryAddress.City)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.UserDelivery.Phone)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.UserDelivery.Phone)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.UserDelivery.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.UserDelivery.Email)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DispatchedOrder)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DispatchedOrder)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.RequestReceived)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.RequestReceived)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+</div>

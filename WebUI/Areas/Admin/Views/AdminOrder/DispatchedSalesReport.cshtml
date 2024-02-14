@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Application.Dtos.OrderDtos.OrderDto>
+
+<h2>Pedidos Por Período</h2>
+
+<nav class="navbar navbar-dark">
+    <div class="container-fluid">
+        <form class="navbar-form navbar-left">
+            <div class="form-group">
+                <label for="minDate">Data Inicial</label>
+                <input type="date" class="form-control" name="minDate" value="@ViewData["minDate"]" />
+            </div>
+            <div class="form-group">
+                <label for="maxDate">Data Final</label>
+                <input type="date" class="form-control" name="maxDate" value="@ViewData["maxDate"]" />
+            </div>
+            <button type="submit" class="btn btn-success">Filtrar</button>
+        </form>
+    </div>
+</nav>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Total de Pedidos = @Model.Count()</h3>
+        <h3 class="panel-title">Total de Lanches nos Pedidos = @Model.Sum(obj => obj.TotalItemsOrder).ToString()</h3>
+        <h3 class="panel-title">Valor Total dos Pedidos = @Model.Sum(obj => obj.TotalOrder).ToString("c")</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr class="success">
+                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserDelivery.FirstName)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserDelivery.Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserDelivery.Phone)</th>
+                    <th>@Html.DisplayNameFor(model => model.TotalOrder)</th>
+                    <th>@Html.DisplayNameFor(model => model.TotalItemsOrder)</th>
+                    <th>@Html.DisplayNameFor(model => model.DispatchedOrder)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserDelivery.FirstName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserDelivery.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserDelivery.Phone)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalOrder)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalItemsOrder)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DispatchedOrder)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -14,22 +14,25 @@
 <h3>Entrega :  @Html.DisplayFor(model => Model.OrderDto.RequestReceived)</h3>
 
 <table class="table">
-    @foreach (var item in @Model.OrderDetails)
+    @foreach (var item in Model.OrderDetails)
     {
-        <tr>
-            <td align="right">
-                <h3>@Html.DisplayFor(modelItem => item.Product.Name)</h3>
-            </td>
-            <td align="right">
-                <img src="@Url.Content(item.Product.Images[0])" class="img-fluid" height="100" width="100">
-            </td>
-            <td align="right">
-                <h3>@string.Format("{0:C2}", item.Product.ProductPriceObjectValue.Price)</h3>
-            </td>
-            <td align="right">
-                <h3>(@Html.DisplayFor(modelItem => item.Quantity))</h3>
-            </td>
-        </tr>
+        @if (Model.OrderDto.Id == item.OrderId)
+        {
+            <tr>
+                <td align="right">
+                    <h3>@Html.DisplayFor(modelItem => item.Product.Name)</h3>
+                </td>
+                <td align="right">
+                    <img src="@Url.Content(item.Product.Images[0])" class="img-fluid" height="100" width="100">
+                </td>
+                <td align="right">
+                    <h3>@string.Format("{0:C2}", item.Product.ProductPriceObjectValue.Price)</h3>
+                </td>
+                <td align="right">
+                    <h3>(@Html.DisplayFor(modelItem => item.Quantity))</h3>
+                </td>
+            </tr>
+        }
     }
     <tr>
         <td colspan="2">&nbsp;</td>

@@ -1,0 +1,75 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h3>Editar dados do pedido</h3><h4>(Não inclui itens do pedido)</h4>
+<hr />
+<form asp-action="Edit" role="form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label asp-for="UserDelivery.FirstName" class="control-label"></label>
+            <input asp-for="UserDelivery.FirstName" class="form-control" readonly />
+        </div>
+        <div class="form-group col-sm-6">
+            <label asp-for="UserDelivery.LastName" class="control-label"></label>
+            <input asp-for="UserDelivery.LastName" class="form-control" readonly />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="DeliveryAddress.Address" class="control-label"></label>
+        <input asp-for="DeliveryAddress.Address" class="form-control" />
+        <span asp-validation-for="DeliveryAddress.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DeliveryAddress.Complement" class="control-label"></label>
+        <input asp-for="DeliveryAddress.Complement" class="form-control" />
+        <span asp-validation-for="DeliveryAddress.Complement" class="text-danger"></span>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label asp-for="DeliveryAddress.ZipCode" class="control-label"></label>
+            <input asp-for="DeliveryAddress.ZipCode" class="form-control" />
+            <span asp-validation-for="DeliveryAddress.ZipCode" class="text-danger"></span>
+        </div>
+        <div class="form-group col-sm-6">
+            <label asp-for="DeliveryAddress.State" class="control-label"></label>
+            <input asp-for="DeliveryAddress.State" class="form-control" />
+            <span asp-validation-for="DeliveryAddress.State" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="DeliveryAddress.City" class="control-label"></label>
+        <input asp-for="DeliveryAddress.City" class="form-control" />
+        <span asp-validation-for="DeliveryAddress.City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserDelivery.Phone" class="control-label"></label>
+        <input asp-for="UserDelivery.Phone" class="form-control" />
+        <span asp-validation-for="UserDelivery.Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserDelivery.Email" class="control-label"></label>
+        <input asp-for="UserDelivery.Email" class="form-control" readonly />
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label asp-for="DispatchedOrder" class="control-label"></label>
+            <input asp-for="DispatchedOrder" class="form-control" type="date" />
+            <span asp-validation-for="DispatchedOrder" class="text-danger"></span>
+        </div>
+        <div class="form-group col-sm-6">
+            <label asp-for="RequestReceived" class="control-label"></label>
+            <input asp-for="RequestReceived" class="form-control" type="date" />
+            <span asp-validation-for="RequestReceived" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+       <input type="submit" value="Salvar" class="btn btn-primary" />
+       <a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+    </div>
+</form>
+
+
