@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace Application.Dtos.PaymentsDto;
-public class CreditCardDto 
+public class CreditCardDto
 {
+    public Guid Id { get; set; } = new Guid();
+
     [Required(ErrorMessage = "Please enter your card number.")]
     [CreditCard(ErrorMessage = "Card refused, please provide a valid card number.")]
     [StringLength(19, MinimumLength = 12)]

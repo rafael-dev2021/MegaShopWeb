@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infra_Data.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstTable : Migration
+    public partial class First : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,7 @@ namespace Infra_Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CreditCard",
+                name: "CreditCards",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -83,11 +83,11 @@ namespace Infra_Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CreditCard", x => x.Id);
+                    table.PrimaryKey("PK_CreditCards", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "DebitCard",
+                name: "DebitCards",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -98,7 +98,7 @@ namespace Infra_Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DebitCard", x => x.Id);
+                    table.PrimaryKey("PK_DebitCards", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -340,14 +340,14 @@ namespace Infra_Data.Migrations
                 {
                     table.PrimaryKey("PK_Payments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Payments_CreditCard_CreditCardId",
+                        name: "FK_Payments_CreditCards_CreditCardId",
                         column: x => x.CreditCardId,
-                        principalTable: "CreditCard",
+                        principalTable: "CreditCards",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Payments_DebitCard_DebitCardId",
+                        name: "FK_Payments_DebitCards_DebitCardId",
                         column: x => x.DebitCardId,
-                        principalTable: "DebitCard",
+                        principalTable: "DebitCards",
                         principalColumn: "Id");
                 });
 
@@ -414,9 +414,9 @@ namespace Infra_Data.Migrations
                     ConfirmedOrder = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DispatchedOrder = table.Column<DateTime>(type: "datetime2", nullable: false),
                     RequestReceived = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeliveryAddress_ZipCode = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
                     DeliveryAddress_Address = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: true),
                     DeliveryAddress_Complement = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: true),
+                    DeliveryAddress_ZipCode = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
                     DeliveryAddress_State = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     DeliveryAddress_City = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     DeliveryAddress_Neighborhood = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
@@ -530,21 +530,21 @@ namespace Infra_Data.Migrations
                 columns: new[] { "ReviewId", "Comment", "Image", "ProductId", "Rating", "ReviewDate" },
                 values: new object[,]
                 {
-                    { 1, "The quality of the photos is incredible.", "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp", 1, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2924) },
-                    { 2, "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.", "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg", 1, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2940) },
-                    { 3, "Good!", "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp", 1, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2940) },
-                    { 4, "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.", "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp", 2, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2941) },
-                    { 5, "Excellent, after all it is an Apple product. Worth every penny given ❤.", "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp", 3, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2942) },
-                    { 6, "The best.", "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp", 4, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2943) },
-                    { 7, "New original product you can buy without fear!.", "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp", 5, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2943) },
-                    { 8, "Excellent product, came sealed.", "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp", 5, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2944) },
-                    { 9, "Perfect product.", "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp", 6, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2945) },
-                    { 10, "The best product, very good!", "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp", 6, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2946) },
-                    { 11, "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.", "", 7, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2946) },
-                    { 12, "It was small on me. I want to return it. To get my refund.", "", 7, 1, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2947) },
-                    { 14, "Excellent product.", "", 9, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2948) },
-                    { 15, "I liked the original, it has to be laced but it's perfect.", "", 10, 5, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2949) },
-                    { 16, "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.", "", 10, 4, new DateTime(2024, 2, 13, 16, 20, 6, 407, DateTimeKind.Local).AddTicks(2949) }
+                    { 1, "The quality of the photos is incredible.", "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp", 1, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3876) },
+                    { 2, "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.", "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg", 1, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3891) },
+                    { 3, "Good!", "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp", 1, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3892) },
+                    { 4, "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.", "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp", 2, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3893) },
+                    { 5, "Excellent, after all it is an Apple product. Worth every penny given ❤.", "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp", 3, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3894) },
+                    { 6, "The best.", "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp", 4, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3895) },
+                    { 7, "New original product you can buy without fear!.", "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp", 5, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3897) },
+                    { 8, "Excellent product, came sealed.", "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp", 5, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3898) },
+                    { 9, "Perfect product.", "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp", 6, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3899) },
+                    { 10, "The best product, very good!", "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp", 6, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3900) },
+                    { 11, "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.", "", 7, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3901) },
+                    { 12, "It was small on me. I want to return it. To get my refund.", "", 7, 1, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3902) },
+                    { 14, "Excellent product.", "", 9, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3903) },
+                    { 15, "I liked the original, it has to be laced but it's perfect.", "", 10, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3905) },
+                    { 16, "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.", "", 10, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3906) }
                 });
 
             migrationBuilder.CreateIndex(
@@ -683,10 +683,10 @@ namespace Infra_Data.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "CreditCard");
+                name: "CreditCards");
 
             migrationBuilder.DropTable(
-                name: "DebitCard");
+                name: "DebitCards");
         }
     }
 }

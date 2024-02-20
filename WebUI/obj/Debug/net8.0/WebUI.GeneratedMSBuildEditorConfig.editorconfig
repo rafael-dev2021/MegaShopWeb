@@ -102,6 +102,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxSZXF1ZXN0UmVjZWl2ZWRTYWxlc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminPayment/IndexCreditCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5QYXltZW50XEluZGV4Q3JlZGl0Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminPayment/IndexDebitCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5QYXltZW50XEluZGV4RGViaXRDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminPayment/IndexPayments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5QYXltZW50XEluZGV4UGF5bWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminProduct/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Qcm9kdWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

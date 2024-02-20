@@ -6,7 +6,7 @@ using Domain.Interfaces.Reviews;
 using Infra_Data.Repositories.EntitiesRepositories;
 using Infra_Data.Repositories.EntitiesRepositories.CartRepositories;
 using Infra_Data.Repositories.EntitiesRepositories.OrdersRepositories;
-using Infra_Data.Repositories.EntitiesRepositories.Payments;
+using Infra_Data.Repositories.EntitiesRepositories.PaymentsRepository;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infra_Ioc.Domain;

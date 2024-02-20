@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Application.Dtos.PaymentsDto.CreditCardDto>
+
+<div class="col-md-12 col-lg-12">
+    <h2 class="mt-4">Credit Card Information</h2>
+
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Credit Card Number</th>
+                <th>Card Holder Name</th>
+                <th>Expiration Date</th>
+                <th>CVV</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id.ToString()</td>
+                    <td>@item.CreditCardNumber</td>
+                    <td>@item.CreditCardHolderName</td>
+                    <td>@item.CreditCardExpirationDate</td>
+                    <td>@item.CreditCardCVV</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

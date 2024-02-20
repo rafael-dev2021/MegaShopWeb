@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Application.Dtos.PaymentsDto.PaymentMethodDto>
+<style>
+    .scrollable-table {
+        max-height: 600px; /* Adjust the height as needed */
+        overflow-y: auto;
+    }
+
+</style>
+
+<div class="col-md-12 col-lg-12">
+    <h2 class="mt-4">Debit Card Information</h2>
+    <div class="scrollable-table">
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr class="table-primary">
+                    <th>Id</th>
+                    <th>Debit Card Number</th>
+                    <th>Card Holder Name</th>
+                    <th>Expiration Date</th>
+                    <th>CVV</th>
+                    <th>SSN</th>
+                    <th>Amount</th>
+                    <th>Debit card Id</th>
+                    <th>Payment date</th>
+                    <th>Reference</th>
+                    <th>Payment method</th>
+                    <th>Payment status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @if (item.PaymentMethodObjectValue.PaymentMethod == "DebitCard")
+                    {
+                        <tr>
+                            <td>@item?.Id.ToString()</td>
+                            <td>@item.DebitCard?.DebitCardNumber</td>
+                            <td>@item.DebitCard?.DebitCardHolderName</td>
+                            <td>@item.DebitCard?.DebitCardExpirationDate</td>
+                            <td>@item.DebitCard?.DebitCardCVV</td>
+                            <td>@item?.SSN</td>
+                            <td>@item?.Amount</td>
+                            <td>@item?.DebitCard.Id.ToString()</td>
+                            <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
+                            <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
+
+                            <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
+                            <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-md-12 col-lg-12">
+    <h2 class="mt-4">Credit Card Information</h2>
+    <div class="scrollable-table">
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr class="table-primary">
+                    <th>Id</th>
+                    <th>Credit Card Number</th>
+                    <th>Card Holder Name</th>
+                    <th>Expiration Date</th>
+                    <th>CVV</th>
+                    <th>SSN</th>
+                    <th>Amount</th>
+                    <th>Credit card Id</th>
+                    <th>Payment date</th>
+                    <th>Reference</th>
+                    <th>Payment method</th>
+                    <th>Payment status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    @if (item.PaymentMethodObjectValue.PaymentMethod == "CreditCard")
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.CreditCard?.CreditCardNumber</td>
+                            <td>@item.CreditCard?.CreditCardHolderName</td>
+                            <td>@item.CreditCard?.CreditCardExpirationDate</td>
+                            <td>@item.CreditCard?.CreditCardCVV</td>
+                            <td>@item?.SSN</td>
+                            <td>@item?.Amount</td>
+                            <td>@item?.CreditCard.Id.ToString()</td>
+                            <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
+                            <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
+                            <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
+                            <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

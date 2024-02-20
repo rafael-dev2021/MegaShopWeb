@@ -13,6 +13,6 @@ public interface IOrderDtoService
     Task<IEnumerable<OrderDetailDto>> GetOrdersDetailsAsync();
     Task<OrderDto> GetByIdAsync(int? id);
     Task AddOrder(OrderDto orderDto, EPaymentMethod ePaymentMethod);
-    Task<OrderDto> UpdateOrderPropertyAsync(int orderId, Action<OrderDto> updateAction);
+    Task UpdateOrderPropertyAsync(OrderDto orderDto);
     Task DeleteOrder(int? id);
 }

@@ -44,6 +44,7 @@
 
 <form asp-action="Checkout" method="post" role="form">
     @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="text-center mb-4 container" style="background-color:#B12704 !important;padding:10px">
         <span style="font-size:18px">
             <a asp-controller="ShoppingCart" asp-action="Index" style="color:white">
@@ -69,22 +70,26 @@
                 </div>
                 <div class="row">
                     <div class="form-group mb-3 mt-2">
-                        <input id="pais" asp-for="DeliveryAddress.Country" placeholder="Country" class="form-control" />
+                        <label asp-for="DeliveryAddress.Country" class="control-label">Country</label>
+                        <input id="country" asp-for="DeliveryAddress.Country" class="form-control" />
                         <span asp-validation-for="DeliveryAddress.Country" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
-                        <input asp-for="UserDelivery.FirstName" placeholder="First name" class="form-control" />
+                        <label asp-for="UserDelivery.FirstName" class="control-label">First name</label>
+                        <input asp-for="UserDelivery.FirstName" class="form-control" />
                         <span asp-validation-for="UserDelivery.FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
-                        <input asp-for="UserDelivery.LastName" placeholder="Last name" class="form-control" />
+                        <label asp-for="UserDelivery.LastName" class="control-label">First name</label>
+                        <input asp-for="UserDelivery.LastName" class="form-control" />
                         <span asp-validation-for="UserDelivery.LastName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group mb-3 mt-2">
                         <div class="form-group col-md-6">
-                            <input asp-for="UserDelivery.Email" placeholder="Email" class="form-control" />
+                            <label asp-for="UserDelivery.Email" class="control-label">Email</label>
+                            <input asp-for="UserDelivery.Email" class="form-control" />
                             <span asp-validation-for="UserDelivery.Email" class="text-danger"></span>
                         </div>
                     </div>
@@ -92,26 +97,31 @@
 
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <input id="cpf" asp-for="UserDelivery.SSN" placeholder="SSN" class="form-control" />
+                        <label asp-for="UserDelivery.SSN" class="control-label">SSN</label>
+                        <input id="ssn" asp-for="UserDelivery.SSN" placeholder="SSN" class="form-control" />
                         <span asp-validation-for="UserDelivery.SSN" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
-                        <input asp-for="UserDelivery.Phone" placeholder="Phone" class="form-control" />
+                        <label asp-for="UserDelivery.Phone" class="control-label">Phone</label>
+                        <input id="phoneNumber" asp-for="UserDelivery.Phone" placeholder="Phone number" class="form-control" />
                         <span asp-validation-for="UserDelivery.Phone" class="text-danger"></span>
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
-                    <input id="cep" asp-for="DeliveryAddress.ZipCode" placeholder="Cep" class="form-control" />
+                    <label asp-for="DeliveryAddress.ZipCode" class="control-label">Zip code</label>
+                    <input id="zipCode" asp-for="DeliveryAddress.ZipCode" placeholder="Zip code" class="form-control" />
                     <span asp-validation-for="DeliveryAddress.ZipCode" class="text-danger"></span>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-md-6">
+                        <label asp-for="DeliveryAddress.State" class="control-label">State</label>
                         <input id="state" asp-for="DeliveryAddress.State" placeholder="State" class="form-control" />
                         <span asp-validation-for="DeliveryAddress.State" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
+                        <label asp-for="DeliveryAddress.City" class="control-label">City</label>
                         <input id="city" asp-for="DeliveryAddress.City" placeholder="City" class="form-control" />
                         <span asp-validation-for="DeliveryAddress.City" class="text-danger"></span>
                     </div>
@@ -119,16 +129,19 @@
 
                 <div class="row">
                     <div class="form-group col-md-6">
+                        <label asp-for="DeliveryAddress.Address" class="control-label">Address</label>
                         <input id="logradouro" asp-for="DeliveryAddress.Address" placeholder="Address" class="form-control" />
                         <span asp-validation-for="DeliveryAddress.Address" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
+                        <label asp-for="DeliveryAddress.Neighborhood" class="control-label">Neighborhood</label>
                         <input id="neighborhood" asp-for="DeliveryAddress.Neighborhood" placeholder="Neighborhood" class="form-control" />
                         <span asp-validation-for="DeliveryAddress.Neighborhood" class="text-danger"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
+                    <label asp-for="DeliveryAddress.Complement" class="control-label">Complement</label>
                     <input asp-for="DeliveryAddress.Complement" placeholder="Apartment, Suite, Unit, Building, Floor, etc.(Optional)" class="form-control" />
                     <span asp-validation-for="DeliveryAddress.Complement" class="text-danger"></span>
                 </div>
@@ -221,7 +234,7 @@
 
             // Exiba ou oculte os campos do cartão de crédito conforme necessário
             var creditCardFields = document.getElementById("creditCardFields");
-            if (selectedPaymentMethod === "CreditCard" || selectedPaymentMethod === "DebitCard") {
+            if (selectedPaymentMethod === "CreditCard") {
                 creditCardFields.style.display = "block";
             } else {
                 creditCardFields.style.display = "none";
@@ -276,56 +289,75 @@
             cardBrandSpan.textContent = cardBrand;
         });
 
-        // Função para fazer a requisição à API ViaCEP e preencher o endereço
-        function getAddressByCEP(cep) {
-            axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+        function getAddressByZipCode(zipcode) {
+            axios.get(`https://viacep.com.br/ws/${zipcode}/json/`)
                 .then(response => {
                     const endereco = response.data;
-                    document.getElementById("pais").value = "Brasil";
+                    document.getElementById("country").value = "Brasil";
                     document.getElementById("logradouro").value = endereco.logradouro;
                     document.getElementById("neighborhood").value = endereco.bairro;
                     document.getElementById("city").value = endereco.localidade;
                     document.getElementById("state").value = endereco.uf;
                 })
                 .catch(error => {
-                    document.getElementById("cep-error").textContent = "CEP inválido";
+                    document.getElementById("zipcode-error").textContent = "Invalid zip code";
                     console.error(error);
                 });
         }
 
         // Função para validar o CEP
-        function validateCEP() {
-            const cep = document.getElementById("cep").value;
-            const cepPattern = /^[0-9]{8}$/;
+        function validateZipCode() {
+            const zipcode = document.getElementById("zipCode").value;
+            const zipcodePattern = /^[0-9]{8}$/;
 
-            if (cepPattern.test(cep)) {
-                getAddressByCEP(cep);
-                document.getElementById("cep-error").textContent = "";
+            if (zipcodePattern.test(zipcode)) {
+                getAddressByZipCode(zipcode);
+                document.getElementById("zipcode-error").textContent = "";
             } else {
-                document.getElementById("cep-error").textContent = "CEP inválido";
+                document.getElementById("zipcode-error").textContent = "Invalid zip code";
             }
         }
 
         // Adicionar um ouvinte de evento para o campo de CEP
-        document.getElementById("cep").addEventListener("input", validateCEP);
+        document.getElementById("zipCode").addEventListener("input", validateZipCode);
 
-        // Função para formatar o CPF
-        function formatCPF(cpf) {
-            cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
-            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-            cpf = cpf.replace(/(\d{3})(\d{2})$/, '$1-$2');
-            return cpf;
+        // Função para formatar o SSN
+        function formatSSN(ssn) {
+            ssn = ssn.replace(/\D/g, ''); // Remove caracteres não numéricos
+            ssn = ssn.replace(/(\d{3})(\d)/, '$1-$2');
+            ssn = ssn.replace(/(\d{2})(\d{4})$/, '$1-$2');
+            return ssn;
         }
 
-        // Função para lidar com a entrada de CPF
-        function handleCPFInput() {
-            const cpfInput = document.getElementById("cpf");
-            cpfInput.value = formatCPF(cpfInput.value);
+        // Função para lidar com a entrada de SSN
+        function handleSSNInput() {
+            const ssnInput = document.getElementById("ssn");
+            ssnInput.value = formatSSN(ssnInput.value);
         }
 
-        // Adicionar um ouvinte de evento para o campo de CPF
-        document.getElementById("cpf").addEventListener("input", handleCPFInput);
+        // Adicionar um ouvinte de evento para o campo de SSN
+        document.getElementById("ssn").addEventListener("input", handleSSNInput);
+
+
+        // Função para formatar o número de telefone
+        function formatPhoneNumber(phoneNumber) {
+            phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove caracteres não numéricos
+            phoneNumber = phoneNumber.replace(/^(\d{3})(\d)/, '$1-$2'); // Adiciona traço após os três primeiros dígitos
+            phoneNumber = phoneNumber.replace(/(\d{3})(\d)/, '$1-$2'); // Adiciona traço após os três próximos dígitos
+            phoneNumber = phoneNumber.replace(/(\d{4})(\d)/, '$1$2'); // Mantém os quatro últimos dígitos
+            return phoneNumber;
+        }
+
+        // Função para lidar com a entrada de número de telefone
+        function handlePhoneNumberInput() {
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            phoneNumberInput.value = formatPhoneNumber(phoneNumberInput.value);
+        }
+
+        // Adicionar um ouvinte de evento para o campo de número de telefone
+        document.getElementById("phoneNumber").addEventListener("input", handlePhoneNumberInput);
+
+
     </script>
 }
 

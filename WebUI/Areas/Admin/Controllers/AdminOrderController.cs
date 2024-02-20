@@ -1,5 +1,6 @@
 ﻿using Application.Dtos.OrderDtos;
 using Application.Services.Entities.OrderDtoServices.Interfaces;
+using Domain.Entities.Orders;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebUI.Areas.Admin.ViewModels.OrderViewModel;
@@ -56,26 +57,22 @@ public class AdminOrderController(IOrderDtoService orderDtoService) : Controller
     [HttpGet]
     public async Task<IActionResult> OrderProducts(int? id)
     {
-        if (id is null) return NotFound();
-
-        try
-        {
-            var orderId = await _orderDtoService.GetByIdAsync(id);
-            var orderDetails = await _orderDtoService.GetOrdersDetailsAsync();
-
-            AdminOrderProductViewModel adminOrderProductViewModel = new()
-            {
-                OrderDto = orderId,
-                OrderDetails = orderDetails,
-                TotalOrder = orderId.TotalOrder
-            };
-            return View(adminOrderProductViewModel);
-        }
-        catch (Exception)
+        var orderId = await _orderDtoService.GetByIdAsync(id);
+        if (orderId is null)
         {
             Response.StatusCode = 404;
             return View("OrderNotFound", id.Value);
         }
+
+        var orderDetails = await _orderDtoService.GetOrdersDetailsAsync();
+
+        AdminOrderProductViewModel adminOrderProductViewModel = new()
+        {
+            OrderDto = orderId,
+            OrderDetails = orderDetails,
+            TotalOrder = orderId.TotalOrder
+        };
+        return View(adminOrderProductViewModel);
     }
 
 
@@ -113,36 +110,34 @@ public class AdminOrderController(IOrderDtoService orderDtoService) : Controller
     [HttpGet]
     public async Task<IActionResult> Edit(int? id)
     {
-        if (id == null || await _orderDtoService.GetOrdersDtoAsync() == null)
-            return BadRequest();
-
         var orderId = await _orderDtoService.GetByIdAsync(id);
-        if (orderId.Id != id)
-            return BadRequest();
+        if (orderId == null)
+        {
+            Response.StatusCode = 404;
+            return View("OrderNotFound", id.Value);
+        }
 
         return View(orderId);
     }
-
     [ValidateAntiForgeryToken]
     [HttpPost]
-    public async Task<IActionResult> Edit(int? id, OrderDto orderDto)
+    public async Task<IActionResult> Edit(OrderDto orderDto)
     {
-        if (id != orderDto.Id)
-            return BadRequest();
-
-        if (ModelState.IsValid)
+        if (ModelState.IsValid && orderDto.DispatchedOrder <= orderDto.RequestReceived)
         {
-            await _orderDtoService.UpdateOrderPropertyAsync(orderDto.Id, updatedOrder =>
-            {
-                updatedOrder.DispatchedOrder = orderDto.DispatchedOrder;
-                updatedOrder.RequestReceived = orderDto.RequestReceived;
-            });
-
+            await _orderDtoService.UpdateOrderPropertyAsync(orderDto);
             return RedirectToAction(nameof(Index));
+        }
+
+        if (orderDto.DispatchedOrder > orderDto.RequestReceived)
+        {
+            ModelState.AddModelError(string.Empty, "The Dispatched Order date cannot be later than the Request Received date. Please make sure to select valid dates.");
         }
 
         return View(orderDto);
     }
+
+
 
 
     [HttpGet]
@@ -150,8 +145,11 @@ public class AdminOrderController(IOrderDtoService orderDtoService) : Controller
     {
         if (id == null) NotFound();
         var orderId = await _orderDtoService.GetByIdAsync(id);
-
-        if (orderId == null) NotFound();
+        if (orderId is null)
+        {
+            Response.StatusCode = 404;
+            return View("OrderNotFound", id.Value);
+        }
         return View(orderId);
     }
 
@@ -160,8 +158,11 @@ public class AdminOrderController(IOrderDtoService orderDtoService) : Controller
     {
         if (id == null) NotFound();
         var orderId = await _orderDtoService.GetByIdAsync(id);
-
-        if (orderId == null) NotFound();
+        if (orderId is null)
+        {
+            Response.StatusCode = 404;
+            return View("OrderNotFound", id.Value);
+        }
         return View(orderId);
     }
 

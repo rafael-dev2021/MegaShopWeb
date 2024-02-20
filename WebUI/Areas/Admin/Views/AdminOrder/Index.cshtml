@@ -56,132 +56,79 @@
         }
 </style>
 
-<h2>Total Orders: @Model.TotalOrders</h2>
+<div class="col-md-12 col-lg-12">
 
-<h6>Search for orders</h6>
-<form class="d-flex flex-grow-1 mb-3" style="width:200px;height:35px;">
-    <input class="form-control me-2 bar" type="search" placeholder="" aria-label="Search" name="filter" value="@ViewBag.Filter" />
-</form>
-<div class="panel-body">
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>E-mail</th>
-                <th>Phone</th>
-                <th>Total Order</th>
-                <th>Total Itens</th>
-                <th>Confirmed order</th>
-                <th>Dispatched order</th>
-                <th>Received</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.OrdersDto)
-            {
+    <h2>Total Orders: @Model.TotalOrders</h2>
+
+    <h6>Search for orders</h6>
+    <form class="d-flex flex-grow-1 mb-3" style="width:200px;height:35px;">
+        <input class="form-control me-2 bar" type="search" placeholder="" aria-label="Search" name="filter" value="@ViewBag.Filter" />
+    </form>
+
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <thead>
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.UserDelivery.FirstName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.UserDelivery.Email)</td>
-                    <td>@Html.DisplayFor(modelItem => item.UserDelivery.Phone)</td>
-                    <td>@Html.DisplayFor(modelItem => item.TotalOrder)</td>
-                    <td>@Html.DisplayFor(modelItem => item.TotalItemsOrder)</td>
-                    <td>@Html.DisplayFor(modelItem => item.ConfirmedOrder)</td>
-                    <td>@Html.DisplayFor(modelItem => item.DispatchedOrder)</td>
-                    <td>@Html.DisplayFor(modelItem => item.RequestReceived)</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-info fs-5 mx-1"></i></a>|
-                        <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye text-primary fs-5 mx-1"></i></a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash text-danger fs-5 mx-1"></i></a> |
-                        <a asp-action="OrderProducts" asp-route-id="@item.Id">View Items</a>
-                    </td>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Total Order</th>
+                    <th>Total Itens</th>
+                    <th>Confirmed order</th>
+                    <th>Dispatched order</th>
+                    <th>Received</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
-<div class="pagination" style="justify-content:center">
-    @if (ViewBag.CurrentPage > 1)
-    {
-        <a href="/Admin/AdminOrder/Index?page=@(ViewBag.CurrentPage - 1)&filter=@(ViewBag.Filter ?? "")">Back</a>
-    }
-
-    @for (int i = 1; i <= ViewBag.TotalPages; i++)
-    {
-        if (i == ViewBag.CurrentPage)
-        {
-            <span class="current">@i</span>
-        }
-        else if (i == 1 || i == ViewBag.TotalPages || (i >= ViewBag.CurrentPage - 5 && i <= ViewBag.CurrentPage + 5))
-        {
-            <a href="/Admin/AdminOrder/Index?page=@i&filter=@(ViewBag.Filter ?? "")">@i</a>
-        }
-        else if (i == ViewBag.CurrentPage - 6 || i == ViewBag.CurrentPage + 6)
-        {
-            <span>...</span>
-        }
-    }
-
-    @if (ViewBag.CurrentPage < ViewBag.TotalPages)
-    {
-        <a href="/Admin/AdminOrder/Index?page=@(ViewBag.CurrentPage + 1)&filter=@(ViewBag.Filter ?? "")">Next</a>
-    }
-</div>
-
-
-
-
-<div class="row">
-    <div class="col-md-6">
-        <form class="form-horizontal" asp-action="DispatchedSalesReport">
-            <fieldset>
-                <legend><b>Relatório de pedidos enviados por período</b></legend>
-                <div class="form-group">
-                    <label for="minDate" class="col-lg-6 control-label">Data Inicial</label>
-                    <div class="col-lg-10">
-                        <input type="date" name="minDate" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="maxDate" class="col-lg-6 control-label">Data Final</label>
-                    <div class="col-lg-10">
-                        <input type="date" name="maxDate" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrdersDto)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.UserDelivery.FirstName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserDelivery.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserDelivery.Phone)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalOrder)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalItemsOrder)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ConfirmedOrder)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DispatchedOrder)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RequestReceived)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-info fs-5 mx-1"></i></a>|
+                            <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye text-primary fs-5 mx-1"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash text-danger fs-5 mx-1"></i></a> |
+                            <a asp-action="OrderProducts" asp-route-id="@item.Id">View Items</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-6">
-        <form class="form-horizontal" asp-action="RequestReceivedSalesReport">
-            <fieldset>
-                <legend><b>Relatório de pedidos entregues por período</b></legend>
-                <div class="form-group">
-                    <label for="minDate" class="col-lg-6 control-label">Data Inicial</label>
-                    <div class="col-lg-10">
-                        <input type="date" name="minDate" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="maxDate" class="col-lg-6 control-label">Data Final</label>
-                    <div class="col-lg-10">
-                        <input type="date" name="maxDate" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+    <div class="pagination" style="justify-content:center">
+        @if (ViewBag.CurrentPage > 1)
+        {
+            <a href="/Admin/AdminOrder/Index?page=@(ViewBag.CurrentPage - 1)&filter=@(ViewBag.Filter ?? "")">Back</a>
+        }
+
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            if (i == ViewBag.CurrentPage)
+            {
+                <span class="current">@i</span>
+            }
+            else if (i == 1 || i == ViewBag.TotalPages || (i >= ViewBag.CurrentPage - 5 && i <= ViewBag.CurrentPage + 5))
+            {
+                <a href="/Admin/AdminOrder/Index?page=@i&filter=@(ViewBag.Filter ?? "")">@i</a>
+            }
+            else if (i == ViewBag.CurrentPage - 6 || i == ViewBag.CurrentPage + 6)
+            {
+                <span>...</span>
+            }
+        }
+
+        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+        {
+            <a href="/Admin/AdminOrder/Index?page=@(ViewBag.CurrentPage + 1)&filter=@(ViewBag.Filter ?? "")">Next</a>
+        }
     </div>
 </div>
 

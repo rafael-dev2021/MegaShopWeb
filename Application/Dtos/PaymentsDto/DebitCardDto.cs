@@ -4,6 +4,8 @@ namespace Application.Dtos.PaymentsDto;
 
 public class DebitCardDto
 {
+    public Guid Id { get; set; } = new Guid();
+
     [Required(ErrorMessage = "Please enter your card number.")]
     [CreditCard(ErrorMessage = "Card refused, please provide a valid card number.")]
     [StringLength(19, MinimumLength = 12)]

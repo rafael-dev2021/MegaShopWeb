@@ -105,24 +105,32 @@ public class OrderRepository(
             throw new Exception("There was an error processing the request.", ex);
         }
     }
-  
+
     public async Task<Order> UpdateOrder(Order order)
     {
-        try
-        {
-            var existingOrder = await _appDbContext.Orders.FindAsync(order.Id);
+        var existingOrder = await _appDbContext.Orders.FindAsync(order.Id);
 
-            _appDbContext.Entry(existingOrder).CurrentValues.SetValues(order);
+        if (existingOrder != null)
+        {
+            existingOrder
+                .Update(order.DispatchedOrder, order.RequestReceived);
+
+            existingOrder.DeliveryAddress
+                .Update(order.DeliveryAddress.Address,
+                        order.DeliveryAddress.Complement,
+                        order.DeliveryAddress.ZipCode,
+                        order.DeliveryAddress.State,
+                        order.DeliveryAddress.City,
+                        order.DeliveryAddress.Neighborhood);
+
+            existingOrder.UserDelivery
+                .Update(order.UserDelivery.Phone, order.UserDelivery.SSN);
 
             await _appDbContext.SaveChangesAsync();
-
-            return existingOrder;
         }
-        catch (Exception ex)
-        {
-            throw new Exception("Erro ao atualizar o pedido.", ex);
-        }
+        return existingOrder;
     }
+
     public async Task<Order> RemoveOrder(Order order)
     {
         _appDbContext.Remove(order);

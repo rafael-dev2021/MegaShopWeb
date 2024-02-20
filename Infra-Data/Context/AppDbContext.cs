@@ -15,17 +15,20 @@ namespace Infra_Data.Context;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
-    public DbSet<Category> Categories { get; set; }
-    public DbSet<Product> Products { get; set; }
-    public DbSet<Review> Reviews { get; set; }
-    public DbSet<Order> Orders { get; set; }
-    public DbSet<Payment> Payments { get; set; }
-    public DbSet<OrderDetail> OrderDetails { get; set; }
-    public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
-    public DbSet<Tshirt> Tshirts { get; set; }
-    public DbSet<Shoes> Shoes { get; set; }
-    public DbSet<Game> Games { get; set; }
-    public DbSet<Smartphone> Smartphones { get; set; }
+    public DbSet<Category> Categories { get; set; } = null;
+    public DbSet<Product> Products { get; set; } = null;
+    public DbSet<Review> Reviews { get; set; } = null;
+    public DbSet<Order> Orders { get; set; } = null;
+    public DbSet<Payment> Payments { get; set; } = null;
+    public DbSet<PaymentMethod> PaymentMethods { get; set; } = null;
+    public DbSet<CreditCard> CreditCards { get; set; } = null;
+    public DbSet<DebitCard> DebitCards { get; set; } = null;
+    public DbSet<OrderDetail> OrderDetails { get; set; } = null;
+    public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; } = null;
+    public DbSet<Tshirt> Tshirts { get; set; } = null;
+    public DbSet<Shoes> Shoes { get; set; } = null;
+    public DbSet<Game> Games { get; set; } = null;
+    public DbSet<Smartphone> Smartphones { get; set; } = null;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

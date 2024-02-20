@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Application.Dtos.OrderDtos.OrderDto>
 
-<div class="container">
+<div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Report of confirmed orders by period</h2>
 
     <nav class="navbar navbar-dark">
@@ -26,26 +26,24 @@
             <table class="table table-bordered table-hover mt-3">
                 <thead>
                     <tr class="table-primary">
-                        <th>@Html.DisplayNameFor(model => model.Id)</th>
-                        <th>@Html.DisplayNameFor(model => model.UserDelivery.FirstName)</th>
-                        <th>@Html.DisplayNameFor(model => model.UserDelivery.Email)</th>
-                        <th>@Html.DisplayNameFor(model => model.UserDelivery.Phone)</th>
-                        <th>@Html.DisplayNameFor(model => model.TotalOrder)</th>
-                        <th>@Html.DisplayNameFor(model => model.TotalItemsOrder)</th>
-                        <th>@Html.DisplayNameFor(model => model.ConfirmedOrder)</th>
+                        <th>Confirmed Order</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Total Order</th>
+                        <th>Total Itens</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ConfirmedOrder)</td>
                             <td>@Html.DisplayFor(modelItem => item.UserDelivery.FirstName)</td>
                             <td>@Html.DisplayFor(modelItem => item.UserDelivery.Email)</td>
                             <td>@Html.DisplayFor(modelItem => item.UserDelivery.Phone)</td>
-                            <td>@Html.DisplayFor(modelItem => item.TotalOrder)</td>
+                            <td>$ @Html.DisplayFor(modelItem => item.TotalOrder)</td>
                             <td>@Html.DisplayFor(modelItem => item.TotalItemsOrder)</td>
-                            <td>@Html.DisplayFor(modelItem => item.ConfirmedOrder)</td>
                         </tr>
                     }
                 </tbody>
@@ -79,53 +77,48 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Graphics</h5>
-                        <canvas id="pieChart"></canvas>
-                    </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="myChart" width="100" height="50"></canvas>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
-
-
 @section Scripts {
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var ctx = document.getElementById('pieChart').getContext('2d');
-
-            // Obtendo os valores dinamicamente da sua coleção
-            var totalOrders = @Html.Raw(Model.Count());
-            var totalProducts = @Html.Raw(Model.Sum(obj => obj.TotalItemsOrder));
-            var totalAmount = @Html.Raw(Model.Sum(obj => obj.TotalOrder));
-
-            var data = {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
                 labels: ['Total Orders', 'Total Products', 'Total Amount'],
                 datasets: [{
-                    data: [totalOrders, totalProducts, totalAmount],
+                    label: 'Order Statistics',
+                    data: [@Model.Count(), @Model.Sum(obj => obj.TotalItemsOrder), @Model.Sum(obj => obj.TotalOrder)],
                     backgroundColor: [
                         'rgb(40, 167, 69)',
                         'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)',
-                        // Adicione mais cores conforme necessário
-                    ],
+                        'rgb(255, 205, 86)'
+                    ]
                 }]
-            };
-
-            var options = {
-                responsive: false,
-                maintainAspectRatio: false,
-            };
-
-            var myPieChart = new Chart(ctx, {
-                type: 'pie',
-                data: data,
-                options: options
-            });
+            },
+            options: {
+                maintainAspectRatio: true,
+                aspectRatio: 3.5,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Graphics'
+                    }
+                }
+            }
         });
     </script>
 }

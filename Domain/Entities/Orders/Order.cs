@@ -17,6 +17,12 @@ public class Order
     public PaymentMethod PaymentMethod { get; set; }
 
 
+    public void Update(DateTime dispatchedOrder, DateTime requestReceived)
+    {
+        DispatchedOrder = dispatchedOrder;
+        RequestReceived = requestReceived;
+    }
+
     public void WhenConfirmedOrder()
     {
         ConfirmedOrder = DateTime.Now;

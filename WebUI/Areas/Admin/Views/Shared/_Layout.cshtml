@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Mega shop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -68,7 +68,6 @@
     <div>
         <main role="main" class="pb-3 d-flex">
             <!-- Sidebar -->
-            <div class="col-md-1 col-lg-1"></div>
             <nav id="sidebar" class="col-md-4 col-lg-2 d-md-block bg-dark sidebar nav-sidebar" style="border-radius: 10px">
                 <div class="position-sticky">
                     <ul class="nav flex-column">
@@ -98,13 +97,13 @@
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminOrder"
-                               asp-action="ConfirmedSalesReport"><i class="bi bi-clipboard-data"></i>&nbsp; Dispatched orders</a>
+                               asp-action="DispatchedSalesReport"><i class="bi bi-clipboard-data"></i>&nbsp; Dispatched orders</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                asp-area="Admin"
-                               asp-controller="AdminProduct"
-                               asp-action="Index"><i class="bi bi-bar-chart"></i>&nbsp;  Delivered orders</a>
+                               asp-controller="AdminOrder"
+                               asp-action="RequestReceivedSalesReport"><i class="bi bi-bar-chart"></i>&nbsp;  Delivered orders</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Admin" asp-controller="AdminOrder" asp-action="Index">
@@ -118,13 +117,16 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                                     <li class="nav-item">
-                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminCategory" asp-action="Index"><i class="bi bi-credit-card"></i>&nbsp;  Credit card</a>
+                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminPayment" asp-action="IndexCreditCard"><i class="bi bi-credit-card"></i>&nbsp;  Credit card</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminGame" asp-action="Index"><i class="bi bi-credit-card-2-back-fill"></i>&nbsp;  Debit card</a>
+                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminPayment" asp-action="IndexDebitCard"><i class="bi bi-credit-card-2-back-fill"></i>&nbsp;  Debit card</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminSmartphone" asp-action="Index"><i class="bi bi-cash-coin"></i>&nbsp;  Bank slip</a>
+                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminPayment" asp-action="IndexPayments"><i class="bi bi-cash-coin"></i>&nbsp;  Payments</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-area="Admin" asp-controller="AdminPayment" asp-action="Index"><i class="bi bi-cash-coin"></i>&nbsp;  Bank slip</a>
                                     </li>
                                 </ul>
                             </div>
@@ -185,7 +187,7 @@
             </nav>
 
             <!-- Conteúdo principal à esquerda -->
-            <div class="col-md-8 ms-sm-auto col-lg-9 px-md-4">
+            <div class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
                 @RenderBody()
             </div>
         </main>
@@ -331,6 +333,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 
