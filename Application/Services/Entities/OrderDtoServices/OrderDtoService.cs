@@ -7,6 +7,7 @@ using Domain.Entities;
 using Domain.Entities.Orders;
 using Domain.Entities.Orders.Interfaces;
 using Domain.Entities.Payments.Enums;
+using System.Reflection;
 
 namespace Application.Services.Entities.OrderDtoServices;
 
@@ -85,11 +86,11 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
         try
         {
             var updateOrder = _mapper.Map<Order>(orderDto) ?? throw new RequestException(new RequestError()
-                {
-                    Message = "Failed to map OrderDto to Order.",
-                    Severity = "Error",
-                    StatusCode = System.Net.HttpStatusCode.BadRequest,
-                });
+            {
+                Message = "Failed to map OrderDto to Order.",
+                Severity = "Error",
+                StatusCode = System.Net.HttpStatusCode.BadRequest,
+            });
             await _orderRepository.UpdateOrder(updateOrder);
         }
         catch (Exception ex)
@@ -100,49 +101,89 @@ public class OrderDtoService(IMapper mapper, IOrderRepository orderRepository) :
 
 
     public async Task<IEnumerable<OrderDetailDto>> GetOrdersDetailsAsync()
-{
-    var ordersDto = await _orderRepository.GetOrdersDetailsAsync();
-
-    if (ordersDto == null || !ordersDto.Any())
     {
-        return new List<OrderDetailDto>();
+        var ordersDto = await _orderRepository.GetOrdersDetailsAsync();
+
+        if (ordersDto == null || !ordersDto.Any())
+        {
+            return new List<OrderDetailDto>();
+        }
+
+        return _mapper.Map<IEnumerable<OrderDetailDto>>(ordersDto);
     }
 
-    return _mapper.Map<IEnumerable<OrderDetailDto>>(ordersDto);
-}
-
-public async Task<IEnumerable<OrderDto>> FindByOrderConfirmDateDtoAsync(DateTime? minDate, DateTime? maxDate)
-{
-    var orders = await _orderRepository.FindByOrderConfirmDateAsync(minDate, maxDate);
-    if (orders == null || !orders.Any())
+    public async Task<IEnumerable<OrderDto>> FindByOrderConfirmDateDtoAsync(DateTime? minDate, DateTime? maxDate)
     {
-        return Enumerable.Empty<OrderDto>();
+        var orders = await _orderRepository.FindByOrderConfirmDateAsync(minDate, maxDate);
+        if (orders == null || !orders.Any())
+        {
+            return Enumerable.Empty<OrderDto>();
+        }
+        var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
+        return orderDtos;
     }
-    var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
-    return orderDtos;
-}
 
-public async Task<IEnumerable<OrderDto>> FindByOrderDispatchedDateDtoAsync(DateTime? minDate, DateTime? maxDate)
-{
-    var orders = await _orderRepository.FindByOrderDispatchedDateAsync(minDate, maxDate);
-    if (orders == null || !orders.Any())
+    public async Task<IEnumerable<OrderDto>> FindByOrderDispatchedDateDtoAsync(DateTime? minDate, DateTime? maxDate)
     {
-        return Enumerable.Empty<OrderDto>();
+        var orders = await _orderRepository.FindByOrderDispatchedDateAsync(minDate, maxDate);
+        if (orders == null || !orders.Any())
+        {
+            return Enumerable.Empty<OrderDto>();
+        }
+        var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
+        return orderDtos;
     }
-    var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
-    return orderDtos;
-}
 
-public async Task<IEnumerable<OrderDto>> FindByOrderRequestReceivedDateDtoAsync(DateTime? minDate, DateTime? maxDate)
-{
-    var orders = await _orderRepository.FindByOrderRequestReceivedDateAsync(minDate, maxDate);
-    if (orders == null || !orders.Any())
+    public async Task<IEnumerable<OrderDto>> FindByOrderRequestReceivedDateDtoAsync(DateTime? minDate, DateTime? maxDate)
     {
-        return Enumerable.Empty<OrderDto>();
+        var orders = await _orderRepository.FindByOrderRequestReceivedDateAsync(minDate, maxDate);
+        if (orders == null || !orders.Any())
+        {
+            return Enumerable.Empty<OrderDto>();
+        }
+        var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
+        return orderDtos;
     }
-    var orderDtos = _mapper.Map<IEnumerable<OrderDto>>(orders);
-    return orderDtos;
-}
 
+    public List<SalesByMonthDto> GetSalesByMonth(IEnumerable<OrderDto> orderDtos)
+    {
+        var salesByMonth = orderDtos
+            .GroupBy(order => new { order.ConfirmedOrder.Year, order.ConfirmedOrder.Month })
+            .Select(group => new SalesByMonthDto
+            {
+                Year = group.Key.Year,
+                Month = group.Key.Month,
+                TotalSales = group.Sum(order => order.TotalOrder)
+            })
+            .OrderBy(group => group.Year)
+            .ThenBy(group => group.Month)
+            .ToList();
 
+        return salesByMonth.Cast<SalesByMonthDto>().ToList();
+    }
+
+    public async Task<decimal> Average()
+    {
+        decimal totalSum = 0;
+        int totalCount = 0;
+
+        var orders = await GetOrdersDtoAsync();
+
+        if (orders != null)
+        {
+            totalCount = orders.Count();
+
+            foreach (var item in orders)
+            {
+                totalSum += item.TotalOrder;
+            }
+
+            if (totalCount > 0)
+            {
+                decimal average = totalSum / totalCount;
+                return average;
+            }
+        }
+        return 0;
+    }
 }

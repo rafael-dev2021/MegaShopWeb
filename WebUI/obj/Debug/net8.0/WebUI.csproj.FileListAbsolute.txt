@@ -604,7 +604,6 @@ C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.GeneratedMSBuildEditorConfig.edit
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.AssemblyInfoInputs.cache
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.AssemblyInfo.cs
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.csproj.CoreCompileInputs.cache
-C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.MvcApplicationPartsAssemblyInfo.cs
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.MvcApplicationPartsAssemblyInfo.cache
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.RazorAssemblyInfo.cache
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.RazorAssemblyInfo.cs

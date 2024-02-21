@@ -1,0 +1,235 @@
+﻿@using System.Globalization
+@model TotalSalesViewModel
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    .custom-list {
+        list-style-type: none;
+        padding: 0;
+        display: inline-block;
+    }
+
+    .custom-list-item {
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+    }
+
+
+    .css-171cbs {
+        border-radius: 7px;
+        border: none;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transition: box-shadow 0.3s ease;
+        height: 17rem;
+        background-color: #fff;
+    }
+
+        .css-171cbs::before {
+            content: "";
+            border-radius: 10px 10px 0px 0px;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #343a40;
+        }
+
+        .css-171cbs::after {
+            content: "";
+            border-radius: 0px 0px 10px 10px;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #343a40;
+        }
+
+        .css-171cbs::before {
+            top: -1px;
+        }
+
+        .css-171cbs::after {
+            bottom: -1px;
+        }
+
+    .circle1 {
+        width: 20px;
+        height: 20px;
+        background-color: dodgerblue;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle; /* Adicionando alinhamento vertical */
+    }
+
+    .circle2 {
+        width: 20px;
+        height: 20px;
+        background-color: lightseagreen;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle; /* Adicionando alinhamento vertical */
+    }
+
+    .circle3 {
+        width: 20px;
+        height: 20px;
+        background-color: orange;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle; /* Adicionando alinhamento vertical */
+    }
+
+    .circle4 {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle; /* Adicionando alinhamento vertical */
+    }
+
+    .scrollable-table {
+        max-height: 600px; /* Adjust the height as needed */
+        overflow-y: auto;
+    }
+</style>
+
+<section class="container mt-3">
+    <h4>Sales Summary</h4>
+</section>
+
+<section class="mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card css-171cbs">
+                    <div class="card-body">
+                        <h3 class="card-title mt-2" style="color:gray">Total sales</h3>
+                        <h2 class="card-text mt-4" style="color:dodgerblue">@Model.TotalOrderValue.ToString("C")</h2>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5 style="color:gray">Quantity of sales: <span style="color:dodgerblue">@Model.TotalOrder</span></h5>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5 style="color:gray">Total average: <span style="color:orange">@Model.Average.ToString("C")</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card css-171cbs">
+                    <div class="card-body">
+                        <canvas id="myChart" width="100" height="50"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h4 style="color:gray"><i class="bi bi-bar-chart-line"></i> Sales</h4>
+        </div>
+        <div class="card-body">
+            <ul class="custom-list my-4">
+                <li class="custom-list-item mx-4"></li>
+                <li class="circle1"></li>
+                <li class="custom-list-item">Em Processamento</li>
+                <li class="circle2"></li>
+                <li class="custom-list-item">Pagamento Aprovado</li>
+                <li class="circle3"></li>
+                <li class="custom-list-item mx-0">Aguardando Pagamento</li>
+                <li class="custom-list-item mx-0"> | Em Análise | </li>
+                <li class="custom-list-item">Estorno Pendente</li>
+                <li class="circle4"></li>
+                <li class="custom-list-item mx-0">Cancelada</li>
+                <li class="custom-list-item mx-0"> | Chargeback | </li>
+                <li class="custom-list-item">Devolvida</li>
+            </ul>
+            <div class="card my-4">
+                <div class="card-header">
+                    <ul class="custom-list">
+                        <li class="custom-list-item mx-3"></li>
+                        <li class="custom-list-item mx-5">Sale</li>
+                        <li class="custom-list-item mx-5">Purchaser</li>
+                        <li class="custom-list-item mx-5">Method</li>
+                        <li class="custom-list-item mx-5">Order date</li>
+                        <li class="custom-list-item mx-5">Payment date</li>
+                        <li class="custom-list-item mx-5">Status</li>
+                        <li class="custom-list-item mx-5">Amount</li>
+                    </ul>
+                </div>
+                @if (Model.OrderDtos != null)
+                {
+                    <div class="scrollable-table">
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                        <p>dsadsa</p>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <h5 class="text-center">No sales found.</h5>
+                        </blockquote>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script>
+
+        var salesData = {
+            labels: @Html.Raw(Json.Serialize(Model.SalesByMonthDtos.Select(group =>
+             $"{CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(group.Month)} {group.Year}"))),
+            datasets: [{
+                label: 'Monthly Sales',
+                backgroundColor: 'dodgerblue',
+                data: @Html.Raw(Json.Serialize(Model.SalesByMonthDtos.Select(group => group.TotalSales)))
+                                                                                                                                                                        }]
+        };
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: salesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 2.5,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}
+

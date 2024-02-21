@@ -24,6 +24,8 @@ public class OrderRepository(
             .Include(x => x.DeliveryAddress)
             .Include(x => x.UserDelivery)
             .Include(x => x.PaymentMethod)
+            .ThenInclude(x=>x.PaymentMethodObjectValue)
+            .ThenInclude(x=>x.PaymentStatusObjectValue)
             .Include(x => x.PaymentMethod.CreditCard)
             .Include(x => x.PaymentMethod.DebitCard)
             .OrderBy(x => x.Id)

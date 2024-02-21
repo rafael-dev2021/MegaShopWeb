@@ -1,6 +1,6 @@
 ﻿using Application.Dtos.OrderDtos;
 using Application.Services.Entities.OrderDtoServices.Interfaces;
-using Domain.Entities.Orders;
+using Application.Services.Entities.PaymentDtoServices.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebUI.Areas.Admin.ViewModels.OrderViewModel;
@@ -9,9 +9,34 @@ namespace WebUI.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [Authorize(Roles = "Admin")]
-public class AdminOrderController(IOrderDtoService orderDtoService) : Controller
+public class AdminOrderController(IOrderDtoService orderDtoService, IPaymentDtoService paymentDtoService) : Controller
 {
     private readonly IOrderDtoService _orderDtoService = orderDtoService;
+    private readonly IPaymentDtoService _paymentDtoService = paymentDtoService;
+
+    public async Task<IActionResult> Sales()
+    {
+        var orders = await _orderDtoService.GetOrdersDtoAsync();
+        var orderDetails = await _orderDtoService.GetOrdersDetailsAsync();
+        var payments = await _paymentDtoService.ListPaymentsDtoAsync();
+        var salesByMonthModel = _orderDtoService.GetSalesByMonth(orders);
+        var average = await _orderDtoService.Average();
+        var totalOrderValue = orders.Sum(obj => obj.TotalOrder);
+        var totalOrder = orders.Count();
+
+        TotalSalesViewModel totalSalesVm = new()
+        {
+            OrderDtos = orders,
+            OrderDetailDtos = orderDetails,
+            PaymentDtos = payments,
+            SalesByMonthDtos = salesByMonthModel,
+            Average = average,
+            TotalOrderValue = totalOrderValue,
+            TotalOrder = totalOrder
+        };
+
+        return View(totalSalesVm);
+    }
 
     private async Task<IActionResult> GenerateSalesReportAsync(
       Func<DateTime?, DateTime?, Task<IEnumerable<OrderDto>>> reportFunc,
