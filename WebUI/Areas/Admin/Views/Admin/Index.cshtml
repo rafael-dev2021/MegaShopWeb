@@ -2,10 +2,6 @@
     ViewData["Title"] = "Admin Area";
 }
 
-<div class="container text-center my-5">
-    <img src="~/images/adminarea.jpg" alt="Admin Area" class="img-fluid" />
-</div>
-
 <div class="container">
     <div class="jumbotron text-center">
         <h2 class="display-4">Welcome to the Administrator's Area</h2>
@@ -17,4 +13,8 @@
             <i class="fas fa-home me-2"></i> Back to Home Page
         </a>
     </div>
+</div>
+
+<div class="container text-center my-5">
+    <partial name="~/Views/Shared/TemporaryFolder/_InCronstruction.cshtml" for="@Model" />
 </div>

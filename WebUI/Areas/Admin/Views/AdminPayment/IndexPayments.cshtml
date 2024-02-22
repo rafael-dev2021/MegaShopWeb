@@ -1,98 +1,115 @@
 ﻿@model IEnumerable<Application.Dtos.PaymentsDto.PaymentMethodDto>
 <style>
     .scrollable-table {
-        max-height: 400px; /* Adjust the height as needed */
+        max-height: 400px; /* Ajuste a altura conforme necessário */
         overflow-y: auto;
     }
 
+    div.dataTables_wrapper div.dataTables_length,
+    #paymentCardTable_wrapper .dataTables_info,
+    #paymentCardTable_wrapper .dataTables_paginate {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
 </style>
 
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Debit Card Information</h2>
-    <div class="scrollable-table">
-        <table class="table table-bordered mt-4">
-            <thead>
-                <tr class="table-primary">
-                    <th>Debit Card Number</th>
-                    <th>Card Holder Name</th>
-                    <th>Expiration Date</th>
-                    <th>CVV</th>
-                    <th>SSN</th>
-                    <th>Amount</th>
-                    <th>Debit card Id</th>
-                    <th>Payment date</th>
-                    <th>Reference</th>
-                    <th>Payment method</th>
-                    <th>Payment status</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
+    <table class="table table-striped mt-4 paymentCardTable">
+        <thead class="bg-dark">
+            <tr class="text-white">
+                <th>Debit Card Number</th>
+                <th>Card Holder Name</th>
+                <th>Expiration Date</th>
+                <th>CVV</th>
+                <th>SSN</th>
+                <th>Amount</th>
+                <th>Debit card Id</th>
+                <th>Payment date</th>
+                <th>Reference</th>
+                <th>Payment method</th>
+                <th>Payment status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                @if (item.PaymentMethodObjectValue.PaymentMethod == "DebitCard")
                 {
-                    @if (item.PaymentMethodObjectValue.PaymentMethod == "DebitCard")
-                    {
-                        <tr>
-                            <td>@item.DebitCard?.DebitCardNumber</td>
-                            <td>@item.DebitCard?.DebitCardHolderName</td>
-                            <td>@item.DebitCard?.DebitCardExpirationDate</td>
-                            <td>@item.DebitCard?.DebitCardCVV</td>
-                            <td>@item?.SSN</td>
-                            <td>@item?.Amount</td>
-                            <td>@item?.DebitCard.Id.ToString()</td>
-                            <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
-                            <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
+                    <tr>
+                        <td>@item.DebitCard?.DebitCardNumber</td>
+                        <td>@item.DebitCard?.DebitCardHolderName</td>
+                        <td>@item.DebitCard?.DebitCardExpirationDate</td>
+                        <td>@item.DebitCard?.DebitCardCVV</td>
+                        <td>@item?.SSN</td>
+                        <td>@item?.Amount</td>
+                        <td>@item?.DebitCard.Id.ToString()</td>
+                        <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
+                        <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
 
-                            <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
-                            <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
-                        </tr>
-                    }
+                        <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
+                        <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                    </tr>
                 }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>
+<hr class="mt-5 mb-5" />
 
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Credit Card Information</h2>
-    <div class="scrollable-table">
-        <table class="table table-bordered mt-4">
-            <thead>
-                <tr class="table-primary">
-                    <th>Credit Card Number</th>
-                    <th>Card Holder Name</th>
-                    <th>Expiration Date</th>
-                    <th>CVV</th>
-                    <th>SSN</th>
-                    <th>Amount</th>
-                    <th>Credit card Id</th>
-                    <th>Payment date</th>
-                    <th>Reference</th>
-                    <th>Payment method</th>
-                    <th>Payment status</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
+    <table class="table table-striped mt-4 paymentCardTable">
+        <thead class="bg-dark">
+            <tr class="text-white">
+                <th>Credit Card Number</th>
+                <th>Card Holder Name</th>
+                <th>Expiration Date</th>
+                <th>CVV</th>
+                <th>SSN</th>
+                <th>Amount</th>
+                <th>Credit card Id</th>
+                <th>Payment date</th>
+                <th>Reference</th>
+                <th>Payment method</th>
+                <th>Payment status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                @if (item.PaymentMethodObjectValue.PaymentMethod == "CreditCard")
                 {
-                    @if (item.PaymentMethodObjectValue.PaymentMethod == "CreditCard")
-                    {
-                        <tr>
-                            <td>@item.CreditCard?.CreditCardNumber</td>
-                            <td>@item.CreditCard?.CreditCardHolderName</td>
-                            <td>@item.CreditCard?.CreditCardExpirationDate</td>
-                            <td>@item.CreditCard?.CreditCardCVV</td>
-                            <td>@item?.SSN</td>
-                            <td>@item?.Amount</td>
-                            <td>@item?.CreditCard.Id.ToString()</td>
-                            <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
-                            <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
-                            <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
-                            <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
-                        </tr>
-                    }
+                    <tr>
+                        <td>@item.CreditCard?.CreditCardNumber</td>
+                        <td>@item.CreditCard?.CreditCardHolderName</td>
+                        <td>@item.CreditCard?.CreditCardExpirationDate</td>
+                        <td>@item.CreditCard?.CreditCardCVV</td>
+                        <td>@item?.SSN</td>
+                        <td>@item?.Amount</td>
+                        <td>@item?.CreditCard.Id.ToString()</td>
+                        <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
+                        <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
+                        <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
+                        <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                    </tr>
                 }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>
 
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.paymentCardTable').DataTable({
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                "pageLength": 5,
+                "language": {
+                    "info": "Showing  _START_ a _END_ de _TOTAL_ entries"
+                }
+            });
+        });
+    </script>
+}
