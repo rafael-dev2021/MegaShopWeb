@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Application.Dtos.PaymentsDto.PaymentMethodDto>
 <style>
     .scrollable-table {
-        max-height: 600px; /* Adjust the height as needed */
+        max-height: 400px; /* Adjust the height as needed */
         overflow-y: auto;
     }
 
@@ -13,7 +13,6 @@
         <table class="table table-bordered mt-4">
             <thead>
                 <tr class="table-primary">
-                    <th>Id</th>
                     <th>Debit Card Number</th>
                     <th>Card Holder Name</th>
                     <th>Expiration Date</th>
@@ -33,7 +32,6 @@
                     @if (item.PaymentMethodObjectValue.PaymentMethod == "DebitCard")
                     {
                         <tr>
-                            <td>@item?.Id.ToString()</td>
                             <td>@item.DebitCard?.DebitCardNumber</td>
                             <td>@item.DebitCard?.DebitCardHolderName</td>
                             <td>@item.DebitCard?.DebitCardExpirationDate</td>
@@ -60,7 +58,6 @@
         <table class="table table-bordered mt-4">
             <thead>
                 <tr class="table-primary">
-                    <th>Id</th>
                     <th>Credit Card Number</th>
                     <th>Card Holder Name</th>
                     <th>Expiration Date</th>
@@ -80,7 +77,6 @@
                     @if (item.PaymentMethodObjectValue.PaymentMethod == "CreditCard")
                     {
                         <tr>
-                            <td>@item.Id</td>
                             <td>@item.CreditCard?.CreditCardNumber</td>
                             <td>@item.CreditCard?.CreditCardHolderName</td>
                             <td>@item.CreditCard?.CreditCardExpirationDate</td>
