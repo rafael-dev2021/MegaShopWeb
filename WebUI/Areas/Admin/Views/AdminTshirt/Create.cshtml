@@ -1,0 +1,329 @@
+﻿@model Application.Dtos.ProductsDto.Fashion.Tshirts.TshirtDto
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create shoes</h1>
+
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create" class="needs-validation" novalidate>
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Images" class="control-label"></label>
+                            <input asp-for="Images[0]" class="form-control" />
+                            <span asp-validation-for="Images[0]" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Images" class="control-label"></label>
+                            <input asp-for="Images[1]" class="form-control" />
+                            <span asp-validation-for="Images[1]" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Images" class="control-label"></label>
+                            <input asp-for="Images[2]" class="form-control" />
+                            <span asp-validation-for="Images[2]" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Images" class="control-label"></label>
+                            <input asp-for="Images[3]" class="form-control" />
+                            <span asp-validation-for="Images[3]" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>  
+                <!-- General Features -->
+                <div class="mb-3 mt-3">
+                    <h5>General Features</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtMainFeaturesObectsValue.Gender" class="control-label"></label>
+                                <input asp-for="TshirtMainFeaturesObectsValue.Gender" class="form-control" />
+                                <span asp-validation-for="TshirtMainFeaturesObectsValue.Gender" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtMainFeaturesObectsValue.Age" class="control-label"></label>
+                                <input asp-for="TshirtMainFeaturesObectsValue.Age" class="form-control" />
+                                <span asp-validation-for="TshirtMainFeaturesObectsValue.Age" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtMainFeaturesObectsValue.TypeOfClothing" class="control-label"></label>
+                                <input asp-for="TshirtMainFeaturesObectsValue.TypeOfClothing" class="form-control" />
+                                <span asp-validation-for="TshirtMainFeaturesObectsValue.TypeOfClothing" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtMainFeaturesObectsValue.FabricDesign" class="control-label"></label>
+                                <input asp-for="TshirtMainFeaturesObectsValue.FabricDesign" class="form-control" />
+                                <span asp-validation-for="TshirtMainFeaturesObectsValue.FabricDesign" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtMainFeaturesObectsValue.Size" class="control-label"></label>
+                                <input asp-for="TshirtMainFeaturesObectsValue.Size" class="form-control" />
+                                <span asp-validation-for="TshirtMainFeaturesObectsValue.Size" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Others Features -->
+                <div class="mb-3 mt-3">
+                    <h5>Others Features</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.RecommendedUses" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.RecommendedUses" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.RecommendedUses" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.KindOfFabric" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.KindOfFabric" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.KindOfFabric" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.Composition" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.Composition" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.Composition" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.MainMaterial" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.MainMaterial" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.MainMaterial" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.SleeveType" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.SleeveType" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.SleeveType" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.TypeOfCollar" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.TypeOfCollar" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.TypeOfCollar" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label asp-for="TshirtOtherFeaturesObectsValue.UnitsPerKit" class="control-label"></label>
+                                <input asp-for="TshirtOtherFeaturesObectsValue.UnitsPerKit" class="form-control" />
+                                <span asp-validation-for="TshirtOtherFeaturesObectsValue.UnitsPerKit" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="TshirtOtherFeaturesObectsValue.WithRecycledMaterials" /> @Html.DisplayNameFor(model => model.TshirtOtherFeaturesObectsValue.WithRecycledMaterials)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="TshirtOtherFeaturesObectsValue.ItsSporty" /> @Html.DisplayNameFor(model => model.TshirtOtherFeaturesObectsValue.ItsSporty)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Specifications -->
+                <div class="mb-3">
+                    <h5>Product Specifications</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductSpecificationsObjectValue.ProductModel" class="control-label"></label>
+                                <input asp-for="ProductSpecificationsObjectValue.ProductModel" class="form-control" />
+                                <span asp-validation-for="ProductSpecificationsObjectValue.ProductModel" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductSpecificationsObjectValue.ProductType" class="control-label"></label>
+                                <input asp-for="ProductSpecificationsObjectValue.ProductType" class="form-control" />
+                                <span asp-validation-for="ProductSpecificationsObjectValue.ProductType" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductSpecificationsObjectValue.ProductBrand" class="control-label"></label>
+                                <input asp-for="ProductSpecificationsObjectValue.ProductBrand" class="form-control" />
+                                <span asp-validation-for="ProductSpecificationsObjectValue.ProductBrand" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductSpecificationsObjectValue.ProductLine" class="control-label"></label>
+                                <input asp-for="ProductSpecificationsObjectValue.ProductLine" class="form-control" />
+                                <span asp-validation-for="ProductSpecificationsObjectValue.ProductLine" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductSpecificationsObjectValue.ProductWeight" class="control-label"></label>
+                                <input asp-for="ProductSpecificationsObjectValue.ProductWeight" class="form-control" />
+                                <span asp-validation-for="ProductSpecificationsObjectValue.ProductWeight" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Data -->
+                <div class="mb-3">
+                    <h5>Product Data</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductDataObjectValue.ReleaseMonth" class="control-label"></label>
+                                <input asp-for="ProductDataObjectValue.ReleaseMonth" class="form-control" />
+                                <span asp-validation-for="ProductDataObjectValue.ReleaseMonth" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductDataObjectValue.ReleaseYear" class="control-label"></label>
+                                <input asp-for="ProductDataObjectValue.ReleaseYear" class="form-control" />
+                                <span asp-validation-for="ProductDataObjectValue.ReleaseYear" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Warranty -->
+                <div class="mb-3">
+                    <h5>Product Warranty</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductWarrantyObjectValue.WarrantyLength" class="control-label"></label>
+                                <input asp-for="ProductWarrantyObjectValue.WarrantyLength" class="form-control" />
+                                <span asp-validation-for="ProductWarrantyObjectValue.WarrantyLength" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductWarrantyObjectValue.WarrantyInformation" class="control-label"></label>
+                                <input asp-for="ProductWarrantyObjectValue.WarrantyInformation" class="form-control" />
+                                <span asp-validation-for="ProductWarrantyObjectValue.WarrantyInformation" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Price -->
+                <div class="mb-3">
+                    <h5>Product Price</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductPriceObjectValue.Price" class="control-label"></label>
+                                <input asp-for="ProductPriceObjectValue.Price" class="form-control" />
+                                <span asp-validation-for="ProductPriceObjectValue.Price" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProductPriceObjectValue.HistoryPrice" class="control-label"></label>
+                                <input asp-for="ProductPriceObjectValue.HistoryPrice" class="form-control" />
+                                <span asp-validation-for="ProductPriceObjectValue.HistoryPrice" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stock and Flags -->
+                <div class="mb-3">
+                    <h5>Stock and Flags</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Stock" class="control-label"></label>
+                                <input asp-for="Stock" class="form-control" />
+                                <span asp-validation-for="Stock" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="CategoryId" class="control-label"></label>
+                                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="ProductFlagsObjectValue.IsDailyOffer" /> @Html.DisplayNameFor(model => model.ProductFlagsObjectValue.IsDailyOffer)
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="ProductFlagsObjectValue.IsBestSeller" /> @Html.DisplayNameFor(model => model.ProductFlagsObjectValue.IsBestSeller)
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="ProductFlagsObjectValue.IsFavorite" /> @Html.DisplayNameFor(model => model.ProductFlagsObjectValue.IsFavorite)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+                </div>
+                <div class="form-group">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

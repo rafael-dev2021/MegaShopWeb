@@ -76,14 +76,7 @@ public class AdminGameController(IGameDtoService gameDtoService, ICategoryDtoSer
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await GameDtoExists(gameDto.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                if (!await GameDtoExists(gameDto.Id)) return NotFound();
             }
             return RedirectToAction(nameof(Index));
         }

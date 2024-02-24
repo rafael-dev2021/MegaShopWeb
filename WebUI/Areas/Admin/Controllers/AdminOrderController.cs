@@ -50,17 +50,10 @@ public class AdminOrderController(IOrderDtoService orderDtoService, IPaymentDtoS
         {
             maxDate = DateTime.Now;
         }
-        try
-        {
-            var result = await reportFunc(minDate, maxDate);
-            ViewData["minDate"] = minDate.Value;
-            ViewData["maxDate"] = maxDate.Value;
-            return View(result);
-        }
-        catch (Exception)
-        {
-            return View("OrderNotFound");
-        }
+        var result = await reportFunc(minDate, maxDate);
+        ViewData["minDate"] = minDate.Value;
+        ViewData["maxDate"] = maxDate.Value;
+        return View(result);
     }
 
     public async Task<IActionResult> ConfirmedSalesReport(DateTime? minDate, DateTime? maxDate)
@@ -78,15 +71,20 @@ public class AdminOrderController(IOrderDtoService orderDtoService, IPaymentDtoS
         return await GenerateSalesReportAsync(_orderDtoService.FindByOrderRequestReceivedDateDtoAsync, minDate, maxDate);
     }
 
-
     [HttpGet]
     public async Task<IActionResult> OrderProducts(int? id)
     {
-        var orderId = await _orderDtoService.GetByIdAsync(id);
+        if (!id.HasValue || !int.TryParse(id.ToString(), out int Id))
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
+        var orderId = await _orderDtoService.GetByIdAsync(Id);
+
         if (orderId is null)
         {
             Response.StatusCode = 404;
-            return View("OrderNotFound", id.Value);
+            return View("OrderNotFound", Id);
         }
 
         var orderDetails = await _orderDtoService.GetOrdersDetailsAsync();
@@ -97,36 +95,21 @@ public class AdminOrderController(IOrderDtoService orderDtoService, IPaymentDtoS
             OrderDetails = orderDetails,
             TotalOrder = orderId.TotalOrder
         };
+
         return View(adminOrderProductViewModel);
     }
 
 
     [HttpGet]
-    public async Task<IActionResult> Index(string filter, int page = 1, int pageSize = 10)
+    public async Task<IActionResult> Index()
     {
         var orders = await _orderDtoService.GetOrdersDtoAsync();
-        var result = _orderDtoService.GetPagingListOrdersDto(filter);
-        if (!string.IsNullOrWhiteSpace(filter))
-        {
-            var filteredOrdersByFilter = _orderDtoService.GetPagingListOrdersDto(filter);
-            if (!filteredOrdersByFilter.Any())
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            orders = filteredOrdersByFilter;
-        }
 
-        int totalOrders = result.Count();
-        int totalPages = (int)Math.Ceiling(totalOrders / (double)pageSize);
-        var paginatedOrders = result.Skip((page - 1) * pageSize).Take(pageSize).ToList();
-
-        ViewBag.TotalPages = totalPages;
-        ViewBag.CurrentPage = page;
-        ViewBag.Filter = filter;
+        int totalOrders = orders.Count();
 
         OrderViewModel orderVM = new()
         {
-            OrdersDto = paginatedOrders,
+            OrdersDto = orders,
             TotalOrders = totalOrders
         };
         return View(orderVM);
@@ -161,8 +144,6 @@ public class AdminOrderController(IOrderDtoService orderDtoService, IPaymentDtoS
 
         return View(orderDto);
     }
-
-
 
 
     [HttpGet]

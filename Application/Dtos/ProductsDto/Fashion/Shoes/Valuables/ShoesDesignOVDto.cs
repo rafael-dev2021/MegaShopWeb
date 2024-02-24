@@ -3,5 +3,5 @@
 public class ShoesDesignOVDto
 {
     public string AdjustmentTypes { get; set; } = string.Empty;
-    public string TypeOfPipe { get; set; }
+    public string TypeOfPipe { get; set; } = string.Empty;
 }

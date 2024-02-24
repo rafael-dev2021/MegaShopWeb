@@ -1,15 +1,22 @@
 ﻿@model Application.Dtos.ProductsDto.Technology.Games.GameDto
-
 @{
     ViewData["Title"] = "Delete";
 }
+<h2>
+    Are you sure you want to delete the product
+    <span class="text-danger">
+        <b>
+            @Model.Name?
+        </b>
+    </span>
+</h2>
 
-<h2>Delete</h2>
-
-<p>Are you sure you want to delete the product @Model.Name?</p>
-
-<button id="deleteButton" class="btn btn-danger">Delete</button>
-
+<button id="deleteButton" class="btn btn-danger mt-3">Delete</button>
+<a asp-action="Index" class="btn btn-info mt-3">
+    <span class="text-white">
+        Back to list
+    </span>
+</a>
 
 <!-- Modal -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
@@ -22,7 +29,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete the product @Model.Name?</p>
+                <p>
+                    Are you sure you want to delete the product
+                    <span class="text-danger">
+                        <b>
+                            @Model.Name?
+                        </b>
+                    </span>
+                </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

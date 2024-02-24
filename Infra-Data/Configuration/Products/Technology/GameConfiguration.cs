@@ -11,7 +11,7 @@ public class GameConfiguration : IEntityTypeConfiguration<Game>
         builder.HasData(
            new Game(
                5,
-               "Marvel\'s Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
+               "Marvel\'s Spider-Man: Miles Morales Standard Edition Sony PS5",
                "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                [
                    "https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp",
@@ -24,7 +24,7 @@ public class GameConfiguration : IEntityTypeConfiguration<Game>
                ),
             new Game(
                6,
-               "God of War Ragnarök Standard Edition Sony PS5 Physical",
+               "God of War Ragnarök Standard Edition Sony PS5",
                "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.",
                [
                    "https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp",

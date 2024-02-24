@@ -1,10 +1,5 @@
 ﻿@model IEnumerable<Application.Dtos.PaymentsDto.PaymentMethodDto>
 <style>
-    .scrollable-table {
-        max-height: 400px; /* Ajuste a altura conforme necessário */
-        overflow-y: auto;
-    }
-
     div.dataTables_wrapper div.dataTables_length,
     #paymentCardTable_wrapper .dataTables_info,
     #paymentCardTable_wrapper .dataTables_paginate {
@@ -12,23 +7,25 @@
         margin-bottom: 1%;
     }
 </style>
-
+@{
+    ViewData["Title"] = "Payments Card";
+}
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Debit Card Information</h2>
-    <table class="table table-striped mt-4 paymentCardTable">
+    <table class="table table-striped mt-4 paymentCardTable" style="line-height:30px">
         <thead class="bg-dark">
-            <tr class="text-white">
+            <tr class="text-white text-lg-center">
+                <th>Debit card Id</th>
                 <th>Debit Card Number</th>
                 <th>Card Holder Name</th>
                 <th>Expiration Date</th>
                 <th>CVV</th>
                 <th>SSN</th>
-                <th>Amount</th>
-                <th>Debit card Id</th>
                 <th>Payment date</th>
                 <th>Reference</th>
                 <th>Payment method</th>
                 <th>Payment status</th>
+                <th>Amount</th>
             </tr>
         </thead>
         <tbody>
@@ -36,19 +33,18 @@
             {
                 @if (item.PaymentMethodObjectValue.PaymentMethod == "DebitCard")
                 {
-                    <tr>
-                        <td>@item.DebitCard?.DebitCardNumber</td>
-                        <td>@item.DebitCard?.DebitCardHolderName</td>
-                        <td>@item.DebitCard?.DebitCardExpirationDate</td>
-                        <td>@item.DebitCard?.DebitCardCVV</td>
+                    <tr class="text-lg-center">
+                        <td>@item?.DebitCard?.Id.ToString()</td>
+                        <td>@item?.DebitCard?.DebitCardNumber</td>
+                        <td>@item?.DebitCard?.DebitCardHolderName</td>
+                        <td>@item?.DebitCard?.DebitCardExpirationDate</td>
+                        <td>@item?.DebitCard?.DebitCardCVV</td>
                         <td>@item?.SSN</td>
-                        <td>@item?.Amount</td>
-                        <td>@item?.DebitCard.Id.ToString()</td>
-                        <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
-                        <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
-
-                        <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
-                        <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                        <td>@item?.PaymentMethodObjectValue?.PaymentDate</td>
+                        <td>@item?.PaymentMethodObjectValue?.Reference.ToString()</td>
+                        <td>@item?.PaymentMethodObjectValue?.PaymentMethod</td>
+                        <td>@item?.PaymentMethodObjectValue?.PaymentStatusObjectValue?.PaymentStatus</td>
+                        <td>@item?.Amount.ToString("C")</td>
                     </tr>
                 }
             }
@@ -59,20 +55,20 @@
 
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Credit Card Information</h2>
-    <table class="table table-striped mt-4 paymentCardTable">
+    <table class="table table-striped mt-4 paymentCardTable" style="line-height:30px">
         <thead class="bg-dark">
-            <tr class="text-white">
+            <tr class="text-white text-lg-center">
+                <th>Credit card Id</th>
                 <th>Credit Card Number</th>
                 <th>Card Holder Name</th>
                 <th>Expiration Date</th>
                 <th>CVV</th>
                 <th>SSN</th>
-                <th>Amount</th>
-                <th>Credit card Id</th>
                 <th>Payment date</th>
                 <th>Reference</th>
                 <th>Payment method</th>
                 <th>Payment status</th>
+                <th>Amount</th>
             </tr>
         </thead>
         <tbody>
@@ -80,18 +76,18 @@
             {
                 @if (item.PaymentMethodObjectValue.PaymentMethod == "CreditCard")
                 {
-                    <tr>
-                        <td>@item.CreditCard?.CreditCardNumber</td>
-                        <td>@item.CreditCard?.CreditCardHolderName</td>
-                        <td>@item.CreditCard?.CreditCardExpirationDate</td>
-                        <td>@item.CreditCard?.CreditCardCVV</td>
+                    <tr class="text-lg-center">
+                        <td>@item?.CreditCard?.Id.ToString()</td>
+                        <td>@item?.CreditCard?.CreditCardNumber</td>
+                        <td>@item?.CreditCard?.CreditCardHolderName</td>
+                        <td>@item?.CreditCard?.CreditCardExpirationDate</td>
+                        <td>@item?.CreditCard?.CreditCardCVV</td>
                         <td>@item?.SSN</td>
-                        <td>@item?.Amount</td>
-                        <td>@item?.CreditCard.Id.ToString()</td>
-                        <td>@item?.PaymentMethodObjectValue.PaymentDate</td>
-                        <td>@item?.PaymentMethodObjectValue.Reference.ToString()</td>
-                        <td>@item?.PaymentMethodObjectValue.PaymentMethod</td>
-                        <td>@item?.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                        <td>@item?.PaymentMethodObjectValue?.PaymentDate</td>
+                        <td>@item?.PaymentMethodObjectValue?.Reference.ToString()</td>
+                        <td>@item?.PaymentMethodObjectValue?.PaymentMethod</td>
+                        <td>@item?.PaymentMethodObjectValue?.PaymentStatusObjectValue?.PaymentStatus</td>
+                        <td>@item?.Amount.ToString("C")</td>
                     </tr>
                 }
             }

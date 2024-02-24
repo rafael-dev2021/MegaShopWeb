@@ -92,7 +92,11 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column">
                         <li>
-                            <a class="nav-link text-center mt-4" style="font-size:1.5rem; margin-left:-17px" asp-area="Admin" asp-controller="Admin" asp-action="Index">
+                            <a class="nav-link text-center mt-4"
+                               style="font-size:1.5rem; margin-left:-17px"
+                               asp-area="Admin"
+                               asp-controller="Admin"
+                               asp-action="Index">
                                 Dashboard
                             </a>
                         </li>
@@ -100,7 +104,58 @@
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminProduct"
-                               asp-action="Index"><i class="bi bi-list-ul"></i>&nbsp;  Store</a>
+                               asp-action="Index">
+                                <i class="bi bi-list-ul"></i>&nbsp;  Store
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link"
+                               asp-area="Admin"
+                               asp-controller="AdminCategory"
+                               asp-action="Index">
+                                <i class="bi bi-plus-square"></i>&nbsp; New Category
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-diagram-3-fill"></i>&nbsp;  Categories
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin"
+                                           asp-controller="AdminGame"
+                                           asp-action="Index">
+                                            <i class="bi bi-plus-square"></i>&nbsp;  Game
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin"
+                                           asp-controller="AdminSmartphone"
+                                           asp-action="Index">
+                                            <i class="bi bi-plus-square"></i>&nbsp;  Smartphone
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin"
+                                           asp-controller="AdminShoes"
+                                           asp-action="Index">
+                                            <i class="bi bi-plus-square"></i>&nbsp;  Shoes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin"
+                                           asp-controller="AdminTshirt"
+                                           asp-action="Index">
+                                            <i class="bi bi-plus-square"></i>&nbsp;  Tshirts
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Admin" asp-controller="AdminOrder" asp-action="Index">
@@ -132,16 +187,33 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                                     <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminPayment" asp-action="IndexCreditCard"><i class="bi bi-credit-card"></i>&nbsp;  Credit card</a>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin"
+                                           asp-controller="AdminPayment"
+                                           asp-action="IndexCreditCard">
+                                            <i class="bi bi-credit-card"></i>&nbsp;  Credit card
+                                        </a>
                                     </li>
                                     <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminPayment" asp-action="IndexDebitCard"><i class="bi bi-credit-card-2-back-fill"></i>&nbsp;  Debit card</a>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin" asp-controller="AdminPayment"
+                                           asp-action="IndexDebitCard">
+                                            <i class="bi bi-credit-card-2-back-fill"></i>&nbsp;  Debit card
+                                        </a>
                                     </li>
                                     <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminPayment" asp-action="IndexPayments"><i class="bi bi-cash-coin"></i>&nbsp;  Payments</a>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin" asp-controller="AdminPayment"
+                                           asp-action="IndexPayments">
+                                            <i class="bi bi-cash-coin"></i>&nbsp;  Payments
+                                        </a>
                                     </li>
                                     <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminPayment" asp-action="Index"><i class="bi bi-cash-coin"></i>&nbsp;  Bank slip</a>
+                                        <a class="text-black dropdown-item"
+                                           asp-area="Admin" asp-controller="AdminPayment"
+                                           asp-action="Index">
+                                            <i class="bi bi-cash-coin"></i>&nbsp;  Bank slip
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -150,52 +222,43 @@
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminOrder"
-                               asp-action="Sales"><i class="bi bi-easel2"></i>&nbsp;  Sales</a>
+                               asp-action="Sales">
+                                <i class="bi bi-easel2"></i>&nbsp;  Sales
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminProduct"
-                               asp-action="Index"><i class="bi bi-percent"></i>&nbsp;  Daily offer</a>
+                               asp-action="Index" asp-route-isDailyOffer="true">
+                                <i class="bi bi-percent"></i>&nbsp;  Daily offer
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminProduct"
-                               asp-action="Index"><i class="bi bi-box-seam"></i>&nbsp;  Best seller</a>
+                               asp-action="Index" asp-route-isBestSeller="true">
+                                <i class="bi bi-box-seam"></i>&nbsp;  Best seller
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminProduct"
-                               asp-action="Index"><i class="bi bi-heart"></i>&nbsp;  Favorites</a>
+                               asp-action="Index" asp-route-isFavorite="true">
+                                <i class="bi bi-heart"></i>&nbsp;  Favorites
+                            </a>
                         </li>
-                        <li>
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-diagram-3-fill"></i>&nbsp;  Register
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminCategory" asp-action="Create"><i class="bi bi-plus-square"></i>&nbsp;  Category</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminGame" asp-action="Create"><i class="bi bi-plus-square"></i>&nbsp;  Game</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminSmartphone" asp-action="Create"><i class="bi bi-plus-square"></i>&nbsp;  Smartphone</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-black dropdown-item" asp-area="Admin" asp-controller="AdminShoes" asp-action="Create"><i class="bi bi-plus-square"></i>&nbsp;  Shoes</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+
+                     
                         <li class="nav-item">
                             <a class="nav-link"
                                asp-area="Admin"
                                asp-controller="AdminProduct"
-                               asp-action="Index"><i class="bi bi-graph-down-arrow"></i>&nbsp;  Chargebacks</a>
+                               asp-action="Index">
+                                <i class="bi bi-graph-down-arrow"></i>&nbsp;  Chargebacks
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -207,7 +270,6 @@
             </div>
         </main>
     </div>
-
 
     <!-- FOOTER -->
     <footer class="bg-dark bg-cover">

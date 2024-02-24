@@ -9,7 +9,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
+        builder.Property(x => x.Name).HasMaxLength(60).IsRequired();
         builder.Property(x => x.Description).HasMaxLength(10000).IsRequired();
         builder.Property(x => x.Images).HasMaxLength(800).IsRequired();
         builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId);

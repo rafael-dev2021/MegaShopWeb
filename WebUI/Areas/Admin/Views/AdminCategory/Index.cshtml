@@ -1,7 +1,22 @@
 ﻿@model IEnumerable<Application.Dtos.CategoryDto>
+<style>
+    div.dataTables_wrapper div.dataTables_length {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
 
+    #categoryTable_wrapper .dataTables_info {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    #categoryTable_wrapper .dataTables_paginate {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+</style>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categories";
 }
 
 <h1>Categories</h1>
@@ -9,34 +24,55 @@
 <p>
     <a asp-action="Create">Create new category</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryImage)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryImage)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>  |
-                </td>
+
+<div class="panel-body">
+    <table class="table table-striped table-hover mt-4" style="line-height:20px" id="categoryTable">
+        <thead class="bg-dark">
+            <tr class="text-white text-lg-center">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Remove</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-lg-center">
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CategoryImage)</td>
+                    <td class="text-lg-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-info align-middle"></i></a>
+                    </td>
+                    <td class="text-lg-center">
+                        <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye text-primary align-middle"></i></a>
+                    </td>
+                    <td class="text-lg-center">
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash text-danger align-middle"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#categoryTable').DataTable({
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                "pageLength": 10,
+                "language": {
+                    "info": "Showing  _START_ to _END_ of _TOTAL_ entries"
+                },
+                "columnDefs": [
+                    { "orderable": false, "targets": [3, 4, 5] } // Desabilita a ordenação para colunas específicas
+                ]
+            });
+        });
+
+    </script>
+}

@@ -1,11 +1,28 @@
 ﻿@model IEnumerable<Application.Dtos.PaymentsDto.CreditCardDto>
 
+<style>
+    div.dataTables_wrapper div.dataTables_length {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    #creditCardTable_wrapper .dataTables_info {
+        margin-top: 2%;
+    }
+
+    #creditCardTable_wrapper .dataTables_paginate {
+        margin-top: 2%;
+    }
+</style>
+@{
+    ViewData["Title"] = "Credit Card";
+}
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Credit Card Information</h2>
 
-    <table class="table table-bordered mt-4">
-        <thead>
-            <tr class="table-primary">
+    <table class="table table-striped table-hover mt-4" style="line-height:40px" id="creditCardTable">
+        <thead class="bg-dark">
+            <tr class="text-white text-lg-center">
                 <th>Id</th>
                 <th>Credit Card Number</th>
                 <th>Card Holder Name</th>
@@ -16,14 +33,29 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.Id.ToString()</td>
-                    <td>@item.CreditCardNumber</td>
-                    <td>@item.CreditCardHolderName</td>
-                    <td>@item.CreditCardExpirationDate</td>
-                    <td>@item.CreditCardCVV</td>
+                <tr class="text-lg-center">
+                    <td>@item?.Id.ToString()</td>
+                    <td>@item?.CreditCardNumber</td>
+                    <td>@item?.CreditCardHolderName</td>
+                    <td>@item?.CreditCardExpirationDate</td>
+                    <td>@item?.CreditCardCVV</td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#creditCardTable').DataTable({
+                "searching": false,
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                "pageLength": 10,
+                "language": {
+                    "info": "Showing  _START_ to _END_ of _TOTAL_ entries"
+                }
+            });
+        });
+    </script>
+}

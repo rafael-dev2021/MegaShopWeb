@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Application.Dtos.ProductsDto.Fashion.Tshirts.TshirtDto>
+
+<style>
+    div.dataTables_wrapper div.dataTables_length {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    #productsTable_wrapper .dataTables_info {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    #productsTable_wrapper .dataTables_paginate {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+</style>
+@{
+    ViewData["Title"] = "TShirts";
+}
+<h1>TShirts</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="panel-body">
+    <table class="table table-striped table-hover mt-4" style="line-height:40px" id="productsTable">
+        <thead class="bg-dark">
+            <tr class="text-white text-lg-center">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>History price</th>
+                <th>Daily offer</th>
+                <th>Best seller</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-lg-center">
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Stock)</td>
+                    <td>@(item.ProductPriceObjectValue.Price.ToString("C"))</td>
+                    <td>@(item.ProductPriceObjectValue.HistoryPrice.ToString("C"))</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProductFlagsObjectValue.IsDailyOffer)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProductFlagsObjectValue.IsBestSeller)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProductSpecificationsObjectValue.ProductBrand)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category.CategoryName)</td>
+                    <td class="text-lg-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-info align-middle"></i></a>
+                    </td>
+                    <td class="text-lg-center">
+                        <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye text-primary align-middle"></i></a>
+                    </td>
+                    <td class="text-lg-center">
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash text-danger align-middle"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#productsTable').DataTable({
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                "pageLength": 10,
+                "language": {
+                    "info": "Showing  _START_ to _END_ of _TOTAL_ entries"
+                },
+                "columnDefs": [
+                    { "orderable": false, "targets": [5, 6, 8, 9, 10, 11] }
+                ]
+            });
+        });
+
+    </script>
+}

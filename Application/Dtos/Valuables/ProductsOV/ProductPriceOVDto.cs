@@ -13,7 +13,7 @@ namespace Application.Dtos.Valuables.ProductsOV
         [DataType(DataType.Currency)]
         [DisplayName("Price")]
         public decimal Price { get; set; }
-        [Range(0.1, 999999999, ErrorMessage = "History Price is invalid, minimum value $ 0.1.")]
+        [Range(0, 999999999, ErrorMessage = "History Price is invalid, minimum value $ 0.1.")]
         [Column(TypeName = "decimal(18,2)")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         [DataType(DataType.Currency)]
