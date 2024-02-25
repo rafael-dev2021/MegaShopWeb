@@ -7,4 +7,5 @@ public class DebitCard
     public string DebitCardHolderName { get; private set; } = string.Empty;
     public string DebitCardExpirationDate { get; private set; } = string.Empty;
     public string DebitCardCVV { get; private set; } = string.Empty;
+    public string SSN { get; private set; } = string.Empty;
 }

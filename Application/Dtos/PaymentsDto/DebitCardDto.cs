@@ -24,4 +24,5 @@ public class DebitCardDto
     [RegularExpression(@"^\d{3,4}$", ErrorMessage = "Please enter a valid security code.")]
     [StringLength(4)]
     public string DebitCardCVV { get; set; } = string.Empty;
+    public string SSN { get; set; } = string.Empty;
 }

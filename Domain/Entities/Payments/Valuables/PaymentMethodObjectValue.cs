@@ -35,8 +35,15 @@ public class PaymentMethodObjectValue : IPaymentMethod
 
         if (isCreditCardPaymentCompleted && PaymentStatusObjectValue != null)
         {
-            PaymentStatusObjectValue.PaymentApproved();
+            PaymentStatusObjectValue.PaymentProcessing();
             SetReference();
+
+            // Introduza um atraso simulado de 5 segundos (5000 milissegundos)
+            Thread.Sleep(5000);
+
+            // Simulando a aprovação do pagamento após o atraso
+            PaymentStatusObjectValue.PaymentApproved();
+
             PaymentDateConfirm();
         }
         else
@@ -54,8 +61,15 @@ public class PaymentMethodObjectValue : IPaymentMethod
 
         if (isDebitCardPaymentCompleted && PaymentStatusObjectValue != null)
         {
-            PaymentStatusObjectValue.PaymentApproved();
+            PaymentStatusObjectValue.PaymentProcessing();
             SetReference();
+
+            // Introduza um atraso simulado de 5 segundos (5000 milissegundos)
+            Thread.Sleep(5000);
+
+            // Simulando a aprovação do pagamento após o atraso
+            PaymentStatusObjectValue.PaymentApproved();
+
             PaymentDateConfirm();
         }
         else

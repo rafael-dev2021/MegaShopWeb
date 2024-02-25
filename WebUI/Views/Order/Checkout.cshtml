@@ -26,7 +26,7 @@
         text-decoration: none;
     }
 
-    .login-form button[type="submit"] {
+    .css-btn-loading-finish button[type="submit"] {
         width: 100%;
         height: 40px;
         background-color: blue;
@@ -36,7 +36,7 @@
         margin-bottom: 10px;
     }
 
-    .login-form .form-group {
+    .css-btn-loading-finish .form-group {
         margin-bottom: 15px;
     }
 
@@ -153,7 +153,7 @@
                         <a asp-controller="" asp-action="Cookies">Cookies</a>
                     </p>
                 </div>
-                <div class="row login-form">
+                <div class="row css-btn-loading-finish">
                     <div class="form-group col-md-3">
                         <button type="submit" value="Finish">Finish order</button>
                     </div>
@@ -181,15 +181,14 @@
                         </div>
 
                         <div id="creditCardFields" style="display:none;">
-                            <!-- Campos do formulário de cartão de crédito -->
                             <div class="mb-3">
                                 <input asp-for="PaymentMethod.CreditCard.CreditCardNumber" id="CardNumber" placeholder="Card number" class="form-control" />
                                 <span id="CardBrand" class="text-muted"></span>
                                 <span asp-validation-for="PaymentMethod.CreditCard.CreditCardNumber" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
-                                <input asp-for="PaymentMethod.SSN" placeholder="SSN" class="form-control" />
-                                <span asp-validation-for="PaymentMethod.SSN" class="text-danger"></span>
+                                <input asp-for="PaymentMethod.CreditCard.SSN" placeholder="SSN" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.CreditCard.SSN" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <input asp-for="PaymentMethod.CreditCard.CreditCardHolderName" placeholder="Holder name" class="form-control" />
@@ -203,6 +202,32 @@
                                 <div class="col-md-6 mb-3">
                                     <input asp-for="PaymentMethod.CreditCard.CreditCardCVV" placeholder="Security code" class="form-control" />
                                     <span asp-validation-for="PaymentMethod.CreditCard.CreditCardCVV" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="debitCardFields" style="display:none;">
+                            <div class="mb-3 debit-card">
+                                <input asp-for="PaymentMethod.DebitCard.DebitCardNumber" id="DebitCardNumber" placeholder="Debit Card number" class="form-control" />
+                                <span id="DebitCardBrand" class="text-muted"></span>
+                                <span asp-validation-for="PaymentMethod.DebitCard.DebitCardNumber" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input asp-for="PaymentMethod.DebitCard.SSN" placeholder="SSN" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.DebitCard.SSN" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3 debit-card">
+                                <input asp-for="PaymentMethod.DebitCard.DebitCardHolderName" placeholder="Holder name" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.DebitCard.DebitCardHolderName" class="text-danger"></span>
+                            </div>
+                            <div class="row debit-card">
+                                <div class="col-md-6 mb-3">
+                                    <input asp-for="PaymentMethod.DebitCard.DebitCardExpirationDate" id="DebitExpirationDate" placeholder="Expiration date" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.DebitCard.DebitCardExpirationDate" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input asp-for="PaymentMethod.DebitCard.DebitCardCVV" placeholder="Security code" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.DebitCard.DebitCardCVV" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -238,6 +263,13 @@
                 creditCardFields.style.display = "block";
             } else {
                 creditCardFields.style.display = "none";
+            }
+            // Exiba ou oculte os campos do cartão de crédito conforme necessário
+            var debitCardFields = document.getElementById("debitCardFields");
+            if (selectedPaymentMethod === "DebitCard") {
+                debitCardFields.style.display = "block";
+            } else {
+                debitCardFields.style.display = "none";
             }
         }
 

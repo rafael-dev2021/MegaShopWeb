@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infra_Data.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class FirstTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -79,7 +79,8 @@ namespace Infra_Data.Migrations
                     CreditCardNumber = table.Column<string>(type: "nvarchar(19)", maxLength: 19, nullable: false),
                     CreditCardHolderName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreditCardExpirationDate = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
-                    CreditCardCVV = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false)
+                    CreditCardCVV = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
+                    SSN = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -94,7 +95,8 @@ namespace Infra_Data.Migrations
                     DebitCardNumber = table.Column<string>(type: "nvarchar(19)", maxLength: 19, nullable: false),
                     DebitCardHolderName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DebitCardExpirationDate = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
-                    DebitCardCVV = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false)
+                    DebitCardCVV = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false),
+                    SSN = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -213,7 +215,7 @@ namespace Infra_Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", maxLength: 10000, nullable: false),
                     Images = table.Column<string>(type: "nvarchar(800)", maxLength: 800, nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
@@ -331,7 +333,7 @@ namespace Infra_Data.Migrations
                     PaymentMethodObjectValue_PaymentStatusObjectValue_PaymentStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PaymentMethodObjectValue_PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    SSN = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    SSN = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     CreditCardId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     DebitCardId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
@@ -503,8 +505,8 @@ namespace Infra_Data.Migrations
                 columns: new[] { "Id", "CategoryId", "Description", "Discriminator", "Images", "Name", "Stock", "ProductFlagsObjectValue_IsBestSeller", "ProductFlagsObjectValue_IsDailyOffer", "ProductFlagsObjectValue_IsFavorite", "GameGeneralFeaturesObjectsValue_Collection", "GameGeneralFeaturesObjectsValue_Developers", "GameGeneralFeaturesObjectsValue_Edition", "GameGeneralFeaturesObjectsValue_GameRating", "GameGeneralFeaturesObjectsValue_GameTitle", "GameGeneralFeaturesObjectsValue_Genres", "GameGeneralFeaturesObjectsValue_Platform", "GameGeneralFeaturesObjectsValue_Publishers", "GameGeneralFeaturesObjectsValue_Saga", "GameRequirementsObjectsValue_MinimumGraphicsProcessorsRequired", "GameRequirementsObjectsValue_MinimumOperatingSystemsRequired", "GameRequirementsObjectsValue_MinimumProcessorsRequired", "GameRequirementsObjectsValue_MinimumRAMRequirement", "GameSpecificationsObjectsValue_AudioLanguages", "GameSpecificationsObjectsValue_FileSize", "GameSpecificationsObjectsValue_Format", "GameSpecificationsObjectsValue_ItsMultiplayer", "GameSpecificationsObjectsValue_ItsOffline", "GameSpecificationsObjectsValue_ItsOnline", "GameSpecificationsObjectsValue_MaximumNumberOfOfflinePlayers", "GameSpecificationsObjectsValue_MaximumNumberOfOnlinePlayers", "GameSpecificationsObjectsValue_RequiresPeripheral", "GameSpecificationsObjectsValue_ScreenLanguages", "GameSpecificationsObjectsValue_SubtitleLanguages", "ProductDataObjectValue_ReleaseMonth", "ProductDataObjectValue_ReleaseYear", "ProductPriceObjectValue_HistoryPrice", "ProductPriceObjectValue_Price", "ProductSpecificationsObjectValue_ProductBrand", "ProductSpecificationsObjectValue_ProductLine", "ProductSpecificationsObjectValue_ProductModel", "ProductSpecificationsObjectValue_ProductType", "ProductSpecificationsObjectValue_ProductWeight", "ProductWarrantyObjectValue_WarrantyInformation", "ProductWarrantyObjectValue_WarrantyLength" },
                 values: new object[,]
                 {
-                    { 5, 3, "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.", "Game", "[\"https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp\"]", "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5 Physical", 10, true, false, true, "Spider man", "Insomniac Games", "Standard Edition", "T", "Marvel's Spider-Man: Miles Morales", "Action", "PS5", "Sony", "30-Day Limited Warranty", "V", "PS5", "Ps5", 60, "English", 60, "Physical", false, true, false, 1, 1, false, "English, Portuguese", "English, Portuguese", "June", "2023", 0.0m, 30.99m, "Sony", "PS5", "Sony", "Video game", "100 g", "30-Day Limited Warranty", "1-year warranty" },
-                    { 6, 3, "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.", "Game", "[\"https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp\"]", "God of War Ragnarök Standard Edition Sony PS5 Physical", 15, true, false, true, "God of War", "SIE Santa Monica Studio", "Standard Edition", "M", "God of War Ragnarök", "Action", "PS5", "Sony", "30-Day Limited Warranty", "V", "PS5", "Ps5", 60, "English, Spanish, Portuguese", 91, "Physical", false, true, true, 1, 1, false, "Spanish, English, Portuguese", "Spanish, English, Portuguese", "July", "2022", 0.0m, 38.99m, "Sony", "PS5", "Sony", "Video game", "100 g", "30-Day Limited Warranty", "1-year warranty" }
+                    { 5, 3, "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.", "Game", "[\"https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp\"]", "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5", 10, true, false, true, "Spider man", "Insomniac Games", "Standard Edition", "T", "Marvel's Spider-Man: Miles Morales", "Action", "PS5", "Sony", "30-Day Limited Warranty", "V", "PS5", "Ps5", 60, "English", 60, "Physical", false, true, false, 1, 1, false, "English, Portuguese", "English, Portuguese", "June", "2023", 0.0m, 30.99m, "Sony", "PS5", "Sony", "Video game", "100 g", "30-Day Limited Warranty", "1-year warranty" },
+                    { 6, 3, "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.", "Game", "[\"https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp\"]", "God of War Ragnarök Standard Edition Sony PS5", 15, true, false, true, "God of War", "SIE Santa Monica Studio", "Standard Edition", "M", "God of War Ragnarök", "Action", "PS5", "Sony", "30-Day Limited Warranty", "V", "PS5", "Ps5", 60, "English, Spanish, Portuguese", 91, "Physical", false, true, true, 1, 1, false, "Spanish, English, Portuguese", "Spanish, English, Portuguese", "July", "2022", 0.0m, 38.99m, "Sony", "PS5", "Sony", "Video game", "100 g", "30-Day Limited Warranty", "1-year warranty" }
                 });
 
             migrationBuilder.InsertData(
@@ -530,21 +532,21 @@ namespace Infra_Data.Migrations
                 columns: new[] { "ReviewId", "Comment", "Image", "ProductId", "Rating", "ReviewDate" },
                 values: new object[,]
                 {
-                    { 1, "The quality of the photos is incredible.", "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp", 1, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3876) },
-                    { 2, "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.", "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg", 1, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3891) },
-                    { 3, "Good!", "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp", 1, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3892) },
-                    { 4, "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.", "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp", 2, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3893) },
-                    { 5, "Excellent, after all it is an Apple product. Worth every penny given ❤.", "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp", 3, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3894) },
-                    { 6, "The best.", "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp", 4, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3895) },
-                    { 7, "New original product you can buy without fear!.", "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp", 5, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3897) },
-                    { 8, "Excellent product, came sealed.", "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp", 5, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3898) },
-                    { 9, "Perfect product.", "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp", 6, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3899) },
-                    { 10, "The best product, very good!", "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp", 6, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3900) },
-                    { 11, "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.", "", 7, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3901) },
-                    { 12, "It was small on me. I want to return it. To get my refund.", "", 7, 1, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3902) },
-                    { 14, "Excellent product.", "", 9, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3903) },
-                    { 15, "I liked the original, it has to be laced but it's perfect.", "", 10, 5, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3905) },
-                    { 16, "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.", "", 10, 4, new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3906) }
+                    { 1, "The quality of the photos is incredible.", "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp", 1, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1660) },
+                    { 2, "Very good purchase, it arrived very quickly and it arrived like a totally new phone, it only has very slight details on the sides.", "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg", 1, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1673) },
+                    { 3, "Good!", "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp", 1, 4, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1674) },
+                    { 4, "The best smartphone I've ever used!!! I left an iPhone 14 Pro Max, sold it, bought the S23 Ultra and still had money left. There's no comparison, with 8gb of ram you can use several applications in the background at the same time.", "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp", 2, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1675) },
+                    { 5, "Excellent, after all it is an Apple product. Worth every penny given ❤.", "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp", 3, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1676) },
+                    { 6, "The best.", "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp", 4, 4, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1677) },
+                    { 7, "New original product you can buy without fear!.", "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp", 5, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1678) },
+                    { 8, "Excellent product, came sealed.", "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp", 5, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1678) },
+                    { 9, "Perfect product.", "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp", 6, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1679) },
+                    { 10, "The best product, very good!", "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp", 6, 4, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1680) },
+                    { 11, "Pay attention to size. Nike models are smaller. The ideal is to buy 1 size larger.", "", 7, 4, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1681) },
+                    { 12, "It was small on me. I want to return it. To get my refund.", "", 7, 1, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1682) },
+                    { 14, "Excellent product.", "", 9, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1682) },
+                    { 15, "I liked the original, it has to be laced but it's perfect.", "", 10, 5, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1683) },
+                    { 16, "I'm a fan of this sneaker. One of the most beautiful on the foot, in my opinion.", "", 10, 4, new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1684) }
                 });
 
             migrationBuilder.CreateIndex(

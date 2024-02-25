@@ -7,4 +7,5 @@ public sealed class CreditCard
     public string CreditCardHolderName { get; private set; } = string.Empty;
     public string CreditCardExpirationDate { get; private set; } = string.Empty;
     public string CreditCardCVV { get; private set; } = string.Empty;
+    public string SSN { get; private set; } = string.Empty;
 }

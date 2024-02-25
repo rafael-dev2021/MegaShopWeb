@@ -17,7 +17,7 @@ namespace Infra_Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -217,6 +217,9 @@ namespace Infra_Data.Migrations
                         .HasMaxLength(19)
                         .HasColumnType("nvarchar(19)");
 
+                    b.Property<string>("SSN")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("CreditCards");
@@ -248,6 +251,9 @@ namespace Infra_Data.Migrations
                         .HasMaxLength(19)
                         .HasColumnType("nvarchar(19)");
 
+                    b.Property<string>("SSN")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("DebitCards");
@@ -271,7 +277,6 @@ namespace Infra_Data.Migrations
                         .HasColumnType("nvarchar(13)");
 
                     b.Property<string>("SSN")
-                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
@@ -312,8 +317,8 @@ namespace Infra_Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<byte[]>("RowVersion")
                         .IsConcurrencyToken()
@@ -373,7 +378,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3876)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1660)
                         },
                         new
                         {
@@ -382,7 +387,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3891)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1673)
                         },
                         new
                         {
@@ -391,7 +396,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3892)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1674)
                         },
                         new
                         {
@@ -400,7 +405,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
                             ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3893)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1675)
                         },
                         new
                         {
@@ -409,7 +414,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
                             ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3894)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1676)
                         },
                         new
                         {
@@ -418,7 +423,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
                             ProductId = 4,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3895)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1677)
                         },
                         new
                         {
@@ -427,7 +432,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3897)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1678)
                         },
                         new
                         {
@@ -436,7 +441,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3898)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1678)
                         },
                         new
                         {
@@ -445,7 +450,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
                             ProductId = 6,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3899)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1679)
                         },
                         new
                         {
@@ -454,7 +459,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
                             ProductId = 6,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3900)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1680)
                         },
                         new
                         {
@@ -463,7 +468,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3901)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1681)
                         },
                         new
                         {
@@ -472,7 +477,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 1,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3902)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1682)
                         },
                         new
                         {
@@ -481,7 +486,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 9,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3903)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1682)
                         },
                         new
                         {
@@ -490,7 +495,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3905)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1683)
                         },
                         new
                         {
@@ -499,7 +504,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 20, 18, 26, 59, 701, DateTimeKind.Local).AddTicks(3906)
+                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1684)
                         });
                 });
 
@@ -800,7 +805,7 @@ namespace Infra_Data.Migrations
                             CategoryId = 3,
                             Description = "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp\"]",
-                            Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5 Physical",
+                            Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5",
                             Stock = 10
                         },
                         new
@@ -809,7 +814,7 @@ namespace Infra_Data.Migrations
                             CategoryId = 3,
                             Description = "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp\"]",
-                            Name = "God of War Ragnarök Standard Edition Sony PS5 Physical",
+                            Name = "God of War Ragnarök Standard Edition Sony PS5",
                             Stock = 15
                         });
                 });
