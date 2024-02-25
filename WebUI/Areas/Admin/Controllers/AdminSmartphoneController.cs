@@ -12,17 +12,22 @@ namespace WebUI.Areas.Admin.Controllers;
 [Authorize(Roles = "Admin")]
 public class AdminSmartphoneController(ISmartphoneDtoService smartphoneDtoService, ICategoryDtoService categoryDtoService) : Controller
 {
-    private readonly ISmartphoneDtoService _smartphoneDtoService = smartphoneDtoService ?? throw new ArgumentNullException(nameof(smartphoneDtoService));
-    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
+    private readonly ISmartphoneDtoService _smartphoneDtoService = smartphoneDtoService ??
+        throw new ArgumentNullException(nameof(smartphoneDtoService));
 
-    public async Task<IActionResult> Index()
-    {
-        return View(await _smartphoneDtoService.GetProductsDtoAsync());
-    }
+    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ??
+        throw new ArgumentNullException(nameof(categoryDtoService));
+
+    public async Task<IActionResult> Index() =>
+        View(await _smartphoneDtoService.GetProductsDtoAsync());
 
     public async Task<IActionResult> Create()
     {
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName");
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName");
+
         return View();
     }
 
@@ -35,22 +40,28 @@ public class AdminSmartphoneController(ISmartphoneDtoService smartphoneDtoServic
             await _smartphoneDtoService.AddAsync(smartphoneDto);
             return RedirectToAction("Index");
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", smartphoneDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(),
+            "Id", "CategoryName", 
+            smartphoneDto.CategoryId);
+
         return View(smartphoneDto);
     }
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null || await _smartphoneDtoService.GetProductsDtoAsync() == null)
-        {
-            return NotFound();
-        }
+            NotFound();
 
         var smartphoneDto = await _smartphoneDtoService.GetByIdAsync(id);
-        if (smartphoneDto == null)
-        {
-            return NotFound();
-        }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", smartphoneDto.CategoryId);
+        if (smartphoneDto == null) NotFound();
+
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName", 
+            smartphoneDto.CategoryId);
+
         return View(smartphoneDto);
     }
     private async Task<bool> SmartphoneDtoExists(int id)
@@ -63,10 +74,7 @@ public class AdminSmartphoneController(ISmartphoneDtoService smartphoneDtoServic
     [HttpPost]
     public async Task<IActionResult> Edit(int id, SmartphoneDto smartphoneDto)
     {
-        if (id != smartphoneDto.Id)
-        {
-            return NotFound();
-        }
+        if (id != smartphoneDto.Id) NotFound();
 
         if (ModelState.IsValid)
         {
@@ -77,17 +85,16 @@ public class AdminSmartphoneController(ISmartphoneDtoService smartphoneDtoServic
             catch (DbUpdateConcurrencyException)
             {
                 if (!await SmartphoneDtoExists(smartphoneDto.Id))
-                {
                     return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
             }
             return RedirectToAction(nameof(Index));
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", smartphoneDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(),
+            "Id", "CategoryName",
+            smartphoneDto.CategoryId);
+
         return View(smartphoneDto);
     }
 

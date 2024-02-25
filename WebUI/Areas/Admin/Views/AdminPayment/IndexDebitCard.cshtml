@@ -5,12 +5,16 @@
         margin-bottom: 1%;
     }
 
-    #debitCardTable_wrapper .dataTables_info {
+    #css-aavpd_wrapper .dataTables_info {
         margin-top: 2%;
     }
 
-    #debitCardTable_wrapper .dataTables_paginate {
+    #css-aavpd_wrapper .dataTables_paginate {
         margin-top: 2%;
+    }
+
+    #css-aavpd {
+        line-height: 40px;
     }
 </style>
 @{
@@ -19,7 +23,7 @@
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Debit Card Information</h2>
 
-    <table class="table table-striped table-hover mt-4" style="line-height:40px" id="debitCardTable">
+    <table class="table table-striped table-hover mt-4" id="css-aavpd">
         <thead class="bg-dark">
             <tr class="text-white text-lg-center">
                 <th>Id</th>
@@ -46,7 +50,7 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-            $('#debitCardTable').DataTable({
+            $('#css-aavpd').DataTable({
                 "searching": false,
                 "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
                 "pageLength": 10,

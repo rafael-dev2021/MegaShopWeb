@@ -12,17 +12,22 @@ namespace WebUI.Areas.Admin.Controllers;
 [Authorize(Roles = "Admin")]
 public class AdminTshirtController(ITshirtDtoService tshirtDtoService, ICategoryDtoService categoryDtoService) : Controller
 {
-    private readonly ITshirtDtoService _tshirtDtoService = tshirtDtoService ?? throw new ArgumentNullException(nameof(tshirtDtoService));
-    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
+    private readonly ITshirtDtoService _tshirtDtoService = tshirtDtoService ??
+        throw new ArgumentNullException(nameof(tshirtDtoService));
 
-    public async Task<IActionResult> Index()
-    {
-        return View(await _tshirtDtoService.GetProductsDtoAsync());
-    }
+    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ??
+        throw new ArgumentNullException(nameof(categoryDtoService));
+
+    public async Task<IActionResult> Index() =>
+        View(await _tshirtDtoService.GetProductsDtoAsync());
 
     public async Task<IActionResult> Create()
     {
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName");
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName");
+
         return View();
     }
 
@@ -35,7 +40,12 @@ public class AdminTshirtController(ITshirtDtoService tshirtDtoService, ICategory
             await _tshirtDtoService.AddAsync(tShirtDto);
             return RedirectToAction("Index");
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", tShirtDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName",
+            tShirtDto.CategoryId);
+
         return View(tShirtDto);
     }
 
@@ -46,9 +56,14 @@ public class AdminTshirtController(ITshirtDtoService tshirtDtoService, ICategory
             return NotFound();
 
         var tShirtDto = await _tshirtDtoService.GetByIdAsync(id);
-        if (tShirtDto is null) return NotFound();
+        if (tShirtDto == null) return NotFound();
 
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", tShirtDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName",
+            tShirtDto.CategoryId);
+
         return View(tShirtDto);
     }
 
@@ -72,7 +87,8 @@ public class AdminTshirtController(ITshirtDtoService tshirtDtoService, ICategory
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await TshirtDtoExists(tShirtDto.Id)) return NotFound();
+                if (!await TshirtDtoExists(tShirtDto.Id))
+                    return NotFound();
             }
             return RedirectToAction(nameof(Index));
         }
@@ -94,10 +110,10 @@ public class AdminTshirtController(ITshirtDtoService tshirtDtoService, ICategory
     }
     public async Task<IActionResult> Delete(int? id)
     {
-        if (id is null) NotFound();
+        if (id == null) NotFound();
         var tShirtDtoId = await _tshirtDtoService.GetByIdAsync(id);
 
-        if (tShirtDtoId is null) NotFound();
+        if (tShirtDtoId == null) NotFound();
         return View(tShirtDtoId);
     }
 

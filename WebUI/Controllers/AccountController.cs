@@ -13,13 +13,9 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
     private readonly IAuthenticateRepository _authenticateRepository = authenticateRepository;
 
     [AllowAnonymous]
-    public IActionResult Login(string returnUrl)
-    {
-        return View(new LoginViewModel()
-        {
-            ReturnUrl = returnUrl
-        });
-    }
+    public IActionResult Login(string returnUrl) =>
+        View(new LoginViewModel()
+        { ReturnUrl = returnUrl });
 
 
     [AllowAnonymous]
@@ -28,18 +24,14 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
     public async Task<IActionResult> Login(LoginViewModel model)
     {
         if (!ModelState.IsValid)
-        {
             return View(model);
-        }
 
         var authenticationResult = await _authenticateRepository.AuthenticateAsync(model.Email, model.Password, model.RememberMe);
 
         if (authenticationResult.IsAuthenticated)
         {
             if (string.IsNullOrEmpty(model.ReturnUrl))
-            {
                 return RedirectToAction("Index", "Home");
-            }
 
             var claims = new List<Claim>
             {
@@ -67,10 +59,7 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
 
 
     [AllowAnonymous]
-    public IActionResult Register()
-    {
-        return View();
-    }
+    public IActionResult Register() => View();
 
     [AllowAnonymous]
     [ValidateAntiForgeryToken]
@@ -80,15 +69,12 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
         var registrationResult = await _authenticateRepository.RegisterAsync(model.Email, model.Password, model.FirstName, model.LastName, model.Phone, model.SSN, model.BirthDate);
 
         if (registrationResult.IsRegistered)
-        {
             return Redirect("/");
-        }
-        else
-        {
-            ModelState.AddModelError(string.Empty, registrationResult.ErrorMessage);
-            return View(model);
-        }
+
+        ModelState.AddModelError(string.Empty, registrationResult.ErrorMessage);
+        return View(model);
     }
+
 
 
     [Authorize]
@@ -102,13 +88,9 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
     }
 
     [Authorize]
-    public IActionResult AccessDenied()
-    {
-        return View();
-    }
+    public IActionResult AccessDenied() => View();
 
-
-    [Authorize(Policy = "Admin")]
+    [Authorize]
     [HttpGet]
     public async Task<IActionResult> EditProfile()
     {
@@ -116,9 +98,7 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
         var userProfile = await _authenticateRepository.GetUserProfileAsync(userEmail);
 
         if (userProfile == null)
-        {
             return NotFound();
-        }
 
         var model = new EditProfileViewModel
         {
@@ -138,34 +118,31 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
     public async Task<IActionResult> EditProfile(EditProfileViewModel model)
     {
         if (!ModelState.IsValid)
-        {
             return View(model);
-        }
 
         var userEmail = User.Identity.Name;
 
-        var updateResult = await _authenticateRepository.UpdateProfileAsync(userEmail, model.FirstName, model.LastName, model.Phone, model.BirthDate, model.IsSubscribedToNewsletter);
+        var updateResult = await _authenticateRepository
+            .UpdateProfileAsync(
+            userEmail,
+            model.FirstName,
+            model.LastName,
+            model.Phone,
+            model.BirthDate,
+            model.IsSubscribedToNewsletter);
 
         if (updateResult)
-        {
             return RedirectToAction("EditProfileSuccess");
-        }
-        else
-        {
-            ModelState.AddModelError(string.Empty, "Failed to update profile.");
-            return View(model);
-        }
+
+        ModelState.AddModelError(string.Empty, "Failed to update profile.");
+        return View(model);
     }
+
     [Authorize]
-    public IActionResult EditProfileSuccess()
-    {
-        return View();
-    }
+    public IActionResult EditProfileSuccess() => View();
+
     [Authorize]
-    public IActionResult ChangePassword()
-    {
-        return View();
-    }
+    public IActionResult ChangePassword() => View();
 
     [Authorize]
     [ValidateAntiForgeryToken]
@@ -173,58 +150,43 @@ public class AccountController(IAuthenticateRepository authenticateRepository) :
     public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
     {
         if (!ModelState.IsValid)
-        {
             return View(model);
-        }
 
         var userEmail = User.Identity.Name;
 
-        var changePasswordResult = await _authenticateRepository.ChangePasswordAsync(userEmail, model.OldPassword, model.NewPassword);
+        var changePasswordResult = await _authenticateRepository
+            .ChangePasswordAsync(
+            userEmail,
+            model.OldPassword,
+            model.NewPassword);
 
         if (changePasswordResult)
-        {
             return RedirectToAction("ChangePasswordSuccess");
-        }
-        else
-        {
-            ModelState.AddModelError(string.Empty, "Failed to change password.");
-            return View(model);
-        }
-    }
 
-    [Authorize]
-    public IActionResult ChangePasswordSuccess()
-    {
-        return View();
+        ModelState.AddModelError(string.Empty, "Failed to change password.");
+        return View(model);
     }
+    [Authorize]
+    public IActionResult ChangePasswordSuccess() => View();
+
 
     [ValidateAntiForgeryToken]
     [HttpPost]
-    public async Task<IActionResult> ResetPassword([Bind("Email,NewPassword,ConfirmPassword")] PasswordResetViewModel model)
+    public async Task<IActionResult> ResetPassword(PasswordResetViewModel model)
     {
         if (ModelState.IsValid)
         {
             var resetResult = await _authenticateRepository.ForgotPasswordAsync(model.Email, model.NewPassword);
 
             if (resetResult)
-            {
                 return View("PasswordResetSuccess");
-            }
-            else
-            {
-                ModelState.AddModelError(string.Empty, "An error occurred while resetting the password or user not found.");
-            }
+
+            ModelState.AddModelError(string.Empty,
+                "An error occurred while resetting the password, user not found.");
         }
 
         return View(model);
     }
-
-    public IActionResult ResetPassword()
-    {
-        return View();
-    }
-    public IActionResult PasswordResetSuccess()
-    {
-        return View();
-    }
+    public IActionResult ResetPassword() => View();
+    public IActionResult PasswordResetSuccess() => View();
 }

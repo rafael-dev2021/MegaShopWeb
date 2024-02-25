@@ -9,8 +9,10 @@ namespace WebUI.Areas.Admin.Controllers;
 [Authorize(Roles = "Admin")]
 public class AdminCategoryController(ICategoryDtoService categoryDtoService) : Controller
 {
-    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService;
-    public async Task<IActionResult> Index() => 
+    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ??
+        throw new ArgumentNullException(nameof(categoryDtoService));
+
+    public async Task<IActionResult> Index() =>
         View(await _categoryDtoService.GetCategoriesDtoAsync());
 
     [HttpGet]
@@ -47,14 +49,7 @@ public class AdminCategoryController(ICategoryDtoService categoryDtoService) : C
         if (id != categoryDto.Id) return NotFound();
         if (ModelState.IsValid)
         {
-            try
-            {
-                await _categoryDtoService.UpdateAsync(categoryDto);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            await _categoryDtoService.UpdateAsync(categoryDto);
             return RedirectToAction(nameof(Index));
         }
         return View(categoryDto);

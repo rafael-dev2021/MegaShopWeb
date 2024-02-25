@@ -3,28 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mega shop</title>
+    <title>@ViewData["Title"] - Mega Shop</title>
+
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Find the best products and deals at Mega Shop. Fashion, electronics, and much more for you!" />
+    <meta name="keywords" content="fashion, electronics, deals, online shopping, Mega Shop" />
+
+    <!-- Links para Estilos e Ícones -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
 
+    <!-- Estruturação Semântica -->
+    <link rel="canonical" href="https://github.com/rafael-dev2021" />
+
+    <!-- Robôs e Indexação -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph para Redes Sociais -->
+    <meta property="og:title" content="@ViewData["Title"] - Mega Shop" />
+    <meta property="og:description" content="Check out our new collection of printed T-shirts, available in different styles and colors. Enjoy!" />
+    <meta property="og:image" content="https://github.com/rafael-dev2021" />
+    <meta property="og:url" content="https://github.com/rafael-dev2021" />
+
     <style>
-        .nav-sidebar a {
-            color: grey !important;
-            font-size: 1.2rem;
-            line-height: 40px;
-            padding-left: 40px; /* Ajuste o valor conforme necessário */
-        }
-
-        .nav-sidebar .dropdown-menu a {
-            color: black !important; /* Defina a cor desejada para os itens do dropdown */
-        }
-
-
-        .css-1721cbs {
+        .css-aavsl {
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             transition: box-shadow 0.3s ease;
@@ -33,17 +38,22 @@
             position: relative;
         }
 
-            .css-1721cbs::before {
+            .css-aavsl::before {
                 content: "";
                 position: absolute;
-                right: 0; /* Posição à direita */
-                width: 2px; /* Largura da barra lateral */
-                height: 100%; /* Altura da barra lateral */
+                right: 0;
+                width: 2px;
+                height: 100%;
                 background-color: #343a40;
             }
 
+            .css-aavsl a {
+                color: grey !important;
+                font-size: 1.2rem;
+                line-height: 40px;
+                padding-left: 40px;
+            }
     </style>
-
 </head>
 <body>
     <header>
@@ -59,7 +69,7 @@
 
     <div>
         <main role="main" class="mb-2 d-flex">
-            <nav class="css-1721cbs col-md-4 col-lg-2 d-md-block nav-sidebar">
+            <nav class="css-aavsl col-md-4 col-lg-2 d-md-block nav-sidebar">
                 <ul class="nav flex-column">
                     <li>
                         <a class="nav-link text-center mt-4"
@@ -72,6 +82,11 @@
                     </li>
                     <li>
                         <a asp-area="Admin"
+                           asp-controller="AdminProduct"
+                           asp-action="Index"><i class="bi bi-list-ul"></i>&nbsp;  Store</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
                            asp-controller="AdminCategory"
                            asp-action="Index">
                             <i class="bi bi-plus-square"></i>&nbsp;New Category
@@ -79,16 +94,16 @@
                     </li>
                     <li>
                         <div class="dropdown">
-                            <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenuOne" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-diagram-3-fill"></i>&nbsp;  Categories
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuOne">
                                 <li>
                                     <a class="text-black dropdown-item"
                                        asp-area="Admin"
                                        asp-controller="AdminGame"
                                        asp-action="Index">
-                                        <i class="bi bi-plus-square"></i>&nbsp;  Game
+                                        <i class="bi bi-plus-square"></i>&nbsp;  Games
                                     </a>
                                 </li>
                                 <li>
@@ -96,7 +111,7 @@
                                        asp-area="Admin"
                                        asp-controller="AdminSmartphone"
                                        asp-action="Index">
-                                        <i class="bi bi-plus-square"></i>&nbsp;  Smartphone
+                                        <i class="bi bi-plus-square"></i>&nbsp;  Smartphones
                                     </a>
                                 </li>
                                 <li>
@@ -148,10 +163,10 @@
                     </li>
                     <li>
                         <div class="dropdown">
-                            <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenuTwo" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-wallet2"></i>&nbsp;  Payments
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuTwo">
                                 <li>
                                     <a class="dropdown-item"
                                        asp-area="Admin"
@@ -222,7 +237,6 @@
                 </ul>
             </nav>
 
-            <!-- Conteúdo principal à esquerda -->
             <div class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
                 @RenderBody()
             </div>
@@ -362,11 +376,8 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/GetProductsListPartial.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

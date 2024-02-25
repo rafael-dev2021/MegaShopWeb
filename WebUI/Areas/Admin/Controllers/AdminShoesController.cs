@@ -14,17 +14,23 @@ public class AdminShoesController(
     IShoesDtoService shoesDtoService,
     ICategoryDtoService categoryDtoService) : Controller
 {
-    private readonly IShoesDtoService _shoesDtoService = shoesDtoService;
-    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService;
+    private readonly IShoesDtoService _shoesDtoService = shoesDtoService ??
+              throw new ArgumentNullException(nameof(shoesDtoService));
 
-    public async Task<IActionResult> Index()
-    {
-        return View(await _shoesDtoService.GetProductsDtoAsync());
-    }
+    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ??
+              throw new ArgumentNullException(nameof(categoryDtoService));
+
+    public async Task<IActionResult> Index() =>
+        View(await _shoesDtoService.GetProductsDtoAsync());
+
 
     public async Task<IActionResult> Create()
     {
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName");
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(),
+            "Id", "CategoryName");
+
         return View();
     }
 
@@ -37,7 +43,12 @@ public class AdminShoesController(
             await _shoesDtoService.AddAsync(shoesDto);
             return RedirectToAction("Index");
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", shoesDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName",
+            shoesDto.CategoryId);
+
         return View(shoesDto);
     }
 
@@ -49,7 +60,12 @@ public class AdminShoesController(
         var shoesDto = await _shoesDtoService.GetByIdAsync(id);
         if (shoesDto == null) return NotFound();
 
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", shoesDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(),
+            "Id", "CategoryName", 
+            shoesDto.CategoryId);
+
         return View(shoesDto);
     }
     private async Task<bool> ShoesDtoExists(int id)
@@ -72,11 +88,17 @@ public class AdminShoesController(
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await ShoesDtoExists(shoesDto.Id)) return NotFound();
+                if (!await ShoesDtoExists(shoesDto.Id))
+                    return NotFound();
             }
             return RedirectToAction(nameof(Index));
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", shoesDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(),
+            "Id", "CategoryName", 
+            shoesDto.CategoryId);
+
         return View(shoesDto);
     }
 

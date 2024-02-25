@@ -1,4 +1,5 @@
 using Application.Services.Entities.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebUI.Models;
@@ -6,12 +7,12 @@ using WebUI.ViewModels;
 
 namespace WebUI.Controllers;
 
-public class HomeController(ILogger<HomeController> logger, ICategoryDtoService categoryDtoService, IProductDtoService productDtoService) : Controller
+public class HomeController(ICategoryDtoService categoryDtoService, IProductDtoService productDtoService) : Controller
 {
-    private readonly ILogger<HomeController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
     private readonly IProductDtoService _productDtoService = productDtoService ?? throw new ArgumentNullException(nameof(productDtoService));
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<IActionResult> Index()
     {
@@ -30,11 +31,10 @@ public class HomeController(ILogger<HomeController> logger, ICategoryDtoService 
         return View(homeVw);
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
+    [AllowAnonymous]
+    public IActionResult Privacy() => View();
+    
+    [AllowAnonymous]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error(int? statusCode = null)
     {

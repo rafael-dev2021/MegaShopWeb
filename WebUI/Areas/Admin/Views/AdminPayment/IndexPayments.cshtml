@@ -1,10 +1,14 @@
 ﻿@model IEnumerable<Application.Dtos.PaymentsDto.PaymentMethodDto>
 <style>
     div.dataTables_wrapper div.dataTables_length,
-    #paymentCardTable_wrapper .dataTables_info,
-    #paymentCardTable_wrapper .dataTables_paginate {
+    #css-aavpi_wrapper .dataTables_info,
+    #css-aavpi_wrapper .dataTables_paginate {
         margin-top: 1%;
         margin-bottom: 1%;
+    }
+
+    .css-aavpi{
+        line-height: 30px;
     }
 </style>
 @{
@@ -12,7 +16,7 @@
 }
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Debit Card Information</h2>
-    <table class="table table-striped mt-4 paymentCardTable" style="line-height:30px">
+    <table class="table table-striped mt-4 css-aavpi">
         <thead class="bg-dark">
             <tr class="text-white text-lg-center">
                 <th>Debit card Id</th>
@@ -55,7 +59,7 @@
 
 <div class="col-md-12 col-lg-12">
     <h2 class="mt-4">Credit Card Information</h2>
-    <table class="table table-striped mt-4 paymentCardTable" style="line-height:30px">
+    <table class="table table-striped mt-4 css-aavpi">
         <thead class="bg-dark">
             <tr class="text-white text-lg-center">
                 <th>Credit card Id</th>
@@ -99,7 +103,7 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-            $('.paymentCardTable').DataTable({
+            $('.css-aavpi').DataTable({
                 "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
                 "pageLength": 5,
                 "language": {

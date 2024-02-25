@@ -12,16 +12,21 @@ namespace WebUI.Areas.Admin.Controllers;
 [Authorize(Roles = "Admin")]
 public class AdminGameController(IGameDtoService gameDtoService, ICategoryDtoService categoryDtoService) : Controller
 {
-    private readonly IGameDtoService _gameDtoService = gameDtoService ?? throw new ArgumentNullException(nameof(gameDtoService));
-    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ?? throw new ArgumentNullException(nameof(categoryDtoService));
-    public async Task<IActionResult> Index()
-    {
-        return View(await _gameDtoService.GetProductsDtoAsync());
-    }
+    private readonly IGameDtoService _gameDtoService = gameDtoService ??
+        throw new ArgumentNullException(nameof(gameDtoService));
+    private readonly ICategoryDtoService _categoryDtoService = categoryDtoService ??
+        throw new ArgumentNullException(nameof(categoryDtoService));
+
+    public async Task<IActionResult> Index() =>
+        View(await _gameDtoService.GetProductsDtoAsync());
 
     public async Task<IActionResult> Create()
     {
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName");
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName");
+
         return View();
     }
 
@@ -34,23 +39,30 @@ public class AdminGameController(IGameDtoService gameDtoService, ICategoryDtoSer
             await _gameDtoService.AddAsync(gameDto);
             return RedirectToAction("Index");
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", gameDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(),
+            "Id", "CategoryName",
+            gameDto.CategoryId);
+
         return View(gameDto);
     }
 
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null || await _gameDtoService.GetProductsDtoAsync() == null)
-        {
             return NotFound();
-        }
 
         var gameDto = await _gameDtoService.GetByIdAsync(id);
-        if (gameDto == null)
-        {
+        if (gameDto == null) 
             return NotFound();
-        }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", gameDto.CategoryId);
+
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName", 
+            gameDto.CategoryId);
+
         return View(gameDto);
     }
     private async Task<bool> GameDtoExists(int id)
@@ -64,9 +76,7 @@ public class AdminGameController(IGameDtoService gameDtoService, ICategoryDtoSer
     public async Task<IActionResult> Edit(int id, GameDto gameDto)
     {
         if (id != gameDto.Id)
-        {
             return NotFound();
-        }
 
         if (ModelState.IsValid)
         {
@@ -76,11 +86,17 @@ public class AdminGameController(IGameDtoService gameDtoService, ICategoryDtoSer
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await GameDtoExists(gameDto.Id)) return NotFound();
+                if (!await GameDtoExists(gameDto.Id)) 
+                    return NotFound();
             }
             return RedirectToAction(nameof(Index));
         }
-        ViewData["CategoryId"] = new SelectList(await _categoryDtoService.GetCategoriesDtoAsync(), "Id", "CategoryName", gameDto.CategoryId);
+        ViewData["CategoryId"] = new SelectList(
+            await _categoryDtoService
+            .GetCategoriesDtoAsync(), 
+            "Id", "CategoryName", 
+            gameDto.CategoryId);
+
         return View(gameDto);
     }
     public async Task<IActionResult> Details(int? id)

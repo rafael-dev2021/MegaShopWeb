@@ -8,26 +8,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers;
 
+[Authorize]
 public class OrderController(IOrderDtoService orderDtoService, IShoppingCartItemDtoService shoppingCart) : Controller
 {
     private readonly IOrderDtoService _orderDtoService = orderDtoService;
     private readonly IShoppingCartItemDtoService _shoppingCart = shoppingCart;
 
-    public async Task<IActionResult> Index()
-    {
-        var orders = await _orderDtoService.GetOrdersDtoAsync();
-        return View(orders);
-    } 
-
-
-    [Authorize]
     [HttpGet]
-    public IActionResult Checkout()
-    {
-        return View();
-    }
+    public async Task<IActionResult> Index() =>
+        View(await _orderDtoService.GetOrdersDtoAsync());
 
-    [Authorize]
+
+    [HttpGet]
+    public IActionResult Checkout() => View();
+
+
     [HttpPost]
     public async Task<IActionResult> Checkout(OrderDto orderDto, EPaymentMethod selectedPaymentMethod)
     {

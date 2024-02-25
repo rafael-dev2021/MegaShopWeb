@@ -6,7 +6,7 @@
         list-style-type: none;
     }
 
-    .css-171cbs {
+    .css-aavos {
         border-radius: 7px;
         border: none;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -15,7 +15,7 @@
         background-color: #fff;
     }
 
-        .css-171cbs::before {
+        .css-aavos::before {
             content: "";
             border-radius: 10px 10px 0px 0px;
             position: absolute;
@@ -25,7 +25,7 @@
             background-color: #343a40;
         }
 
-        .css-171cbs::after {
+        .css-aavos::after {
             content: "";
             border-radius: 0px 0px 10px 10px;
             position: absolute;
@@ -35,35 +35,35 @@
             background-color: #343a40;
         }
 
-        .css-171cbs::before {
+        .css-aavos::before {
             top: -1px;
         }
 
-        .css-171cbs::after {
+        .css-aavos::after {
             bottom: -1px;
         }
 
 
-    .css-99txtG {
+    .css-aavos_ctxt {
         color: #808080 !important;
     }
 
 
-    .css-98cstL {
+    .css-aavos-ul {
         list-style-type: none;
         padding: 0;
         display: inline-block;
         font-size: 1.1rem;
     }
 
-    .css-98cstLI {
+    .css-aavos-ul-li {
         display: inline-block;
         margin-right: 20px;
         position: relative;
     }
 
 
-    .css-201crc {
+    .css-aavos-onec {
         width: 20px;
         height: 20px;
         background-color: dodgerblue;
@@ -71,7 +71,7 @@
         display: inline-block;
     }
 
-    .css-202crc {
+    .css-aavos-twoc {
         width: 20px;
         height: 20px;
         background-color: lightseagreen;
@@ -79,7 +79,7 @@
         display: inline-block;
     }
 
-    .css-203crc {
+    .css-aavos-threec {
         width: 20px;
         height: 20px;
         background-color: orange;
@@ -87,7 +87,7 @@
         display: inline-block;
     }
 
-    .css-204crc {
+    .css-aavos-fourc {
         width: 20px;
         height: 20px;
         background-color: red;
@@ -119,24 +119,24 @@
     <section class="mt-4">
         <div class="row">
             <div class="col-12 col-md-6">
-                <div class="card css-171cbs">
+                <div class="card css-aavos">
                     <div class="card-body">
-                        <h3 class="card-title mt-2 css-99txtG">Total sales</h3>
-                        <h2 class="card-text mt-4" style="font-weight:600;font-size:2rem;color:dodgerblue">@Model.TotalOrderValue.ToString("C")</h2>
+                        <h3 class="card-title mt-2 css-aavos_ctxt">Total sales</h3>
+                        <h2 class="card-text mt-4 text-primary font-weight-bold fs-2">@Model.TotalOrderAmount.ToString("C")</h2>
                         <hr />
                         <div class="row">
                             <div class="col-md-6 mt-4">
-                                <h5 class="css-99txtG">Quantity of sales: <span style="color:dodgerblue">@Model.TotalOrder</span></h5>
+                                <h5 class="css-aavos_ctxt">Quantity of sales: <span class=" text-primary">@Model.TotalCountOrder</span></h5>
                             </div>
                             <div class="col-md-6 mt-4">
-                                <h5 class="css-99txtG">Total average: <span style="color:orange">@Model.Average.ToString("C")</span></h5>
+                                <h5 class="css-aavos_ctxt ">Total average: <span class="text-warning">@Model.Average.ToString("C")</span></h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <div class="card css-171cbs">
+                <div class="card css-aavos">
                     <div class="card-body">
                         <canvas id="myChart" width="100" height="50"></canvas>
                     </div>
@@ -147,23 +147,23 @@
     <section class="mt-4">
         <div class="card">
             <div class="card-header">
-                <h4 class="css-99txtG"><i class="bi bi-bar-chart-line"></i> Sales</h4>
+                <h4 class="css-aavos_ctxt"><i class="bi bi-bar-chart-line"></i> Sales</h4>
             </div>
             <div class="card-body">
-                <ul class="css-98cstL css-99txtG my-2">
-                    <li class="css-98cstLI mx-4"></li>
-                    <li class="css-201crc"></li>
-                    <li class="css-98cstLI">In processing</li>
-                    <li class="css-202crc"></li>
-                    <li class="css-98cstLI">Approved payment</li>
-                    <li class="css-203crc"></li>
-                    <li class="css-98cstLI mx-0">Awaiting payment</li>
-                    <li class="css-98cstLI mx-0"> | In analysis | </li>
-                    <li class="css-98cstLI">Chargeback Pending</li>
-                    <li class="css-204crc"></li>
-                    <li class="css-98cstLI mx-0">Cancelled</li>
-                    <li class="css-98cstLI mx-0"> | Chargeback | </li>
-                    <li class="css-98cstLI">Returned</li>
+                <ul class="css-aavos-ul css-aavos_ctxt my-2">
+                    <li class="css-aavos-ul-li mx-4"></li>
+                    <li class="css-aavos-onec"></li>
+                    <li class="css-aavos-ul-li">In processing</li>
+                    <li class="css-aavos-twoc"></li>
+                    <li class="css-aavos-ul-li">Approved payment</li>
+                    <li class="css-aavos-threec"></li>
+                    <li class="css-aavos-ul-li mx-0">Awaiting payment</li>
+                    <li class="css-aavos-ul-li mx-0"> | In analysis | </li>
+                    <li class="css-aavos-ul-li">Chargeback Pending</li>
+                    <li class="css-aavos-fourc"></li>
+                    <li class="css-aavos-ul-li mx-0">Cancelled</li>
+                    <li class="css-aavos-ul-li mx-0"> | Chargeback | </li>
+                    <li class="css-aavos-ul-li">Returned</li>
                 </ul>
                 <div class="my-3">
                     <div class="">
@@ -190,27 +190,27 @@
                                            .PaymentMethod
                                            .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Processing")
                                             {
-                                                <td><span class="css-201crc"></span></td>
+                                                <td><span class="css-aavos-onec"></span></td>
                                             }
                                             else if (
                                             item
                                             .PaymentMethod
                                             .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Approved")
                                             {
-                                                <td><span class="css-202crc"></span></td>
+                                                <td><span class="css-aavos-twoc"></span></td>
                                             }
                                             else if (
                                             item
                                             .PaymentMethod
                                             .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Pending")
                                             {
-                                                <td><span class="css-203crc"></span></td>
+                                                <td><span class="css-aavos-threec"></span></td>
                                             }
                                             else if (
                                             item.PaymentMethod
                                             .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Canceled")
                                             {
-                                                <td><span class="css-204crc"></span></td>
+                                                <td><span class="css-aavos-fourc"></span></td>
                                             }
                                             <td>@item.UserDelivery.FirstName</td>
                                             <td>@item.PaymentMethod.PaymentMethodObjectValue.PaymentMethod</td>
@@ -224,7 +224,7 @@
                                 else
                                 {
                                     <tr>
-                                        <td colspan="7"><h5 class="text-center css-99txtG">No sales found.</h5></td>
+                                        <td colspan="7"><h5 class="text-center css-aavos_ctxt">No sales found.</h5></td>
                                     </tr>
                                 }
                             </tbody>

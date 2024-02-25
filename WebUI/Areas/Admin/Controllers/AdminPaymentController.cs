@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Areas.Admin.Controllers;
+
 [Area("Admin")]
 [Authorize(Roles = "Admin")]
 public class AdminPaymentController(IPaymentDtoService paymentDtoService) : Controller
 {
-    private readonly IPaymentDtoService _paymentDtoService = paymentDtoService;
+    private readonly IPaymentDtoService _paymentDtoService = paymentDtoService ??
+        throw new ArgumentNullException(nameof(paymentDtoService));
 
     public async Task<IActionResult> IndexPayments() =>
         View(await _paymentDtoService.ListPaymentsDtoAsync());

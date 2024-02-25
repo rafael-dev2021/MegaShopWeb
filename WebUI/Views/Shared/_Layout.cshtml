@@ -3,12 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mega shop</title>
+    <title>@ViewData["Title"] - Mega Shop</title>
+
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Find the best products and deals at Mega Shop. Fashion, electronics, and much more for you!" />
+    <meta name="keywords" content="fashion, electronics, deals, online shopping, Mega Shop" />
+
+    <!-- Links para Estilos e Ícones -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estruturação Semântica -->
+    <link rel="canonical" href="https://github.com/rafael-dev2021" />
+
+    <!-- Robôs e Indexação -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph para Redes Sociais -->
+    <meta property="og:title" content="@ViewData["Title"] - Mega Shop" />
+    <meta property="og:description" content="Check out our new collection of printed T-shirts, available in different styles and colors. Enjoy!" />
+    <meta property="og:image" content="https://github.com/rafael-dev2021" />
+    <meta property="og:url" content="https://github.com/rafael-dev2021" />
 </head>
 <body>
     <header>
@@ -51,7 +69,7 @@
                 <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
                     @await Component.InvokeAsync("CategoryMenu")
                     @* <a class="btn btn-outline-secondary" asp-area="Admin" asp-controller="Admin" asp-action="Index">
-                        Admin
+                    Admin
                     </a> *@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">

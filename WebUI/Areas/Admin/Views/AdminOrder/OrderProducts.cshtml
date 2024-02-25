@@ -40,7 +40,7 @@
                                         <img src="@Url.Content(item.Product.Images[0])" class="img-fluid" height="100" width="100" alt="Product Image">
                                     </td>
                                     <td align="right">
-                                        <h5>@string.Format("{0:C2}", item.Product.ProductPriceObjectValue.Price)</h5>
+                                        <h5>@item.Product.ProductPriceObjectValue.Price.ToString("C"))</h5>
                                     </td>
                                     <td align="right">
                                         <h5>(@Html.DisplayFor(modelItem => item.Quantity))</h5>
@@ -53,7 +53,7 @@
                 <div class="d-flex justify-content-end mt-5">
                     <div>
                         <div class="mx-3">
-                            <h5>Total Order: @string.Format("{0:C2}", Model.TotalOrder)</h5>
+                            <h5>Total Order: @Model.TotalOrderAmount.ToString("C")</h5>
                             <hr />
                         </div>
                         <a asp-action="Index" class="btn btn-outline-info mx-3 my-2"><i class="fas fa-arrow-left me-2"></i> Back to List</a>

@@ -10,6 +10,6 @@ public class TotalSalesViewModel
     public IEnumerable<OrderDetailDto> OrderDetailDtos { get; set; }
     public IEnumerable<PaymentDto> PaymentDtos { get; set; }
     public decimal Average { get; set; }
-    public decimal TotalOrderValue { get; set; }
-    public int TotalOrder { get; set; } = 0;
+    public decimal TotalOrderAmount { get; set; }
+    public int TotalCountOrder { get; set; } = 0;
 }

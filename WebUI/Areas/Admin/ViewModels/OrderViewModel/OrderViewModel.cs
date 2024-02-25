@@ -6,5 +6,5 @@ public class OrderViewModel
 {
     public IEnumerable<OrderDto> OrdersDto { get; set; }
     public OrderDto OrderDto { get; set; } = new OrderDto();
-    public int TotalOrders { get; set; } = 0;
+    public int TotalCountOrder { get; set; } = 0;
 }
