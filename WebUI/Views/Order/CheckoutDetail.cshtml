@@ -1,2 +1,65 @@
 ﻿@model Application.Dtos.OrderDtos.OrderDto
-<h1>Ok</h1>
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h2>Order Details - Order # @(Model.Id)</h2>
+
+<div>
+    <h4>Order Summary</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Total Order:</dt>
+        <dd class="col-sm-10">@Model.TotalOrder.ToString("C")</dd>
+
+        <dt class="col-sm-2">Total Items:</dt>
+        <dd class="col-sm-10">@Model.TotalItemsOrder</dd>
+
+        <dt class="col-sm-2">Confirmed Order:</dt>
+        <dd class="col-sm-10">@Model.ConfirmedOrder</dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Delivery Information</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Delivery Address:</dt>
+        <dd class="col-sm-10">@Model.DeliveryAddress.Address)</dd>
+
+        <dt class="col-sm-2">Delivery User:</dt>
+        <dd class="col-sm-10">@Model.UserDelivery.FirstName)</dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Payment Information</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Payment Method:</dt>
+        <dd class="col-sm-10">@Model.PaymentMethod.PaymentMethodObjectValue.PaymentMethod)</dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Order Details</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var orderDetail in Model.OrderDetails)
+            {
+                <tr>
+                    <td>@orderDetail.Product.Name</td>
+                    <td>@orderDetail.Quantity</td>
+                    <td>@orderDetail.Price.ToString("C")</td>
+                    <td>@(orderDetail.Quantity * orderDetail.Price).ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

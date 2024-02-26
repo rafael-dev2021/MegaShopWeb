@@ -11,7 +11,7 @@ public class OrderDto
     public DateTime ConfirmedOrder { get; set; }
     public DateTime DispatchedOrder { get; set; }
     public DateTime RequestReceived { get; set; }
-    public List<OrderDetailDto> OrderDetails { get; } = [];
+    public List<OrderDetailDto> OrderDetails { get; } = new List<OrderDetailDto>();
     public DeliveryAddressDto DeliveryAddress { get; set; } = new DeliveryAddressDto();
     public UserDeliveryDto UserDelivery { get; set; } = new UserDeliveryDto();
     public PaymentMethodDto PaymentMethod { get; set; }

@@ -6,25 +6,14 @@ using Application.Services.Entities.OrderDtoServices.Interfaces;
 using Domain.Entities.Payments.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Intrinsics.X86;
 
 namespace WebUI.Controllers
 {
     [Authorize]
-    public class OrderController : Controller
+    public class OrderController(IOrderDtoService orderDtoService, IShoppingCartItemDtoService shoppingCart) : Controller
     {
-        private readonly IOrderDtoService _orderDtoService;
-        private readonly IShoppingCartItemDtoService _shoppingCart;
-
-        public OrderController(IOrderDtoService orderDtoService, IShoppingCartItemDtoService shoppingCart)
-        {
-            _orderDtoService = orderDtoService;
-            _shoppingCart = shoppingCart;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Index() =>
-            View(await _orderDtoService.GetOrdersDtoAsync());
+        private readonly IOrderDtoService _orderDtoService = orderDtoService;
+        private readonly IShoppingCartItemDtoService _shoppingCart = shoppingCart;
 
         [HttpGet]
         public IActionResult Checkout() => View();

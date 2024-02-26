@@ -8,25 +8,7 @@
         height: 50px;
     }
 
-    .form-group input[type="submit"],
-    .form-group a.btn {
-        height: 60px;
-        line-height: 60px;
-    }
-
-    .row {
-        margin-bottom: 10px;
-    }
-
-    .text-danger {
-        display: block;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    .css-btn-loading-finish button[type="submit"] {
+    .css-voc button[type="submit"] {
         width: 100%;
         height: 40px;
         background-color: blue;
@@ -36,15 +18,13 @@
         margin-bottom: 10px;
     }
 
-    .css-btn-loading-finish .form-group {
+    .css-voc .form-group {
         margin-bottom: 15px;
     }
-
 </style>
 
 <form asp-action="Checkout" method="post" role="form">
     @Html.AntiForgeryToken()
-    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="text-center mb-4 container" style="background-color:#B12704 !important;padding:10px">
         <span style="font-size:18px">
             <a asp-controller="ShoppingCart" asp-action="Index" style="color:white">
@@ -145,15 +125,15 @@
                     <input asp-for="DeliveryAddress.Complement" placeholder="Apartment, Suite, Unit, Building, Floor, etc.(Optional)" class="form-control" />
                     <span asp-validation-for="DeliveryAddress.Complement" class="text-danger"></span>
                 </div>
-                <div style="justify-content:right; display:flex">
+                <div class="justify-content-lg-end d-flex">
                     <p>
                         Upon completion, you agree to
-                        <a asp-controller="" asp-action="Privacy">Privay Policy</a>
+                        <a asp-controller="Home" asp-action="Privacy">Privay Policy</a>
                         and
-                        <a asp-controller="" asp-action="Cookies">Cookies</a>
+                        <a asp-controller="" asp-action="#">Cookies</a>
                     </p>
                 </div>
-                <div class="row css-btn-loading-finish">
+                <div class="row css-voc">
                     <div class="form-group col-md-3">
                         <button type="submit" value="Finish">Finish order</button>
                     </div>
@@ -180,7 +160,7 @@
                             <span asp-validation-for="PaymentMethod.PaymentMethodObjectValue.EPaymentMethod" class="text-danger"></span>
                         </div>
 
-                        <div id="creditCardFields" style="display:none;">
+                        <div id="creditCardFields"  style="display:none;">
                             <div class="mb-3">
                                 <input asp-for="PaymentMethod.CreditCard.CreditCardNumber" id="CardNumber" placeholder="Card number" class="form-control" />
                                 <span id="CardBrand" class="text-muted"></span>
@@ -273,34 +253,29 @@
             }
         }
 
-        // Adicione um ouvinte de evento para chamar a função quando o método de pagamento é alterado
         var paymentMethodDropdown = document.getElementById("PaymentMethod");
         paymentMethodDropdown.addEventListener("change", handlePaymentMethodChange);
 
-        // Chame a função inicialmente para garantir que os campos estejam corretamente configurados ao carregar a página
         handlePaymentMethodChange();
 
-        // Adiciona o divisor '/' automaticamente na data de expiração
         const expirationDateInput = document.getElementById('ExpirationDate');
         expirationDateInput.addEventListener('input', (event) => {
             const input = event.target;
             let value = input.value;
-            value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            value = value.replace(/\D/g, '');
             if (value.length > 2) {
                 value = value.slice(0, 2) + '/' + value.slice(2);
             }
             input.value = value;
         });
 
-        // Identifica a bandeira do cartão de acordo com o número digitado
         const cardNumberInput = document.getElementById('CardNumber');
         const cardBrandSpan = document.getElementById('CardBrand');
         cardNumberInput.addEventListener('input', (event) => {
             const input = event.target;
             let value = input.value;
-            value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            value = value.replace(/\D/g, ''); 
 
-            // Array com expressões regulares para identificar a bandeira do cartão
             const cardBrands = [
                 { brand: 'Visa', pattern: /^4/ },
                 { brand: 'Mastercard', pattern: /^5[1-5]/ },
@@ -337,7 +312,6 @@
                 });
         }
 
-        // Função para validar o CEP
         function validateZipCode() {
             const zipcode = document.getElementById("zipCode").value;
             const zipcodePattern = /^[0-9]{8}$/;
@@ -350,46 +324,37 @@
             }
         }
 
-        // Adicionar um ouvinte de evento para o campo de CEP
         document.getElementById("zipCode").addEventListener("input", validateZipCode);
 
-        // Função para formatar o SSN
         function formatSSN(ssn) {
-            ssn = ssn.replace(/\D/g, ''); // Remove caracteres não numéricos
+            ssn = ssn.replace(/\D/g, ''); 
             ssn = ssn.replace(/(\d{3})(\d)/, '$1-$2');
             ssn = ssn.replace(/(\d{2})(\d{4})$/, '$1-$2');
             return ssn;
         }
 
-        // Função para lidar com a entrada de SSN
         function handleSSNInput() {
             const ssnInput = document.getElementById("ssn");
             ssnInput.value = formatSSN(ssnInput.value);
         }
 
-        // Adicionar um ouvinte de evento para o campo de SSN
         document.getElementById("ssn").addEventListener("input", handleSSNInput);
 
 
-        // Função para formatar o número de telefone
         function formatPhoneNumber(phoneNumber) {
-            phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove caracteres não numéricos
-            phoneNumber = phoneNumber.replace(/^(\d{3})(\d)/, '$1-$2'); // Adiciona traço após os três primeiros dígitos
-            phoneNumber = phoneNumber.replace(/(\d{3})(\d)/, '$1-$2'); // Adiciona traço após os três próximos dígitos
-            phoneNumber = phoneNumber.replace(/(\d{4})(\d)/, '$1$2'); // Mantém os quatro últimos dígitos
+            phoneNumber = phoneNumber.replace(/\D/g, '');
+            phoneNumber = phoneNumber.replace(/^(\d{3})(\d)/, '$1-$2');
+            phoneNumber = phoneNumber.replace(/(\d{3})(\d)/, '$1-$2'); 
+            phoneNumber = phoneNumber.replace(/(\d{4})(\d)/, '$1$2'); 
             return phoneNumber;
         }
 
-        // Função para lidar com a entrada de número de telefone
         function handlePhoneNumberInput() {
             const phoneNumberInput = document.getElementById("phoneNumber");
             phoneNumberInput.value = formatPhoneNumber(phoneNumberInput.value);
         }
 
-        // Adicionar um ouvinte de evento para o campo de número de telefone
         document.getElementById("phoneNumber").addEventListener("input", handlePhoneNumberInput);
-
-
     </script>
 }
 

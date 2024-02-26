@@ -1,5 +1,4 @@
 ﻿using Application.Dtos.PaymentsDto;
-using Domain.Entities.Orders;
 
 namespace Application.Dtos.OrderDtos;
 
