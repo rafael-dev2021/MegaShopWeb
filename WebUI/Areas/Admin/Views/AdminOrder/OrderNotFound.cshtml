@@ -1,0 +1,32 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "404 Not Found";
+}
+
+<div class="col-lg-12" style="line-height:35px">
+    <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-12 mt-5">
+            <div class="card border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h2>
+                        <i class="fas fa-exclamation-triangle"></i> Page Not Found - Order Not Located
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">
+                        The order you are looking for (ID: <span>@Model</span>) was not found in our system.
+                    </h2>
+                    <p class="card-text">
+                        It seems the requested order is not available. Please double-check the order ID or try searching again.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Index" asp-controller="AdminOrder" class="btn btn-success">
+                        <i class="fas fa-list"></i> Click here to return to the complete list of orders.
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

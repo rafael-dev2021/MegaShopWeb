@@ -5,35 +5,34 @@ using Domain.Entities.Products.Technology.Smartphones;
 using MediatR;
 using System.Net;
 
-namespace Application.CQRS.Handlers.Products.Technology.Smartphones
+namespace Application.CQRS.Handlers.Products.Technology.Smartphones;
+
+public class CreateGameHandler : IRequestHandler<CreateSmartphoneCommand, Smartphone>
 {
-    public class CreateGameHandler : IRequestHandler<CreateSmartphoneCommand, Smartphone>
+    private readonly ISmartphoneRepository _smartphoneRepository;
+
+    public CreateGameHandler(ISmartphoneRepository smartphoneRepository)
     {
-        private readonly ISmartphoneRepository _smartphoneRepository;
+        _smartphoneRepository = smartphoneRepository ?? throw new ArgumentNullException(nameof(smartphoneRepository));
+    }
 
-        public CreateGameHandler(ISmartphoneRepository smartphoneRepository)
-        {
-            _smartphoneRepository = smartphoneRepository ?? throw new ArgumentNullException(nameof(smartphoneRepository));
-        }
+    public async Task<Smartphone> Handle(CreateSmartphoneCommand request, CancellationToken cancellationToken)
+    {
+        var product = new Smartphone(request.Name, request.Description, request.Images, request.Stock, request.ProductDataObjectValue,
+            request.ProductFlagsObjectValue, request.ProductPriceObjectValue,
+            request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.SmartphoneFeatureObjectValue,
+            request.SmartphoneDisplayObjectValue, request.SmartphoneMemoryObjectValue, request.SmartphoneCameraObjectValue,
+            request.SmartphonePlatformObjectValue, request.SmartphoneBatteryObjectValue,
+            request.SmartphoneDimensionsObjectValue, request.CategoryId)
 
-        public async Task<Smartphone> Handle(CreateSmartphoneCommand request, CancellationToken cancellationToken)
-        {
-            var product = new Smartphone(request.Name, request.Description, request.Stock, request.ProductDataObjectValue,
-                request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
-                request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.SmartphoneFeatureObjectValue,
-                request.SmartphoneDisplayObjectValue, request.SmartphoneMemoryObjectValue, request.SmartphoneCameraObjectValue,
-                request.SmartphonePlatformObjectValue, request.SmartphoneBatteryObjectValue,
-                request.SmartphoneDimensionsObjectValue, request.CategoryId)
+            ?? throw new RequestException(new RequestError
+            {
+                Message = "Something went wrong",
+                Severity = "error",
+                StatusCode = HttpStatusCode.NotFound
+            });
 
-                ?? throw new RequestException(new RequestError
-                {
-                    Message = "Something went wrong",
-                    Severity = "error",
-                    StatusCode = HttpStatusCode.NotFound
-                });
-
-            product.CategoryId = request.CategoryId;
-            return await _smartphoneRepository.CreateAsync(product);
-        }
+        product.SetCategoryId(request.CategoryId);
+        return await _smartphoneRepository.CreateAsync(product);
     }
 }

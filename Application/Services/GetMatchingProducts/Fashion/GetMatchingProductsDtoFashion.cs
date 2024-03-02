@@ -2,29 +2,27 @@
 using Application.Dtos.ProductsDto.Fashion.Shoes;
 using Application.Dtos.ProductsDto.Fashion.Tshirts;
 
-namespace Application.Services.GetMatchingProducts.Fashion
+namespace Application.Services.GetMatchingProducts.Fashion;
+
+public class GetMatchingProductsDtoFashion
 {
-    public class GetMatchingProductsDtoFashion
+    public ProductDto ProductDto { get; set; }
+    public IEnumerable<TshirtDto> TshirtsDto { get; set; }
+    public IEnumerable<ShoesDto> ShoesDto { get; set; }
+
+    public IEnumerable<T> GetMatchingProducts<T>(IEnumerable<T> productsDto) where T : ProductDto
     {
-        public ProductDto ProductDto { get; set; }
-        public IEnumerable<TshirtDto> TshirtsDto { get; set; }
-        public IEnumerable<ShoesDto> ShoesDtos { get; set; }
-
-        public IEnumerable<TshirtDto> GetMatchingTshirt()
-        {
-            var matchingSmartTvs = TshirtsDto.Where(s =>
-                s.ProductSpecificationsObjectValue.ProductModel == ProductDto.ProductSpecificationsObjectValue.ProductModel &&
-                s.Category.CategoryName == ProductDto.Category.CategoryName);
-
-            return matchingSmartTvs;
-        }
-        public IEnumerable<ShoesDto> GetMatchingShoes()
-        {
-            var matchingSmartTvs = ShoesDtos.Where(s =>
-                s.ProductSpecificationsObjectValue.ProductModel == ProductDto.ProductSpecificationsObjectValue.ProductModel &&
-                s.Category.CategoryName == ProductDto.Category.CategoryName);
-
-            return matchingSmartTvs;
-        }
+        return productsDto
+            .Where(x =>
+            x.ProductSpecificationsObjectValue.ProductModel == ProductDto.ProductSpecificationsObjectValue.ProductModel &&
+            x.Category.CategoryName == ProductDto.Category.CategoryName);
+    }
+    public IEnumerable<TshirtDto> GetMatchingTshirtDto()
+    {
+        return GetMatchingProducts(TshirtsDto);
+    }
+    public IEnumerable<ShoesDto> GetMatchingShoesDto()
+    {
+        return GetMatchingProducts(ShoesDto);
     }
 }

@@ -1,5 +1,4 @@
-﻿using Domain.Entities.Payments.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebUI.ViewModels.IdentityViewModel
 {
@@ -29,17 +28,7 @@ namespace WebUI.ViewModels.IdentityViewModel
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }
 
-        [Required]
-        [Display(Name = "Default Payment Method")]
-        public EPaymentMethod DefaultPaymentMethod { get; set; }
-        public EPaymentMethod payPal = EPaymentMethod.PayPal;
-        public EPaymentMethod creditCart = EPaymentMethod.CreditCard;
-        public EPaymentMethod debitCard = EPaymentMethod.DebitCard;
-        public EPaymentMethod bankTransfer = EPaymentMethod.BankTransfer;
-        public EPaymentMethod money = EPaymentMethod.CashOnDelivery;
-
         [Display(Name = "Subscribe to Newsletter")]
         public bool IsSubscribedToNewsletter { get; set; }
-
     }
 }

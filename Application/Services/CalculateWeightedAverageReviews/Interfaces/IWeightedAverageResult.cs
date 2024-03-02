@@ -1,10 +1,9 @@
-﻿using Application.Services.CalculateWeightedAverageReviews.ValueObjects;
-using Domain.Entities.Reviews;
+﻿using Application.Dtos.Reviews;
+using Application.Services.CalculateWeightedAverageReviews.ValueObjects;
 
-namespace Application.Services.CalculateWeightedAverageReviews.Interfaces
+namespace Application.Services.CalculateWeightedAverageReviews.Interfaces;
+
+public interface IWeightedAverageResult
 {
-    public interface IWeightedAverageResult
-    {
-        public WeightedAverageResultOV CalculateWeightedAverage(IEnumerable<Review> reviews);
-    }
+    public WeightedAverageResultOV CalculateWeightedAverage(IEnumerable<ReviewDto> reviews);
 }

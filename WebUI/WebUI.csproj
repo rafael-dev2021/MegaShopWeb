@@ -9,53 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Create.cshtml" />
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
-    <Content Remove="Areas\Admin\Views\SmartphoneAdmin\Index.cshtml" />
-    <Content Remove="wwwroot\css\_GetProductList.css" />
-    <Content Remove="wwwroot\js\_GetProductList.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Create.cshtml" />
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Delete.cshtml" />
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\SmartphoneAdmin\Index.cshtml" />
-    <None Include="Views\Account\AccessDenied.cshtml" />
-    <None Include="Views\Account\ChangePassword.cshtml" />
-    <None Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <None Include="Views\Account\EditProfile.cshtml" />
-    <None Include="Views\Account\EditProfileSuccess.cshtml" />
-    <None Include="Views\Account\Login.cshtml" />
-    <None Include="Views\Account\PasswordResetSuccess.cshtml" />
-    <None Include="Views\Account\Register.cshtml" />
-    <None Include="Views\Account\ResetPassword.cshtml" />
-    <None Include="Views\Shared\CategoriesPartial\_CategoriesPartial.cshtml" />
-    <None Include="Views\Smartphone\DetailsPartial.cshtml" />
-    <None Include="Views\Smartphone\FeaturesPartial.cshtml" />
-    <None Include="Views\Smartphone\Index.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Infra-Ioc\Infra-Ioc.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Admin\" />
-    <Folder Include="wwwroot\images\img_games\" />
   </ItemGroup>
 
 </Project>

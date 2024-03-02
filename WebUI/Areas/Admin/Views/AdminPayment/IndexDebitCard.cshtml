@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Application.Dtos.PaymentsDto.DebitCardDto>
+<style>
+    div.dataTables_wrapper div.dataTables_length {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    #css-aavpd_wrapper .dataTables_info {
+        margin-top: 2%;
+    }
+
+    #css-aavpd_wrapper .dataTables_paginate {
+        margin-top: 2%;
+    }
+
+    #css-aavpd {
+        line-height: 40px;
+    }
+</style>
+@{
+    ViewData["Title"] = "Debit Card";
+}
+<div class="col-md-12 col-lg-12">
+    <h2 class="mt-4">Debit Card Information</h2>
+
+    <table class="table table-striped table-hover mt-4" id="css-aavpd">
+        <thead class="bg-dark">
+            <tr class="text-white text-lg-center">
+                <th>Id</th>
+                <th>Debit Card Number</th>
+                <th>Card Holder Name</th>
+                <th>Expiration Date</th>
+                <th>CVV</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-lg-center">
+                    <td>@item?.Id.ToString()</td>
+                    <td>@item?.CardNumber</td>
+                    <td>@item?.CardHolderName</td>
+                    <td>@item?.CardExpirationDate</td>
+                    <td>@item?.CardCVV</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#css-aavpd').DataTable({
+                "searching": false,
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                "pageLength": 10,
+                "language": {
+                    "info": "Showing  _START_ to _END_ of _TOTAL_ entries"
+                }
+            });
+        });
+    </script>
+}

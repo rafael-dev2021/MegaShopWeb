@@ -1,68 +1,64 @@
 ﻿using Application.Dtos.Reviews;
-using Application.Interfaces.Entities;
+using Application.Services.Entities.Interfaces;
 using AutoMapper;
 using Domain.Entities.Reviews;
 using Domain.Interfaces.Reviews;
 
-namespace Application.Services.Entities
+namespace Application.Services.Entities;
+
+public class ReviewDtoService(IReviewRepository repository, IMapper mapper) : IReviewDtoService
 {
-    public class ReviewDtoService(IReviewRepository repository, IMapper mapper) : IReviewDtoService
+    private readonly IReviewRepository _repository = repository;
+    private readonly IMapper _mapper = mapper;
+
+    public async Task<IEnumerable<ReviewDto>> GetReviewsDtoAsync()
     {
-        private readonly IReviewRepository _repository = repository;
-        private readonly IMapper _mapper = mapper;
-
-        public async Task<IEnumerable<ReviewDto>> GetReviewsDtoAsync()
+        var reviewsDto = await _repository.ListItemsAsync();
+        if (reviewsDto == null || !reviewsDto.Any())
         {
-            var reviewsDto = await _repository.GetReviewsAsync();
-            if (reviewsDto == null || !reviewsDto.Any())
-            {
-                return new List<ReviewDto>();
-            }
-            return _mapper.Map<IEnumerable<ReviewDto>>(reviewsDto);
+            return new List<ReviewDto>();
         }
+        return _mapper.Map<IEnumerable<ReviewDto>>(reviewsDto);
+    }
 
-        public async Task<ReviewDto> GetByIdAsync(int? id)
-        {
-            if (id == null)
-                throw new ArgumentNullException(nameof(id), "Review ID cannot be null.");
+    public async Task<ReviewDto> GetByIdAsync(int? id)
+    {
+        if (id == null)
+            throw new ArgumentNullException(nameof(id), 
+                "Review ID cannot be null.");
 
-            var getReviewId = await _repository.GetByIdAsync(id);
+        var getReviewId = await _repository.GetByIdAsync(id) ?? 
+            throw new Exception($"Review with ID {id} not found.");
+        return _mapper.Map<ReviewDto>(getReviewId);
+    }
 
-            if (getReviewId == null)
-                throw new Exception($"Review with ID {id} not found.");
+    public async Task AddReview(ReviewDto reviewDto)
+    {
+        if (reviewDto == null)
+            throw new ArgumentNullException(nameof(reviewDto), 
+                "ReviewDto cannot be null.");
 
-            return _mapper.Map<ReviewDto>(getReviewId);
-        }
+        var addReview = _mapper.Map<Review>(reviewDto);
+        await _repository.CreateAsync(addReview);
+    }
+    public async Task UpdateReview(ReviewDto reviewDto)
+    {
+        if (reviewDto == null)
+            throw new ArgumentNullException(nameof(reviewDto),
+                "ReviewDto cannot be null.");
 
-        public async Task AddReview(ReviewDto reviewDto)
-        {
-            if (reviewDto == null)
-                throw new ArgumentNullException(nameof(reviewDto), "ReviewDto cannot be null.");
+        var updateReview = _mapper.Map<Review>(reviewDto);
+        await _repository.UpdateAsync(updateReview);
+    }
 
-            var addReview = _mapper.Map<Review>(reviewDto);
-            await _repository.CreateReview(addReview);
-        }
+    public async Task DeleteReview(int? id)
+    {
+        if (id == null)
+            throw new ArgumentNullException(nameof(id), 
+                "Review ID cannot be null.");
 
-        public async Task DeleteReview(int? id)
-        {
-            if (id == null)
-                throw new ArgumentNullException(nameof(id), "Review ID cannot be null.");
-
-            var deleteReview = await _repository.GetByIdAsync(id);
-
-            if (deleteReview == null)
-                throw new Exception($"Review with ID {id} not found.");
-
-            await _repository.RemoveReview(deleteReview);
-        }
-
-        public async Task UpdateReview(ReviewDto reviewDto)
-        {
-            if (reviewDto == null)
-                throw new ArgumentNullException(nameof(reviewDto), "ReviewDto cannot be null.");
-
-            var updateReview = _mapper.Map<Review>(reviewDto);
-            await _repository.UpdateReview(updateReview);
-        }
+        var deleteReview = await _repository.GetByIdAsync(id) ??
+            throw new Exception($"Review with ID {id} not found.");
+        await _repository.DeleteAsync(deleteReview);
     }
 }

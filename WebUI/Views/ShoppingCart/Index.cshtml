@@ -1,0 +1,105 @@
+﻿@using WebUI.ViewModels.Cart
+@model ShoppingCartViewModel
+
+<link rel="stylesheet" href="~/css/cardCart.css" />
+
+
+<div class="container cardCart">
+
+    <div class="text-center mb-4" style="background-color:#B12704 !important;padding:10px">
+        <span style="font-size:18px">
+            <a asp-controller="ShoppingCart" asp-action="Index" style="color:deepskyblue">
+                Cart
+            </a>
+            @if (Model.GetCartTotalItems > 0)
+            {
+                <a asp-controller="ShoppingCart" asp-action="ItemReview" style="color:white">
+                    > Item Review
+                </a>
+            }
+            else
+            {
+                <span style="color:white">
+                    > Item Review  > Checkout > Order Detail
+                </span>
+            }
+
+        </span>
+    </div>
+    <div>
+        <a asp-controller="ShoppingCart" asp-action="CleanCart" style="color:red">
+            Clean cart
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="row">
+                    @foreach (var item in Model.ShoppingCartItemsDto)
+                    {
+                        <partial name="_CartPartial" for="@item" />
+                    }
+                </div>
+                @{
+                    var items = Model.ShoppingCartItemsDto;
+                }
+                <div class="card-body">
+                    <div class="justify-content-center d-flex">
+                        @if (items.Count() < 1)
+                        {
+                            <h5>Shopping cart is empty, add products</h5>
+                        }
+                    </div>
+                    <div style="text-align:right" class="format_span">
+                        <span>SubTotal (@ViewBag.TotalItems items): @ViewBag.Total.ToString("C")</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <div class="card" id="descriptionCart">
+                    <p>
+                        The price and availability of products in the Store are subject to change. The shopping cart is a temporary place to store a list of your products and reflects the most current price for each of them.
+                        Do you have a gift card or promo code? We will ask you to enter your claim code when it is time to pay.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 checkout">
+            <div class="card-body card">
+                <h5 class="card-title text-center mt-2">Purchase Summary</h5>
+                <hr />
+                <div class="row format_span">
+                    <div class="col-md-8">
+                        <span>Total items: </span>
+                    </div>
+                    <div class="col-md-4">
+                        (<span style="color:#B12704 !important">@Model.GetCartTotalItems</span>)
+                    </div>
+                    <div class="col-md-8">
+                        <span>SubTotal: </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>@ViewBag.Total.ToString("C")</span>
+                    </div>
+                    <div class="text-center mt-3">
+                        @if (Model.GetCartTotalItems > 0)
+                        {
+                            <a asp-controller="ShoppingCart" asp-action="ItemReview" style="height:50px;width:100%;border-radius:5px" class="btn btn-primary mb-3 btn-lg" aria-label="Checkout">
+                                Continue
+                            </a>
+                        }
+                        else
+                        {
+                            <div style="height:50px;width:100%;border-radius:5px;" class="btn btn-primary mb-3 btn-lg" aria-label="Checkout">
+                                Continue
+                            </div>
+                        }
+                    </div>
+                    <br />
+                    <span class="text-center" style="font-size:14px">Apply a coupon code, in the next step.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

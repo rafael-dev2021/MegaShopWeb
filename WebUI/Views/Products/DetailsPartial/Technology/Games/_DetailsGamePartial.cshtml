@@ -1,0 +1,46 @@
+﻿@model Application.Dtos.ProductsDto.Technology.Games.GameDto
+<style>
+    .specs_features_list_item li {
+        line-height: 1.75em;
+        padding-left: 5px;
+        text-indent: -10px;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(0,0,0,.9);
+    }
+</style>
+@{
+    string[] stringPaths = new string[]
+    {
+        Model.GameGeneralFeaturesObjectsValue.Developers,
+        Model.GameGeneralFeaturesObjectsValue.Genres,
+        Model.GameSpecificationsObjectsValue.Format,
+    };
+
+    bool allPathsAreNullOrEmpty = stringPaths.All(string.IsNullOrEmpty);
+}
+
+@if (!allPathsAreNullOrEmpty)
+{
+    <div>
+        <ul class="specs_features_list_item">
+            <li>Classification: @Model.GameGeneralFeaturesObjectsValue.GameRating.</li>
+            <li>File size: @Model.GameSpecificationsObjectsValue.FileSize GB.</li>
+
+            @if (!string.IsNullOrEmpty(Model.GameGeneralFeaturesObjectsValue.Developers))
+            {
+                <li>Developed by: @Model.GameGeneralFeaturesObjectsValue.Developers.</li>
+            }
+            @if (!string.IsNullOrEmpty(Model.GameGeneralFeaturesObjectsValue.Genres))
+            {
+                <li>Genre: @Model.GameGeneralFeaturesObjectsValue.Genres.</li>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.GameSpecificationsObjectsValue.Format))
+            {
+                <li>Format: @Model.GameSpecificationsObjectsValue.Format.</li>
+            }
+            <li>It's offline: @(Model.GameSpecificationsObjectsValue.ItsOffline ? "Yes" : "Not").</li>
+        </ul>
+    </div>
+}

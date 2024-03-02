@@ -5,28 +5,27 @@ using Domain.Entities.Products.Technology.Games;
 using MediatR;
 using System.Net;
 
-namespace Application.CQRS.Handlers.Products.Technology.Games
+namespace Application.CQRS.Handlers.Products.Technology.Games;
+
+public class CreateGameHandler(IGameRepository gameRepository) : IRequestHandler<CreateGameCommand, Game>
 {
-    public class CreateGameHandler(IGameRepository gameRepository) : IRequestHandler<CreateGameCommand, Game>
+    private readonly IGameRepository _gameRepository = gameRepository;
+
+    public async Task<Game> Handle(CreateGameCommand request, CancellationToken cancellationToken)
     {
-        private readonly IGameRepository _gameRepository = gameRepository;
+        var product = new Game(request.Name, request.Description, request.Images, request.Stock, request.ProductDataObjectValue,
+            request.ProductFlagsObjectValue, request.ProductPriceObjectValue,
+            request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.GameGeneralFeaturesObjectsValue,
+            request.GameSpecificationsObjectsValue, request.GameRequirementsObjectsValue, request.CategoryId)
 
-        public async Task<Game> Handle(CreateGameCommand request, CancellationToken cancellationToken)
-        {
-            var product = new Game(request.Name, request.Description, request.Stock, request.ProductDataObjectValue,
-                request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
-                request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.GameGeneralFeaturesObjectsValue,
-                request.GameSpecificationsObjectsValue, request.GameRequirementsObjectsValue, request.CategoryId)
+         ?? throw new RequestException(new RequestError
+         {
+             Message = "Something went wrong",
+             Severity = "error",
+             StatusCode = HttpStatusCode.NotFound
+         });
 
-             ?? throw new RequestException(new RequestError
-             {
-                 Message = "Something went wrong",
-                 Severity = "error",
-                 StatusCode = HttpStatusCode.NotFound
-             });
-
-            product.CategoryId = request.CategoryId;
-            return await _gameRepository.CreateAsync(product);
-        }
+        product.SetCategoryId(request.CategoryId);
+        return await _gameRepository.CreateAsync(product);
     }
 }

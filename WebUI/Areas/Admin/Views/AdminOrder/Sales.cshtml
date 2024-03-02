@@ -1,0 +1,279 @@
+﻿@using System.Globalization
+@model TotalSalesViewModel
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    .css-aavos {
+        border-radius: 7px;
+        border: none;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transition: box-shadow 0.3s ease;
+        height: 17rem;
+        background-color: #fff;
+    }
+
+        .css-aavos::before {
+            content: "";
+            border-radius: 10px 10px 0px 0px;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #343a40;
+        }
+
+        .css-aavos::after {
+            content: "";
+            border-radius: 0px 0px 10px 10px;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #343a40;
+        }
+
+        .css-aavos::before {
+            top: -1px;
+        }
+
+        .css-aavos::after {
+            bottom: -1px;
+        }
+
+
+    .css-aavos_ctxt {
+        color: #808080 !important;
+    }
+
+
+    .css-aavos-ul {
+        list-style-type: none;
+        padding: 0;
+        display: inline-block;
+        font-size: 1.1rem;
+    }
+
+    .css-aavos-ul-li {
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+    }
+
+
+    .css-aavos-onec {
+        width: 20px;
+        height: 20px;
+        background-color: dodgerblue;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .css-aavos-twoc {
+        width: 20px;
+        height: 20px;
+        background-color: lightseagreen;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .css-aavos-threec {
+        width: 20px;
+        height: 20px;
+        background-color: orange;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .css-aavos-fourc {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    div.dataTables_wrapper div.dataTables_length {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    #salesTable_wrapper .dataTables_info {
+        margin-top: 1%;
+    }
+
+    #salesTable_wrapper .dataTables_paginate {
+        margin-top: 1%;
+    }
+</style>
+@{
+    ViewData["Title"] = "Sales";
+}
+<section class="col-md-12 col-lg-12">
+    <section class="mt-3">
+        <h4>Sales Summary</h4>
+    </section>
+
+    <section class="mt-4">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card css-aavos">
+                    <div class="card-body">
+                        <h3 class="card-title mt-2 css-aavos_ctxt">Total sales</h3>
+                        <h2 class="card-text mt-4 text-primary font-weight-bold fs-2">@Model.TotalOrderAmount.ToString("C")</h2>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5 class="css-aavos_ctxt">Quantity of sales: <span class=" text-primary">@Model.TotalCountOrder</span></h5>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5 class="css-aavos_ctxt ">Total average: <span class="text-warning">@Model.Average.ToString("C")</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card css-aavos">
+                    <div class="card-body">
+                        <canvas id="myChart" width="100" height="50"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="css-aavos_ctxt"><i class="bi bi-bar-chart-line"></i> Sales</h4>
+            </div>
+            <div class="card-body">
+                <ul class="css-aavos-ul css-aavos_ctxt my-2">
+                    <li class="css-aavos-ul-li mx-4"></li>
+                    <li class="css-aavos-onec"></li>
+                    <li class="css-aavos-ul-li">In processing</li>
+                    <li class="css-aavos-twoc"></li>
+                    <li class="css-aavos-ul-li">Approved payment</li>
+                    <li class="css-aavos-threec"></li>
+                    <li class="css-aavos-ul-li mx-0">Awaiting payment</li>
+                    <li class="css-aavos-ul-li mx-0"> | In analysis | </li>
+                    <li class="css-aavos-ul-li">Chargeback Pending</li>
+                    <li class="css-aavos-fourc"></li>
+                    <li class="css-aavos-ul-li mx-0">Cancelled</li>
+                    <li class="css-aavos-ul-li mx-0"> | Chargeback | </li>
+                    <li class="css-aavos-ul-li">Returned</li>
+                </ul>
+                <div class="my-3">
+                    <div class="">
+                        <table class="table table-striped table-hover mt-4" style="line-height:40px" id="salesTable">
+                            <thead class="bg-dark">
+                                <tr class="text-white text-lg-center">
+                                    <th>Sale</th>
+                                    <th>Purchaser</th>
+                                    <th>Method</th>
+                                    <th>Order date</th>
+                                    <th>Payment date</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.OrderDtos != null && Model.OrderDtos.Any())
+                                {
+                                    @foreach (var item in Model.OrderDtos)
+                                    {
+                                        <tr class="text-lg-center">
+                                            @if (
+                                           item
+                                           .PaymentMethod
+                                           .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Processing")
+                                            {
+                                                <td><span class="css-aavos-onec"></span></td>
+                                            }
+                                            else if (
+                                            item
+                                            .PaymentMethod
+                                            .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Approved")
+                                            {
+                                                <td><span class="css-aavos-twoc"></span></td>
+                                            }
+                                            else if (
+                                            item
+                                            .PaymentMethod
+                                            .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Pending")
+                                            {
+                                                <td><span class="css-aavos-threec"></span></td>
+                                            }
+                                            else if (
+                                            item.PaymentMethod
+                                            .PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus == "Canceled")
+                                            {
+                                                <td><span class="css-aavos-fourc"></span></td>
+                                            }
+                                            <td>@item.UserDelivery.FirstName</td>
+                                            <td>@item.PaymentMethod.PaymentMethodObjectValue.PaymentMethod</td>
+                                            <td>@item.ConfirmedOrder</td>
+                                            <td>@item.PaymentMethod.PaymentMethodObjectValue.PaymentDate</td>
+                                            <td>@item.PaymentMethod.PaymentMethodObjectValue.PaymentStatusObjectValue.PaymentStatus</td>
+                                            <td>@item.TotalOrder.ToString("C")</td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7"><h5 class="text-center css-aavos_ctxt">No sales found.</h5></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#salesTable').DataTable({
+                "searching": false,
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                "pageLength": 5,
+                "language": {
+                    "info": "Showing  _START_ to _END_ of _TOTAL_ entries"
+                }
+            });
+        });
+    </script>
+    <script>
+        var salesData = {
+            labels: @Html.Raw(Json.Serialize(Model.SalesByMonthDtos.Select(group =>
+             $"{CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(group.Month)} {group.Year}"))),
+            datasets: [{
+                label: 'Monthly Sales',
+                backgroundColor: 'dodgerblue',
+                data: @Html.Raw(Json.Serialize(Model.SalesByMonthDtos.Select(group => group.TotalSales)))
+                                                                                                                                                                                                                                                                                                                                                                                                }]
+        };
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: salesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 3,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}
+

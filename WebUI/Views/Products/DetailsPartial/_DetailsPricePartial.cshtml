@@ -25,12 +25,12 @@
     <span style="color:gray;font-size:15px"><del>@Model.ProductDto.ProductPriceObjectValue.HistoryPrice.ToString("C2")</del></span>
     <h2>
         @Model.ProductDto.ProductPriceObjectValue.Price.ToString("C2")
-        <span class="discount_color" style="font-size:18px">@Model.CalculateDiscountOV.DiscountPercentage.ToString("F0")% OFF</span>
+        <span class="discount_color" style="font-size:18px">@Model.CalculateDiscountValuable.DiscountPercentage.ToString("F0")% OFF</span>
     </h2>
     <div class="style_Installment">
         <span style="color:black;">
             In
-            <span class="discount_color">12x @Model.CalculateDiscountOV.InTwelveInstallmentWithoutInterest.ToString("C2") without interest</span>
+            <span class="discount_color">12x @Model.CalculateDiscountValuable.InTwelveInstallmentWithoutInterest.ToString("C2") without interest</span>
         </span>
     </div>
     <div class="mt-2">
@@ -45,7 +45,7 @@ else if (Model.ProductDto.ProductFlagsObjectValue.IsBestSeller == true)
     <div class="style_Installment">
         <span style="color:black;">
             In
-            <span class="discount_color">6x @Model.CalculateDiscountOV.InSixInstallmentWithoutInterest.ToString("C2") without interest</span>
+            <span class="discount_color">6x @Model.CalculateDiscountValuable.InSixInstallmentWithoutInterest.ToString("C2") without interest</span>
         </span>
     </div>
     <div class="mt-2">
@@ -61,7 +61,7 @@ else
         <span style="color:black;">
             In
             <span style="color:red">
-                3x @Model.CalculateDiscountOV.InThreeInstallmentWithInterest.ToString("C2")
+                3x @Model.CalculateDiscountValuable.InThreeInstallmentWithInterest.ToString("C2")
                 <span style="color:black"> with interest </span><span style="color:red">3%</span>
             </span>
         </span>

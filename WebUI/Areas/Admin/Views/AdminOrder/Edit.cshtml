@@ -1,0 +1,194 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="col-md-12 col-lg-12 mt-4" style="line-height:35px">
+
+    <h2>Edit Order</h2>
+    <hr />
+    <form asp-action="Edit" role="form">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row">
+            <div class="form-group mb-3 mt-2">
+                <label asp-for="DeliveryAddress.Country" class="control-label">Country</label>
+                <input id="country" asp-for="DeliveryAddress.Country" class="form-control" readonly />
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="UserDelivery.FirstName" class="control-label">First name</label>
+                <input asp-for="UserDelivery.FirstName" class="form-control" readonly />
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="UserDelivery.LastName" class="control-label">First name</label>
+                <input asp-for="UserDelivery.LastName" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group mb-3 mt-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="UserDelivery.Email" class="control-label">Email</label>
+                    <input asp-for="UserDelivery.Email" class="form-control" readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="UserDelivery.SSN" class="control-label">SSN</label>
+                <input id="ssn" asp-for="UserDelivery.SSN" class="form-control" readonly />
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="UserDelivery.Phone" class="control-label">Phone</label>
+                <input id="phoneNumber" asp-for="UserDelivery.Phone" placeholder="Phone number" class="form-control" />
+                <span asp-validation-for="UserDelivery.Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="DeliveryAddress.ZipCode" class="control-label">Zip code</label>
+            <input id="zipCode" asp-for="DeliveryAddress.ZipCode" placeholder="Zip code" class="form-control" />
+            <span asp-validation-for="DeliveryAddress.ZipCode" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="DeliveryAddress.State" class="control-label">State</label>
+                <input id="state" asp-for="DeliveryAddress.State" placeholder="State" class="form-control" />
+                <span asp-validation-for="DeliveryAddress.State" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="DeliveryAddress.City" class="control-label">City</label>
+                <input id="city" asp-for="DeliveryAddress.City" placeholder="City" class="form-control" />
+                <span asp-validation-for="DeliveryAddress.City" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="DeliveryAddress.Address" class="control-label">Address</label>
+                <input id="logradouro" asp-for="DeliveryAddress.Address" placeholder="Address" class="form-control" />
+                <span asp-validation-for="DeliveryAddress.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="DeliveryAddress.Neighborhood" class="control-label">Neighborhood</label>
+                <input id="neighborhood" asp-for="DeliveryAddress.Neighborhood" placeholder="Neighborhood" class="form-control" />
+                <span asp-validation-for="DeliveryAddress.Neighborhood" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DeliveryAddress.Complement" class="control-label">Complement</label>
+            <input asp-for="DeliveryAddress.Complement" placeholder="Apartment, Suite, Unit, Building, Floor, etc.(Optional)" class="form-control" />
+            <span asp-validation-for="DeliveryAddress.Complement" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="DispatchedOrder" class="control-label">Dispatched Order</label>
+                <input asp-for="DispatchedOrder" id="DispatchedOrder" class="form-control"  />
+                <span asp-validation-for="DispatchedOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="RequestReceived" class="control-label">Request Received</label>
+                <input asp-for="RequestReceived" id="RequestReceived" class="form-control"  />
+                <span asp-validation-for="RequestReceived" class="text-danger"></span>
+            </div>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group mt-3">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-outline-info ml-2">Back</a>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dispatchedOrderInput = document.getElementById("DispatchedOrder");
+            var requestReceivedInput = document.getElementById("RequestReceived");
+
+            if (dispatchedOrderInput) {
+                dispatchedOrderInput.valueAsDate = new Date();
+            }
+
+            if (requestReceivedInput) {
+                requestReceivedInput.valueAsDate = new Date();
+            }
+        });
+    </script>
+    <script>
+
+        function getAddressByZipCode(zipcode) {
+            axios.get(`https://viacep.com.br/ws/${zipcode}/json/`)
+                .then(response => {
+                    const endereco = response.data;
+                    document.getElementById("country").value = "Brasil";
+                    document.getElementById("logradouro").value = endereco.logradouro;
+                    document.getElementById("neighborhood").value = endereco.bairro;
+                    document.getElementById("city").value = endereco.localidade;
+                    document.getElementById("state").value = endereco.uf;
+                })
+                .catch(error => {
+                    document.getElementById("zipcode-error").textContent = "Invalid zip code";
+                    console.error(error);
+                });
+        }
+
+        // Função para validar o CEP
+        function validateZipCode() {
+            const zipcode = document.getElementById("zipCode").value;
+            const zipcodePattern = /^[0-9]{8}$/;
+
+            if (zipcodePattern.test(zipcode)) {
+                getAddressByZipCode(zipcode);
+                document.getElementById("zipcode-error").textContent = "";
+            } else {
+                document.getElementById("zipcode-error").textContent = "Invalid zip code";
+            }
+        }
+
+        // Adicionar um ouvinte de evento para o campo de CEP
+        document.getElementById("zipCode").addEventListener("input", validateZipCode);
+
+        // Função para formatar o SSN
+        function formatSSN(ssn) {
+            ssn = ssn.replace(/\D/g, ''); // Remove caracteres não numéricos
+            ssn = ssn.replace(/(\d{3})(\d)/, '$1-$2');
+            ssn = ssn.replace(/(\d{2})(\d{4})$/, '$1-$2');
+            return ssn;
+        }
+
+        // Função para lidar com a entrada de SSN
+        function handleSSNInput() {
+            const ssnInput = document.getElementById("ssn");
+            ssnInput.value = formatSSN(ssnInput.value);
+        }
+
+        // Adicionar um ouvinte de evento para o campo de SSN
+        document.getElementById("ssn").addEventListener("input", handleSSNInput);
+
+        // Função para formatar o número de telefone
+        function formatPhoneNumber(phoneNumber) {
+            phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove caracteres não numéricos
+            phoneNumber = phoneNumber.replace(/^(\d{3})(\d)/, '$1-$2'); // Adiciona traço após os três primeiros dígitos
+            phoneNumber = phoneNumber.replace(/(\d{3})(\d)/, '$1-$2'); // Adiciona traço após os três próximos dígitos
+            phoneNumber = phoneNumber.replace(/(\d{4})(\d)/, '$1$2'); // Mantém os quatro últimos dígitos
+            return phoneNumber;
+        }
+
+        // Função para lidar com a entrada de número de telefone
+        function handlePhoneNumberInput() {
+            const phoneNumberInput = document.getElementById("phoneNumber");
+            phoneNumberInput.value = formatPhoneNumber(phoneNumberInput.value);
+        }
+
+        // Adicionar um ouvinte de evento para o campo de número de telefone
+        document.getElementById("phoneNumber").addEventListener("input", handlePhoneNumberInput);
+
+    </script>
+}

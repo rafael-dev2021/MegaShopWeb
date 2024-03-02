@@ -5,27 +5,26 @@ using Domain.Entities.Products.Fashion.Tshirts;
 using MediatR;
 using System.Net;
 
-namespace Application.CQRS.Handlers.Products.Fashion.Tshirts
+namespace Application.CQRS.Handlers.Products.Fashion.Tshirts;
+
+public class CreateTshirtHandler(ITshirtRepository tshirtRepository) : IRequestHandler<CreateTshirtCommand, Tshirt>
 {
-    public class CreateTshirtHandler(ITshirtRepository tshirtRepository) : IRequestHandler<CreateTshirtCommand, Tshirt>
+    private readonly ITshirtRepository _tshirtRepository = tshirtRepository;
+
+    public async Task<Tshirt> Handle(CreateTshirtCommand request, CancellationToken cancellationToken)
     {
-        private readonly ITshirtRepository _tshirtRepository = tshirtRepository;
+        var product = new Tshirt(request.Name, request.Description, request.Images, request.Stock, request.ProductDataObjectValue,
+            request.ProductFlagsObjectValue, request.ProductPriceObjectValue,
+            request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.TshirtOtherFeaturesObectsValue,
+            request.TshirtMainFeaturesObectsValue, request.CategoryId)
+            ?? throw new RequestException(new RequestError
+            {
+                Message = "Something went wrong",
+                Severity = "error",
+                StatusCode = HttpStatusCode.NotFound
+            });
 
-        public async Task<Tshirt> Handle(CreateTshirtCommand request, CancellationToken cancellationToken)
-        {
-            var product = new Tshirt(request.Name, request.Description, request.Stock, request.ProductDataObjectValue,
-                request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
-                request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.TshirtOtherFeaturesObectsValue,
-                request.TshirtMainFeaturesObectsValue, request.CategoryId)
-                ?? throw new RequestException(new RequestError
-                {
-                    Message = "Something went wrong",
-                    Severity = "error",
-                    StatusCode = HttpStatusCode.NotFound
-                });
-
-            product.CategoryId = request.CategoryId;
-            return await _tshirtRepository.CreateAsync(product);
-        }
+        product.SetCategoryId(request.CategoryId);
+        return await _tshirtRepository.CreateAsync(product);
     }
 }

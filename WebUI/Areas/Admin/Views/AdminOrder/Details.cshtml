@@ -1,0 +1,51 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container mt-4">
+    <h3 class="mb-4">Order Details</h3>
+    <hr />
+
+    <div>
+        <dl class="row">
+            <div class="col-sm-6">
+                <dt><i class="fas fa-user"></i> Customer Information</dt>
+                <dd>@($"{Model.UserDelivery.FirstName} {Model.UserDelivery.LastName}")</dd>
+
+                <dt><i class="fas fa-map-marker-alt"></i> Address</dt>
+                <dd>@Model.DeliveryAddress.Address</dd>
+
+                <dt><i class="fas fa-info-circle"></i> Complement</dt>
+                <dd>@Model.DeliveryAddress.Complement</dd>
+
+                <dt><i class="fas fa-envelope"></i> Zip Code</dt>
+                <dd>@Model.DeliveryAddress.ZipCode</dd>
+
+                <dt><i class="fas fa-globe"></i> State</dt>
+                <dd>@Model.DeliveryAddress.State</dd>
+
+                <dt><i class="fas fa-city"></i> City</dt>
+                <dd>@Model.DeliveryAddress.City</dd>
+            </div>
+
+            <div class="col-sm-6">
+                <dt><i class="fas fa-phone"></i> Phone</dt>
+                <dd>@Model.UserDelivery.Phone</dd>
+
+                <dt><i class="fas fa-envelope"></i> Email</dt>
+                <dd>@Model.UserDelivery.Email</dd>
+
+                <dt><i class="fas fa-truck"></i> Dispatched Order</dt>
+                <dd>@Model.DispatchedOrder</dd>
+
+                <dt><i class="fas fa-calendar-alt"></i> Request Received</dt>
+                <dd>@Model.RequestReceived</dd>
+            </div>
+        </dl>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+        <a asp-action="Index" class="btn btn-outline-info ml-2"><i class="fas fa-arrow-left"></i> Back to List</a>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿@model Application.Dtos.OrderDtos.OrderDto
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Delete</h2>
+
+<h2>
+    Are you sure you want to delete the order
+    <span class="text-danger">
+        <b>
+            @Model.UserDelivery.FirstName?
+        </b>
+    </span>
+</h2>
+
+<button id="deleteButton" class="btn btn-danger mt-3">Delete</button>
+<a asp-action="Index" class="btn btn-info mt-3">
+    <span class="text-white">
+        Back to list
+    </span>
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Are you sure you want to delete the order
+                    <span class="text-danger">
+                        <b>
+                            @Model.UserDelivery.FirstName?
+                        </b>
+                    </span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form asp-action="DeleteConfirm" asp-route-id="@Model.Id" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">Confirm Deletion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#deleteButton').on('click', function () {
+                $('#confirmDeleteModal').modal('show');
+            });
+
+            // Ensure that Bootstrap's modal functions are correctly initialized
+            $('#confirmDeleteModal').on('shown.bs.modal', function () {
+                // This event is triggered when the modal has been made visible to the user
+            });
+
+            // If the cancel button inside the modal is clicked, close the modal
+            $('#confirmDeleteModal').on('click', '.btn-secondary', function () {
+                $('#confirmDeleteModal').modal('hide');
+            });
+
+            // If the modal close button is clicked, close the modal
+            $('#confirmDeleteModal').on('click', '.close', function () {
+                $('#confirmDeleteModal').modal('hide');
+            });
+        });
+    </script>
+}

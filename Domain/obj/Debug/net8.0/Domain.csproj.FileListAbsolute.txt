@@ -10,3 +10,15 @@ C:\C#\MegaShopWeb\Domain\obj\Debug\net8.0\Domain.dll
 C:\C#\MegaShopWeb\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\C#\MegaShopWeb\Domain\obj\Debug\net8.0\Domain.pdb
 C:\C#\MegaShopWeb\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\C#\MegaShopWebVS\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\C#\MegaShopWebVS\Domain\bin\Debug\net8.0\Domain.dll
+C:\C#\MegaShopWebVS\Domain\bin\Debug\net8.0\Domain.pdb
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.dll
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\Domain.pdb
+C:\C#\MegaShopWebVS\Domain\obj\Debug\net8.0\ref\Domain.dll

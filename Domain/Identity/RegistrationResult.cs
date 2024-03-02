@@ -1,8 +1,7 @@
-﻿namespace Domain.Identity
+﻿namespace Domain.Identity;
+
+public class RegistrationResult
 {
-    public class RegistrationResult
-    {
-        public bool IsRegistered { get; set; }
-        public string ErrorMessage { get; set; } = string.Empty;
-    }
+    public bool IsRegistered { get; set; }
+    public string ErrorMessage { get; set; } = string.Empty;
 }

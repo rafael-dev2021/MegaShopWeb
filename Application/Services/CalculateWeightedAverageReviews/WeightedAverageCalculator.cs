@@ -1,43 +1,42 @@
-﻿using Application.Services.CalculateWeightedAverageReviews.Interfaces;
+﻿using Application.Dtos.Reviews;
+using Application.Services.CalculateWeightedAverageReviews.Interfaces;
 using Application.Services.CalculateWeightedAverageReviews.ValueObjects;
-using Domain.Entities.Reviews;
 
-namespace Application.Services.CalculateWeightedAverageReviews
+namespace Application.Services.CalculateWeightedAverageReviews;
+
+public class WeightedAverageCalculator : IWeightedAverageResult
 {
-    public class WeightedAverageCalculator : IWeightedAverageResult
+    public WeightedAverageResultOV CalculateWeightedAverage(IEnumerable<ReviewDto> reviewsDto)
     {
-        public WeightedAverageResultOV CalculateWeightedAverage(IEnumerable<Review> reviews)
+        var countRating = 0;
+        var maxRating = 5.0;
+        var result = new WeightedAverageResultOV();
+
+        foreach (var item in reviewsDto)
         {
-            var countRating = 0;
-            var maxRating = 5.0;
-            var result = new WeightedAverageResultOV();
+            countRating += item.Rating;
+            result.CountReviews++;
+        }
 
-            foreach (var item in reviews)
+        if (result.CountReviews > 0)
+        {
+            var averageRating = countRating / result.CountReviews;
+            var weight = maxRating / averageRating;
+
+            if (weight < 1)
             {
-                countRating += item.Rating;
-                result.CountReviews++;
-            }
-
-            if (result.CountReviews > 0)
-            {
-                var averageRating = countRating / result.CountReviews;
-                var weight = maxRating / averageRating;
-
-                if (weight < 1)
-                {
-                    result.WeightedAverage = averageRating * weight;
-                }
-                else
-                {
-                    result.WeightedAverage = averageRating;
-                }
+                result.WeightedAverage = averageRating * weight;
             }
             else
             {
-                result.WeightedAverage = 0.0;
+                result.WeightedAverage = averageRating;
             }
-
-            return result;
         }
+        else
+        {
+            result.WeightedAverage = 0.0;
+        }
+
+        return result;
     }
 }

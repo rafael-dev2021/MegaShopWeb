@@ -1,0 +1,42 @@
+﻿@model Application.Dtos.ProductsDto.Technology.Games.GameDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Details video games</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Images)
+        </dt>
+        <dd class="col-sm-8">
+            <img src="@Url.Content(Model.Images[0])" width="150" />
+        </dd>
+    </dl>
+</div>
+<hr />
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-info">Back</a>
+</div>

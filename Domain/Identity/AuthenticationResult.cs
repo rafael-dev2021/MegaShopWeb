@@ -1,8 +1,7 @@
-﻿namespace Domain.Identity
+﻿namespace Domain.Identity;
+
+public class AuthenticationResult
 {
-    public class AuthenticationResult
-    {
-        public bool IsAuthenticated { get; set; }
-        public string ErrorMessage { get; set; } = string.Empty;
-    }
+    public bool IsAuthenticated { get; set; }
+    public string ErrorMessage { get; set; } = string.Empty;
 }

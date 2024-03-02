@@ -1,0 +1,9 @@
+﻿@using WebUI.ViewModels.Cart
+@model ShoppingCartViewModel
+
+@if (Model.ShoppingCartItemsDto.Count() > 0)
+{
+    <span style="color:red">
+        @Model.GetCartTotalItems
+    </span>
+}

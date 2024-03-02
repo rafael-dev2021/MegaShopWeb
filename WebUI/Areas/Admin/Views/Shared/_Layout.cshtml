@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mega Shop</title>
+
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Find the best products and deals at Mega Shop. Fashion, electronics, and much more for you!" />
+    <meta name="keywords" content="fashion, electronics, deals, online shopping, Mega Shop" />
+
+    <!-- Links para Estilos e Ícones -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+
+    <!-- Estruturação Semântica -->
+    <link rel="canonical" href="https://github.com/rafael-dev2021" />
+
+    <!-- Robôs e Indexação -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph para Redes Sociais -->
+    <meta property="og:title" content="@ViewData["Title"] - Mega Shop" />
+    <meta property="og:description" content="Check out our new collection of printed T-shirts, available in different styles and colors. Enjoy!" />
+    <meta property="og:image" content="https://github.com/rafael-dev2021" />
+    <meta property="og:url" content="https://github.com/rafael-dev2021" />
+
+    <style>
+        .css-aavsl {
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            background-color: #fff;
+            line-height: 50px;
+            position: relative;
+        }
+
+            .css-aavsl::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 2px;
+                height: 100%;
+                background-color: #343a40;
+            }
+
+            .css-aavsl a {
+                color: grey !important;
+                font-size: 1.2rem;
+                line-height: 40px;
+                padding-left: 40px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand mr-auto" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo/logo.png" alt="Megashop">
+                </a>
+            </nav>
+        </div>
+        <div class="border-bottom mt-2 mb-2"></div>
+    </header>
+
+    <div>
+        <main role="main" class="mb-2 d-flex">
+            <nav class="css-aavsl col-md-4 col-lg-2 d-md-block nav-sidebar">
+                <ul class="nav flex-column">
+                    <li>
+                        <a class="nav-link text-center mt-4"
+                           style="font-size:1.5rem; margin-left:-17px"
+                           asp-area="Admin"
+                           asp-controller="Admin"
+                           asp-action="Index">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminProduct"
+                           asp-action="Index"><i class="bi bi-list-ul"></i>&nbsp;  Store</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminCategory"
+                           asp-action="Index">
+                            <i class="bi bi-plus-square"></i>&nbsp;New Category
+                        </a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenuOne" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-diagram-3-fill"></i>&nbsp;  Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuOne">
+                                <li>
+                                    <a class="text-black dropdown-item"
+                                       asp-area="Admin"
+                                       asp-controller="AdminGame"
+                                       asp-action="Index">
+                                        <i class="bi bi-plus-square"></i>&nbsp;  Games
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-black dropdown-item"
+                                       asp-area="Admin"
+                                       asp-controller="AdminSmartphone"
+                                       asp-action="Index">
+                                        <i class="bi bi-plus-square"></i>&nbsp;  Smartphones
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-black dropdown-item"
+                                       asp-area="Admin"
+                                       asp-controller="AdminShoes"
+                                       asp-action="Index">
+                                        <i class="bi bi-plus-square"></i>&nbsp;  Shoes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-black dropdown-item"
+                                       asp-area="Admin"
+                                       asp-controller="AdminTshirt"
+                                       asp-action="Index">
+                                        <i class="bi bi-plus-square"></i>&nbsp;  Tshirts
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminOrder"
+                           asp-action="Index">
+                            <i class="bi bi-boxes"></i>&nbsp;Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminOrder"
+                           asp-action="ConfirmedSalesReport">
+                            <i class="bi bi-graph-up-arrow"></i>&nbsp;Confirmed orders
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminOrder"
+                           asp-action="DispatchedSalesReport">
+                            <i class="bi bi-clipboard-data"></i>&nbsp;Dispatched orders
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminOrder"
+                           asp-action="RequestReceivedSalesReport">
+                            <i class="bi bi-truck"></i>&nbsp;Deliveries
+                        </a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" style="cursor:pointer" id="dropdownMenuTwo" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-wallet2"></i>&nbsp;  Payments
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuTwo">
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-area="Admin"
+                                       asp-controller="AdminPayment"
+                                       asp-action="IndexCreditCard">
+                                        <i class="bi bi-credit-card"></i>&nbsp;  Credit card
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-area="Admin" asp-controller="AdminPayment"
+                                       asp-action="IndexDebitCard">
+                                        <i class="bi bi-credit-card-2-back-fill"></i>&nbsp;  Debit card
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class=" dropdown-item"
+                                       asp-area="Admin" asp-controller="AdminPayment"
+                                       asp-action="IndexPayments">
+                                        <i class="bi bi-cash-coin"></i>&nbsp;  Payments
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-area="Admin" asp-controller="AdminPayment"
+                                       asp-action="Index">
+                                        <i class="bi bi-cash-coin"></i>&nbsp;  Bank slip
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminOrder"
+                           asp-action="Sales">
+                            <i class="bi bi-easel2"></i>&nbsp;Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminProduct"
+                           asp-action="Index" asp-route-isDailyOffer="true">
+                            <i class="bi bi-percent"></i>&nbsp;Daily offer
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminProduct"
+                           asp-action="Index" asp-route-isBestSeller="true">
+                            <i class="bi bi-box-seam"></i>&nbsp;Best seller
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminProduct"
+                           asp-action="Index" asp-route-isFavorite="true">
+                            <i class="bi bi-heart"></i>&nbsp;Favorites
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin"
+                           asp-controller="AdminProduct"
+                           asp-action="Index">
+                            <i class="bi bi-graph-down-arrow"></i>&nbsp;Chargebacks
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark bg-cover">
+        <div class="py-12 border-bottom">
+            <div class="container container_layout">
+                <div class="row">
+                    <div class="col-12 col-md-3 mt-3">
+                        <h4 class="mt-3 text-white">Mega shop</h4>
+                        <ul class="list-unstyled list-inline mb-7 mb-md-0">
+                            <li class="list-inline-item">
+                                <a href="#!" class="text-gray-350">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!" class="text-gray-350">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!" class="text-gray-350">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!" class="text-gray-350">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!" class="text-gray-350">
+                                    <i class="fab fa-medium"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm mt-3">
+                        <h6 class="heading-xxs mb-3 mt-3 text-white">
+                            Account
+                        </h6>
+                        <ul class="list-unstyled mb-7 mb-sm-0">
+                            <li>
+                                <a a asp-controller="Account" asp-action="Login">Sign in</a>
+                            </li>
+                            <li>
+                                <a a asp-controller="Account" asp-action="Register">Sign up</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm mt-3">
+                        <h6 class="heading-xxs  mb-3 mt-3 text-white">
+                            About Us
+                        </h6>
+                        <ul class="list-unstyled mb-7 mb-sm-0">
+                            <li>
+                                <a href="#">MegaShop</a>
+                            </li>
+                            <li>
+                                <a href="#">Investor Relations</a>
+                            </li>
+                            <li>
+                                <a href="#">Trends</a>
+                            </li>
+                            <li>
+                                <a href="#">Sustainability</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm mt-3">
+                        <h6 class="heading-xxs  mb-3 mt-3 text-white">
+                            Company
+                        </h6>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-gray-300" href="./about.html">Our Story</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-300" href="#!">Careers</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-300" href="#!">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-300" href="#!">Privacy & Cookie policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm mt-3">
+                        <h6 class="heading-xxs  mb-3 mt-3 text-white">
+                            Contact
+                        </h6>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a asp-controller="Contact" asp-action="Contact">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#!">Track shipments</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Privacy">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-6">
+            <div class="container  mt-3">
+                <div class="row">
+                    <div class="col mb-3">
+                        <p class="mb-md-0 fs-xxs text-muted">
+                            © 2023 All rights reserved. Designed by Unvab.
+                            <a href="https://github.com/rafael-dev2021">
+                                <span style="color:blueviolet;font-size:20px"><i class="bi bi-github"></i></span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <img class="footer-payment" src="~/images/payments/mastercard (1).svg" alt="...">
+                        <img class="footer-payment" src="~/images/payments/visa (1).svg" alt="...">
+                        <img class="footer-payment" src="~/images/payments/amex.svg" alt="...">
+                        <img class="footer-payment" src="~/images/payments/paypal (1).svg" alt="...">
+                        <img class="footer-payment" src="~/images/payments/maestro.svg" alt="...">
+                        <img class="footer-payment" src="~/images/payments/klarna.svg" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/GetProductsListPartial.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

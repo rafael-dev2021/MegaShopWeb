@@ -1,8 +1,7 @@
-﻿namespace Domain.Identity.Interfaces
+﻿namespace Domain.Identity.Interfaces;
+
+public interface ISeedUserRoleRepository
 {
-    public interface ISeedUserRoleRepository
-    {
-        Task SeedUserAsync();
-        Task SeedRoleAsync();
-    }
+    Task SeedUserAsync();
+    Task SeedRoleAsync();
 }

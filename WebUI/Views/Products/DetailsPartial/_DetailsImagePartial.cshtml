@@ -2,10 +2,10 @@
 @{
     string[] imagePaths = new string[]
     {
-        Model.ProductImageObjectValue.MainImage,
-        Model.ProductImageObjectValue.ImageFirst,
-        Model.ProductImageObjectValue.ImageSecond,
-        Model.ProductImageObjectValue.ImageThird
+        Model.Images[0],
+        Model.Images[1],
+        Model.Images[2],
+        Model.Images[3]
     };
 }
 <style>
@@ -52,7 +52,7 @@
         }
     </div>
     <div class="col-md-5 d-none d-md-block">
-        <img src="@Model.ProductImageObjectValue.MainImage" alt="@Model.Name" class="img-fluid main-image zoomable-image" id="main-image">
+        <img src="@Url.Content(Model.Images[0])" alt="@Model.Name" class="img-fluid main-image zoomable-image" id="main-image">
     </div>
 }
 

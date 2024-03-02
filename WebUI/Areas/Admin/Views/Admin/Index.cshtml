@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Admin Area";
+}
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h2 class="display-4">Welcome to the Administrator's Area</h2>
+        <p class="lead">Explore and manage your admin functionalities with ease.</p>
+    </div>
+
+    <div class="text-center">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">
+            <i class="fas fa-home me-2"></i> Back to Home Page
+        </a>
+    </div>
+</div>
+
+<div class="container text-center my-5">
+    <partial name="~/Views/Shared/TemporaryFolder/_InCronstruction.cshtml" for="@Model" />
+</div>

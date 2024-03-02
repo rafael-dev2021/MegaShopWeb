@@ -2,30 +2,28 @@
 using Application.Dtos.ProductsDto.Technology.Games;
 using Application.Dtos.ProductsDto.Technology.Smartphones;
 
-namespace Application.Services.GetMatchingProducts.Technology
+namespace Application.Services.GetMatchingProducts.Technology;
+
+public class GetMatchingProductsDtoTechnology
 {
-    public class GetMatchingProductsDtoTechnology
+    public ProductDto ProductDto { get; set; }
+    public IEnumerable<SmartphoneDto> SmartphonesDto { get; set; }
+    public IEnumerable<GameDto> GamesDto { get; set; }
+
+    public IEnumerable<T> GetMatchingProducts<T>(IEnumerable<T> productsDto) where T : ProductDto
     {
-        public ProductDto ProductDto { get; set; }
-        public IEnumerable<SmartphoneDto> SmartphonesDto { get; set; }
-        public IEnumerable<GameDto> GamesDto { get; set; }
+        return productsDto
+            .Where(x =>
+            x.ProductSpecificationsObjectValue.ProductModel == ProductDto.ProductSpecificationsObjectValue.ProductModel &&
+            x.Category.CategoryName == ProductDto.Category.CategoryName);
+    }
+    public IEnumerable<SmartphoneDto> GetMatchingSmartphonesDto()
+    {
+        return GetMatchingProducts(SmartphonesDto);
+    }
 
-        public IEnumerable<SmartphoneDto> GetMatchingSmartphones()
-        {
-            var matchingSmartphones = SmartphonesDto.Where(s =>
-                s.ProductSpecificationsObjectValue.ProductModel == ProductDto.ProductSpecificationsObjectValue.ProductModel &&
-                s.Category.CategoryName == ProductDto.Category.CategoryName);
-
-            return matchingSmartphones;
-        }
-
-        public IEnumerable<GameDto> GetMatchingGames()
-        {
-            var matchingGames = GamesDto.Where(s =>
-                s.ProductSpecificationsObjectValue.ProductModel == ProductDto.ProductSpecificationsObjectValue.ProductModel &&
-                s.Category.CategoryName == ProductDto.Category.CategoryName);
-
-            return matchingGames;
-        }
+    public IEnumerable<GameDto> GetMatchingGamesDto()
+    {
+        return GetMatchingProducts(GamesDto);
     }
 }

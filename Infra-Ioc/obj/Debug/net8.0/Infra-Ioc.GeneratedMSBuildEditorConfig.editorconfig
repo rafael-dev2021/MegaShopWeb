@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Infra_Ioc
-build_property.ProjectDir = C:\C#\MegaShopWeb\Infra-Ioc\
+build_property.ProjectDir = C:\C#\MegaShopWebVS\Infra-Ioc\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

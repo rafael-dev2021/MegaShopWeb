@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pq+mE68OXblMARcnDfndP02klhMcT1rVorsKai+mq5JHa81sAtxnCCEYFSejDO74txWfbKJlXbys24A63lmzbw==",
+  "dgSpecHash": "2Ey/8s6uR/WsWXderf9ZUnZcSJNJ/Gxnw96kbxReCI5wP3el4K6d6FDd7QqB61kB4LKviDgZiHvmF71HYzJCpA==",
   "success": true,
-  "projectFilePath": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj",
+  "projectFilePath": "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ainbo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",

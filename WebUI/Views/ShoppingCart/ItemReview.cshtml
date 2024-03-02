@@ -1,0 +1,183 @@
+﻿@using WebUI.ViewModels.Cart
+@model ShoppingCartViewModel
+
+<link rel="stylesheet" href="~/css/itemReview.css" />
+@{
+    var itemCard = Model.ProductDtos;
+}
+
+<div class="container itemReview">
+    <div class="text-center mb-4" style="background-color:#B12704 !important;padding:10px">
+        <span style="font-size:18px">
+            <a asp-controller="ShoppingCart" asp-action="Index" style="color:white">
+                Cart >
+            </a>
+            <a asp-controller="ShoppingCart" asp-action="ItemReview" style="color:deepskyblue">
+                Item Review
+            </a>
+            <span style="color:white">
+                > Checkout > Order Detail
+            </span>
+        </span>
+    </div>
+    @{
+        var shippingFree = DateTime.Now;
+        var newDateFree2 = shippingFree.AddDays(2);
+        var newDateFree3 = shippingFree.AddDays(3);
+
+        var shippingPay = DateTime.Now;
+        var newDatePay4 = shippingPay.AddDays(4);
+        var newDatePay7 = shippingPay.AddDays(7);
+    }
+
+    @{
+        var frete = 15.59m;
+        var total = ViewBag.Total + frete;
+        var desconto = total * 0.09m;
+        var comdesconto = total - desconto;
+
+    }
+    <div>
+        <a asp-controller="ShoppingCart" asp-action="CleanCart" style="color:red">
+            Clean cart
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="row">
+                    <div class="mt-2 mb-2">
+                        <span class="shipping_estimate">
+                            Shipping estimate @newDateFree2.ToString("MMMM/dd/yyyy") - @newDateFree3.ToString("MMMM/dd/yyyy")
+                        </span>
+                        <br />
+                        <span class="shipped_from">
+                            Items shipped from MegaShop.com.br
+                        </span>
+                        <hr />
+                    </div>
+                    <div class="col-md-8">
+                        @foreach (var item in Model.ShoppingCartItemsDto)
+                        {
+                            @if (item.Product.ProductFlagsObjectValue.IsBestSeller || item.Product.ProductFlagsObjectValue.IsDailyOffer == true)
+                            {
+                                <partial name="_CartCheckoutPartial" for="@item" />
+                            }
+                        }
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Deadline</h6>
+                        <span class="deadline">
+                            FREE Standard Delivery -
+                            <span class="receive"> receive @newDateFree2.ToString("MM/dd") the @newDateFree3.ToString("MM/dd")</span>
+                        </span>
+                        <h6 class="mt-3 item_ships">
+                            Item ships in original product packaging without storage box to reduce the use of additional packaging. The item becomes visible.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <div class="row">
+                    <div class="mt-2 mb-2">
+                        <span class="shipping_estimate">
+                            Shipping &nbsp;estimate @newDatePay4.ToString("MMMM/dd/yyyy") - @newDatePay7.ToString("MMMM/dd/yyyy")
+                        </span>
+                        <br />
+                        <span class="shipped_from">
+                            Items shipped from partners
+                        </span>
+                        <hr />
+                    </div>
+                    <div class="col-md-8">
+                        @foreach (var item in Model.ShoppingCartItemsDto)
+                        {
+                            @if (!item.Product.ProductFlagsObjectValue.IsBestSeller && !item.Product.ProductFlagsObjectValue.IsDailyOffer == true)
+                            {
+                                <partial name="_CartCheckoutPartial" for="@item" />
+                            }
+                        }
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Deadline</h6>
+                        <span class="deadline">
+                            <span style="color:#B12704 !important">$15.59</span> Standard Delivery
+                            <span class="receive">receive @newDatePay4.ToString("MM/dd") the @newDatePay7.ToString("MM/dd")</span>
+                        </span>
+                        <h6 class="mt-3 item_ships">
+                            Item ships in original product packaging without storage box to reduce the use of additional packaging. The item becomes visible.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a style="justify-content:center;display:flex" asp-controller="Order" asp-action="Checkout">
+                            <span class="btn btn-primary mt-4">Finalize order</span>
+                        </a>
+                    </div>
+                    <div class="col-md-10 mt-2">
+                        <div class="total_order">
+                            <span>Total order: @comdesconto.ToString("C")</span>
+                            <p>By placing your order, you agree to the MegaShop  <a asp-controller="" asp-action="Term">Terms of Use.</a> Please review the <a asp-controller="" asp-action="Privacy">Privacy Notice</a>, <a asp-controller="" asp-action="Cookie">Cookie Notice</a><br /> and Interest-Based Ads Notice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 checkout">
+            <div class="card-body card">
+                <h5 class="card-title text-center mt-2">Purchase Summary</h5>
+                <hr />
+                <div class="row format_span">
+                    <div class="col-md-8">
+                        <span>Total items: </span>
+                    </div>
+                    <div class="col-md-4">
+                        (<span style="color:#B12704 !important">@Model.GetCartTotalItems</span>)
+                    </div>
+                    <div class="col-md-8">
+                        <span>Total order: </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>@ViewBag.Total.ToString("C")</span>
+                    </div>
+                    <div class="col-md-8">
+                        <span>Shipping and handling: </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span>@frete.ToString("C")</span>
+                    </div>
+                    <div class="col-md-8">
+                        <span>SubTotal: </span> <br />
+                    </div>
+                    <div class="col-md-4">
+                        <span>@total.ToString("C")</span>
+                    </div>
+                    <div class="col-md-8">
+                        <span>Coupon applied: </span> <br />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <span>-@desconto.ToString("C")</span>
+                    </div>
+                    <hr />
+                </div>
+                <div class="row">
+                    <div class="col-md-6 total_order">
+                        <span>Total order: </span> <br />
+                    </div>
+                    <div class="col-md-6 total_order">
+                        <span>@comdesconto.ToString("C")</span>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a asp-controller="Order" asp-action="Checkout" style="height:50px;width:100%;border-radius:5px" class="btn btn-primary mb-3 btn-lg" aria-label="Checkout">
+                        Checkout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

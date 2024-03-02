@@ -1,70 +1,38 @@
 ﻿using Domain.Identity.Interfaces;
+using IdentityModel;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Infra_Data.Identity;
-public class SeedUserRoleRepository(RoleManager<IdentityRole> roleManager, UserManager<UserGeneric> userManager) : ISeedUserRoleRepository
+
+public class SeedUserRoleRepository(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager) : ISeedUserRoleRepository
 {
     private readonly RoleManager<IdentityRole> _roleManager = roleManager;
-    private readonly UserManager<UserGeneric> _userManager = userManager;
+    private readonly UserManager<ApplicationUser> _userManager = userManager;
 
-    public async Task SeedRoleAsync()
+    private async Task CreateRoleIfNotExists(string roleName)
     {
-        if (!await _roleManager.RoleExistsAsync("Admin"))
+        if (!await _roleManager.RoleExistsAsync(roleName))
         {
             IdentityRole role = new()
             {
-                Name = "Admin",
-                NormalizedName = "ADMIN"
-            };
-            _ = await _roleManager.CreateAsync(role);
-        }
-
-        if (!await _roleManager.RoleExistsAsync("User"))
-        {
-            IdentityRole role = new()
-            {
-                Name = "User",
-                NormalizedName = "USER"
+                Name = roleName,
+                NormalizedName = roleName.ToUpper()
             };
             _ = await _roleManager.CreateAsync(role);
         }
     }
 
-    public async Task SeedUserAsync()
+    private async Task CreateUserIfNotExists(string email, string roleName)
     {
-        if (await _userManager.FindByEmailAsync("admin@localhost.com") == null)
+        if (await _userManager.FindByEmailAsync(email) == null)
         {
-            var userGeneric = new UserGeneric
+            var appUser = new ApplicationUser
             {
-                Email = "admin@localhost.com",
-                UserName = "admin@localhost.com",
-                NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                FirstName = "Rafael",
-                LastName = "Silva",
-                BirthDate = new DateTime(2000, 02, 20),
-                SSN = "123-55-6789",
-                PhoneNumber = "1624-240-7675",
-                EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
-                ConcurrencyStamp = Guid.NewGuid().ToString()
-            };
-
-            IdentityResult result = await _userManager.CreateAsync(userGeneric, "@Visual23k+");
-            if (result.Succeeded)
-            {
-                await _userManager.AddToRoleAsync(userGeneric, "Admin");
-            }
-        }
-
-        if (await _userManager.FindByEmailAsync("user@localhost.com") == null)
-        {
-            var userGeneric = new UserGeneric
-            {
-                Email = "user@localhost.com",
-                UserName = "user@localhost.com",
-                NormalizedEmail = "USER@LOCALHOST.COM",
-                NormalizedUserName = "USER@LOCALHOST.COM",
+                Email = email,
+                UserName = email,
+                NormalizedEmail = email.ToUpper(),
+                NormalizedUserName = email.ToUpper(),
                 FirstName = "Rafael",
                 LastName = "Silva",
                 BirthDate = new DateTime(2000, 02, 20),
@@ -75,11 +43,30 @@ public class SeedUserRoleRepository(RoleManager<IdentityRole> roleManager, UserM
                 ConcurrencyStamp = Guid.NewGuid().ToString()
             };
 
-            IdentityResult result = await _userManager.CreateAsync(userGeneric, "@Visual23k+");
+            IdentityResult result = await _userManager.CreateAsync(appUser, "@Visual23k+");
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(userGeneric, "User");
+                await _userManager.AddToRoleAsync(appUser, roleName);
+                await _userManager.AddClaimsAsync(appUser, new Claim[]
+                {
+                    new(JwtClaimTypes.Name, $"{appUser.FirstName} {appUser.LastName}"),
+                    new(JwtClaimTypes.GivenName, appUser.FirstName),
+                    new(JwtClaimTypes.FamilyName, appUser.LastName),
+                    new(JwtClaimTypes.Role, roleName)
+                });
             }
         }
+    }
+
+    public async Task SeedRoleAsync()
+    {
+        await CreateRoleIfNotExists("Admin");
+        await CreateRoleIfNotExists("User");
+    }
+
+    public async Task SeedUserAsync()
+    {
+        await CreateUserIfNotExists("admin@localhost.com", "Admin");
+        await CreateUserIfNotExists("user@localhost.com", "User");
     }
 }

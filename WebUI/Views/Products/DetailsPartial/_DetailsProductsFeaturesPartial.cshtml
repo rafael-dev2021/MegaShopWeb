@@ -5,7 +5,7 @@
         <div class="row">
             @if (items.Id == Model.ProductDto.Id)
             {
-                <partial name="~/Views/Smartphone/FeaturesPartial.cshtml" for="@items" />
+                <partial name="~/Views/Products/DetailsPartial/Technology/Smartphones/_FeaturesSmartphonePartial.cshtml" for="@items" />
             }
         </div>
     </div>
@@ -16,7 +16,7 @@
         <div class="row">
             @if (items.Id == Model.ProductDto.Id)
             {
-                <partial name="~/Views/Game/FeaturesPartial.cshtml" for="@items" />
+                <partial name="~/Views/Products/DetailsPartial/Technology/Games/_FeaturesGamePartial.cshtml" for="@items" />
             }
         </div>
     </div>

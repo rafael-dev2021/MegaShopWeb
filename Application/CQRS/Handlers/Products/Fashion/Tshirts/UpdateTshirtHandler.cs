@@ -5,32 +5,31 @@ using Domain.Entities.Products.Fashion.Tshirts;
 using MediatR;
 using System.Net;
 
-namespace Application.CQRS.Handlers.Products.Fashion.Tshirts
-{
-    public class UpdateTshirtHandler(ITshirtRepository tshirtRepository) : IRequestHandler<UpdateTshirtCommand, Tshirt>
-    {
-        private readonly ITshirtRepository _tshirtRepository = tshirtRepository;
-        public async Task<Tshirt> Handle(UpdateTshirtCommand request, CancellationToken cancellationToken)
-        {
-            var product = await _tshirtRepository.GetByIdAsync(request.Id);
-            if (product == null)
-            {
-                throw new RequestException(new RequestError
-                {
-                    Message = "Id not found!",
-                    Severity = "error",
-                    StatusCode = HttpStatusCode.NotFound
-                });
-            }
-            else
-            {
-                product.TshirtUpdate(request.Name, request.Description, request.Stock, request.ProductDataObjectValue,
-                request.ProductFlagsObjectValue, request.ProductImageObjectValue, request.ProductPriceObjectValue,
-                request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.TshirtOtherFeaturesObectsValue,
-                request.TshirtMainFeaturesObectsValue, request.CategoryId);
+namespace Application.CQRS.Handlers.Products.Fashion.Tshirts;
 
-                return await _tshirtRepository.UpdateAsync(product);
-            }
+public class UpdateTshirtHandler(ITshirtRepository tshirtRepository) : IRequestHandler<UpdateTshirtCommand, Tshirt>
+{
+    private readonly ITshirtRepository _tshirtRepository = tshirtRepository;
+    public async Task<Tshirt> Handle(UpdateTshirtCommand request, CancellationToken cancellationToken)
+    {
+        var product = await _tshirtRepository.GetByIdAsync(request.Id);
+        if (product == null)
+        {
+            throw new RequestException(new RequestError
+            {
+                Message = "Id not found!",
+                Severity = "error",
+                StatusCode = HttpStatusCode.NotFound
+            });
+        }
+        else
+        {
+            product.TshirtUpdate(request.Name, request.Description,request.Images, request.Stock, request.ProductDataObjectValue,
+            request.ProductFlagsObjectValue, request.ProductPriceObjectValue,
+            request.ProductSpecificationsObjectValue, request.ProductWarrantyObjectValue, request.TshirtOtherFeaturesObectsValue,
+            request.TshirtMainFeaturesObectsValue, request.CategoryId);
+
+            return await _tshirtRepository.UpdateAsync(product);
         }
     }
 }
