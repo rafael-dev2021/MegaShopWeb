@@ -8,74 +8,49 @@ namespace Domain.Entities.Payments.Valuables;
 
 public class PaymentMethodObjectValue : IPaymentMethod
 {
+    public PaymentStatusObjectValue PaymentStatusObjectValue { get; protected set; } = new ();
     [EnumDataType(typeof(EPaymentMethod))]
-    public string PaymentMethod { get; protected set; }
+    public string PaymentMethod { get; protected set; } = string.Empty;
 
     [NotMapped]
     public EPaymentMethod EPaymentMethod { get; protected set; }
 
-    public Guid Reference { get; set; }
-    public PaymentStatusObjectValue PaymentStatusObjectValue { get; set; } = new PaymentStatusObjectValue();
+    public Guid Reference { get; protected set; }
     public DateTime PaymentDate { get; protected set; }
 
-    public void PaymentDateConfirm()
-    {
-        PaymentDate = DateTime.Now;
-    }
-    private void SetReference()
-    {
-        Reference = Guid.NewGuid();
-    }
-    public void CreditCardPaymentMethod(string creditCardNumber)
-    {
-        EPaymentMethod = EPaymentMethod.CreditCard;
-        PaymentMethod = EPaymentMethod.CreditCard.ToString();
+    private void PaymentDateConfirm() => PaymentDate = DateTime.Now;
+    private void SetReference() => Reference = Guid.NewGuid();
 
-        bool isCreditCardPaymentCompleted = CreditCardValidator.ValidateCreditCardNumber(creditCardNumber);
-
-        if (isCreditCardPaymentCompleted && PaymentStatusObjectValue != null)
+    private void ProcessPayment(string cardNumber, EPaymentMethod method)
+    {
+        EPaymentMethod = method;
+        PaymentMethod = method.ToString();
+        bool isPaymentCompleted = CreditCardValidator
+            .ValidateCreditCardNumber(cardNumber);
+        if (isPaymentCompleted && PaymentStatusObjectValue != null)
         {
             PaymentStatusObjectValue.PaymentProcessing();
             SetReference();
 
-            // Introduza um atraso simulado de 5 segundos (5000 milissegundos)
-            Thread.Sleep(5000);
+            Thread.Sleep(2500);
 
-            // Simulando a aprovação do pagamento após o atraso
             PaymentStatusObjectValue.PaymentApproved();
-
             PaymentDateConfirm();
         }
         else
         {
-            PaymentStatusObjectValue.PaymentDeclined();
+            PaymentStatusObjectValue?.PaymentDeclined();
         }
     }
 
-    public void DebitCardPaymentMethod(string debitCardNumber)
+    public void CreditCardPaymentMethod(string cardNumber)
     {
-        EPaymentMethod = EPaymentMethod.DebitCard;
-        PaymentMethod = EPaymentMethod.DebitCard.ToString();
+        ProcessPayment(cardNumber, EPaymentMethod.CreditCard);
+    }
 
-        bool isDebitCardPaymentCompleted = CreditCardValidator.ValidateCreditCardNumber(debitCardNumber);
-
-        if (isDebitCardPaymentCompleted && PaymentStatusObjectValue != null)
-        {
-            PaymentStatusObjectValue.PaymentProcessing();
-            SetReference();
-
-            // Introduza um atraso simulado de 5 segundos (5000 milissegundos)
-            Thread.Sleep(5000);
-
-            // Simulando a aprovação do pagamento após o atraso
-            PaymentStatusObjectValue.PaymentApproved();
-
-            PaymentDateConfirm();
-        }
-        else
-        {
-            PaymentStatusObjectValue.PaymentDeclined();
-        }
+    public void DebitCardPaymentMethod(string cardNumber)
+    {
+        ProcessPayment(cardNumber, EPaymentMethod.DebitCard);
     }
 
     public void BankSlipPaymentMethod()

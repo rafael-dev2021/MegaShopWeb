@@ -20,6 +20,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbCo
     public DbSet<Review> Reviews { get; set; } = null;
     public DbSet<Order> Orders { get; set; } = null;
     public DbSet<Payment> Payments { get; set; } = null;
+    public DbSet<Card> Cards { get; set; } = null;
     public DbSet<PaymentMethod> PaymentMethods { get; set; } = null;
     public DbSet<CreditCard> CreditCards { get; set; } = null;
     public DbSet<DebitCard> DebitCards { get; set; } = null;

@@ -51,10 +51,10 @@ namespace WebUI.Controllers
                     orderDto.PaymentMethod.CreditCard = new CreditCardDto
                     {
                         Id = orderDto.PaymentMethod.CreditCard.Id,
-                        CreditCardNumber = orderDto.PaymentMethod.CreditCard.CreditCardNumber,
-                        CreditCardHolderName = orderDto.PaymentMethod.CreditCard.CreditCardHolderName,
-                        CreditCardExpirationDate = orderDto.PaymentMethod.CreditCard.CreditCardExpirationDate,
-                        CreditCardCVV = orderDto.PaymentMethod.CreditCard.CreditCardCVV,
+                        CardNumber = orderDto.PaymentMethod.CreditCard.CardNumber,
+                        CardHolderName = orderDto.PaymentMethod.CreditCard.CardHolderName,
+                        CardExpirationDate = orderDto.PaymentMethod.CreditCard.CardExpirationDate,
+                        CardCVV = orderDto.PaymentMethod.CreditCard.CardCVV,
                         SSN = orderDto.PaymentMethod.CreditCard.SSN
                     };
 
@@ -67,10 +67,10 @@ namespace WebUI.Controllers
                     orderDto.PaymentMethod.DebitCard = new DebitCardDto
                     {
                         Id = orderDto.PaymentMethod.DebitCard.Id,
-                        DebitCardNumber = orderDto.PaymentMethod.DebitCard.DebitCardNumber,
-                        DebitCardHolderName = orderDto.PaymentMethod.DebitCard.DebitCardHolderName,
-                        DebitCardExpirationDate = orderDto.PaymentMethod.DebitCard.DebitCardExpirationDate,
-                        DebitCardCVV = orderDto.PaymentMethod.DebitCard.DebitCardCVV,
+                        CardNumber = orderDto.PaymentMethod.DebitCard.CardNumber,
+                        CardHolderName = orderDto.PaymentMethod.DebitCard.CardHolderName,
+                        CardExpirationDate = orderDto.PaymentMethod.DebitCard.CardExpirationDate,
+                        CardCVV = orderDto.PaymentMethod.DebitCard.CardCVV,
                         SSN = orderDto.PaymentMethod.DebitCard.SSN
                     };
 

@@ -13,6 +13,7 @@ public class DomainEntitiesToMappingProfile : Profile
     public DomainEntitiesToMappingProfile()
     {
         CreateMap<Category, CategoryDto>().ReverseMap();
+        CreateMap<Card, CardDto>().ReverseMap();
         CreateMap<Review, ReviewDto>().ReverseMap();
         CreateMap<Payment, PaymentDto>().ReverseMap();
         CreateMap<CreditCard, CreditCardDto>().ReverseMap();

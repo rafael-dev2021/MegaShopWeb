@@ -162,52 +162,52 @@
 
                         <div id="creditCardFields"  style="display:none;">
                             <div class="mb-3">
-                                <input asp-for="PaymentMethod.CreditCard.CreditCardNumber" id="CardNumber" placeholder="Card number" class="form-control" />
+                                <input asp-for="PaymentMethod.CreditCard.CardNumber" id="CardNumber" placeholder="Card number" class="form-control" />
                                 <span id="CardBrand" class="text-muted"></span>
-                                <span asp-validation-for="PaymentMethod.CreditCard.CreditCardNumber" class="text-danger"></span>
+                                <span asp-validation-for="PaymentMethod.CreditCard.CardNumber" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <input asp-for="PaymentMethod.CreditCard.SSN" placeholder="SSN" class="form-control" />
                                 <span asp-validation-for="PaymentMethod.CreditCard.SSN" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
-                                <input asp-for="PaymentMethod.CreditCard.CreditCardHolderName" placeholder="Holder name" class="form-control" />
-                                <span asp-validation-for="PaymentMethod.CreditCard.CreditCardHolderName" class="text-danger"></span>
+                                <input asp-for="PaymentMethod.CreditCard.CardHolderName" placeholder="Holder name" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.CreditCard.CardHolderName" class="text-danger"></span>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <input asp-for="PaymentMethod.CreditCard.CreditCardExpirationDate" id="ExpirationDate" placeholder="Expiration date" class="form-control" />
-                                    <span asp-validation-for="PaymentMethod.CreditCard.CreditCardExpirationDate" class="text-danger"></span>
+                                    <input asp-for="PaymentMethod.CreditCard.CardExpirationDate" id="ExpirationDate" placeholder="Expiration date" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.CreditCard.CardExpirationDate" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input asp-for="PaymentMethod.CreditCard.CreditCardCVV" placeholder="Security code" class="form-control" />
-                                    <span asp-validation-for="PaymentMethod.CreditCard.CreditCardCVV" class="text-danger"></span>
+                                    <input asp-for="PaymentMethod.CreditCard.CardCVV" placeholder="Security code" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.CreditCard.CardCVV" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
 
                         <div id="debitCardFields" style="display:none;">
                             <div class="mb-3 debit-card">
-                                <input asp-for="PaymentMethod.DebitCard.DebitCardNumber" id="DebitCardNumber" placeholder="Debit Card number" class="form-control" />
+                                <input asp-for="PaymentMethod.DebitCard.CardNumber" id="DebitCardNumber" placeholder="Debit Card number" class="form-control" />
                                 <span id="DebitCardBrand" class="text-muted"></span>
-                                <span asp-validation-for="PaymentMethod.DebitCard.DebitCardNumber" class="text-danger"></span>
+                                <span asp-validation-for="PaymentMethod.DebitCard.CardNumber" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <input asp-for="PaymentMethod.DebitCard.SSN" placeholder="SSN" class="form-control" />
                                 <span asp-validation-for="PaymentMethod.DebitCard.SSN" class="text-danger"></span>
                             </div>
                             <div class="mb-3 debit-card">
-                                <input asp-for="PaymentMethod.DebitCard.DebitCardHolderName" placeholder="Holder name" class="form-control" />
-                                <span asp-validation-for="PaymentMethod.DebitCard.DebitCardHolderName" class="text-danger"></span>
+                                <input asp-for="PaymentMethod.DebitCard.CardHolderName" placeholder="Holder name" class="form-control" />
+                                <span asp-validation-for="PaymentMethod.DebitCard.CardHolderName" class="text-danger"></span>
                             </div>
                             <div class="row debit-card">
                                 <div class="col-md-6 mb-3">
-                                    <input asp-for="PaymentMethod.DebitCard.DebitCardExpirationDate" id="DebitExpirationDate" placeholder="Expiration date" class="form-control" />
-                                    <span asp-validation-for="PaymentMethod.DebitCard.DebitCardExpirationDate" class="text-danger"></span>
+                                    <input asp-for="PaymentMethod.DebitCard.CardExpirationDate" id="DebitExpirationDate" placeholder="Expiration date" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.DebitCard.CardExpirationDate" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input asp-for="PaymentMethod.DebitCard.DebitCardCVV" placeholder="Security code" class="form-control" />
-                                    <span asp-validation-for="PaymentMethod.DebitCard.DebitCardCVV" class="text-danger"></span>
+                                    <input asp-for="PaymentMethod.DebitCard.CardCVV" placeholder="Security code" class="form-control" />
+                                    <span asp-validation-for="PaymentMethod.DebitCard.CardCVV" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>

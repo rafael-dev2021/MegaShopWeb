@@ -191,72 +191,47 @@ namespace Infra_Data.Migrations
                     b.ToTable("OrderDetails");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Payments.CreditCard", b =>
+            modelBuilder.Entity("Domain.Entities.Payments.Card", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CreditCardCVV")
+                    b.Property<string>("CardCVV")
                         .IsRequired()
                         .HasMaxLength(4)
                         .HasColumnType("nvarchar(4)");
 
-                    b.Property<string>("CreditCardExpirationDate")
+                    b.Property<string>("CardExpirationDate")
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<string>("CreditCardHolderName")
+                    b.Property<string>("CardHolderName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("CreditCardNumber")
+                    b.Property<string>("CardNumber")
                         .IsRequired()
                         .HasMaxLength(19)
                         .HasColumnType("nvarchar(19)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
 
                     b.Property<string>("SSN")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("CreditCards");
-                });
+                    b.ToTable("Cards");
 
-            modelBuilder.Entity("Domain.Entities.Payments.DebitCard", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Card");
 
-                    b.Property<string>("DebitCardCVV")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)");
-
-                    b.Property<string>("DebitCardExpirationDate")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<string>("DebitCardHolderName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("DebitCardNumber")
-                        .IsRequired()
-                        .HasMaxLength(19)
-                        .HasColumnType("nvarchar(19)");
-
-                    b.Property<string>("SSN")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DebitCards");
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Domain.Entities.Payments.Payment", b =>
@@ -276,7 +251,7 @@ namespace Infra_Data.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
 
-                    b.Property<string>("SSN")
+                    b.Property<string>("Ssn")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
@@ -378,7 +353,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_637616-MLA70484274053_072023-O.webp",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1660)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1580)
                         },
                         new
                         {
@@ -387,7 +362,7 @@ namespace Infra_Data.Migrations
                             Image = "https://m.media-amazon.com/images/I/71a4vqXqxbL._SY256.jpg",
                             ProductId = 1,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1673)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1592)
                         },
                         new
                         {
@@ -396,7 +371,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_743184-MLA69501979268_052023-F.webp",
                             ProductId = 1,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1674)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1593)
                         },
                         new
                         {
@@ -405,7 +380,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_936910-MLA54765476953_032023-F.webp",
                             ProductId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1675)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1594)
                         },
                         new
                         {
@@ -414,7 +389,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_960098-MLA73264672831_122023-F.webp",
                             ProductId = 3,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1676)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1595)
                         },
                         new
                         {
@@ -423,7 +398,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_911842-MLA73095448948_112023-F.webp",
                             ProductId = 4,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1677)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1596)
                         },
                         new
                         {
@@ -432,7 +407,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_696237-MLA71736945652_092023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1678)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1597)
                         },
                         new
                         {
@@ -441,7 +416,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_918056-MLA72166744514_102023-F.webp",
                             ProductId = 5,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1678)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1598)
                         },
                         new
                         {
@@ -450,7 +425,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_661229-MLA72108620029_102023-F.webp",
                             ProductId = 6,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1679)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1599)
                         },
                         new
                         {
@@ -459,7 +434,7 @@ namespace Infra_Data.Migrations
                             Image = "https://http2.mlstatic.com/D_NQ_NP_2X_942915-MLA54965635426_042023-F.webp",
                             ProductId = 6,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1680)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1600)
                         },
                         new
                         {
@@ -468,7 +443,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1681)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1601)
                         },
                         new
                         {
@@ -477,7 +452,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 7,
                             Rating = 1,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1682)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1602)
                         },
                         new
                         {
@@ -486,7 +461,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 9,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1682)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1603)
                         },
                         new
                         {
@@ -495,7 +470,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 5,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1683)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1604)
                         },
                         new
                         {
@@ -504,7 +479,7 @@ namespace Infra_Data.Migrations
                             Image = "",
                             ProductId = 10,
                             Rating = 4,
-                            ReviewDate = new DateTime(2024, 2, 25, 19, 30, 50, 453, DateTimeKind.Local).AddTicks(1684)
+                            ReviewDate = new DateTime(2024, 3, 1, 21, 5, 3, 630, DateTimeKind.Local).AddTicks(1605)
                         });
                 });
 
@@ -721,6 +696,20 @@ namespace Infra_Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.Payments.CreditCard", b =>
+                {
+                    b.HasBaseType("Domain.Entities.Payments.Card");
+
+                    b.HasDiscriminator().HasValue("CreditCard");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Payments.DebitCard", b =>
+                {
+                    b.HasBaseType("Domain.Entities.Payments.Card");
+
+                    b.HasDiscriminator().HasValue("DebitCard");
+                });
+
             modelBuilder.Entity("Domain.Entities.Payments.PaymentMethod", b =>
                 {
                     b.HasBaseType("Domain.Entities.Payments.Payment");
@@ -752,6 +741,7 @@ namespace Infra_Data.Migrations
                             Description = "Buoyed to the comfort you've come to trust, the Air Max Excee meets the needs of your 9 to 5 while keeping your outfit on-point with rich textures. These sneakers deliver just what you're looking for—soft cushioning that's easy to style.",
                             Images = "[\"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/24d5a5ec-db76-4512-99a8-36231b9a9b41/streakfly-road-racing-shoes-8rTxtR.png\",\"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/97fb810e-5803-43f5-98ac-67c8763deb15/streakfly-road-racing-shoes-8rTxtR.png\",\"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6d25c69b-b08b-4cc7-b97d-8384e196951f/streakfly-road-racing-shoes-8rTxtR.png\",\"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54e264aa-a85f-4152-b409-ed0372924d81/streakfly-road-racing-shoes-8rTxtR.png\"]",
                             Name = "Nike Streakfly",
+                            RowVersion = new byte[0],
                             Stock = 15
                         },
                         new
@@ -761,6 +751,7 @@ namespace Infra_Data.Migrations
                             Description = "The Suede hit the scene in 1968 and has been changing the game ever since. It’s been worn by icons of every generation, and it’s stayed classic through it all. Instantly recognizable and constantly reinvented, Suede’s legacy continues to grow and be legitimized by the authentic and expressive individuals that embrace the iconic shoe. Be apart of the history of Suede.",
                             Images = "[\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/sv01/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\",\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod02/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\",\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/mod03/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\",\"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/374915/01/bv/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers\"]",
                             Name = "Suede Classic XXI Sneakers",
+                            RowVersion = new byte[0],
                             Stock = 15
                         });
                 });
@@ -779,6 +770,7 @@ namespace Infra_Data.Migrations
                             Description = "The Nike Classic Swoosh Futura medium support women's workout top offers long-lasting comfort during training with sweat-wicking fabric and a compression fit.",
                             Images = "[\"https://imgnike-a.akamaihd.net/768x768/002897ID.jpg\",\"https://imgnike-a.akamaihd.net/768x768/002897IDA1.jpg\",\"https://imgnike-a.akamaihd.net/768x768/002897IDA4.jpg\",\"https://imgnike-a.akamaihd.net/768x768/002897IDA5.jpg\"]",
                             Name = "Top Nike Swoosh Woman",
+                            RowVersion = new byte[0],
                             Stock = 5
                         },
                         new
@@ -788,6 +780,7 @@ namespace Infra_Data.Migrations
                             Description = "Fresh and full of life, this Adicolor Firebird track jacket celebrates the power and authenticity of adidas' legendary DNA.",
                             Images = "[\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a5757a66a549439cbac6afcd002ca57f_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_01_laydown.jpg\",\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3cae025992434e889496afcd002c97ae_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_42_detail.jpg\",\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c6f0e6def4bd4eefa0bfafcd002c7094_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_21_model.jpg\",\"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a915172e29f24ce4b34bafcd002c78dc_9366/Adicolor_Classics_Firebird_Track_Jacket_Black_IL8764_23_hover_model.jpg\"]",
                             Name = "Adicolor classics firebird track jacket",
+                            RowVersion = new byte[0],
                             Stock = 8
                         });
                 });
@@ -806,6 +799,7 @@ namespace Infra_Data.Migrations
                             Description = "With this Spider-Man game you will enjoy hours of fun and new challenges that will allow you to improve as a player.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_739971-MLA44963396567_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_717296-MLA44963321732_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_902181-MLA44963396568_022021-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_952087-MLU69953465194_062023-O.webp\"]",
                             Name = "Marvel's Spider-Man: Miles Morales Standard Edition Sony PS5",
+                            RowVersion = new byte[0],
                             Stock = 10
                         },
                         new
@@ -815,6 +809,7 @@ namespace Infra_Data.Migrations
                             Description = "With this God of War game you will enjoy hours of fun and new challenges that will allow you to improve as a player. You will be able to share each game with people from all over the world as you can connect online.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_834716-MLU72751588558_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_924074-MLU69483138400_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_662378-MLU69483138404_052023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_852774-MLU69482634062_052023-O.webp\"]",
                             Name = "God of War Ragnarök Standard Edition Sony PS5",
+                            RowVersion = new byte[0],
                             Stock = 15
                         });
                 });
@@ -833,6 +828,7 @@ namespace Infra_Data.Migrations
                             Description = "Maximum security so that only you can access your team. You can choose between the fingerprint sensor to activate your phone with a tap, or facial recognition that allows you to unlock up to 30% faster.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_856672-MLU70401529412_072023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_945544-MLU70401529414_072023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_808604-MLU70400221716_072023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_827555-MLU70400783806_072023-O.webp\"]",
                             Name = "Samsung Galaxy S23 Ultra 512GB Unlocked - Black",
+                            RowVersion = new byte[0],
                             Stock = 20
                         },
                         new
@@ -842,6 +838,7 @@ namespace Infra_Data.Migrations
                             Description = "Maximum security so that only you can access your team. You can choose between the fingerprint sensor to activate your phone with a tap, or facial recognition that allows you to unlock up to 30% faster.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_683947-MLU73106437489_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_690989-MLU72932986551_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_612226-MLU72932986555_112023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_683459-MLU72932986549_112023-O.webp\"]",
                             Name = "Samsung Galaxy S23 Ultra 256GB - Violet",
+                            RowVersion = new byte[0],
                             Stock = 25
                         },
                         new
@@ -851,6 +848,7 @@ namespace Infra_Data.Migrations
                             Description = "FORGED FROM TITANIUM — iPhone 15 Pro features a rugged, lightweight design made from aerospace-grade titanium. On the back, textured matte glass and, on the front, Ceramic Shield, more resistant than any smartphone glass. It's also tough against splashes, water, and dust.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_918178-MLA71783088444_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_829742-MLA71783365702_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_715495-MLA71783365704_092023-O.webps\"]",
                             Name = "Apple iPhone 15 Pro (512 GB) - Titanium Blue",
+                            RowVersion = new byte[0],
                             Stock = 15
                         },
                         new
@@ -860,6 +858,7 @@ namespace Infra_Data.Migrations
                             Description = "FORGED FROM TITANIUM — iPhone 15 Pro features a rugged, lightweight design made from aerospace-grade titanium. On the back, textured matte glass and, on the front, Ceramic Shield, more resistant than any smartphone glass. It's also tough against splashes, water, and dust.",
                             Images = "[\"https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_812116-MLA71783168214_092023E-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_658271-MLA71782871766_092023-O.webp\",\"https://http2.mlstatic.com/D_NQ_NP_998898-MLA71782901894_092023-O.webp\"]",
                             Name = "Apple iPhone 15 Pro (128 GB) - Titanium White",
+                            RowVersion = new byte[0],
                             Stock = 10
                         });
                 });

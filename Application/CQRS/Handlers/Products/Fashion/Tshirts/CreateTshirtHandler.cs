@@ -24,7 +24,7 @@ public class CreateTshirtHandler(ITshirtRepository tshirtRepository) : IRequestH
                 StatusCode = HttpStatusCode.NotFound
             });
 
-        product.CategoryId = request.CategoryId;
+        product.SetCategoryId(request.CategoryId);
         return await _tshirtRepository.CreateAsync(product);
     }
 }

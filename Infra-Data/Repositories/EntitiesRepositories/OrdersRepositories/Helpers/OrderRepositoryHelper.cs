@@ -66,8 +66,7 @@ public class OrderRepositoryHelper(AppDbContext appDbContext, IShoppingCartItemR
 
         if (product.Stock >= cartItem.Quantity)
         {
-            product.Stock -= cartItem.Quantity;
-
+            product.SetStock(product.Stock - cartItem.Quantity);
             var orderDetails = new OrderDetail
             (
             cartItem.Quantity,

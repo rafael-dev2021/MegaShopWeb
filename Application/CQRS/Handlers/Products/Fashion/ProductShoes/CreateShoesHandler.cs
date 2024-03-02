@@ -23,7 +23,7 @@ public class CreateShoesHandle(IShoesRepository shoesRepository) : IRequestHandl
                StatusCode = HttpStatusCode.NotFound
            });
 
-        product.CategoryId = request.CategoryId;
+        product.SetCategoryId(request.CategoryId);
         return await _shoesRepository.CreateAsync(product);
     }
 }

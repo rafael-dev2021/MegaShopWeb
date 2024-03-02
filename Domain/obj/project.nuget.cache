@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6/ToVnHF0rX2oQvjv8kOiiZS9zwhM86rGBbaqfWCi5IVHW63p1ZdZ+oBxGQ0N3pPhM8nBjCETwMmWddrzVRwDg==",
+  "dgSpecHash": "fM6trwi/ctuYupGea55hGplTE7xWz7JlC3B6ETpym5aal6QTVvlmo3z3B8NznEDL36Woo9vdY6w1Uxcz0t02wA==",
   "success": true,
-  "projectFilePath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

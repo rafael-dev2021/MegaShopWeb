@@ -25,7 +25,7 @@ public class CreateGameHandler(IGameRepository gameRepository) : IRequestHandler
              StatusCode = HttpStatusCode.NotFound
          });
 
-        product.CategoryId = request.CategoryId;
+        product.SetCategoryId(request.CategoryId);
         return await _gameRepository.CreateAsync(product);
     }
 }

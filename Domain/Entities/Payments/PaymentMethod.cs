@@ -4,22 +4,21 @@ namespace Domain.Entities.Payments;
 
 public class PaymentMethod : Payment
 {
-    public CreditCard CreditCard { get; set; } = new CreditCard();
-    public DebitCard DebitCard { get; set; } = new DebitCard();
+    public CreditCard CreditCard { get; set; } = new();
+    public DebitCard DebitCard { get; set; } = new();
 
     public override void DefaultPayment(EPaymentMethod ePaymentMethod)
     {
         switch (ePaymentMethod)
         {
             case EPaymentMethod.CreditCard:
-                PaymentMethodObjectValue.CreditCardPaymentMethod(CreditCard.CreditCardNumber);
+                PaymentMethodObjectValue.CreditCardPaymentMethod(CreditCard.CardNumber);
                 break;
             case EPaymentMethod.DebitCard:
-                PaymentMethodObjectValue.DebitCardPaymentMethod(DebitCard.DebitCardNumber);
-                break;
-            case EPaymentMethod.BankSlip:
-                PaymentMethodObjectValue.BankSlipPaymentMethod();
+                PaymentMethodObjectValue.DebitCardPaymentMethod(DebitCard.CardNumber);
                 break;
         }
     }
 }
+
+

@@ -32,7 +32,7 @@ public class CreateGameHandler : IRequestHandler<CreateSmartphoneCommand, Smartp
                 StatusCode = HttpStatusCode.NotFound
             });
 
-        product.CategoryId = request.CategoryId;
+        product.SetCategoryId(request.CategoryId);
         return await _smartphoneRepository.CreateAsync(product);
     }
 }

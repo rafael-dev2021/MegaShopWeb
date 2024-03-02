@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zz65xEy1M4syhoo5sJ3pnrFGaouiwmBemT2l0U+m4wDPBdRFc7I3SbARSaudG3XxvASEPH5x4zFOE9jMkIN8Uw==",
+  "dgSpecHash": "nBluRW5rpinl+MMokIC+tVOFH6DeppSHny1XzE8KYMWU4GCGcL4VLaOq3ltBA11utMogq1dktUnEOqGkKrL9RA==",
   "success": true,
-  "projectFilePath": "C:\\C#\\MegaShopWeb\\Infra-Ioc\\Infra-Ioc.csproj",
+  "projectFilePath": "C:\\C#\\MegaShopWebVS\\Infra-Ioc\\Infra-Ioc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ainbo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

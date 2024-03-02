@@ -1,5 +1,4 @@
-﻿using Domain.Entities.Cart;
-using Domain.Entities.Reviews;
+﻿using Domain.Entities.Reviews;
 using Domain.Entities.Valuables.ProductValuables;
 
 namespace Domain.Entities;
@@ -10,19 +9,21 @@ public class Product
     public string Name { get; protected set; } = string.Empty;
     public string Description { get; protected set; } = string.Empty;
     public List<string> Images { get; protected set; } = [];
-    public int Stock { get; set; }
-    public byte[] RowVersion { get; set; }
+    public int Stock { get; protected set; }
+    public byte[] RowVersion { get; set; } = [];
     public ProductDataOV ProductDataObjectValue { get; protected set; }
     public ProductFlagsOV ProductFlagsObjectValue { get; protected set; }
     public ProductPriceOV ProductPriceObjectValue { get; protected set; }
     public ProductSpecificationsOV ProductSpecificationsObjectValue { get; protected set; }
     public ProductWarrantyOV ProductWarrantyObjectValue { get; protected set; }
-    public int CategoryId { get; set; }
-    public Category Category { get; set; }
-    public ICollection<Review> Reviews { get; set; } = [];
+    public int CategoryId { get; protected set; }
+    public Category Category { get; }
+    public ICollection<Review> Reviews { get; } = [];
     public Product()
     { }
-    public Product(int id, string name, string description, List<string> images, int stock, int categoryId)
+    public void SetStock(int stock) => Stock = stock;
+    public void SetCategoryId(int categoryId) => CategoryId = categoryId;
+    protected Product(int id, string name, string description, List<string> images, int stock, int categoryId)
     {
         Id = id;
         Name = name;
@@ -32,7 +33,7 @@ public class Product
         CategoryId = categoryId;
     }
 
-    public Product(
+    protected Product(
         string name,
         string description,
         List<string> images,
@@ -56,7 +57,7 @@ public class Product
         CategoryId = categoryId;
     }
 
-    public void ProductUpdate(
+    protected void ProductUpdate(
         string name,
         string description,
         List<string> images,

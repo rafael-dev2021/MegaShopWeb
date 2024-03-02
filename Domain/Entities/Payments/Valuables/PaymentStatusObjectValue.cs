@@ -13,45 +13,16 @@ public class PaymentStatusObjectValue : IPaymentStatus
     [NotMapped]
     public EPaymentStatus EPaymentStatus { get; protected set; }
 
-    public void PaymentPending()
+    public void SetPaymentStatus(EPaymentStatus status)
     {
-        EPaymentStatus = EPaymentStatus.Pending;
-        PaymentStatus = EPaymentStatus.Pending.ToString();
+        EPaymentStatus = status;
+        PaymentStatus = status.ToString();
     }
-
-    public void PaymentProcessing()
-    {
-        EPaymentStatus = EPaymentStatus.Processing;
-        PaymentStatus = EPaymentStatus.Processing.ToString();
-    }
-
-    public void PaymentApproved()
-    {
-        EPaymentStatus = EPaymentStatus.Approved;
-        PaymentStatus = EPaymentStatus.Approved.ToString();
-    }
-
-    public void PaymentDeclined()
-    {
-        EPaymentStatus = EPaymentStatus.Declined;
-        PaymentStatus = EPaymentStatus.Declined.ToString();
-    }
-
-    public void PaymentRefunded()
-    {
-        EPaymentStatus = EPaymentStatus.Refunded;
-        PaymentStatus = EPaymentStatus.Refunded.ToString();
-    }
-
-    public void PaymentCompleted()
-    {
-        EPaymentStatus = EPaymentStatus.Completed;
-        PaymentStatus = EPaymentStatus.Completed.ToString();
-    }
-
-    public void PaymentCanceled()
-    {
-        EPaymentStatus = EPaymentStatus.Canceled;
-        PaymentStatus = EPaymentStatus.Canceled.ToString();
-    }
+    public void PaymentPending() => SetPaymentStatus(EPaymentStatus.Pending);
+    public void PaymentProcessing() => SetPaymentStatus(EPaymentStatus.Processing);
+    public void PaymentApproved() => SetPaymentStatus(EPaymentStatus.Approved);
+    public void PaymentDeclined() => SetPaymentStatus(EPaymentStatus.Declined);
+    public void PaymentRefunded() => SetPaymentStatus(EPaymentStatus.Refunded);
+    public void PaymentCompleted() => SetPaymentStatus(EPaymentStatus.Completed);
+    public void PaymentCanceled() => SetPaymentStatus(EPaymentStatus.Canceled);
 }
