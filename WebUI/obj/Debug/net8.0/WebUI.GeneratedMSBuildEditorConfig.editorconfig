@@ -9,491 +9,491 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebUI
 build_property.RootNamespace = WebUI
-build_property.ProjectDir = C:\C#\MegaShopWebVS\WebUI\
+build_property.ProjectDir = C:\C#\MegaShopWeb\WebUI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\C#\MegaShopWebVS\WebUI
+build_property.MSBuildProjectDirectory = C:\C#\MegaShopWeb\WebUI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminCategory/Create.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminCategory/Delete.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminCategory/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminCategory/Edit.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminCategory/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminCategory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5DYXRlZ29yeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminGame/Create.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminGame/Delete.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminGame/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminGame/Edit.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminGame/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminGame/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5HYW1lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/ConfirmedSalesReport.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/ConfirmedSalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxDb25maXJtZWRTYWxlc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/Delete.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/DispatchedSalesReport.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/DispatchedSalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxEaXNwYXRjaGVkU2FsZXNSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/Edit.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/OrderNotFound.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/OrderNotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxPcmRlck5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/OrderProducts.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/OrderProducts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxPcmRlclByb2R1Y3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/RequestReceivedSalesReport.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/RequestReceivedSalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxSZXF1ZXN0UmVjZWl2ZWRTYWxlc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminOrder/Sales.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminOrder/Sales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5PcmRlclxTYWxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminPayment/IndexCreditCard.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminPayment/IndexCreditCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5QYXltZW50XEluZGV4Q3JlZGl0Q2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminPayment/IndexDebitCard.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminPayment/IndexDebitCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5QYXltZW50XEluZGV4RGViaXRDYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminPayment/IndexPayments.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminPayment/IndexPayments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5QYXltZW50XEluZGV4UGF5bWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminProduct/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminProduct/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Qcm9kdWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminShoes/Create.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminShoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TaG9lc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminShoes/Delete.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminShoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TaG9lc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminShoes/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminShoes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TaG9lc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminShoes/Edit.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminShoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TaG9lc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminShoes/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminShoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TaG9lc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminSmartphone/Create.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminSmartphone/Delete.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminSmartphone/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminSmartphone/Edit.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminSmartphone/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminSmartphone/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TbWFydHBob25lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminTshirt/Create.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminTshirt/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Uc2hpcnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminTshirt/Delete.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminTshirt/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Uc2hpcnRcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminTshirt/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminTshirt/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Uc2hpcnRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminTshirt/Edit.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminTshirt/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Uc2hpcnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/AdminTshirt/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/AdminTshirt/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Uc2hpcnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/Admin/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/Shared/_Layout.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/AccessDenied.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/ChangePassword.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/ChangePasswordSuccess.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/ChangePasswordSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZFN1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/EditProfile.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/EditProfileSuccess.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/EditProfileSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0UHJvZmlsZVN1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/Login.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/PasswordResetSuccess.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/PasswordResetSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQYXNzd29yZFJlc2V0U3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/Register.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Account/ResetPassword.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Contact/About.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Contact/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Contact/Contact.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Contact/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Contact/ThankYou.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Contact/ThankYou.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxUaGFua1lvdS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Home/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Home/Privacy.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Order/Checkout.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Order/CheckoutDetail.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Order/CheckoutDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXREZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/Details.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/Technology/Games/_DetailsGamePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Games/_DetailsGamePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxHYW1lc1xfRGV0YWlsc0dhbWVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/Technology/Games/_DetailsGameSpecificationsPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Games/_DetailsGameSpecificationsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxHYW1lc1xfRGV0YWlsc0dhbWVTcGVjaWZpY2F0aW9uc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/Technology/Games/_FeaturesGamePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Games/_FeaturesGamePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxHYW1lc1xfRmVhdHVyZXNHYW1lUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphonePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphonePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxTbWFydHBob25lc1xfRGV0YWlsc1NtYXJ0cGhvbmVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphoneSpecificationsPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_DetailsSmartphoneSpecificationsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxTbWFydHBob25lc1xfRGV0YWlsc1NtYXJ0cGhvbmVTcGVjaWZpY2F0aW9uc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_FeaturesSmartphonePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/Technology/Smartphones/_FeaturesSmartphonePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcVGVjaG5vbG9neVxTbWFydHBob25lc1xfRmVhdHVyZXNTbWFydHBob25lUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsAboutThisProductPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsAboutThisProductPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNBYm91dFRoaXNQcm9kdWN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsButtonInformationsPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsButtonInformationsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNCdXR0b25JbmZvcm1hdGlvbnNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsContainerBuyBoxOnePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsContainerBuyBoxOnePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNDb250YWluZXJCdXlCb3hPbmVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsContainerBuyBoxThreePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsContainerBuyBoxThreePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNDb250YWluZXJCdXlCb3hUaHJlZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsContainerBuyBoxTwoPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsContainerBuyBoxTwoPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNDb250YWluZXJCdXlCb3hUd29QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsImagePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsImagePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNJbWFnZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsPricePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsPricePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNQcmljZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsProductAlsoPurchasedPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsProductAlsoPurchasedPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNQcm9kdWN0QWxzb1B1cmNoYXNlZFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/DetailsPartial/_DetailsProductsFeaturesPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/DetailsPartial/_DetailsProductsFeaturesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlsc1BhcnRpYWxcX0RldGFpbHNQcm9kdWN0c0ZlYXR1cmVzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/IndexCategory.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/IndexCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXhDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/PriceIsBetweenTwoHundredAndAThousand.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/PriceIsBetweenTwoHundredAndAThousand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJpY2VJc0JldHdlZW5Ud29IdW5kcmVkQW5kQVRob3VzYW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/PriceIsHigherThanTwoThousand.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/PriceIsHigherThanTwoThousand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJpY2VJc0hpZ2hlclRoYW5Ud29UaG91c2FuZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/PriceIsLowerThanOneHundred.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/PriceIsLowerThanOneHundred.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJpY2VJc0xvd2VyVGhhbk9uZUh1bmRyZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Products/ProductNotFound.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Products/ProductNotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJvZHVjdE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/CategoriesPartial/_CategoriesPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/CategoriesPartial/_CategoriesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENhdGVnb3JpZXNQYXJ0aWFsXF9DYXRlZ29yaWVzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/BrandsMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/BrandsMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQnJhbmRzTWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/CategoryMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/CategoryMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/CategoryWithProductCountList/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/CategoryWithProductCountList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlXaXRoUHJvZHVjdENvdW50TGlzdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/FashionMenu/AllProductsViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/FashionMenu/AllProductsViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmFzaGlvbk1lbnVcQWxsUHJvZHVjdHNWaWV3UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/FashionMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/FashionMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmFzaGlvbk1lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/GamesMenu/AllProductsViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/GamesMenu/AllProductsViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2FtZXNNZW51XEFsbFByb2R1Y3RzVmlld1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/GamesMenu/ConsoleViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/GamesMenu/ConsoleViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2FtZXNNZW51XENvbnNvbGVWaWV3UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/GamesMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/GamesMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2FtZXNNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/GamesMenu/VideoGameViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/GamesMenu/VideoGameViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2FtZXNNZW51XFZpZGVvR2FtZVZpZXdQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/ShoppingCartMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/ShoppingCartMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2hvcHBpbmdDYXJ0TWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/SmartphonesMenu/AllProductsViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/SmartphonesMenu/AllProductsViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU21hcnRwaG9uZXNNZW51XEFsbFByb2R1Y3RzVmlld1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/SmartphonesMenu/AppleViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/SmartphonesMenu/AppleViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU21hcnRwaG9uZXNNZW51XEFwcGxlVmlld1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/SmartphonesMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/SmartphonesMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU21hcnRwaG9uZXNNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/SmartphonesMenu/SamsungViewPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/SmartphonesMenu/SamsungViewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU21hcnRwaG9uZXNNZW51XFNhbXN1bmdWaWV3UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Components/SortByMenu/Default.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Components/SortByMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU29ydEJ5TWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/Error.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListImagesPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListImagesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdEltYWdlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListModalPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdE1vZGFsUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListOwlPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdE93bFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListPricePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListPricePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdFByaWNlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListReviewsAveragePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListReviewsAveragePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdFJldmlld3NBdmVyYWdlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListTablePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/GetProductsListPartial/GetProductsListTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxHZXRQcm9kdWN0c0xpc3RQYXJ0aWFsXEdldFByb2R1Y3RzTGlzdFRhYmxlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsAverageOpinionsPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsAverageOpinionsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxQcm9kdWN0UmV2aWV3c1BhcnRpYWxcUHJvZHVjdFJldmlld3NBdmVyYWdlT3BpbmlvbnNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsAveragePartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsAveragePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxQcm9kdWN0UmV2aWV3c1BhcnRpYWxcUHJvZHVjdFJldmlld3NBdmVyYWdlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/ProductReviewsPartial/ProductReviewsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxQcm9kdWN0UmV2aWV3c1BhcnRpYWxcUHJvZHVjdFJldmlld3NQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/_HomeCarousel.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/_HomeCarousel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxfSG9tZUNhcm91c2VsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/ProductsPartial/_ProductAlsoPurchased.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/ProductsPartial/_ProductAlsoPurchased.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2R1Y3RzUGFydGlhbFxfUHJvZHVjdEFsc29QdXJjaGFzZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/TemporaryFolder/_InCronstruction.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/TemporaryFolder/_InCronstruction.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFRlbXBvcmFyeUZvbGRlclxfSW5Dcm9uc3RydWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/_CartCheckoutPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/_CartCheckoutPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0Q2hlY2tvdXRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/_CartPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/_CartPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/_LoginPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/ShoppingCart/Index.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/ShoppingCart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/ShoppingCart/ItemReview.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/ShoppingCart/ItemReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEl0ZW1SZXZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/_ViewImports.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/_ViewStart.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/C\#/MegaShopWebVS/WebUI/Views/Shared/_Layout.cshtml]
+[C:/C\#/MegaShopWeb/WebUI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mv07mvknwk

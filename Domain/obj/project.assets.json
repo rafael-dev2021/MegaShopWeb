@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj",
+      "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-      "outputPath": "C:\\C#\\MegaShopWebVS\\Domain\\obj\\",
+      "outputPath": "C:\\C#\\MegaShopWeb\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

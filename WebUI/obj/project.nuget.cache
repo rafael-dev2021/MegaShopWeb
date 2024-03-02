@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yeU4dnSt/mdq8KtIguGQFxkEJvEyCu6RnJGcrLXy6WtPpc/JbJtHHDwXSaU/mEATAWl0NFj7o/yXvbIkgcP/Sw==",
+  "dgSpecHash": "1uhY3YsY6EHqKZbKMrdqTMy0kAibi3ENAyW28upSKzJuUWIoGmqV/3onTeSQba0ZOJgiwlqfeAETc+jtnZsSiQ==",
   "success": true,
-  "projectFilePath": "C:\\C#\\MegaShopWebVS\\WebUI\\WebUI.csproj",
+  "projectFilePath": "C:\\C#\\MegaShopWeb\\WebUI\\WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ainbo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

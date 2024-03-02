@@ -199,7 +199,6 @@ C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\staticwebassets.pack.json
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\scopedcss\bundle\WebUI.styles.css
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\scopedcss\projectbundle\WebUI.bundle.scp.css
-C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.csproj.CopyComplete
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.dll
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\refint\WebUI.dll
 C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.pdb
@@ -412,3 +411,4 @@ C:\C#\MegaShopWebVS\WebUI\obj\Debug\net8.0\WebUI.pdb
 C:\C#\MegaShopWebVS\WebUI\obj\Debug\net8.0\WebUI.genruntimeconfig.cache
 C:\C#\MegaShopWebVS\WebUI\obj\Debug\net8.0\ref\WebUI.dll
 C:\C#\MegaShopWebVS\WebUI\obj\Debug\net8.0\WebUI.MvcApplicationPartsAssemblyInfo.cs
+C:\C#\MegaShopWeb\WebUI\obj\Debug\net8.0\WebUI.csproj.Up2Date

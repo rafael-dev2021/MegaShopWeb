@@ -31,7 +31,6 @@ C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.AssemblyInfoInputs.cache
 C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.AssemblyInfo.cs
 C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.csproj.CoreCompileInputs.cache
 C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.sourcelink.json
-C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.csproj.CopyComplete
 C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.dll
 C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\refint\Infra-Ioc.dll
 C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.pdb
@@ -74,3 +73,4 @@ C:\C#\MegaShopWebVS\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.dll
 C:\C#\MegaShopWebVS\Infra-Ioc\obj\Debug\net8.0\refint\Infra-Ioc.dll
 C:\C#\MegaShopWebVS\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.pdb
 C:\C#\MegaShopWebVS\Infra-Ioc\obj\Debug\net8.0\ref\Infra-Ioc.dll
+C:\C#\MegaShopWeb\Infra-Ioc\obj\Debug\net8.0\Infra-Ioc.csproj.Up2Date

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o4IvINb9OtGQQKkLa5MF6catQQ6fDotnq/kccKM0B9w=",
+  "Hash": "LE2cxro9wq/Y2d2fKFnHMkMTgMe7BlNv8KKQ0MOsD/Q=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebUI\\wwwroot",
       "Source": "WebUI",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WebUI.styles.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WebUI.styles.css",
       "SourceId": "WebUI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "WebUI.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\C#\\MegaShopWebVS\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WebUI.styles.css"
+      "OriginalItemSpec": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WebUI.styles.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebUI.bundle.scp.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebUI.bundle.scp.css",
       "SourceId": "WebUI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "WebUI.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\C#\\MegaShopWebVS\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebUI.bundle.scp.css"
+      "OriginalItemSpec": "C:\\C#\\MegaShopWeb\\WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebUI.bundle.scp.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\_GetProductList.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\_GetProductList.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/_GetProductList.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\_GetProductList.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\Fashion.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\Fashion.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/Fashion.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Fashion.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\Games.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\Games.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/Games.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Games.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\GetProductsListPartial.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\GetProductsListPartial.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/GetProductsListPartial.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\css\\GetProductsListPartial.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\login.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\login.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\register.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\register.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/register.css",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\css\\register.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\site.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\site.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\css\\Smartphone.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\css\\Smartphone.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "css/Smartphone.css",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Smartphone.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\favicon.ico",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\favicon.ico",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\5203299.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\5203299.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/5203299.jpg",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\images\\5203299.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\aa.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\aa.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/aa.jpg",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\images\\aa.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\ana.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\ana.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/ana.jpg",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ana.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\adidas.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\adidas.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/adidas.jpg",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\adidas.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\banner.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\banner.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/banner.png",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\banner.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\fashionWoman.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\fashionWoman.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/fashionWoman.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\fashionWoman.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\fashionWoman2.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\fashionWoman2.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/fashionWoman2.jpg",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\fashionWoman2.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\manShirts.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\manShirts.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/manShirts.jpg",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\manShirts.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\nike.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\nike.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/nike.jpg",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\nike.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\nike1.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\nike1.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/nike1.jpg",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\nike1.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\nikeMen.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\nikeMen.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/nikeMen.jpg",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\nikeMen.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\puma.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\puma.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/puma.jpg",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\puma.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\smarphones\\iphone.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\iphone.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/smarphones/iphone.jpg",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\smarphones\\iphone.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\smarphones\\iphonephone.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\iphonephone.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/smarphones/iphonephone.png",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\smarphones\\iphonephone.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\smarphones\\motorola.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\motorola.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/smarphones/motorola.png",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\smarphones\\motorola.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\smarphones\\samsung.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\samsung.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/smarphones/samsung.jpg",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\smarphones\\samsung.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\smarphones\\samsungphone.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\smarphones\\samsungphone.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/smarphones/samsungphone.png",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\smarphones\\samsungphone.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\assets\\womanShoes.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\assets\\womanShoes.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/assets/womanShoes.jpg",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\images\\assets\\womanShoes.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\adidasfashion.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\adidasfashion.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/adidasfashion.jpg",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\adidasfashion.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\applePods.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\applePods.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/applePods.jpg",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\applePods.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\appleWatch.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\appleWatch.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/appleWatch.jpg",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\appleWatch.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\banner-deal.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\banner-deal.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/banner-deal.jpg",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\banner-deal.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\bannerHome.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\bannerHome.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/bannerHome.webp",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\bannerHome.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\BeechsideClothing.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\BeechsideClothing.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/BeechsideClothing.png",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\BeechsideClothing.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\consoles.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\consoles.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/consoles.png",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\consoles.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\fas",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\fas",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/fas",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\fas"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\gamesFifa.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\gamesFifa.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/gamesFifa.png",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\gamesFifa.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\gamesMario.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\gamesMario.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/gamesMario.png",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\gamesMario.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\gamesSpider.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\gamesSpider.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/gamesSpider.png",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\gamesSpider.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\grocery-banner.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\grocery-banner.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/grocery-banner.png",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\grocery-banner.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\grocery-banner-2.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\grocery-banner-2.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/grocery-banner-2.jpg",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\grocery-banner-2.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\hero_iphone15_announce__uuemlcwczn6u_small_2x.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\hero_iphone15_announce__uuemlcwczn6u_small_2x.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/hero_iphone15_announce__uuemlcwczn6u_small_2x.jpg",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\hero_iphone15_announce__uuemlcwczn6u_small_2x.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\menu-banner.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\menu-banner.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/menu-banner.jpg",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\menu-banner.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\newcollection.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\newcollection.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/newcollection.png",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\newcollection.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\nikebanner.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\nikebanner.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/nikebanner.webp",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\nikebanner.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\pcGamer.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\pcGamer.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/pcGamer.png",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\pcGamer.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\ps.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\ps.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/ps.webp",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\ps.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\pumafashion.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\pumafashion.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/pumafashion.jpg",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\pumafashion.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\pummabanner.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\pummabanner.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/pummabanner.webp",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\pummabanner.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\reebok.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\reebok.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/reebok.jpg",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\reebok.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\RefreshForLess.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\RefreshForLess.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/RefreshForLess.webp",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\RefreshForLess.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\samsung.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\samsung.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/samsung.jpg",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\samsung.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\smartphones.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\smartphones.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/smartphones.png",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\smartphones.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\smartphones2.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\smartphones2.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/smartphones2.png",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\smartphones2.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\smartphones3.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\smartphones3.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/smartphones3.png",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\smartphones3.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\swtch.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\swtch.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/swtch.webp",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\swtch.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\banner\\xbox.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\banner\\xbox.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/banner/xbox.webp",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\banner\\xbox.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\adidas.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\adidas.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/adidas.png",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\adidas.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\adidas.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\adidas.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/adidas.svg",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\adidas.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\animes.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\animes.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/animes.webp",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\animes.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\asos.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\asos.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/asos.svg",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\asos.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\asus.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\asus.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/asus.png",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\asus.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\bershka.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\bershka.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/bershka.svg",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\bershka.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\blackarrow.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\blackarrow.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/blackarrow.webp",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\blackarrow.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\books.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\books.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/books.webp",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\books.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\c3tech.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\c3tech.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/c3tech.webp",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\c3tech.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\classic.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\classic.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/classic.webp",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\classic.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\consoles.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\consoles.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/consoles.webp",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\consoles.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\corsair.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\corsair.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/corsair.webp",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\corsair.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\dc.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\dc.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/dc.webp",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\dc.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\decoration.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\decoration.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/decoration.webp",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\decoration.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\games.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\games.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/games.webp",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\games.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\gamingseat.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\gamingseat.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/gamingseat.webp",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\gamingseat.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\geek.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\geek.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/geek.webp",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\geek.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\giftcard.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\giftcard.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/giftcard.webp",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\giftcard.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\harrypotter.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\harrypotter.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/harrypotter.webp",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\harrypotter.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\hyperx.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\hyperx.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/hyperx.webp",
       "AssetKind": "All",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\hyperx.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\infinix.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\infinix.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/infinix.png",
       "AssetKind": "All",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\infinix.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\iphone.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\iphone.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/iphone.png",
       "AssetKind": "All",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\iphone.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\mango.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\mango.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/mango.svg",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\mango.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\marvel.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\marvel.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/marvel.webp",
       "AssetKind": "All",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\marvel.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\monitor.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\monitor.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/monitor.webp",
       "AssetKind": "All",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\monitor.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\motorola.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\motorola.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/motorola.png",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\motorola.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\multilaser.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\multilaser.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/multilaser.png",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\multilaser.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\multilaser.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\multilaser.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/multilaser.webp",
       "AssetKind": "All",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\multilaser.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\nike.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\nike.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/nike.png",
       "AssetKind": "All",
@@ -1670,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\nike.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\peripheral.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\peripheral.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/peripheral.webp",
       "AssetKind": "All",
@@ -1689,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\peripheral.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\puma.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\puma.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/puma.png",
       "AssetKind": "All",
@@ -1708,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\puma.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\razer.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\razer.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/razer.webp",
       "AssetKind": "All",
@@ -1727,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\razer.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\redragon.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\redragon.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/redragon.webp",
       "AssetKind": "All",
@@ -1746,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\redragon.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\reebok.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\reebok.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/reebok.svg",
       "AssetKind": "All",
@@ -1765,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\reebok.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\samsung.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\samsung.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/samsung.png",
       "AssetKind": "All",
@@ -1784,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\samsung.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\starwars.webp",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\starwars.webp",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/starwars.webp",
       "AssetKind": "All",
@@ -1803,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\starwars.webp"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\stradivarius.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\stradivarius.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/stradivarius.svg",
       "AssetKind": "All",
@@ -1822,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\stradivarius.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\xiaomi.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\xiaomi.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/xiaomi.png",
       "AssetKind": "All",
@@ -1841,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\xiaomi.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\Brands\\zara.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\Brands\\zara.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/Brands/zara.svg",
       "AssetKind": "All",
@@ -1860,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Brands\\zara.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\button\\appstore-btn.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\button\\appstore-btn.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/button/appstore-btn.svg",
       "AssetKind": "All",
@@ -1879,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot\\images\\button\\appstore-btn.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\button\\googleplay-btn.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\button\\googleplay-btn.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/button/googleplay-btn.svg",
       "AssetKind": "All",
@@ -1898,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot\\images\\button\\googleplay-btn.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\carlos.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\carlos.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/carlos.jpg",
       "AssetKind": "All",
@@ -1917,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot\\images\\carlos.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-atta-rice-dal.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-atta-rice-dal.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-atta-rice-dal.jpg",
       "AssetKind": "All",
@@ -1936,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-atta-rice-dal.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-baby-care.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-baby-care.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-baby-care.jpg",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-baby-care.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-bakery-biscuits.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-bakery-biscuits.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-bakery-biscuits.jpg",
       "AssetKind": "All",
@@ -1974,10 +1974,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-bakery-biscuits.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-chicken-meat-fish.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-chicken-meat-fish.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-chicken-meat-fish.jpg",
       "AssetKind": "All",
@@ -1993,10 +1993,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-chicken-meat-fish.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-cleaning-essentials.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-cleaning-essentials.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-cleaning-essentials.jpg",
       "AssetKind": "All",
@@ -2012,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-cleaning-essentials.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-dairy-bread-eggs.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-dairy-bread-eggs.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-dairy-bread-eggs.jpg",
       "AssetKind": "All",
@@ -2031,10 +2031,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-dairy-bread-eggs.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-instant-food.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-instant-food.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-instant-food.jpg",
       "AssetKind": "All",
@@ -2050,10 +2050,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-instant-food.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-pet-care.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-pet-care.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-pet-care.jpg",
       "AssetKind": "All",
@@ -2069,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-pet-care.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-snack-munchies.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-snack-munchies.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-snack-munchies.jpg",
       "AssetKind": "All",
@@ -2088,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-snack-munchies.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\category\\category-tea-coffee-drinks.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\category\\category-tea-coffee-drinks.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/category/category-tea-coffee-drinks.jpg",
       "AssetKind": "All",
@@ -2107,10 +2107,10 @@
       "OriginalItemSpec": "wwwroot\\images\\category\\category-tea-coffee-drinks.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc.jpg",
       "AssetKind": "All",
@@ -2126,10 +2126,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\boleto.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\boleto.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/boleto.png",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\boleto.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\diner.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\diner.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/diner.png",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\diner.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\hipercard.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\hipercard.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/hipercard.png",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\hipercard.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\master.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\master.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/master.png",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\master.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\money.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\money.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/money.png",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\money.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\pix.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\pix.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/pix.png",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\pix.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\cc\\visa.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\cc\\visa.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/cc/visa.png",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cc\\visa.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\contact.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\contact.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/contact.jpg",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\images\\contact.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\basicWomenDress.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\basicWomenDress.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/basicWomenDress.jpg",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\basicWomenDress.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\Kids.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\Kids.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/Kids.jpg",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\Kids.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\Men.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\Men.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/Men.jpg",
       "AssetKind": "All",
@@ -2335,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\Men.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\Profile.pdf",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\Profile.pdf",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/Profile.pdf",
       "AssetKind": "All",
@@ -2354,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\Profile.pdf"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\puma.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\puma.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/puma.jpg",
       "AssetKind": "All",
@@ -2373,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\puma.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\shirtsMen.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\shirtsMen.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/shirtsMen.jpg",
       "AssetKind": "All",
@@ -2392,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\shirtsMen.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\shoes.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\shoes.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/shoes.jpg",
       "AssetKind": "All",
@@ -2411,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\shoes.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\summerStyle.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\summerStyle.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/summerStyle.jpg",
       "AssetKind": "All",
@@ -2430,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\summerStyle.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\sweatshirts.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\sweatshirts.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/sweatshirts.jpg",
       "AssetKind": "All",
@@ -2449,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\sweatshirts.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\fashion\\women.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\fashion\\women.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/fashion/women.jpg",
       "AssetKind": "All",
@@ -2468,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fashion\\women.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\ff.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\ff.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/ff.jpg",
       "AssetKind": "All",
@@ -2487,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ff.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\history.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\history.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/history.jpg",
       "AssetKind": "All",
@@ -2506,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\images\\history.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\cellphone.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\cellphone.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/cellphone.svg",
       "AssetKind": "All",
@@ -2525,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\cellphone.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\fingerprint.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\fingerprint.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/fingerprint.svg",
       "AssetKind": "All",
@@ -2544,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\fingerprint.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\internal_memory.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\internal_memory.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/internal_memory.svg",
       "AssetKind": "All",
@@ -2563,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\internal_memory.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\nfc.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\nfc.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/nfc.svg",
       "AssetKind": "All",
@@ -2582,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\nfc.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\rating.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\rating.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/rating.png",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\rating.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\resolution_front_camera.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\resolution_front_camera.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/resolution_front_camera.svg",
       "AssetKind": "All",
@@ -2620,10 +2620,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\resolution_front_camera.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\resolution_rear.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\resolution_rear.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/resolution_rear.svg",
       "AssetKind": "All",
@@ -2639,10 +2639,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\resolution_rear.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\icons\\resolution_rear_camera.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\icons\\resolution_rear_camera.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/icons/resolution_rear_camera.svg",
       "AssetKind": "All",
@@ -2658,10 +2658,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons\\resolution_rear_camera.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_games\\default.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_games\\default.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_games/default.svg",
       "AssetKind": "All",
@@ -2677,10 +2677,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_games\\default.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartphone\\internal_memory.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartphone\\internal_memory.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartphone/internal_memory.svg",
       "AssetKind": "All",
@@ -2696,10 +2696,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartphone\\internal_memory.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartphone\\resolution_front_camera.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartphone\\resolution_front_camera.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartphone/resolution_front_camera.svg",
       "AssetKind": "All",
@@ -2715,10 +2715,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartphone\\resolution_front_camera.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartphone\\resolution_rear_camera.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartphone\\resolution_rear_camera.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartphone/resolution_rear_camera.svg",
       "AssetKind": "All",
@@ -2734,10 +2734,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartphone\\resolution_rear_camera.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartphone\\screen_size_v3.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartphone\\screen_size_v3.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartphone/screen_size_v3.svg",
       "AssetKind": "All",
@@ -2753,10 +2753,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartphone\\screen_size_v3.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartTvs\\integrated_apps.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartTvs\\integrated_apps.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartTvs/integrated_apps.svg",
       "AssetKind": "All",
@@ -2772,10 +2772,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartTvs\\integrated_apps.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartTvs\\resolution_type.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartTvs\\resolution_type.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartTvs/resolution_type.svg",
       "AssetKind": "All",
@@ -2791,10 +2791,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartTvs\\resolution_type.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartTvs\\screen_size_v3.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartTvs\\screen_size_v3.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartTvs/screen_size_v3.svg",
       "AssetKind": "All",
@@ -2810,10 +2810,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartTvs\\screen_size_v3.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartTvs\\screen_type.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartTvs\\screen_type.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartTvs/screen_type.svg",
       "AssetKind": "All",
@@ -2829,10 +2829,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartTvs\\screen_type.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\img_smartTvs\\smart.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\img_smartTvs\\smart.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/img_smartTvs/smart.svg",
       "AssetKind": "All",
@@ -2848,10 +2848,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_smartTvs\\smart.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\jj.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\jj.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/jj.jpg",
       "AssetKind": "All",
@@ -2867,10 +2867,10 @@
       "OriginalItemSpec": "wwwroot\\images\\jj.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\joao.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\joao.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/joao.jpg",
       "AssetKind": "All",
@@ -2886,10 +2886,10 @@
       "OriginalItemSpec": "wwwroot\\images\\joao.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\julia.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\julia.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/julia.jpg",
       "AssetKind": "All",
@@ -2905,10 +2905,10 @@
       "OriginalItemSpec": "wwwroot\\images\\julia.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\logo\\ico2.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\logo\\ico2.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/logo/ico2.png",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo\\ico2.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\logo\\logo.png",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\logo\\logo.png",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/logo/logo.png",
       "AssetKind": "All",
@@ -2943,10 +2943,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo\\logo.png"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\maintenance.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\maintenance.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/maintenance.jpg",
       "AssetKind": "All",
@@ -2962,10 +2962,10 @@
       "OriginalItemSpec": "wwwroot\\images\\maintenance.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\patterns\\pattern-1.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\patterns\\pattern-1.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/patterns/pattern-1.svg",
       "AssetKind": "All",
@@ -2981,10 +2981,10 @@
       "OriginalItemSpec": "wwwroot\\images\\patterns\\pattern-1.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\patterns\\pattern-2.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\patterns\\pattern-2.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/patterns/pattern-2.svg",
       "AssetKind": "All",
@@ -3000,10 +3000,10 @@
       "OriginalItemSpec": "wwwroot\\images\\patterns\\pattern-2.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\amazonpay.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\amazonpay.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/amazonpay.svg",
       "AssetKind": "All",
@@ -3019,10 +3019,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\amazonpay.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\american-express.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\american-express.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/american-express.svg",
       "AssetKind": "All",
@@ -3038,10 +3038,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\american-express.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\amex.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\amex.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/amex.svg",
       "AssetKind": "All",
@@ -3057,10 +3057,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\amex.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\klarna.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\klarna.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/klarna.svg",
       "AssetKind": "All",
@@ -3076,10 +3076,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\klarna.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\maestro.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\maestro.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/maestro.svg",
       "AssetKind": "All",
@@ -3095,10 +3095,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\maestro.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\mastercard (1).svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\mastercard (1).svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/mastercard (1).svg",
       "AssetKind": "All",
@@ -3114,10 +3114,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\mastercard (1).svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\mastercard.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\mastercard.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/mastercard.svg",
       "AssetKind": "All",
@@ -3133,10 +3133,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\mastercard.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\paypal (1).svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\paypal (1).svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/paypal (1).svg",
       "AssetKind": "All",
@@ -3152,10 +3152,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\paypal (1).svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\paypal.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\paypal.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/paypal.svg",
       "AssetKind": "All",
@@ -3171,10 +3171,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\paypal.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\visa (1).svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\visa (1).svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/visa (1).svg",
       "AssetKind": "All",
@@ -3190,10 +3190,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\visa (1).svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\payments\\visa.svg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\payments\\visa.svg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/payments/visa.svg",
       "AssetKind": "All",
@@ -3209,10 +3209,10 @@
       "OriginalItemSpec": "wwwroot\\images\\payments\\visa.svg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\private.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\private.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/private.jpg",
       "AssetKind": "All",
@@ -3228,10 +3228,10 @@
       "OriginalItemSpec": "wwwroot\\images\\private.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\slides\\slide-1.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\slides\\slide-1.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/slides/slide-1.jpg",
       "AssetKind": "All",
@@ -3247,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\images\\slides\\slide-1.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\images\\slides\\slider-2.jpg",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\images\\slides\\slider-2.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "images/slides/slider-2.jpg",
       "AssetKind": "All",
@@ -3266,10 +3266,10 @@
       "OriginalItemSpec": "wwwroot\\images\\slides\\slider-2.jpg"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\js\\_GetProductList.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\_GetProductList.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "js/_GetProductList.js",
       "AssetKind": "All",
@@ -3285,10 +3285,10 @@
       "OriginalItemSpec": "wwwroot\\js\\_GetProductList.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\js\\GetProductsListPartial.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\GetProductsListPartial.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "js/GetProductsListPartial.js",
       "AssetKind": "All",
@@ -3304,10 +3304,10 @@
       "OriginalItemSpec": "wwwroot\\js\\GetProductsListPartial.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\js\\site.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\js\\site.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -3323,10 +3323,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -3342,10 +3342,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -3361,10 +3361,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -3380,10 +3380,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -3399,10 +3399,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -3418,10 +3418,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -3437,10 +3437,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -3456,10 +3456,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -3475,10 +3475,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -3494,10 +3494,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -3513,10 +3513,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -3532,10 +3532,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -3551,10 +3551,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -3570,10 +3570,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -3589,10 +3589,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -3608,10 +3608,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -3627,10 +3627,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -3646,10 +3646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -3665,10 +3665,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -3684,10 +3684,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -3703,10 +3703,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -3722,10 +3722,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -3741,10 +3741,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -3760,10 +3760,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -3779,10 +3779,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -3798,10 +3798,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -3817,10 +3817,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -3836,10 +3836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -3855,10 +3855,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -3874,10 +3874,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -3893,10 +3893,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -3912,10 +3912,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -3931,10 +3931,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -3950,10 +3950,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -3969,10 +3969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -3988,10 +3988,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -4007,10 +4007,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -4026,10 +4026,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -4045,10 +4045,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -4064,10 +4064,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -4083,10 +4083,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -4102,10 +4102,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -4121,10 +4121,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -4140,10 +4140,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -4159,10 +4159,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -4178,10 +4178,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -4197,10 +4197,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -4216,10 +4216,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -4235,10 +4235,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -4254,10 +4254,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -4273,10 +4273,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -4292,10 +4292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -4311,10 +4311,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -4330,10 +4330,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -4349,10 +4349,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -4368,10 +4368,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -4387,10 +4387,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\C#\\MegaShopWebVS\\WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\C#\\MegaShopWeb\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

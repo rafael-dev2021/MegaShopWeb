@@ -252,11 +252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj",
+      "projectPath": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-      "outputPath": "C:\\C#\\MegaShopWebVS\\Application\\obj\\",
+      "outputPath": "C:\\C#\\MegaShopWeb\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -277,8 +277,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj"
+            "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj"
             }
           }
         }

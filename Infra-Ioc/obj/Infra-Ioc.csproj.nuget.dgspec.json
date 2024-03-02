@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C#\\MegaShopWebVS\\Infra-Ioc\\Infra-Ioc.csproj": {}
+    "C:\\C#\\MegaShopWeb\\Infra-Ioc\\Infra-Ioc.csproj": {}
   },
   "projects": {
-    "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj": {
+    "C:\\C#\\MegaShopWeb\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj",
+        "projectPath": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\MegaShopWebVS\\Application\\obj\\",
+        "outputPath": "C:\\C#\\MegaShopWeb\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj"
+              "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj": {
+    "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj",
+        "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\MegaShopWebVS\\Domain\\obj\\",
+        "outputPath": "C:\\C#\\MegaShopWeb\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -146,14 +146,14 @@
         }
       }
     },
-    "C:\\C#\\MegaShopWebVS\\Infra-Data\\Infra-Data.csproj": {
+    "C:\\C#\\MegaShopWeb\\Infra-Data\\Infra-Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\MegaShopWebVS\\Infra-Data\\Infra-Data.csproj",
+        "projectUniqueName": "C:\\C#\\MegaShopWeb\\Infra-Data\\Infra-Data.csproj",
         "projectName": "Infra-Data",
-        "projectPath": "C:\\C#\\MegaShopWebVS\\Infra-Data\\Infra-Data.csproj",
+        "projectPath": "C:\\C#\\MegaShopWeb\\Infra-Data\\Infra-Data.csproj",
         "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\MegaShopWebVS\\Infra-Data\\obj\\",
+        "outputPath": "C:\\C#\\MegaShopWeb\\Infra-Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -174,8 +174,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj"
+              "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj"
               }
             }
           }
@@ -256,14 +256,14 @@
         }
       }
     },
-    "C:\\C#\\MegaShopWebVS\\Infra-Ioc\\Infra-Ioc.csproj": {
+    "C:\\C#\\MegaShopWeb\\Infra-Ioc\\Infra-Ioc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\MegaShopWebVS\\Infra-Ioc\\Infra-Ioc.csproj",
+        "projectUniqueName": "C:\\C#\\MegaShopWeb\\Infra-Ioc\\Infra-Ioc.csproj",
         "projectName": "Infra-Ioc",
-        "projectPath": "C:\\C#\\MegaShopWebVS\\Infra-Ioc\\Infra-Ioc.csproj",
+        "projectPath": "C:\\C#\\MegaShopWeb\\Infra-Ioc\\Infra-Ioc.csproj",
         "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\MegaShopWebVS\\Infra-Ioc\\obj\\",
+        "outputPath": "C:\\C#\\MegaShopWeb\\Infra-Ioc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -284,14 +284,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj": {
-                "projectPath": "C:\\C#\\MegaShopWebVS\\Application\\Application.csproj"
+              "C:\\C#\\MegaShopWeb\\Application\\Application.csproj": {
+                "projectPath": "C:\\C#\\MegaShopWeb\\Application\\Application.csproj"
               },
-              "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\C#\\MegaShopWebVS\\Domain\\Domain.csproj"
+              "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj"
               },
-              "C:\\C#\\MegaShopWebVS\\Infra-Data\\Infra-Data.csproj": {
-                "projectPath": "C:\\C#\\MegaShopWebVS\\Infra-Data\\Infra-Data.csproj"
+              "C:\\C#\\MegaShopWeb\\Infra-Data\\Infra-Data.csproj": {
+                "projectPath": "C:\\C#\\MegaShopWeb\\Infra-Data\\Infra-Data.csproj"
               }
             }
           }

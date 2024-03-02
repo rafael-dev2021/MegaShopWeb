@@ -28,7 +28,6 @@ C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.AssemblyInfoInputs.cach
 C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.AssemblyInfo.cs
 C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.csproj.CoreCompileInputs.cache
 C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.sourcelink.json
-C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.csproj.CopyComplete
 C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.dll
 C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\refint\Infra-Data.dll
 C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.pdb
@@ -70,3 +69,4 @@ C:\C#\MegaShopWebVS\Infra-Data\obj\Debug\net8.0\refint\Infra-Data.dll
 C:\C#\MegaShopWebVS\Infra-Data\obj\Debug\net8.0\Infra-Data.pdb
 C:\C#\MegaShopWebVS\Infra-Data\obj\Debug\net8.0\Infra-Data.genruntimeconfig.cache
 C:\C#\MegaShopWebVS\Infra-Data\obj\Debug\net8.0\ref\Infra-Data.dll
+C:\C#\MegaShopWeb\Infra-Data\obj\Debug\net8.0\Infra-Data.csproj.Up2Date
