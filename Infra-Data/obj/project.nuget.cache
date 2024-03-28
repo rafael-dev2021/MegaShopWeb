@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j2xMF8dQNpm1yfXae59o47nkUrodLaH1OSyEdQ7D9261YKMMM4SRbpzq2x5gyeVTsW5NK2BfU4kbpfXna7I+vg==",
+  "dgSpecHash": "ICUB9doHq3L6msn3+lSnXJtFd5nDkqvifOrkCUSB85i8Ra/T0q/c78Rhe42Odx/X+Awli6n6IrVEeDNWHrYA6w==",
   "success": true,
-  "projectFilePath": "C:\\C#\\MegaShopWeb\\Infra-Data\\Infra-Data.csproj",
+  "projectFilePath": "C:\\C#\\MegaShopWeb2\\Infra-Data\\Infra-Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ainbo\\.nuget\\packages\\azure.core\\1.36.0\\azure.core.1.36.0.nupkg.sha512",
     "C:\\Users\\ainbo\\.nuget\\packages\\azure.identity\\1.10.4\\azure.identity.1.10.4.nupkg.sha512",

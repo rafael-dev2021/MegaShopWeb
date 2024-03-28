@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\C#\\MegaShopWeb2\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\C#\\MegaShopWeb\\Domain\\Domain.csproj",
+      "projectPath": "C:\\C#\\MegaShopWeb2\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\ainbo\\.nuget\\packages\\",
-      "outputPath": "C:\\C#\\MegaShopWeb\\Domain\\obj\\",
+      "outputPath": "C:\\C#\\MegaShopWeb2\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,11 +45,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
